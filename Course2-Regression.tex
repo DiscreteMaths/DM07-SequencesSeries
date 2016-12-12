@@ -9,18 +9,21 @@ Case Study - Predicting Housing Prices
 In our first case study, predicting house prices, you will create models that predict a continuous value (price) from input features (square footage, number of bedrooms and bathrooms,...).  This is just one of the many places where regression can be applied.  Other applications range from predicting health outcomes in medicine, stock prices in finance, and power usage in high-performance computing, to analyzing which regulators are important for gene expression.
 
 In this course, you will explore regularized linear regression models for the task of prediction and feature selection.  You will be able to handle very large sets of features and select between models of various complexity.  You will also analyze the impact of aspects of your data -- such as outliers -- on your selected models and predictions.  To fit these models, you will implement optimization algorithms that scale to large datasets.
-
+%======================================================================================%
 Learning Outcomes:  By the end of this course, you will be able to:
-   -Describe the input and output of a regression model.
-   -Compare and contrast bias and variance when modeling data.
-   -Estimate model parameters using optimization algorithms.
-   -Tune parameters with cross validation.
-   -Analyze the performance of the model.
-   -Describe the notion of sparsity and how LASSO leads to sparse solutions.
-   -Deploy methods to select between models.
-   -Exploit the model to form predictions. 
-   -Build a regression model to predict prices using a housing dataset.
-   -Implement these techniques in Python.
+\begin{itemize}
+   \item Describe the input and output of a regression model.
+   \item Compare and contrast bias and variance when modeling data.
+   \item Estimate model parameters using optimization algorithms.
+   \item Tune parameters with cross validation.
+   \item Analyze the performance of the model.
+   \item Describe the notion of sparsity and how LASSO leads to sparse solutions.
+   \item Deploy methods to select between models.
+   \item Exploit the model to form predictions. 
+   \item Build a regression model to predict prices using a housing dataset.
+   \item Implement these techniques in Python.
+\end{itemize}
+%======================================================================================%
 WEEK 1
 Welcome
 Regression is one of the most important and broadly used machine learning and statistics tools out there. It allows you to make predictions from data by learning the relationship between features of your data and some observed, continuous-valued response. Regression is used in a massive number of applications ranging from predicting stock prices to understanding gene regulatory networks.
@@ -36,7 +39,7 @@ This introduction to the course provides you with an overview of the topics we w
 Simple Linear Regression
 Our course starts from the most basic regression model: Just fitting a line to data. This simple model for forming predictions from a single, univariate feature of the data is appropriately called "simple linear regression".
 In this module, we describe the high-level regression task and then specialize these concepts to the simple linear regression case. You will learn how to formulate a simple regression model and fit the model to data using both a closed-form solution as well as an iterative optimization algorithm called gradient descent. Based on this fitted function, you will interpret the estimated model parameters and form predictions. You will also analyze the sensitivity of your fit to outlying observations.
-
+%======================================================================================%
 You will examine all of these concepts in the context of a case study of predicting house prices from the square feet of the house.
 \begin{itemize}
 \item Slides presented in this module
@@ -73,10 +76,12 @@ You will examine all of these concepts in the context of a case study of predict
 Quiz · Simple Linear Regression
 \item Reading: Fitting a simple linear regression model on housing data
 Quiz · Fitting a simple linear regression model on housing data
+
+%======================================================================================%
 \section{WEEK 2:Multiple Regression}
 The next step in moving beyond simple linear regression is to consider "multiple regression" where multiple features of the data are used to form predictions.
 More specifically, in this module, you will learn how to build models of more complex relationship between a single variable (e.g., 'square feet') and the observed response (like 'house sales price'). This includes things like fitting a polynomial to your data, or capturing seasonal changes in the response value. You will also learn how to incorporate multiple input variables (e.g., 'square feet', '# bedrooms', '# bathrooms'). You will then be able to describe how all of these models can still be cast within the linear regression framework, but now using multiple "features". Within this multiple regression framework, you will fit models to data, interpret estimated coefficients, and form predictions.
-
+%======================================================================================%
 Here, you will also implement a gradient descent algorithm for fitting a multiple regression model.
 \begin{itemize}
 \item Slides presented in this module
@@ -173,7 +178,7 @@ A fundamental machine learning task is to select amongst a set of features to in
 To start, you will examine methods that search over an enumeration of models including different subsets of features. You will analyze both exhaustive search and greedy algorithms. Then, instead of an explicit enumeration, we turn to Lasso regression, which implicitly performs feature selection in a manner akin to ridge regression: A complex model is fit based on a measure of fit to the training data plus a measure of overfitting different than that used in ridge. This lasso method has had impact in numerous applied domains, and the ideas behind the method have fundamentally changed machine learning and statistics. You will also implement a coordinate descent algorithm for fitting a Lasso model.
 
 Coordinate descent is another, general, optimization technique, which is useful in many areas of machine learning.
-
+\begin{itemize}
 \item Slides presented in this module
 \item The feature selection task
 \item All subsets
@@ -198,6 +203,8 @@ Coordinate descent is another, general, optimization technique, which is useful 
 \item Deriving the lasso coordinate descent update
 \item Choosing the penalty strength and other practical issues with lasso
 \item A brief recap
+\end{itemize}
+%======================================================================================%
 Quiz · Feature Selection and Lasso
 \item Reading: Using LASSO to select features
 Quiz · Using LASSO to select features
@@ -232,11 +239,13 @@ Quiz · Predicting house prices using k-nearest neighbors regression
 In the conclusion of the course, we will recap what we have covered. This represents both techniques specific to regression, as well as foundational machine learning concepts that will appear throughout the specialization. We also briefly discuss some important regression techniques we did not cover in this course.
 We conclude with an overview of what's in store for you in the rest of the specialization.
 
+\begin{itemize}
 \item Slides presented in this module
 \item Simple and multiple regression
 \item Assessing performance and ridge regression
 \item Feature selection, lasso, and nearest neighbor regression
 \item What we covered and what we didn't cover
 \item What's ahead in the ML specialization
-\item Thank you!
-Hi
+\end{itemize}
+\end{document}
+%======================================================================================%
