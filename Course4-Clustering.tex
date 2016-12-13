@@ -1,40 +1,45 @@
 Machine Learning: Clustering & Retrieval
 Current session: Jun 30 — Aug 22.
 About the Course
-Case Studies: Finding Similar Documents
+\subsection{Case Studies: Finding Similar Documents}
 
 A reader is interested in a specific news article and you want to find similar articles to recommend.  What is the right notion of similarity?  Moreover, what if there are millions of other documents?  Each time you want to a retrieve a new document, do you need to search through all other documents?  How do you group similar documents together?  How do you discover new, emerging topics that the documents cover?   
 
-In this third case study, finding similar documents, you will examine similarity-based algorithms for retrieval.  In this course, you will also examine structured representations for describing the documents in the corpus, including clustering and mixed membership models, such as latent Dirichlet allocation (LDA).  You will implement expectation maximization (EM) to learn the document clusterings, and see how to scale the methods using MapReduce.
+In this third case study, finding similar documents, you will examine similarity-based algorithms for retrieval.  In this course, you will also examine structured representations for describing the documents in the corpus, including clustering and mixed membership models, such as \textbf{latent Dirichlet allocation (LDA)}.  You will implement \textbf{expectation maximization (EM)} to learn the document clusterings, and see how to scale the methods using MapReduce.
 
 Learning Outcomes:  By the end of this course, you will be able to:
-   -Create a document retrieval system using k-nearest neighbors.
-   -Identify various similarity metrics for text data.
-   -Reduce computations in k-nearest neighbor search by using KD-trees.
-   -Produce approximate nearest neighbors using locality sensitive hashing.
-   -Compare and contrast supervised and unsupervised learning tasks.
-   -Cluster documents by topic using k-means.
-   -Describe how to parallelize k-means using MapReduce.
-   -Examine probabilistic clustering approaches using mixtures models.
-   -Fit a mixture of Gaussian model using expectation maximization (EM).
-   -Perform mixed membership modeling using latent Dirichlet allocation (LDA).
-   -Describe the steps of a Gibbs sampler and how to use its output to draw inferences.
-   -Compare and contrast initialization techniques for non-convex optimization objectives.
-   -Implement these techniques in Python.
-WEEK 1
-Welcome
+\begin{itemize}
+   \item Create a document retrieval system using k\item nearest neighbors.
+   \item Identify various similarity metrics for text data.
+   \item Reduce computations in k\item nearest neighbor search by using KD\item trees.
+   \item Produce approximate nearest neighbors using locality sensitive hashing.
+   \item Compare and contrast supervised and unsupervised learning tasks.
+   \item Cluster documents by topic using k\item means.
+   \item Describe how to parallelize k\item means using MapReduce.
+   \item Examine probabilistic clustering approaches using mixtures models.
+   \item Fit a mixture of Gaussian model using expectation maximization (EM).
+   \item Perform mixed membership modeling using latent Dirichlet allocation (LDA).
+   \item Describe the steps of a Gibbs sampler and how to use its output to draw inferences.
+   \item Compare and contrast initialization techniques for non\item convex optimization objectives.
+   \item Implement these techniques in Python.
+  \end{itemize}
+%=========================================================================%
+\subsection{WEEK 1 - Welcome}
 Clustering and retrieval are some of the most high-impact machine learning tools out there. Retrieval is used in almost every applications and device we interact with, like in providing a set of products related to one a shopper is currently considering, or a list of people you might want to connect with on a social media platform. Clustering can be used to aid retrieval, but is a more broadly useful tool for automatically discovering structure in data, like uncovering groups of similar patients.
 This introduction to the course provides you with an overview of the topics we will cover and the background knowledge and resources we assume you have.
 
+\begin{itemize}
 \item Slides presented in this module
 \item Welcome and introduction to clustering and retrieval tasks
 \item Course overview
 \item Module-by-module topics covered
 \item Assumed background
 \item Software tools you'll need for this course
-WEEK 2
-Nearest Neighbor Search
+\end{itemize}
+
+\subsection{WEEK 2 -Nearest Neighbor Search}
 We start the course by considering a retrieval task of fetching a document similar to one someone is currently reading. We cast this problem as one of nearest neighbor search, which is a concept we have seen in the Foundations and Regression courses. However, here, you will take a deep dive into two critical components of the algorithms: the data representation and metric for measuring similarity between pairs of datapoints. You will examine the computational burden of the naive nearest neighbor search algorithm, and instead implement scalable alternatives using KD-trees for handling large datasets and locality sensitive hashing (LSH) for providing approximate nearest neighbors, even in high-dimensional spaces. You will explore all of these ideas on a Wikipedia dataset, comparing and contrasting the impact of the various choices you can make on the nearest neighbor results produced.
+\begin{itemize}
 \item Slides presented in this module
 \item Retrieval as k-nearest neighbor search
 \item 1-NN algorithm
@@ -65,9 +70,11 @@ Quiz · Locality Sensitive Hashing
 \item Implementing Locality Sensitive Hashing from scratch
 Quiz · Implementing Locality Sensitive Hashing from scratch
 \item A brief recap
-WEEK 3
-Clustering with k-means
+\end{itemize}
+%===============================================================================%
+\subsection{WEEK 3 - Clustering with k-means}
 In clustering, our goal is to group the datapoints in our dataset into disjoint sets. Motivated by our document analysis case study, you will use clustering to discover thematic groups of articles by "topic". These topics are not provided in this unsupervised learning task; rather, the idea is to output such cluster labels that can be post-facto associated with known topics like "Science", "World News", etc. Even without such post-facto labels, you will examine how the clustering output can provide insights into the relationships between datapoints in the dataset. The first clustering algorithm you will implement is k-means, which is the most widely used clustering algorithm out there. To scale up k-means, you will learn about the general MapReduce framework for parallelizing and distributing computations, and then how the iterates of k-means can utilize this framework. You will show that k-means can provide an interpretable grouping of Wikipedia articles when appropriately tuned.
+\begin{itemize}
 \item Slides presented in this module
 \item The goal of clustering
 \item An unsupervised task
@@ -86,9 +93,12 @@ Quiz · Clustering text data with K-means
 Quiz · MapReduce for k-means
 \item Other applications of clustering
 \item A brief recap
-WEEK 4
-Mixture Models
+\end{itemize}
+%=====================================%
+\newpage
+\subsection{ WEEK 4 - Mixture Models}
 In k-means, observations are each hard-assigned to a single cluster, and these assignments are based just on the cluster centers, rather than also incorporating shape information. In our second module on clustering, you will perform probabilistic model-based clustering that provides (1) a more descriptive notion of a "cluster" and (2) accounts for uncertainty in assignments of datapoints to clusters via "soft assignments". You will explore and implement a broadly useful algorithm called expectation maximization (EM) for inferring these soft assignments, as well as the model parameters. To gain intuition, you will first consider a visually appealing image clustering task. You will then cluster Wikipedia articles, handling the high-dimensionality of the tf-idf document representation considered.
+\begin{itemize}
 \item Slides presented in this module
 \item Motiving probabilistic clustering models
 \item Aggregating over unknown classes in an image dataset
@@ -110,11 +120,13 @@ Quiz · EM for Gaussian mixtures
 Quiz · Implementing EM for Gaussian mixtures
 \item Clustering text data with Gaussian mixtures
 Quiz · Clustering text data with Gaussian mixtures
-WEEK 5
-Mixed Membership Modeling via Latent Dirichlet Allocation
+\end{itemize}
+%==============================================================%
+\subsection*{WEEK 5 - Mixed Membership Modeling via LDA}
 The clustering model inherently assumes that data divide into disjoint sets, e.g., documents by topic. But, often our data objects are better described via memberships in a collection of sets, e.g., multiple topics. In our fourth module, you will explore latent Dirichlet allocation (LDA) as an example of such a mixed membership model particularly useful in document analysis. You will interpret the output of LDA, and various ways the output can be utilized, like as a set of learned document features. The mixed membership modeling ideas you learn about through LDA for document analysis carry over to many other interesting models and applications, like social network models where people have multiple affiliations.
 Throughout this module, we introduce aspects of Bayesian modeling and a Bayesian inference algorithm called Gibbs sampling. You will be able to implement a Gibbs sampler for LDA by the end of the module.
 
+\begin{itemize}
 \item Slides presented in this module
 \item Mixed membership models for documents
 \item An alternative document clustering model
@@ -132,6 +144,7 @@ Quiz · Latent Dirichlet Allocation
 \item Learning LDA model via Gibbs sampling
 \item Modeling text topics with Latent Dirichlet Allocation
 \item Modeling text topics with Latent Dirichlet Allocation
+\end{itemize}
 %=============================================%
 WEEK 6
 Hierarchical Clustering & Closing Remarks
@@ -139,7 +152,7 @@ In the conclusion of the course, we will recap what we have covered. This repres
 We provide a quick tour into an alternative clustering approach called hierarchical clustering, which you will experiment with on the Wikipedia dataset. Following this exploration, we discuss how clustering-type ideas can be applied in other areas like segmenting time series. We then briefly outline some important clustering and retrieval ideas that we did not cover in this course.
 
 We conclude with an overview of what's in store for you in the rest of the specialization.
-
+\begin{itemize}
 \item Module 1 recap
 \item Module 2 recap
 \item Module 3 recap
@@ -150,3 +163,5 @@ We conclude with an overview of what's in store for you in the rest of the speci
 \item What we didn't cover
 \item What's ahead in the specialization
 \item Thank you!
+\end{itemize}
+\end{document}
