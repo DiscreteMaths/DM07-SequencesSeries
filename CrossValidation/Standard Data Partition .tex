@@ -1,16 +1,18 @@
 Standard Data Partition 
 
 Standard Data Partition 
-Data Partitioning
+\section{Data Partitioning}
 Most data mining projects use large volumes of data. Before building a model, typically you partition the data using a partition utility. Partitioning yields mutually exclusive datasets: a training dataset, a validation dataset and a test dataset.
-Training Set
+\subsection*{Training Set}
 The training dataset is used to train or build a model. For example, in a linear regression, the training dataset is used to fit the linear regression model, i.e. to compute the regression coefficients. In a neural network model, the training dataset is used to obtain the network weights.
-Validation Set
+\subsection*{Validation Set}
 Once a model is built on training data, you need to find out the accuracy of the model on unseen data. For this, the model should be used on a dataset that was not used in the training process -- a dataset where you know the actual value of the target variable. The discrepancy between the actual value and the predicted value of the target variable is the error in prediction. Some form of average error (MSE of average % error) measures the overall accuracy of the model.
 If you were to use the training data itself to compute the accuracy of the model fit, you would get an overly optimistic estimate of the accuracy of the model. This is because the training or model fitting process ensures that the accuracy of the model for the training data is as high as possible -- the model is specifically suited to the training data. To get a more realistic estimate of how the model would perform with unseen data, you need to set aside a part of the original data and not use it in the training process. This dataset is known as the validation dataset. After fitting the model on the training dataset, you should test its performance on the validation dataset.
-Test Set
+\subsection*{Test Set}
 The validation dataset is often used to fine-tune models. For example, you might try out neural network models with various architectures and test the accuracy of each on the validation dataset to choose among the competing architectures. In such a case, when a model is finally chosen, its accuracy with the validation dataset is still an optimistic estimate of how it would perform with unseen data. This is because the final model has come out as the winner among the competing models based on the fact that its accuracy with the validation dataset is highest. Thus, you need to set aside yet another portion of data which is used neither in training nor in validation. This set is known as the test dataset. The accuracy of the model on the test data gives a realistic estimate of the performance of the model on completely unseen data.
-Standard Partition
+
+
+\subsection{Standard Partition}
 XLMiner� provides two ways of standard partitioning: random partitioning and user-defined partitioning.
 Random partitioning: In simple random sampling, every observation in the main dataset has equal probability of being selected for the partition dataset. For example, if you specify 60% for the training dataset, then 60% of the total observations would be randomly selected and would comprise the training dataset. In other words, each observation has a 60% chance of being selected for the training partition. 
 Random partitioning uses the system clock as a default to initialize the random number seed. Alternatively, you can specify any non-negative seed for random number generation for the partitioning. If you check the "set seed" option, the default seed entry is 12345. 
