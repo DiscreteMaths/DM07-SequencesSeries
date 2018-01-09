@@ -1,3 +1,86 @@
+
+
+
+\section{Training and validation}
+%http://www.jmp.com/support/help/Validation_2.shtml
+Using Validation and Test Data
+
+%When you have sufficient data, you can subdivide your data into three parts called the training, validation, and test data. During the selection process, models are fit on the training data, and the prediction error for the models so obtained is found by using the validation data. This prediction error on the validation data can be used to decide when to terminate the selection process or to decide what effects to include as the selection process proceeds. Finally, once a selected model has been obtained, the test set can be used to assess how the selected model generalizes on data that played no role in selecting the model.
+
+In some cases you might want to use only training and test data. For example, you might decide to use an information criterion to decide what effects to include and when to terminate the selection process. In this case no validation data are required, but test data can still be useful in assessing the predictive performance of the selected model. In other cases you might decide to use validation data during the selection process but forgo assessing the selected model on test data. 
+%Hastie, Tibshirani, and Friedman (2001) note that it is difficult to give a general rule on how many observations you should assign to each role. They note that a typical split might be 50\% for training and 25% each for validation and testing.
+
+
+\subsection{Cross-Validation and Testing}
+%====================================================%
+\begin{itemize}
+	\item In order to build the best possible mode, we will split our training data into two parts: a training set and a test set. 
+	
+	\item 	The general idea is as follows. The model parameters (the regression coefficients) are learned using the training set as above. 
+	\item The error is evaluated on the test set, and the meta-parameters are adjusted so that this cross-validation error is minimized. 
+
+\end{itemize}	
+\subsection{Cross Validation}
+%-------------------------------------------------------------------------------------%
+\begin{itemize}	
+%	\item 	
+%	
+%	\item	The cross validated set of data is a more honest presentation of the power of the
+%	discriminant function than that provided by the original classifications and often produces
+%	a poorer outcome. 
+	\item The cross validation is often termed a jack-knife classification, in that
+	it successively classifies \textbf{all cases but one} to develop a predictive model and then
+	categorizes the case that was left out. This process is repeated with each case left out in
+	turn.This is known as leave-1-out cross validation. 
+	
+	\item 	This cross validation produces a more reliable function. The argument behind it is that
+	one should not use the case you are trying to predict as part of the categorization process.
+\end{itemize}
+
+
+
+%-----------------------------------------------------------------------------------%
+
+
+
+
+\subsection{Cross Validation}
+\begin{itemize}
+\item In a prediction problem, a model is usually given a dataset of known data 
+on which training is run (\textit{training dataset}), and a dataset of unknown data (or \textit{first seen data/ testing dataset}) against which testing the model is performed.
+\item Cross-validation is mainly used in settings where the goal is prediction, and one wants to estimate how accurately a predictive model will perform in practice, with unseen data.
+\item The goal of cross validation is to define a dataset to ``test" the model in the training phase, in order to limit problems like overfitting, give an insight on how the model will generalize to an independent data set (i.e., an unknown dataset, for instance from a real problem), etc.
+\item Cross-validation is important in guarding against testing hypotheses suggested by the data (called ``\textbf{\textit{Type III errors}}"), especially where further samples 
+are hazardous, costly or impossible to collect 
+\end{itemize}
+\subsection*{K-fold Cross Validation}
+\begin{itemize}
+\item In k-fold cross-validation, the original data set is randomly partitioned into $k$ equally sized subsamples (e.g. 10 samples).
+ 
+\item Of the $k$ subsamples, a single subsample is retained as the testing data for testing the model, and the remaining k - 1 subsamples are used as training data. 
+\item The cross-validation process is then repeated k times (the folds), with each of the $k$ subsamples used exactly once as the test data. \item The $k$ results from the folds can then be averaged (or otherwise combined) to produce a single estimation.
+\item The advantage of this method over repeated random sub-sampling is that all observations are used for both training and testing, and each observation is used for testing exactly once. 
+\end{itemize}
+%\subsection*{Choosing K - Bias and Variance}
+%In general, when using k-fold cross validation, it seems to be the case that:
+%\begin{itemize}
+%\item A larger k will produce an estimate with smaller bias but potentially higher variance (on top of being computationally expensive)
+%\item A smaller k will lead to a smaller variance but may lead to a a biased estimate.
+%\end{itemize}
+\newpage
+
+\subsection*{Leave-One-Out Cross-Validation}
+\begin{itemize}
+\item As the name suggests, \textbf{leave-one-out cross-validation}  \textbf{(LOOCV)} involves using a single observation from the original sample as the validation data, and the remaining observations as the training data. 
+\item This is repeated such that each observation in the sample is used once as the validation data. 
+\item This is the same as a K-fold cross-validation with K being equal to the number of observations in the original sampling, i.e. \textbf{K=n}.
+\end{itemize}
+
+
+
+%-------------------------------------------------------%
+
+
 Standard Data Partition 
 
 Standard Data Partition 
@@ -11,42 +94,5 @@ If you were to use the training data itself to compute the accuracy of the model
 \subsection*{Test Set}
 The validation dataset is often used to fine-tune models. For example, you might try out neural network models with various architectures and test the accuracy of each on the validation dataset to choose among the competing architectures. In such a case, when a model is finally chosen, its accuracy with the validation dataset is still an optimistic estimate of how it would perform with unseen data. This is because the final model has come out as the winner among the competing models based on the fact that its accuracy with the validation dataset is highest. Thus, you need to set aside yet another portion of data which is used neither in training nor in validation. This set is known as the test dataset. The accuracy of the model on the test data gives a realistic estimate of the performance of the model on completely unseen data.
 
+\end{document}
 
-\subsection{Standard Partition}
-XLMiner� provides two ways of standard partitioning: random partitioning and user-defined partitioning.
-Random partitioning: In simple random sampling, every observation in the main dataset has equal probability of being selected for the partition dataset. For example, if you specify 60% for the training dataset, then 60% of the total observations would be randomly selected and would comprise the training dataset. In other words, each observation has a 60% chance of being selected for the training partition. 
-Random partitioning uses the system clock as a default to initialize the random number seed. Alternatively, you can specify any non-negative seed for random number generation for the partitioning. If you check the "set seed" option, the default seed entry is 12345. 
-Using the same seed allows you to replicate the partitions exactly for different runs. 
-Let us see how the partition utility works on the dataset Wine.xls.
-Data Size: Different versions of XLMiner�  have varying limits on size of data. The size of data depicted in the example below may not be supported by your version. Refer to Data Handling Specifications for details.
-
-The figure below shows the partition dialog box using random sampling. The "set seed" box is checked, the default user-specified value is left at '12345,' training data comprises 60% of the total dataset, and validation data 40%.  These are the defaults for partitioning. To use other percentages, click on "Specify-percentages" and enter the desired percentages for partitioning
-
-The dialog box indicates the name of the dataset, the worksheet that contains the dataset ,#rows and the  #columns in it.
-Data Range
-The data range to be partitioned into training, validation and test sets should be specified in the Data Range box. Either type the address directly in this box, or using the reference button, mark the required data range from the worksheet. If the cell pointer (active cell) is already somewhere in the data range, XLMiner� automatically picks up the contiguous data range surrounding the active cell.
-First Row Contains Headers
-When this box is checked, XLMiner� picks up the headers from first row of the selected data range. When the box is unchecked, XLMiner� follows the default naming convention, i.e., the variable in the first column of the selected range will be called "Var1", the second column "Var2," etc.
-Variables
-This list box contains the names of the variables in the selected data range. If the first row of the range contains the variable names, then these names appear in this list box. If the first row of the dataset does not contain the headers, then XLMiner� puts the variable names using its default naming convention. In this case the first column is named Var1, the second column is named Var2 and so on.   To select a variable for the partition, click on it, then click on the ">" button.  Use the ctrl key to select multiple variables.
-Variables in the Partitioned Data
-This list box contains the names of the variables that you selected from the Variables list.
-Partition Options
-User can pick up rows randomly (as shown here). Check "Set Seed" and enter the desired number. Partitioning is also possible by using a partition variable, as shown later. 
-Partitioning percentages when picking up rows randomly
-XLMiner� provides three options here --
-Automatic : If you select this, 60% of the total number of records in the dataset are assigned randomly to the training set and the rest to the validation set. If the data set is large then 60% will perhaps exceed the limit on number of records in the training partition. (Check the data handling specifications.) In that case, XLMiner� will allocate such a maximum percentage to the training set that will be just within the limits. It will then assign the remaining percentage to the validation set. eg. If the limit on training partition is 10,000 records and the data set has 60,000 records then XLMiner� will assign 16.66% records to training set. The remaining 83.34% records will be included in the validation set.
-Specify percentages : You can specify the required partition percentages here. In case of large data sets XLMiner� will suggest the maximum possible percentage to training set, so that the training partition is within the specified limits. It will then allocate the remaining records to validation and test sets in the proportion 60:40. You can change these and specify percentages. XLMiner�  will execute your specifications as long as the limits are met. 
-Equal records in training, validation and test set : XLMiner�  will divide the records equally in training, validation and test sets. If the data set is large, it will assign maximum possible records to training so that the number is within the specified limit for training partition and assigns the same percentage to validation and test sets. This means, all the records may not be accommodated. So in case of large data sets use specify percentages if required.
- The output of a data partition run is shown in the figure below:
-
-XLMiner� allots Row Ids to records in the sequence they appear in the dataset. It also sorts the output on Row Id before displaying it.
-User-defined partitioning: In user-defined partitioning, you specify the partition variable that is used to partition the dataset. This is useful when you have already predetermined the observations that should be used in training, validation, and/or test. This partition variable must take the value "t" for training, "v" for validation and "s" for test. Rows with any other values in the Partition Variable column are ignored. The partition variable serves as a flag for writing each observation to appropriate partition(s).
-Data Size: Different versions of XLMiner�  have varying limits on size of data. The size of data depicted in the example below may not be supported by your version. Refer to Data Handling Specifications for details.
-Figure below shows the dataset Wine_Partition.xls where we have added "Partition Variable" column.
-
-The figure below shows the dialog box where "Partition Variable" has been selected for partitioning of the dataset.
-   
-The output of a data partition run, using a partition variable, is shown in the figure below:
-
- 
