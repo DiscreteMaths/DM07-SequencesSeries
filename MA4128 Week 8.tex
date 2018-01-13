@@ -165,51 +165,6 @@ A dummy variable is a numerical variable used in regression analysis to represen
 
 
 
-
-
-\newpage
-\section{Multicollinearity}
-In multiple regression, two or more predictor variables are colinear if they show strong linear relationships. This makes estimation of regression coefficients impossible. It can also produce unexpectedly large estimated standard errors for the coefficients of the X variables involved.
-
-This is why an exploratory analysis of the data should be first done to see if any collinearity among explanatory variables exists. Multicolinearity is suggested by non-significant results in individual tests on the regression coefficients for important explanatory (predictor) variables. Multicolinearity may make the determination of the main predictor variable having an effect on the outcome difficult.
-
-\subsection{How to Identify Multicollinearity}
-
-
-     You can assess multicollinearity by examining \textbf{tolerance} and the \textbf{Variance Inflation Factor} (VIF) are two collinearity diagnostic factors that can help you identify multicollinearity. Tolerance is a measure of collinearity reported by most statistical programs such as SPSS; the variables tolerance is 1-R2. A small tolerance value indicates that the variable under consideration is almost a perfect linear combination of the independent variables already in the equation and that it should not be added to the regression equation. All variables involved in the linear relationship will have a small tolerance. Some suggest that a tolerance value less than 0.1 should be investigated further. If a low tolerance value is accompanied by large standard errors and nonsignificance, multicollinearity may be an issue.
-
-
-\subsection{The Variance Inflation Factor (VIF)}
-
-
-
-     The Variance Inflation Factor (VIF) measures the impact of collinearity among the variables in a regression model. The Variance Inflation Factor (VIF) is 1/Tolerance, it is always greater than or equal to 1. There is no formal VIF value for determining presence of multicollinearity. Values of VIF that exceed 10 are often regarded as indicating multicollinearity, but in weaker models values above 2.5 may be a cause for concern. In many statistics programs, the results are shown both as an individual R2 value (distinct from the overall R2 of the model) and a Variance Inflation Factor (VIF). When those R2 and VIF values are high for any of the variables in your model, multicollinearity is probably an issue. When VIF is high there is high multicollinearity and instability of the b and beta coefficients. It is often difficult to sort this out. \\
-
-\bigskip
-
-You can also assess multicollinearity in regression in the following ways:
-
-\begin{itemize}
-\item [(1)] Examine the correlations and associations (nominal variables) between independent variables to detect a high level of association. High bivariate correlations are easy to spot by running correlations among your variables. If high bivariate correlations are present, you can delete one of the two variables. However, this may not always be sufficient.
-
-\item [(2)] Regression coefficients will change dramatically according to whether other variables are included or excluded from the model. Play around with this by adding and then removing variables from your regression model.
-
-\item [(3)] The standard errors of the regression coefficients will be large if multicollinearity is an issue.
-
-\item [(4)] Predictor variables with known, strong relationships to the outcome variable will not achieve statistical significance. In this case, neither may contribute significantly to the model after the other one is included. But together they contribute a lot. If you remove both variables from the model, the fit would be much worse. So the overall model fits the data well, but neither X variable makes a significant contribution when it is added to your model last. When this happens, multicollinearity may be present.
-
-\end{itemize}
-
-\subsection{Variance Inflation Factor}
-
-The variance inflation factor (VIF) quantifies the severity of multicollinearity in a regression analysis.
-
-The VIF provides an index that measures how much the variance (the square of the estimate's standard deviation) of an estimated regression coefficient is increased because of collinearity.
-
-
-A common rule of thumb is that if the VIF is greater than 5 then multicollinearity is high. Also a VIF level of 10 has been proposed as a cut off value.
-
-
 \section{Law of Parsimony}
 Parsimonious: The simplest plausible model with the fewest possible number of variables.
 
@@ -287,22 +242,6 @@ criterion variable.
 %Adjusted $R^2$ is used to compensate for the addition of variables to the model.  As more independent variables are added to the regression model, unadjusted R2 will generally increase but there will never be a decrease.  This will occur even when the additional variables do little to help explain the dependent variable.  To compensate for this, adjusted R2 is corrected for the number of independent variables in the model.  The result is an adjusted R2 than can go up or down depending on whether the addition of another variable adds or does not add to the explanatory power of the model.  Adjusted R2 will always be lower than unadjusted.
 %
 %It has become standard practice to report the adjusted R2, especially when there are multiple models presented with varying numbers of independent variables.
-%
-%\subsection{Multicollinearity}
-%When choosing a predictor variable you should select one that might be correlated with the criterion variable, but that is not strongly correlated with the other predictor variables. However, correlations amongst the predictor variables are not unusual. The term multicollinearity (or collinearity) is used to describe the situation
-%when a high correlation is detected between two or more predictor variables.
-%
-%Such high correlations cause problems when trying to draw inferences about the relative contribution of each predictor variable to the success of the model. SPSS provides you with a means of checking for this and we describe this below.
-%
-%\subsection{Variance Inflation Factor (VIF)}
-%
-%The variance inflation factor (or “VIF”) provides us with a measure of how much the variance for a given regression coefficient is increased compared to if all predictors were uncorrelated. To understand what the variance inflation factor is, and what it measures, we need to examine the computation of the standard error of a regression coefficient.
-%
-%\section{Tolerance}
-%
-%Tolerance is simply the reciprocal of VIF, and is computed as
-%\[ \mbox{Tolerance} = \frac{1}{VIF}\]
-%Whereas large values of VIF were unwanted and undesirable, since tolerance is the reciprocal of VIF, larger than not values of tolerance are indicative of a lesser problem with collinearity. In other words, we want large tolerances.
 
 
 
@@ -336,47 +275,5 @@ criterion variable.
 
 %------------------------------------------------------------%
 
-
-
-
-
-
-\subsection{How to Identify Multicollinearity}
-
-     You can assess multicollinearity by examining tolerance and the Variance Inflation Factor (VIF) are two collinearity diagnostic factors that can help you identify multicollinearity. Tolerance is a measure of collinearity reported by most statistical programs such as SPSS; the variable’s tolerance is 1-R2. A small tolerance value indicates that the variable under consideration is almost a perfect linear combination of the independent variables already in the equation and that it should not be added to the regression equation. All variables involved in the linear relationship will have a small tolerance. Some suggest that a tolerance value less than 0.1 should be investigated further. If a low tolerance value is accompanied by large standard errors and nonsignificance, multicollinearity may be an issue.
-%
-%\subsection{The Variance Inflation Factor (VIF)}
-%
-%     The Variance Inflation Factor (VIF) measures the impact of collinearity among the variables in a regression model. The Variance Inflation Factor (VIF) is 1/Tolerance, it is always greater than or equal to 1. There is no formal VIF value for determining presence of multicollinearity. Values of VIF that exceed 10 are often regarded as indicating multicollinearity, but in weaker models values above 2.5 may be a cause for concern. In many statistics programs, the results are shown both as an individual R2 value (distinct from the overall R2 of the model) and a Variance Inflation Factor (VIF). When those R2 and VIF values are high for any of the variables in your model, multicollinearity is probably an issue. When VIF is high there is high multicollinearity and instability of the b and beta coefficients. It is often difficult to sort this out.
-
-You can also assess multicollinearity in regression in the following ways:
-
-1. Examine the correlations and associations (nominal variables) between independent variables to detect a high level of association. High bivariate correlations are easy to spot by running correlations among your variables. If high bivariate correlations are present, you can delete one of the two variables. However, this may not always be sufficient.
-
-2. Regression coefficients will change dramatically according to whether other variables are included or excluded from the model. Play around with this by adding and then removing variables from your regression model.
-
-3. The standard errors of the regression coefficients will be large if multicollinearity is an issue.
-
-4. Predictor variables with known, strong relationships to the outcome variable will not achieve statistical significance. In this case, neither may contribute significantly to the model after the other one is included. But together they contribute a lot. If you remove both variables from the model, the fit would be much worse. So the overall model fits the data well, but neither X variable makes a significant contribution when it is added to your model last. When this happens, multicollinearity may be present.
-\section{Information Criterions}
-
-
-We define two types of information criterion: the Bayesian Information
-Criterion (BIC) and the Akaike Information Criterion (AIC). In AIC and BIC, we choose the model that
-has the minimum value of:
-\[AIC = −2log(L)+2m,\]
-\[BIC = −2log(L)+mlogn\]
-
-where
-\begin{itemize}
-\item L is the likelihood of the data with a certain model,
-\item n is the number of observations and
-\item m is the number of parameters in the model.
-\end{itemize}
-\subsection{AIC}
-The Akaike information criterion is a measure of the relative \textbf{goodness of fit} of a statistical model.
-
-When using the AIC for selecting the parametric model class, choose
-the model for which the AIC value is lowest.
 
 \end{document} 
