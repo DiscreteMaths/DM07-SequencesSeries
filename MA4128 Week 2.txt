@@ -1,9 +1,0 @@
-UCD PhDs
-
-Interpretability Criterion
-Factor Loadings
-Rotations
-Varimax
-Communalities
-
-
