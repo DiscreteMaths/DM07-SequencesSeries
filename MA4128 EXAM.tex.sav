@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 2011 13:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+\pagestyle{fancy}
+\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+\lhead{MA4128} \rhead{Mr. Kevin O'Brien}
+\chead{Advanced Data Modeling}
+%\input{tcilatex}
+
+\begin{document}
+
+\section*{Attempt All Questions}
+
+\subsection*{Question 1 : Principal Component Analysis and Factor Analysis}
+
+\begin{itemize}
+\item Principal Component Analysis is a data reduction technique. Explain what this term means.
+\item The KMO is used to measure what characteristic of the data. Explain how the KMO measure should be interpreted.
+\item Briefly describe the Bartlett Test for Sphericity, with reference to the null and alternative hypotheses, and how those statements relate to the purpose of the test.
+\end{itemize}
+
+\subsection*{Question 2 : Cluster Analysis}
+
+
+\begin{itemize}
+\item Compare and constrast agglomerative and divisive clustering.
+\item Explain the difference between Ward’s method and k means
+ clustering.
+\item Vertical Icicle Plot
+\end{itemize}
+\begin{itemize}
+\item In the context of hierarchical cluster analyses, distinguish between agglomerative clustering and divisive clustering.
+\item What is a vertical icicle plot used for? Give a brief dscription, supporting your answer with sketches.
+\item Compute the Euclidean distance between the following points.
+\end{itemize}
+
+\subsection*{Question 3 :k-means cluster analysis}
+Use two clusters.
+Illustrate your answer with sketches.
+
+%------------------------------------------------------------------ %
+
+\subsection*{Question 4 : Model Selection}
+
+\begin{itemize}
+\item Overfitting
+\item Multi-collinearity
+\item Law of Parsimony
+\end{itemize}
+
+
+%http://www.education.umd.edu/EDMS/student/Exams/PrelimCompSpr09.pdf
+Answer the following questions related to multicollinearity in the context of multiple
+regression analysis.
+\begin{itemize}
+\item[a.] Define multicollinearity.
+\item[b.] State two ways in which a multiple regression analysis could be affected by severe
+multicollinearity.
+\item[c.] State two ways of formally diagnosing the severity of multicollinearity. Include any
+relevant formula(s) and define each formulaic component. What benchmark criteria are
+typically used in practice to make decisions about the severity of the impact for each of
+the diagnostic methods?
+\item[d.] Describe two statistical methods that can be applied to the data to lessen the effects of
+severe multicollinearity. 
+\end{itemize}
+
+
+
+
+
+Compare and contrast the following variable selection procedures
+\begin{itemize}
+\item Forward Selection
+\item Backward Elimination
+\item Stepwise Selection
+\end{itemize}
+
+%------------------------------------------------------------------ %
+\newpage
+\subsection*{Question 5 : Discriminant Analysis}
+Compare and contrast MANOVA
+
+
+\subsection*{Question 6 : Model Validation}
+
+\begin{itemize}
+\item Training Data
+\item Validation Data
+\item Testing Data
+\end{itemize}
+
+
+
+\subsection*{Question 7 : Missing Data}
+\begin{itemize}
+\item What is Missing Data? Discuss the implications of Missing Data in the context of a statistical analysis.
+\item What is Multiple Imputation
+\end{itemize}
+\begin{itemize}
+\item Compare and contrast the following types of missing data: Missing At Random, Missing Not At Random, Missing Completely at Random.
+\item Briefly describe the technique of Imputation.
+\end{itemize}
+
+\subsection*{Question 8 : Logistic Regression}
+Under what circumstances would you choose to use logistic regression?
+
+%http://www.public.iastate.edu/~stat415/stephenson/exam-sol.pdf
+Given the equation
+\bigskip
+
+The usual assumptions placed on the error terms in ordinary least squares
+regression are:
+\begin{itemize}
+\item independently distributed
+\item identically distributed (equal variance)
+\item normally distributed
+\end{itemize}
+Which of these assumptions are violated when dealing with binary response data? Explain briefly how each is violated.
+\\
+What is a logit? How can you transform a logit into a probability?
+\\
+What is the only real limitation with logistic regression?  How does probit analysis differ from logistic regression?
+\\
+
+
+\end{document} 

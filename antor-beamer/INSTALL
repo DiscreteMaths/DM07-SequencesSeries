@@ -1,0 +1,14 @@
+1. Copy the directory antor-beamer somewhere in your texmf tree, e.g.
+
+on linux, you can install it e.g. in:
+    /usr/share/texmf/tex/latex/beamer/themes/
+
+on windows:
+    somewhere in a miktex folder...
+
+2. Refresh the file name database
+
+on linux, in a terminal:
+    sudo texhash
+
+on windows, click on "refresh FNDB" in the MikTeX settings manager

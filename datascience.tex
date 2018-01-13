@@ -1,4 +1,4 @@
-\documentclass[]{report}
+﻿\documentclass[]{report}
 
 \voffset=-1.5cm
 \oddsidemargin=0.0cm
@@ -20,43 +20,44 @@
 \begin{document}
 
 %================================================================================== %
-\newpage	
+
 \section{Machine learning: the problem setting}
-	
-	\noindent In general, a learning problem considers a set of $n$ samples of data and try to predict properties of unknown data. If
-	each sample is more than a single number, and for instance a multi-dimensional entry (aka multivariate data), is it said
-	to have several variables, also known as attributes or \textbf{\textit{features}}.\\
-	\bigskip
-	We can separate learning problems in a few large categories:
-	
-	\begin{itemize}
-		\item \textbf{Supervised learning}, in which the data comes with additional attributes that we want to predict.\\ 
-		%(Click here to go to the Scikit-Learn supervised learning page).
-		\bigskip
-		This problem can be either:
-		\begin{description}
-			\item[Classification:] samples belong to two or more classes and we want to learn from already labeled data how
-			to predict the class of unlabeled data. \\ An example of classification problem would be the digit recognition
-			example, in which the aim is to assign each input vector to one of a finite number of discrete categories.
-			\item[Regression:] if the desired output consists of one or more continuous variables, then the task is called
-			regression. \\ An example of a regression problem would be the prediction of the weight of a pony as a
-			function of its age and height.
-		\end{description}
-		
-		\newpage
-		\item  \textbf{Unsupervised learning}, in which the training data consists of a set of input vectors $x$ without any corresponding
-		target values. \\ \bigskip The goal in such problems may be
-		\begin{itemize}
-			\item to discover groups of similar examples within the data, where
-			it is called \textbf{\textit{clustering}}, \item to determine the distribution of data within the input space, known as \textbf{\textit{density estimation}},
-			\item to project the data from a high-dimensional space down to two or thee dimensions for the purpose of
-			visualization 
-		\end{itemize}
-		% (Click here to go to the Scikit-Learn unsupervised learning page).
-	\end{itemize}
-	
-	%======================================================================== %
-\newpage
+
+\noindent In general, a learning problem considers a set of $n$ samples of data and try to predict properties of unknown data. If
+each sample is more than a single number, and for instance a multi-dimensional entry (aka multivariate data), is it said
+to have several variables, also known as attributes or \textbf{\textit{features}}.\\
+\bigskip
+We can separate learning problems in a few large categories:
+
+\begin{itemize}
+\item \textbf{Supervised learning}, in which the data comes with additional attributes that we want to predict.\\ 
+%(Click here to go to the Scikit-Learn supervised learning page).
+\bigskip
+This problem can be either:
+\begin{description}
+\item[Classification:] samples belong to two or more classes and we want to learn from already labeled data how
+to predict the class of unlabeled data. \\ An example of classification problem would be the digit recognition
+example, in which the aim is to assign each input vector to one of a finite number of discrete categories.
+\item[Regression:] if the desired output consists of one or more continuous variables, then the task is called
+regression. \\ An example of a regression problem would be the prediction of the weight of a pony as a
+function of its age and height.
+\end{description}
+
+%======================================================================== %
+\medskip
+\item  \textbf{Unsupervised learning}, in which the training data consists of a set of input vectors $x$ without any corresponding
+target values. \\ \bigskip The goal in such problems may be
+\begin{itemize}
+\item to discover groups of similar examples within the data, where
+it is called \textbf{\textit{clustering}}, \item to determine the distribution of data within the input space, known as \textbf{\textit{density estimation}},
+\item to project the data from a high-dimensional space down to two or thee dimensions for the purpose of
+visualization 
+\end{itemize}
+% (Click here to go to the Scikit-Learn unsupervised learning page).
+\end{itemize}
+
+%======================================================================== %
+\medskip
 \section{Data Science}
 Data science incorporates varying elements and builds on techniques and theories from many fields, including math, statistics, data engineering, pattern recognition and learning, advanced computing, visualization, uncertainty modeling, data warehousing, and high performance computing with the goal of extracting meaning from data and creating data products.
 \smallskip
@@ -71,6 +72,7 @@ Data science is a novel term that is often used interchangeably with competitive
 \item  Knowledge discovery in social and information networks 
 \end{itemize}
 
+%======================================================================== %
 
 Data scientists use an extensive understanding of business, combined with technical skills and statistical knowledge, to create methods for organizations to collect and interpret data. A data scientist helps an organization determine the questions that need answers, develops the methodology and technological tools needed to collect pertinent data, and builds the statistical models needed to derive answers from the data collected. In short, these professionals have the technical skills and business understanding needed to help an organization make decisions or develop useful products and services for customers, based on the analysis of data.
 \smallskip
@@ -82,7 +84,9 @@ Similar applications allow a data scientist to collect, analyze, and report info
 \smallskip
 Different industries and, in fact, different companies within the same industry, have different needs when it comes to daily tasks completed by a data scientist. While the tasks may differ, the skills needed remain the same. Professionals in this line of work need programming and other technical skills in order to develop appropriate tools to collect and manipulate data. Additionally, such professionals need creativity and critical thinking skills, as well as the ability to understand business needs, in order to know what data to collect and the different ways to interpret information.
 
-  \newpage
+  \medskip
+
+%======================================================================== %
 \section*{Data Sciences}
 \begin{itemize}
 \item Data analytics (DA) is the science of examining raw data with the purpose of drawing conclusions about that information. Data analytics is used in many industries to allow companies and organization to make better business decisions and in the sciences to verify or disprove existing models or theories. 
@@ -94,23 +98,26 @@ Different industries and, in fact, different companies within the same industry,
 %======================================%
     \subsection*{ Analytics }
 
-The term "analytics" has been used by many business intelligence (BI) software vendors as a buzzword to describe quite different functions. Data analytics is used to describe everything from online analytical processing (OLAP) to CRM analytics in call centers. Banks and credit cards companies, for instance, analyze withdrawal and spending patterns to prevent fraud or identity theft. Ecommerce companies examine Web site traffic or navigation patterns to determine which customers are more or less likely to buy a product or service based upon prior purchases or viewing trends. Modern data analytics often use information dashboards supported by real-time data streams. So-called real-time analytics involves dynamic analysis and reporting, based on data entered into a system less than one minute before the actual time of use.
+The term ``analytics" has been used by many business intelligence (BI) software vendors as a buzzword to describe quite different functions. Data analytics is used to describe everything from online analytical processing (OLAP) to CRM analytics in call centers. Banks and credit cards companies, for instance, analyze withdrawal and spending patterns to prevent fraud or identity theft. Ecommerce companies examine Web site traffic or navigation patterns to determine which customers are more or less likely to buy a product or service based upon prior purchases or viewing trends. Modern data analytics often use information dashboards supported by real-time data streams. So-called real-time analytics involves dynamic analysis and reporting, based on data entered into a system less than one minute before the actual time of use.
+%======================================%
 
-    \subsection*{Data modeling }
+  \subsection*{Data Modeling }
 Data modeling is the formalization and documentation of existing processes and events that occur during application software design and development. Data modeling techniques and tools capture and translate complex system designs into easily understood representations of the data flows and processes, creating a blueprint for construction and/or re-engineering.
 
 A data model can be thought of as a diagram or flowchart that illustrates the relationships between data. Although capturing all the possible relationships in a data model can be very time-intensive, it's an important step and shouldn't be rushed. Well-documented models allow stake-holders to identify errors and make changes before any programming code has been written.
 
 Data modelers often use multiple models to view the same data and ensure that all processes, entities, relationships and data flows have been identified. There are several different approaches to data modeling, including:
 \begin{itemize}
-\item  Conceptual Data Modeling - identifies the highest-level relationships between different entities.
+\item  \textbf{Conceptual Data Modeling} - identifies the highest-level relationships between different entities.
 
-\item  Enterprise Data Modeling - similar to conceptual data modeling, but addresses the unique requirements of a specific business. 
+\item  \textbf{Enterprise Data Modeling} - similar to conceptual data modeling, but addresses the unique requirements of a specific business. 
 
-\item  Logical Data Modeling - illustrates the specific entities, attributes and relationships involved in a business function. Serves as the basis for the creation of the physical data model.
+\item  \textbf{Logical Data Modeling} - illustrates the specific entities, attributes and relationships involved in a business function. Serves as the basis for the creation of the physical data model.
 
-\item  Physical Data Modeling - represents an application and database-specific implementation of a logical data model.
+\item  \textbf{Physical Data Modeling} - represents an application and database-specific implementation of a logical data model.
     \end{itemize}
+
+%======================================================================== %
     \subsection*{ Predictive Modeling }
 \begin{itemize}
 \item Predictive modeling is a process used in predictive analytics to create a statistical model of future behavior. Predictive analytics is the area of data mining concerned with forecasting probabilities and trends.
@@ -122,37 +129,41 @@ In predictive modeling, data is collected for the relevant predictors, a statist
 Predictive modeling is used widely in information technology (IT). In spam filtering systems, for example, predictive modeling is sometimes used to identify the probability that a given message is spam. Other applications of predictive modeling include customer relationship management (CRM), capacity planning, change management, disaster recovery, security management, engineering, meteorology and city planning.
 \end{itemize}
 
+%======================================================================== %
 \section{Machine Learning}
-%=============================%
 
 % What is Machine Learning
 % What is Supervised and Unsupervised Learning
 % What is Re-inforcment Learning
 
-%====================================%
+
 
 
 Machine learning is the science of getting computers to act without being explicitly programmed. In the past decade, machine learning has given us self-driving cars, practical speech recognition, effective web search, and a vastly improved understanding of the human genome. Machine learning is so pervasive today that you probably use it dozens of times a day without knowing it. Many researchers also think it is the best way to make progress towards human-level AI.
+%======================================================================== %
 
 
 \section{Introduction to Data Mining}
-%====================================%
+
 
 Data Mining is an analytic process designed to explore data (usually large amounts of data - typically business or market related) in search of consistent patterns and/or systematic relationships between variables, and then to validate the findings by applying the detected patterns to new subsets of data. The ultimate goal of data mining is prediction - and predictive data mining is the most common type of data mining and one that has the most direct business applications. The process of data mining consists of three stages: (1) the initial exploration, (2) model building or pattern identification withvalidation/verification, and (3) deployment (i.e., the application of the model to new data in order to generate predictions).
 
 
-Stage 1: Exploration. This stage usually starts with data preparation which may involve cleaning data, data transformations, selecting subsets of records and - in case of data sets with large numbers of variables ("fields") - performing some preliminary feature selection operations to bring the number of variables to a manageable range (depending on the statistical methods which are being considered). Then, depending on the nature of the analytic problem, this first stage of the process of data mining may involve anywhere between a simple choice of straightforward predictors for a regression model, to elaborate exploratory analyses using a wide variety of graphical and statistical methods (see Exploratory Data Analysis (EDA)) in order to identify the most relevant variables and determine the complexity and/or the general nature of models that can be taken into account in the next stage.
+\textbf{Stage 1: Exploration.} This stage usually starts with data preparation which may involve cleaning data, data transformations, selecting subsets of records and - in case of data sets with large numbers of variables ("fields") - performing some preliminary feature selection operations to bring the number of variables to a manageable range (depending on the statistical methods which are being considered). Then, depending on the nature of the analytic problem, this first stage of the process of data mining may involve anywhere between a simple choice of straightforward predictors for a regression model, to elaborate exploratory analyses using a wide variety of graphical and statistical methods (see Exploratory Data Analysis (EDA)) in order to identify the most relevant variables and determine the complexity and/or the general nature of models that can be taken into account in the next stage.
 
-Stage 2: Model building and validation. This stage involves considering various models and choosing the best one based on their predictive performance (i.e., explaining the variability in question and producing stable results across samples). This may sound like a simple operation, but in fact, it sometimes involves a very elaborate process. There are a variety of techniques developed to achieve that goal - many of which are based on so-called "competitive evaluation of models," that is, applying different models to the same data set and then comparing their performance to choose the best. These techniques - which are often considered the core of predictive data mining - include: Bagging (Voting, Averaging), Boosting, Stacking (Stacked Generalizations), and Meta-Learning.
 
-Stage 3: Deployment. That final stage involves using the model selected as best in the previous stage and applying it to new data in order to generate predictions or estimates of the expected outcome.
+\textbf{Stage 2: Model building and validation.} This stage involves considering various models and choosing the best one based on their predictive performance (i.e., explaining the variability in question and producing stable results across samples). This may sound like a simple operation, but in fact, it sometimes involves a very elaborate process. There are a variety of techniques developed to achieve that goal - many of which are based on so-called "competitive evaluation of models," that is, applying different models to the same data set and then comparing their performance to choose the best. These techniques - which are often considered the core of predictive data mining - include: Bagging (Voting, Averaging), Boosting, Stacking (Stacked Generalizations), and Meta-Learning.
+
+
+\textbf{Stage 3: Deployment.} That final stage involves using the model selected as best in the previous stage and applying it to new data in order to generate predictions or estimates of the expected outcome.
 
 %================================================%
+
 The concept of Data Mining is becoming increasingly popular as a business information management tool where it is expected to reveal knowledge structures that can guide decisions in conditions of limited certainty. Recently, there has been increased interest in developing new analytic techniques specifically designed to address the issues relevant to business Data Mining (e.g., Classification Trees), but Data Mining is still based on the conceptual principles of statistics including the traditional Exploratory Data Analysis (EDA) and modeling and it shares with them both some components of its general approaches and specific techniques.
 
 However, an important general difference in the focus and purpose between Data Mining and the traditional Exploratory Data Analysis (EDA) is that Data Mining is more oriented towards applications than the basic nature of the underlying phenomena. In other words, Data Mining is relatively less concerned with identifying the specific relations between the involved variables. For example, uncovering the nature of the underlying functions or the specific types of interactive, multivariate dependencies between variables are not the main goal of Data Mining. Instead, the focus is on producing a solution that can generate useful predictions. Therefore, Data Mining accepts among others a "black box" approach to data exploration or knowledge discovery and uses not only the traditional Exploratory Data Analysis (EDA) techniques, but also such techniques as Neural Networks which can generate valid predictions but are not capable of identifying the specific nature of the interrelations between the variables on which the predictions are based.
 
-Data Mining is often considered to be "a blend of statistics, AI (artificial intelligence), and data base research" (Pregibon, 1997, p. 8), which until very recently was not commonly recognized as a field of interest for statisticians, and was even considered by some "a dirty word in Statistics" (Pregibon, 1997, p. 8). Due to its applied importance, however, the field emerges as a rapidly growing and major area (also in statistics) where important theoretical advances are being made (see, for example, the recent annual International Conferences on Knowledge Discovery and Data Mining, co-hosted by the American Statistical Association).
+Data Mining is often considered to be \textit{``a blend of statistics, AI (artificial intelligence), and data base research"} (Pregibon, 1997, p. 8), which until very recently was not commonly recognized as a field of interest for statisticians, and was even considered by some "a dirty word in Statistics" (Pregibon, 1997, p. 8). Due to its applied importance, however, the field emerges as a rapidly growing and major area (also in statistics) where important theoretical advances are being made (see, for example, the recent annual International Conferences on Knowledge Discovery and Data Mining, co-hosted by the American Statistical Association).
 
 For information on Data Mining techniques, review the summary topics included below. There are numerous books that review the theory and practice of data mining; the following books offer a representative sample of recent general books on data mining, representing a variety of approaches and perspectives: 
 
@@ -235,7 +246,7 @@ A data mining application can be extremely sophisticated and the statistical dat
 
 Computer programmers and designers also employ the study of probability and statistical data analysis to develop machines and computer programs. The Google Internet search engine was designed using statistical data mining. Google continues to collect and use data mining to create program updates and applications.
 
-\newpage
+\medskip
 %=====================================================%
 
 \end{document}
