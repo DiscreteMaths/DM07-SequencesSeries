@@ -178,33 +178,6 @@ square root transformations transform non-normal/skewed distributions closer to 
 
 This log transformation of the p values to a log distribution enables us to create a link with the normal regression equation. The log distribution (or logistic transformation of p) is also called the logit of p or \textbf{\textit{logit(p)}}.
 
-\subsection{The Logit}
-The convention for binomial logistic regression is to code the
-dependent class of greatest interest as 1 and the other class as 0, because the coding will
-affect the odds ratios and slope estimates.
-
-The logit(p) is the log (to base e) of the odds ratio or likelihood ratio that the dependent
-variable is 1. In symbols it is defined as:
-\[ logit(p) = ln \left(\frac{p}{(1-p)}\right) \]
-
-Whereas p can only range from 0 to 1, logit(p) scale ranges from negative infinity to positive
-infinity and is symmetrical around the logit of 0.5 (which is zero)
-
-\subsection{The Logistic Regression Equation}
-The form of the logistic regression equation is:
-\[ logit[p(x)] =  log \frac{p(x)}{1-p(x)}  = b_0 + b_1x_1 + b_2x_2 + b_3x_3 + \ldots \]
-
-This looks just like a linear regression and although logistic regression finds a ‘best
-fitting’ equation, just as linear regression does, the principles on which it does so are
-rather different. Instead of using a least-squared deviations criterion for the best fit, it
-uses a maximum likelihood method, which maximizes the probability of getting the
-observed results given the fitted regression coefficients. A consequence of this is that the
-goodness of fit and overall significance statistics used in logistic regression are different
-from those used in linear regression.
-
-The probability that a case is in a particular category,p, can be calculated with the following formula (which is simply another rearrangement of the previous formula).
-
-\[p = \frac{exp(b_0 + b_1x_1 + b_2x_2 + b_3x_3 + \ldots)}{1 + exp(b_0 + b_1x_1 + b_2x_2 + b_3x_3 + \ldots)}\]
 
 \newpage
 \subsection{Exercise Data Set}
@@ -233,19 +206,3 @@ We are not using any categorical variables this time. If there are categorical v
 default).
 
 
-UseR! 2013 Conference
-
-Flights to Madrid
-
-Venue UCLM
-
-Registration date
-
-Abstracts
-
-2011 Conference
-
-Tutorials
-
-LondonR Conference
-London - R in Insurance conference
