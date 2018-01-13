@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \documentclass[]{report}
 
 \voffset=-1.5cm
@@ -244,3 +245,251 @@ The misclassification rate calculates the proportion ofobservations being alloca
 \end{document}
 
 \end{document}
+=======
+\documentclass[]{report}
+
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+\usepackage{framed}
+\usepackage{subfiles}
+\usepackage{enumerate}
+\usepackage{graphics}
+\usepackage{newlfont}
+\usepackage{eurosym}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\begin{document}
+
+
+
+% http://www.norusis.com/pdf/SPC_v13.pdf
+
+\subsection*{Supervised Learning}
+\begin{itemize}
+\item \textbf{Supervised learning} is tasked with learning a function from labeled training data in order to predict the value of any valid input. 
+
+\item Common examples of supervised learning include classifying e-mail messages as spam, labeling Web pages according to their genre, and recognizing handwriting. 
+\item Many algorithms are used to create supervised learners, the most common being neural networks, Support Vector Machines (SVMs), and Naive Bayes classifiers.
+\end{itemize}
+
+%=====================================================%
+\subsection*{Supervised and Unsupervised Learning}
+\textbf{Supervised learning} is tasked with learning a function from labeled training data in order to predict the value of any valid input. 
+
+
+\subsection*{Unsupervised Learning}
+\begin{itemize}
+	\item
+\textbf{Unsupervised learning} is tasked with making sense of data without any examples of what is correct or incorrect. It is most commonly used for clustering similar input into logical groups. 
+\item Unsupervised learning  can be used to reduce the number of dimensions in a data set in order to focus on only the most useful attributes, or to detect trends. 
+
+\item Common approaches to unsupervised learning include k-Means, hierarchical clustering, and self-organizing maps.
+\end{itemize}
+%---------------------------%
+\section{Supervised learning}
+
+
+Supervised learning is the machine learning task of inferring a function from supervised training data. The training data consist of a set of training examples. In supervised learning, each example is a pair consisting of an input object (typically a vector) and a desired output value (also called the supervisory signal). A supervised learning algorithm analyzes the training data and produces an inferred function, which is called a classifier (if the output is discrete, see classification) or a regression function (if the output is continuous, see regression). The inferred function should predict the correct output value for any valid input object. This requires the learning algorithm to generalize from the training data to unseen situations 
+
+in a "reasonable" way (see inductive bias). 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage
+\section{Week 6 General Theory Topics}
+
+
+\subsection{Steps in Building a Predictive Model}
+\begin{enumerate}
+\item Find the right data
+\item Define your error rate
+\item Split data into:
+\begin{itemize}
+\item \textbf{Training Set}
+\item \textbf{Testing Set}
+\item \textbf{Validation Set} (optional)
+\end{itemize}
+\item On the training set select predictor variables (features)
+\item On the training set generate your predictive model
+\item On the training set cross-validate
+
+%\item If no validation - apply 1x to test set
+%\item If validation - apply to test set and refine
+%\item If validation - apply 1x to validation
+\end{enumerate}
+%-------------------------------------------------------%
+\subsection{Descriptive vs Predictive Models}
+
+\begin{itemize}
+	\item A \textbf{descriptive model} is only concerned with modeling the structure in the observed data. It makes sense to train and evaluate it on the same dataset.
+	
+	\item The \textbf{predictive model} is attempting a much more difficult problem, approximating the true discrimination function from a sample of data. We want to use algorithms that do not pick out and model all of the noise in our sample. We do want to chose algorithms that generalize beyond the observed data. It makes sense that we could only evaluate the ability of the model to generalize from a data sample on data that it had not see before during training.
+	
+	\item \textbf{IMPORTANT} The best descriptive model is accurate on the observed data. The best predictive model is accurate on unobserved data.
+\end{itemize}
+
+
+
+
+\subsection{Error Rates}
+
+\begin{itemize}
+	\item We can evaluate error rates by means of a training sample (to construct build a model) and a test sample.
+	
+	
+	\item 	An optimistic error rate is obtained by reclassifying the training data. (In the \textbf{\textit{training data}} sets, how many cases were misclassified). This is known as the \textbf{apparent error rate}.
+	
+	
+	\item 	The apparent error rate is obtained by using in the training set to estimate
+	the error rates. It can be severely optimistically biased, particularly for complex classifiers, and in the presence of over-fitted models.
+	
+	
+	\item	If an independent test sample is used for classifying, we arrive at the  \textbf{true error rate}.The true error rate (or conditional error rate) of a classifier is the expected
+	probability of misclassifying a randomly selected pattern.
+	It is the error rate of an infinitely large test set drawn from the same distribution as the training data.
+\end{itemize}
+
+
+
+
+%---------------------------------------------------------------------------------------%
+
+
+
+
+\subsection{Binary Classification}
+\noindent \textbf{Defining True/False Positives}
+In general, Positive = identified and negative = rejected. Therefore:
+
+\begin{itemize}
+	\item True positive = correctly identified
+	
+	\item False positive = incorrectly identified
+	
+	\item True negative = correctly rejected
+	
+	\item False negative = incorrectly rejected
+\end{itemize}
+\subsubsection*{Medical Testing Example:}
+\begin{itemize}
+	\item True positive = Sick people correctly diagnosed as sick
+	
+	\item False positive= Healthy people incorrectly identified as sick
+	
+	\item True negative = Healthy people correctly identified as healthy
+	
+	\item False negative = Sick people incorrectly identified as healthy.
+\end{itemize}
+%-------------------------------------------------- %
+\newpage
+\subsection{Definitions (From Week 1)}
+\textbf{Confusion Matrix} \\
+The confusion
+table is a table in which the rows are the observed categories of the dependent and
+the columns are the predicted categories. When prediction is perfect all cases will lie on the
+diagonal. The percentage of cases on the diagonal is the percentage of correct classifications. 
+
+\textbf{Accuracy Rate}\\
+The accuracy rate calculates the proportion ofobservations being allocated to the \textbf{correct} group by the predictive model. It is calculated as follows:
+\[ \frac{
+\mbox{Number of Correct Classifications }}{\mbox{Total Number of Classifications }} \]
+
+\[ = \frac{TP + TN}{TP+FP+TN+FN}\]
+
+\medskip
+
+\noindent \textbf{Misclassification Rate}\\
+The misclassification rate calculates the proportion ofobservations being allocated to the \textbf{incorrect} group by the predictive model. It is calculated as follows:
+\[ \frac{
+\mbox{Number of Incorrect Classifications }}{\mbox{Total Number of Classifications }} \]
+
+\[ = \frac{FP + FN}{TP+FP+TN+FN}\]
+\newpage
+
+\subsection{Misclassification Cost}
+\begin{itemize}
+	\item As in all statistical procedures it is helpful to use diagnostic procedures to assess the efficacy of the analysis. We use \textbf{cross-validation} to assess the classification probability.
+	Typically you are going to have some prior rule as to what is an \textbf{acceptable misclassification rate}.
+	
+	\item	Those rules might involve things like, \textit{``what is the cost of misclassification?"} Consider a medical study where you might be able to diagnose cancer.
+	
+	\item There are really two alternative costs. 
+	\begin{itemize}
+		\item[$\ast$] The cost of misclassifying someone as having cancer when they don't.
+	This could cause a certain amount of emotional grief. Additionally there would be the substantial cost of unnecessary treatment.
+	
+	\item[$\ast$] There is also the alternative cost of misclassifying someone as not having cancer when in fact they do have it.
+	\end{itemize}
+	\item A good classification procedure should
+	\begin{itemize}
+		\item[$\ast$] result in few misclassifications
+		\item[$\ast$] take \textbf{\textit{prior probabilities of occurrence}} into account
+		\item[$\ast$] consider the cost of misclassification
+	\end{itemize}
+	
+	\item 	For example, suppose there tend to be more financially sound firms than bankrupt
+	firm. If we really believe that the prior probability of a financially
+	distressed and ultimately bankrupted firm is very small, then one should
+	classify a randomly selected firm as non-bankrupt unless the data
+	overwhelmingly favor bankruptcy.
+	
+	
+	
+	\item 	There are two costs associated with discriminant analysis classification: The true misclassification cost per class, and the expected misclassification cost (ECM) per observation.
+	
+	\item 	\textbf{Example} Suppose there we have a binary classification system, with two classes: class 1 and class 2.
+	Suppose that classifying a class 1 object as belonging to class 2 represents a more serious error than classifying a class 2 object as belonging to class 1. There would an assignable cost to each error.
+	\textbf{c(i$|$j)} is the cost of classifying an observation into class $j$ if its true class is $i$.
+	The costs of misclassification can be defined by a cost matrix.
+	
+	\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		% after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+		& Predicted & Predicted \\
+		& Class 1 & Class 2 \\  \hline
+		Class 1 & 0 & $c(2|1)$  \\ \hline
+		Class 2 & $c(1|2)$ & 0 \\
+		\hline
+	\end{tabular}
+	\end{center}
+	
+\end{itemize}
+
+\noindent \textbf{Expected cost of misclassification (ECM)}
+\begin{itemize}
+	\item Let $p_1$ and $p_2$ be the prior probability of class 1 and class 2 respectively.
+	Necessarily $p_1$ + $p_2$ = 1.
+	
+\item	The conditional probability of classifying an object as class 1 when it is in fact from
+	class 2 is denoted $p(1|2)$.
+\item 	Similarly the conditional probability of classifying an object as class 2 when it is in
+	fact from class 1 is denoted $p(2|1)$.
+	
+	\[ECM = c(2|1)p(2|1)p_1 + c(1|2)p(1|2)p_2\]
+\textit{(In other words: the sum of the cost of misclassification times the (joint) probability of that misclassification.)}
+	
+\item 	A reasonable classification rule should have ECM as small as possible.
+\end{itemize}
+
+
+
+
+
+
+
+\end{document}
+
+\end{document}
+>>>>>>> 1ef437d6e5c26def8a03ded0973347918b682cb0
