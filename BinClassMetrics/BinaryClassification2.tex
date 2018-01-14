@@ -1,3 +1,26 @@
+
+\documentclass[]{report}
+
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+\usepackage{framed}
+\usepackage{subfiles}
+\usepackage{graphics}
+\usepackage{newlfont}
+\usepackage{eurosym}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\begin{document}
+
 \section*{Binary Classification}
 \subsection*{What Is Classification}
 Classification is the problem of identifying to which of a set of categories
@@ -7,84 +30,103 @@ known.
 
 % Logisticn Rege Discriminant analysis is an example of a classification method.
 \begin{itemize}
-\item  To train (create) a classifier, the fitting function estimates the parameters
-of a Gaussian distribution for each class.
-\item  To predict the classes of new data, the trained classifier finds the class
-with the smallest misclassification cost.
+	\item  To train (create) a classifier, the fitting function estimates the parameters
+	of a Gaussian distribution for each class.
+	\item  To predict the classes of new data, the trained classifier finds the class
+	with the smallest misclassification cost.
 \end{itemize}
 \subsection*{Types I and II Error}
 A type I error is the incorrect rejection of a true null hypothesis. A type
 II error is the failure to reject a false null hypothesis. A type I error is a
 false positive. Usually a type I error leads one to conclude that a thing or
 relationship exists when really it doesn’t. A type II error is a false negative.
-Null hypothesis (H0) is true Null hypothesis (H0) is false
-Reject Type I error Correct outcome
-null hypothesis False positive True positive
-Fail to reject Correct outcome Type II error
-null hypothesis True negative False negative
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Table}
+	% \caption{}
+	% \label{fig:table}
+\end{figure}
+
 \subsection*{False Positive and False Negative Error}
 
 \begin{itemize}
 	\item 
-	A false positive error, commonly called a “false alarm” is a result that indicates
+	A false positive error, commonly called a ``\textbf{false alarm}``, is a result that indicates
 	a given condition has been fulfilled, when it actually has not been
-	fulfilled. A false positive error is a Type I error where the test is checking
-	a single condition, and results in an affirmative or negative decision usually
-	designated as ”true or false”.
+	fulfilled. A false positive error is a Type I error % where the test is checking a single condition, and results in an affirmative or negative decision usually
+	% designated as ”true or false”.
 	\item  A false negative error is where a test result indicates that a condition
 	failed, while it actually was successful. A false negative error is a Type II
-	error occurring in test steps where a single condition is checked for and the
-	result can either be positive or negative.
+	error.% occurring in test steps where a single condition is checked for and the 	result can either be positive or negative.
 \end{itemize}
 \subsection*{Confusion Matrix}
 \begin{itemize}
-	\item A confusion matrix, is a table with two rows and two columns that reports
+	\item The confusion table is a table in which the rows are the observed categories of
+	the dependent and the columns are the predicted categories. 
+	\item A confusion matrix reports
 	the number of false positives, false negatives, true positives, and true
-	negatives.
-	\item This allows more detailed analysis than mere proportion of correct guesses
-	(accuracy). Accuracy is not a reliable metric for the real performance of a
+	negatives. This allows more detailed analysis than mere proportion of correct guesses
+	(accuracy). 
+	\item \textbf{Accuracy} is not a reliable metric for the real performance of a
 	classifier, because it will yield misleading results if the data set is unbalanced
 	(that is, when the number of samples in different classes vary greatly).
-	
-	\item For example, if there were 95 cats and only 5 dogs in the data set, the
-	classifier could easily be biased into classifying all the samples as cats. The
-	overall accuracy would be 95\%, but in practice the classifier would have a
-	100\% recognition rate for the cat class but a 0\% recognition rate for the dog
-	class.
+	\begin{itemize}
+		\item[$\bullet$] For example, if there were 95 cats and only 5 dogs in the data set, the
+		classifier could easily be biased into classifying all the samples as cats. The
+		overall accuracy would be 95\%, but in practice the classifier would have a
+		100\% recognition rate for the cat class but a 0\% recognition rate for the dog
+		class.
+	\end{itemize}
 \end{itemize}
 
 \subsection*{Sensitivity and Specificity}
 Sensitivity and specificity are measures of the performance of a binary classification
 test.
 \begin{itemize}
-\item Sensitivity (also called the true positive rate, or the recall rate) measures
-the proportion of actual positives which are correctly identified
-as such (e.g. the percentage of sick people who are correctly identified
-as having the condition).
-sensitivity (Recall) = number of true positives
-number of true positives + number of false negatives
+	\item \textbf{Sensitivity} (also called the true positive rate, or the \textbf{recall} rate) measures
+	the proportion of actual positives which are correctly identified
+	as such (e.g. the percentage of sick people who are correctly identified
+	as having the condition).
+	
+	\[ \mbox{Sensitivity (Recall)} = \frac{TP}{TP +FN}\]
+	
+	\begin{itemize}
+		\item \textit{(Remark: We will use the terms Sensitivity and Recall interchangeably.
+			Sensitivity is more commonly used in a medical context, while recall is more
+			commonly used in data science.)}
+	\end{itemize}
+	\item \textbf{Specificity} measures the proportion of negatives which are correctly
+	identified as such (e.g. the percentage of healthy people who are correctly
+	identified as not having the condition, sometimes called the true
+	negative rate).
+	
+	\[ \mbox{Specificity} = \frac{TN}{TP +FN}\]
+	
+	\begin{itemize}
+		\item \textit{(Remark: Not commonly used in Data Sciences, and NOT a synoym for Precision)}
+	\end{itemize}
+\end{itemize}
+\subsection*{Receiver Operating Characteristic (ROC) curve}[h!]
+\begin{figure}
+	\centering
+	\includegraphics[width=0.55\linewidth]{ROCcurve}
+	\caption{}
+	\label{fig:roccurve}
+\end{figure}
 \begin{itemize}
-	\item \textit{(Remark: We will use the terms Sensitivity and Recall interchangeably.
-	Sensitivity is more commonly used in a medical context, while recall is more
-	commonly used in data science.)}
+	\item In a Receiver Operating Characteristic (ROC) curve the true positive rate
+	(Sensitivity) is plotted in function of the false positive rate (100-Specificity)
+	for different cut-off points. 
+	\item Each point on the ROC curve represents a sensitivity/specificity
+	pair corresponding to a particular decision threshold. 
+	\item A
+	test with perfect discrimination (no overlap in the two distributions) has a
+	ROC curve that passes through the upper left corner (100\% sensitivity, 100\%
+	specificity). 
+	\item Therefore the closer the ROC curve is to the upper left corner,
+	the higher the overall accuracy of the test. %(Zweig and Campbell, 1993).
 \end{itemize}
-\item Specificity measures the proportion of negatives which are correctly
-identified as such (e.g. the percentage of healthy people who are correctly
-identified as not having the condition, sometimes called the true
-negative rate).
-\end{itemize}
-\[ \mbox{Specificity} = \frac{TN}{TP +FN}\]
 
-
-\subsection*{Receiver Operating Characteristic (ROC) curve}
-In a Receiver Operating Characteristic (ROC) curve the true positive rate
-(Sensitivity) is plotted in function of the false positive rate (100-Specificity)
-for different cut-off points. Each point on the ROC curve represents a sensitivity/specificity
-pair corresponding to a particular decision threshold. A
-test with perfect discrimination (no overlap in the two distributions) has a
-ROC curve that passes through the upper left corner (100% sensitivity, 100%
-specificity). Therefore the closer the ROC curve is to the upper left corner,
-the higher the overall accuracy of the test (Zweig and Campbell, 1993).
 \subsection*{Accuracy, Recall and Precision: An Example}
 Calculating precision and recall is actually quite easy. Imagine there are
 135 positive cases among 10,000 cases. You want to predict which ones are
@@ -93,27 +135,30 @@ positive, and you pick 265 to have a better chance of catching many of the
 get the actual results you sum up how many times you were right or wrong.
 There are four ways of being right or wrong:
 \begin{itemize}
-\item TN / True Negative: case was negative and predicted negative
-\item TP / True Positive: case was positive and predicted positive
-\item  FN / False Negative: case was positive but predicted negative
-\item FP / False Positive: case was negative but predicted positive
+	\item TN / True Negative: case was negative and predicted negative
+	\item TP / True Positive: case was positive and predicted positive
+	\item  FN / False Negative: case was positive but predicted negative
+	\item FP / False Positive: case was negative but predicted positive
 \end{itemize}
 Now count how many of the 10,000 cases fall in each category:
 \begin{center}
-\begin{tabular}{|c|c|c|}
-  & Predicted Negative & Predicted Positive \\ \hline
-Negative Cases & TN: 9,700 & FP: 165 \\ \hline
-Positive Cases &  FN: 35 & TP: 100 \\ \hline
-\end{tabular}
+	\begin{tabular}{|c|c|c|} \hline
+		& Predicted Negative & Predicted Positive \\ \hline
+		Negative Cases & TN: 9,700 & FP: 165 \\ \hline
+		Positive Cases &  FN: 35 & TP: 100 \\ \hline
+	\end{tabular}
 \end{center}
-What percent of your predictions were correct?
-• The accuracy was (9,760+60) out of 10,000 = 98.00\%
-What percent of the positive cases did you catch?
-• The recall was 100 out of 135 = 74.07\%
-What percent of positive predictions were correct?
-• The precision was 100 out of 265 = 37.74\%
-What percent of negative predictions were correct?
-• The specifity was 9700 out of 9735 = 99.64%
+
+\begin{itemize}
+	\item What percent of your predictions were correct? \\The accuracy was (9,760+60) out of 10,000 = 98.00\%
+	\item	What percent of the positive cases did you catch?\\
+	The recall was 100 out of 135 = 74.07\%
+	\item	What percent of positive predictions were correct?\\
+	The precision was 100 out of 265 = 37.74\%
+	\item 	What percent of negative predictions were correct?\\
+	The specifity was 9700 out of 9735 = 99.64\%
+\end{itemize}
+
 \subsection*{The F Score}
 The F-score or F-measure is a measure of a classification procedure’s accuracy.
 It considers both the precision and the recall to compute the score.
@@ -121,8 +166,7 @@ It considers both the precision and the recall to compute the score.
 
 
 \subsection*{ Cross Validation}
-The confusion table is a table in which the rows are the observed categories of
-the dependent and the columns are the predicted categories. When prediction
+When prediction
 is perfect all cases will lie on the diagonal. The percentage of cases on the
 diagonal is the percentage of correct classifications. The cross validated set of
 data is a more honest presentation of the power of the discriminant function
@@ -147,7 +191,7 @@ of the categorization process.
 	complex classifiers, and in the presence of over-fitted models.
 	\item If an independent test sample is used for classifying, we arrive at the true
 	error rate.
-		\item The true error rate (or conditional error rate) of a classifier is the
+	\item The true error rate (or conditional error rate) of a classifier is the
 	expected probability of misclassifying a randomly selected pattern. It is the
 	error rate of an infinitely large test set drawn from the same distribution as
 	the training data.
@@ -164,6 +208,7 @@ There are really two alternative costs. The cost of misclassifying someone
 as having cancer when they don’t. This could cause a certain amount of emotional
 grief. Additionally there would be the substantial cost of unnecessary
 treatment.
+\smallskip 
 There is also the alternative cost of misclassifying someone as not having
 cancer when in fact they do have it.
 A good classification procedure should
@@ -177,9 +222,10 @@ bankrupt firm. If we really believe that the prior probability of a financially
 distressed and ultimately bankrupted firm is very small, then one should classify
 a randomly selected firm as non-bankrupt unless the data overwhelmingly
 favor bankruptcy.
+\smallskip 
 There are two costs associated with discriminant analysis classification:
-The true misclassification cost per class, and the expected misclassification
-cost (ECM) per observation.
+The \textbf{true misclassification cost per class}, and the\textbf{ expected misclassification
+	cost} (ECM) per observation.
 
 \smallskip
 
@@ -189,11 +235,18 @@ to class 2 represents a more serious error than classifying a class 2 object as
 belonging to class 1. There would an assignable cost to each error. c(i|j) is
 the cost of classifying an observation into class j if its true class is i. The
 costs of misclassification can be defined by a cost matrix.
-Predicted Predicted
-Class 1 Class 2
-Class 1 0 c(2|1)
-Class 2 c(1|2) 0
-\subsection*{ Expected cost of misclassification (ECM)}
+\begin{center}
+
+	\begin{tabular}{|c|c|c|}
+		& Predicted & Predicted \\ 
+		& Class 1 & Class 2 \\ \hline 
+		Class 1 & 0&  c(2|1) \\ \hline 
+		Class 2 & c(1|2) & 0 \\ \hline 
+	\end{tabular}
+\end{center}
+
+
+\subsection*{ Expected Cost of Misclassification (ECM)}
 Let p1 and p2 be the prior probability of class 1 and class 2 respectively.
 Necessarily p1 + p2 = 1.
 

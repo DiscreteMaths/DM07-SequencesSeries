@@ -1,0 +1,148 @@
+
+
+\documentclass{article}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphics}
+\setlength{\heavyrulewidth}{1.5pt}
+\setlength{\abovetopsep}{4pt}
+
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+\begin{document}
+	
+	
+	%--------------------------------%
+	
+	%% - \frametitle{Sensitivity and Specificity}
+
+	\textbf{Binary Classification Prediction Procedure} Positive or Negative \\ \bigskip
+	\textbf{Possible Outcomes from Classification Procedure:}\\ \bigskip
+	\begin{description}
+		\item[TN] True Negatives - correct prediction
+		\item[TP] True Positives - correct prediction
+		\item[FN] False Negatives - incorrect prediction
+		\item[FP] False Positives - incorrect prediction
+	\end{description}
+	
+	
+	
+	
+	%--------------------------------%
+	
+	
+	{
+
+		\centering
+		\begin{table}[!htbp]
+			
+			%\caption{Comparison of percentages.}
+			\begin{tabular}{c | *2c }
+				%\toprule
+				Actual  & \multicolumn{2}{c}{Predicted}\\
+				Class  & \multicolumn{2}{c}{Class}\\
+				\midrule
+				{}   & Negative & Positive       \\
+				Negative  &  \textbf{TN} & \textbf{FP}  \\
+				Positive   &  \textbf{FN} & \textbf{TP}  \\
+				%\bottomrule
+			\end{tabular}
+		\end{table}
+	}
+	\begin{description}
+		\item[TN] \textbf{True Negatives} 
+		\item[TP] \textbf{True Positives} 
+		\item[FN] \textbf{False Negatives}
+		\item[FP] \textbf{False Positives} 
+	\end{description}
+	
+	
+
+	\begin{itemize}
+		\item The F-score or F-measure is a single measure of a classification procedure's usefulness. 
+		\item The F-score considers both the \textit{\textbf{Precision}} and the \textit{\textbf{Recall}} of the procedure to compute the score.
+		\item The higher the F-score, the better the predictive power of the 
+		classification procedure. 
+		\item A score of 1 means the classification procedure is perfect. The lowest possible F-score is 0.
+		\[ 0 \leq F \leq 1 \]
+	\end{itemize}
+	
+	%-------------------------------------------%
+
+	\begin{itemize}
+		\item \textbf{Precision} is the number of correct positive results divided by the number of \textit{\textbf{predicted positive}} results.
+		\[ \mbox{Precision}= \frac{TP}{TP+FP}  \]
+		\item \textbf{Recall} is the number of correct positive results divided by the number of \textit{\textbf{actual positive}} results. 
+		\[ \mbox{Recall}= \frac{TP}{TP+FN}  \]
+	\end{itemize}
+	
+ The F-score is the Harmonic mean of Precision and Recall.
+	\[ F = \frac{2}{\frac{1}{\mbox{Recall}} + \frac{1}{\mbox{Precision}}} \]
+	Alternatively
+	\[ F = 2 \times \left( \frac{\mbox{Precision} \times \mbox{Recall}}{\mbox{Precision} + \mbox{Recall}} \right) \] 
+	
+	%-------------------------------------------%
+	
+	
+	
+
+	Number of cases: \textbf{100,000}\\ 
+	\begin{center}
+		
+		\begin{table}[!htbp]
+			%\caption{Comparison of percentages.}
+			\begin{tabular}{c *4c}
+				\toprule
+				Actual &  \multicolumn{2}{c}{Predicted} & \multicolumn{2}{c}{Predicted}\\
+				State &  \multicolumn{2}{c}{Negative} & \multicolumn{2}{c}{Positive}\\
+				\midrule
+				Negative   & \phantom{spa} TN & \textbf{97750}\phantom{spa}   & FP  & \textbf{150}\\
+				Positive   & \phantom{spa} FN & \textbf{330} \phantom{spa}   & TP  & \textbf{1770}\\
+				
+				%3   &  6.6  &  5.6   & 35.9  & 37.4\\
+				\bottomrule
+			\end{tabular}
+		\end{table}
+	\end{center}
+	\begin{itemize}
+		\item \textbf{Accuracy} = 0.9952
+		\item \textbf{Recall} = 0.8428
+		\item \textbf{Precision} = 0.9218
+	\end{itemize}
+	
+	%--------------------------------%
+
+	\[ F = 2 \times \frac{\mbox{Precision} \times \mbox{Recall}}{\mbox{Precision} + \mbox{Recall}}\]\bigskip
+	\[ F = 2 \times \frac{\mbox{0.9218} \times \mbox{0.8428}}{\mbox{0.9218} + \mbox{0.8428}}\] 
+	\bigskip
+
+
+	
+	\[ F = 2 \times \left( \frac{\mbox{0.9218} \times \mbox{0.8428}}{\mbox{0.9218} + \mbox{0.8428}} \right)\] 
+	
+	\[ F = 2 \times \left( \frac{0.7770}{1.7646} \right) = 2 \times 0.4402 \]
+	{
+
+		\[F = 0.8804\] 
+	}
+	
+	%--------------------------------%
+
+
+
+\begin{center}
+\LARGE{Accuracy, Recall and Precision}
+\end{center}
+
+\section{Recall and Precision}
+In a classification task, the precision for a class is the number of true positives (i.e. the number of items correctly labeled as belonging to the positive class) divided by the total number of elements labeled as belonging to the positive class (i.e. the sum of true positives and false positives, which are items incorrectly labeled as belonging to the class). 
+
+
+\subsection*{Recall}
+Recall in this context is defined as the number of true positives divided by the total number of elements that actually belong to the positive class (i.e. the sum of true positives and false negatives, which are items which were not labeled as belonging to the positive class but should have been).
+
+\end{document}
