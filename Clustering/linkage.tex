@@ -1,0 +1,88 @@
+
+\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+%\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphicx}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 2011 13:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+\pagestyle{fancy}
+\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+\lhead{MA4128} \rhead{Mr. Kevin O'Brien}
+\chead{Advanced Data Modelling}
+%\input{tcilatex}
+
+
+% http://www.norusis.com/pdf/SPC_v13.pdf
+\begin{document}
+	
+	
+	%SESSION 1: Hierarchical Clustering
+	% Hierarchical clustering - dendrograms
+	% Divisive vs. agglomerative methods
+	% Different linkage methods
+	
+	%SESSION 2: K-means Clustering
+	
+	\tableofcontents
+	\newpage
+
+
+
+
+The hierarchical clustering procedure attempts to identify relatively homogeneous groups of cases (or variables) based on selected
+characteristics. For example: cluster television shows into homogeneous groups based on viewer
+characteristics. In hierarchical clustering, an algorithm is used that starts with each case (or variable) in a
+separate cluster and combines clusters until only one is left.
+
+
+
+To cluster cases you need to identify variables you wish to be considered in creating clusters for the cases.
+The variables to be used for cluster formation are here: picture quality (5 measures), reception quality (3
+measures), audio quality (3 measures), ease of programming (1 measure), number of events (1 measure),
+number of days for future programming (1 measure), remote control (3 measures), and extras (3 measures).
+Pass these in the Variable(s) box.
+
+Cluster Method: Choose the procedure for combining clusters. The default procedure is called the
+between-group linkage. SPSS computes the smallest average distance between all group pairs and
+combines the two groups that are closest. The procedure begins with as many clusters as there are cases
+(here: 21). At step one, the two cases with the smallest distance between them are clustered. Then SPSS
+computes distances once more and combines the two that are next closest. After the second step you will
+have either 18 individual cases and one cluster of 3 cases, or 17 individual cases and two clusters of two
+cases each. The process continues until all cases are grouped into one large cluster.
+Measure: Indicate what method is used for distance measuring, the default is Squared Euclidean distance. 
+
+\subsection{Linkage methods}
+\begin{itemize}
+	\item  Single linkage (minimum distance)
+	\item  Complete linkage (maximum distance)
+	\item  Average linkage
+\end{itemize}
+
+%http://www.rdg.ac.uk/~aes02mm/supermarket.sav
+
+\subsubsection{Ward's method}
+\begin{itemize}
+	\item  Compute sum of squared distances within clusters
+	\item  Aggregate clusters with the minimum increase in the
+	overall sum of squares
+\end{itemize}
+\subsubsection{Centroid method}
+The distance between two clusters is defined as the
+difference between the centroids (cluster averages)
+
+\end{document}
