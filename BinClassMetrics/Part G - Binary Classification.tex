@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+
+%opening
+\usepackage{framed}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\begin{document}
+
+
+\section*{Binary Classification}
+
+\subsection*{Binary Classification}
+\subsubsection*{Defining true/false positives}
+In general, Positive = identified and negative = rejected. Therefore:
+
+\begin{itemize}
+\item[TN] True negative = correctly rejected
+\item[FP] False positive = incorrectly identified
+\item[FN] False negative = incorrectly rejected
+\item[TP] True positive = correctly identified
+\end{itemize}
+\subsubsection*{Medical testing example}
+\begin{itemize}
+\item True positive = Sick people correctly diagnosed as sick
+
+\item False positive= Healthy people incorrectly identified as sick
+
+\item True negative = Healthy people correctly identified as healthy
+
+\item False negative = Sick people incorrectly identified as healthy.
+\end{itemize}
+\newpage
+\subsection*{Definitions}
+\textbf{Accuracy Rate}\\
+The accuracy rate calculates the proportion ofobservations being allocated to the \textbf{correct} group by the predictive model. It is calculated as follows:
+\[ \frac{
+\mbox{Number of Correct Classifications }}{\mbox{Total Number of Classifications }} \]
+
+\[ = \frac{TP + TN}{TP+FP+TN+FN}\]
+
+
+\noindent \textbf{Misclassification Rate}\\
+The misclassification rate calculates the proportion ofobservations being allocated to the \textbf{incorrect} group by the predictive model. It is calculated as follows:
+\[ \frac{
+\mbox{Number of Incorrect Classifications }}{\mbox{Total Number of Classifications }} \]
+
+\[ = \frac{FP + FN}{TP+FP+TN+FN}\]
+
+
+\end{document}
