@@ -25,101 +25,8 @@
 \begin{document}
 
 \tableofcontents
-\newpage
-\section{Logistic Regression}
-Logistic regression determines the impact of multiple independent variables
-presented simultaneously to predict membership of one or other of the two
-dependent variable categories.
 
-\subsection{The purpose of logistic regression}
-\begin{itemize}
-	\item The crucial limitation of linear regression is that it cannot deal with Dependent Variables’s that are \textbf{\textit{dichotomous}} and categorical. Many interesting variables in the business world are dichotomous: for
-	example, consumers make a decision to buy or not buy (\textit{\textbf{Buy/Don't Buy}}), a product may pass or fail quality control (\textit{\textbf{Pass/Fail}}), there are good or poor credit risks (\textit{\textbf{Good/Poor}}), an employee may be promoted or not (\textit{\textbf{Promote/Don't Promote}}).
-	
-\item 	A range of regression techniques have been developed for analysing data with categorical dependent
-	variables, including logistic regression and discriminant analysis (Hence referred to as DA, which is the next section of course).
-	
-\item 	Logistical regression is regularly used rather than discriminant analysis when there are only two categories
-	for the dependent variable. Logistic regression is also easier to use with SPSS than DA when
-	there is a mixture of numerical and categorical Independent Variables’s, because it includes procedures for
-	generating the necessary dummy variables automatically, requires fewer assumptions, and
-	is more statistically robust. DA strictly requires the continuous independent variables  (though dummy variables can be used as in multiple regression). Thus, in instances where
-	the independent variables are categorical, or a mix of continuous and categorical, and the
-	DV is categorical, logistic regression is necessary.
-\end{itemize}
-
-
-\subsection{Use of Binomial Probability Theory}
-\begin{itemize}
-	\item Since the dependent variable is dichotomous we cannot predict a numerical value for it
-	using logistic regression, so the usual regression least squares deviations criteria for best fit
-	approach of minimizing error around the line of best fit is inappropriate.
-	
-\item 	Instead, logistic regression employs binomial probability theory in which there are only two values to
-	predict: that probability (p) is 1 rather than 0, i.e. the event/person belongs to one group
-	rather than the other.
-\item Logistic regression forms a best fitting equation or function using the
-	maximum likelihood method (not part of course), which maximizes the probability of classifying the observed
-	data into the appropriate category given the regression coefficients.
-\end{itemize}
-
-	
-	\section{Introduction to Logistic Regression}
-	\begin{itemize}
-		\item Logistic regression or logit regression is a type of probabilistic statistical classification model.
-		
-		\item It is also used to predict a binary response from a binary predictor, used for predicting the outcome of a categorical dependent variable (i.e., a class label) based on one or more predictor variables (features). 
-		
-		\item That is, it is used in estimating empirical values of the parameters in a qualitative response model. The probabilities describing the possible outcomes of a single trial are modeled, as a function of the explanatory (predictor) variables, using a logistic function. 
-		
-		\item Logistic regression, also called a logit model, is used to model \textbf{dichotomous (i.e. Binary) outcome variables}. In the logit model the log odds of the outcome is modeled as a linear combination of the predictor variables.
-		
-		\item 
-		Binary Logistic regression is used to determine the impact of multiple independent variables
-		presented simultaneously to predict membership of one or other of the two
-		dependent variable categories.
-		\item Logistic regression determines the impact of multiple independent variables
-		presented simultaneously to predict membership of one or other of the two
-		dependent variable categories.
-		\item However, if your dependent variable was not measured on a dichotomous scale, but a continuous scale instead, you will need to carry out \textbf{multiple regression}, whereas if your dependent variable was measured on an ordinal scale, \textbf{ordinal regression} would be a more appropriate starting point.
-	\end{itemize}
-	
-	
-	
-	\section*{Introduction to Logistic Regression}
-	
-	The term ‘\textbf{\textit{generalized linear model}}’ is used to describe a procedure for
-	transforming the dependent variable so that the ‘right hand side’ of the model
-	equation can be interpreted as a \textbf{‘\textit{linear combination}}’ of the explanatory variables. 	In logistic regression, the logit may be computed in a manner similar to linear regression:
-	\[ \eta_i = \beta_0 + \beta_1x_1 + \beta_2x_2 + \ldots  \]
-	
-	In situations where the dependent (y) variable is continuous and can be
-	reasonably assumed to have a normal distribution we do not transform the y
-	variable at all and we can simply run a multiple linear regression analysis.
-	
-	Otherwise some sort of transformation is applied.
-	
-	
-	%---------------------------------------------------------------%
-	\subsection{Binomial Logistic Regression} 
-	A binomial logistic regression (often referred to simply as logistic regression), predicts the probability that an observation falls into one of two categories of a \textbf{dichotomous} dependent variable based on one or more independent variables that can be either continuous or categorical.
-	
-	% \section{Binomial Logistic Regression}
-	Binomial logistic regression estimates the probability of an event (as an example, having heart disease) occurring. 
-	\begin{itemize}
-		\item If the estimated probability of the event occurring is greater than or equal to 0.5 (better than even chance), the procedure classifies the event as occurring (e.g., heart disease being present). \item If the probability is less than 0.5, Logistic regression classifies the event as not occurring (e.g., no heart disease). 
-	\end{itemize}
-	
-	\subsection{Examples of Logistic Regression}
-	
-	\begin{description}
-		\item[Example 1:]  Suppose that we are interested in the factors that influence whether a political candidate wins an election.  The outcome (response) variable is binary (0/1); \textit{ win or lose}.  The predictor variables of interest are the amount of money spent on the campaign, the amount of time spent campaigning negatively and whether or not the candidate is an incumbent.
-		
-		\item[Example 2:]  A researcher is interested in how variables, such as GRE (Graduate Record Exam scores), GPA (grade point average) and prestige of the undergraduate institution, effect admission into graduate school. The response variable, \textit{admit/don't admit}, is a binary variable.
-	\end{description}
-	
-
-\subsection{Assumptions of logistic regression}
+\section{Assumptions of logistic regression}
 
 	
 	\begin{description}
@@ -376,118 +283,6 @@ dependent variable categories.
 	%-------------------------------------------------------%
 	
 	%------------------------------------------------------------------------------------%
-	\section{Logistic Regression}
-	Logistic regression, also called a logit model, is used to model \textbf{dichotomous outcome} variables. 
-	In the logit model the \textbf{log odds} of the outcome is modeled as a linear combination of the predictor variables.
-	
-	In logistic regression theory, the predicted dependent variable is a function of the probability that a particular subject will be in one of the categories (for example, the probability that a patient has the disease, given his or her set of scores on the predictor variables).
-	%------------------------------------------------------------------------------------------------------------------------- %
-	\subsection{Odds}
-	\begin{itemize}
-		\item 	The odds in favor of an event or a proposition are the ratio of the probability that an event will happen to the probability that it will not happen.
-\item 		'Odds' are an expression of relative probabilities. Often 'odds' are quoted as odds against, rather than as odds in favor of, because of the possibility of confusion of the latter with the fractional probability of an event occurring.
-		\[ \operatorname{Odds} = \frac{p}{1-p} \]
-		
-		
-		
-		
-		
-		
-		
-		
-	\item 	Loglinear models essentially define a pattern of odds ratios, apply the marginals to them, and compare the resulting table with the observed table, in pretty much the same way we apply the Pearson  $\chi^2$ test for association. The big difference is the pattern we define can be much more complicated than independence.
-	\end{itemize}
-
-	
-	\[ \hat{Y} = \frac{\mbox{Odds}}{1+\mbox{Odds}} \]
-	%---------------------------------------------------------- %
-
-\subsection{Odds and Odds Ratio}
-Logistic regression calculates changes in the log odds of the dependent,
-not changes in the dependent value as OLS regression does. For a dichotomous variable the
-odds of membership of the target group are equal to the probability of membership in the
-target group divided by the probability of membership in the other group. Odds value can
-range from 0 to infinity and tell you how much more likely it is that an observation is a
-member of the target group rather than a member of the other group. If the probability is
-0.80, the odds are 4 to 1 or 0.80/0.20; if the probability is 0.25, the odds are .33 (0.25/0.75).
-
-If the probability of membership in the target group is 0.50, the odds are 1 to 1 (0.50/0.50), as
-in coin tossing when both outcomes are equally likely.
-
-Another important concept is the odds ratio (OR), which estimates the change in the
-odds of membership in the target group for a one unit increase in the predictor. It is calculated by using the regression coefficient of the predictor as the exponent. Suppose we were predicting exam success by a maths competency
-predictor with an estimate b = 2.69. Thus the odds ratio is exp(2.69) or 14.73. Therefore the odds of passing
-are 14.73 times greater for a student, for example, who had a pre-test score of 5, than for a
-student whose pre-test score was 4.
-%--------------------------------------------------------%
-
-	\subsection{Introduction to the Odds Ratio}
-	Let's begin with probability. Suppose that the probability of success is 0.8, thus
-	p = 0.8
-	Then the probability of failure is
-	\[q = 1 - p = 0.2\]
-	The odds of success are defined as
-	\[odds(success) = p/q = 0.8/0.2 = 4\]
-	that is, the odds of success are 4 to 1. The odds of failure would be
-	\[odds(failure) = q/p = .2/.8 = .25\]
-	This looks a little strange but it is really saying that the odds of failure are 1 to 4.  The odds of success and the odds of failure are just reciprocals of one another, i.e., 1/4 = 0.25 and 1/0.25 = 4. 
-	
-
-	\subsection{Confidence Intervals for Odds Ratios}
-	\begin{itemize}
-		\item Many statistical implementations of logistic regression include Confidence Intervals for the odds ratios.
-		Odds ratios whose confidence limits exclude 1 are statistically significant.
-		\item The odds ratio is referred to in SPSS as \texttt{\textbf{Exp(B)}}, the exponentiation of the B coefficient
-	\end{itemize}
-	
-	%-------------------------------------------%
-	\subsection{Log-Odds}
-	As an alternative to modeling the value of the outcome, logistic regression focuses instead upon the
-	relative probability (odds) of obtaining a given result category. The natural logarithm of the odds is
-	linear across most of its range, allowing us to continue using many of the methods developed for linear models.
-	The result of this type of regression can be expressed as follows:
-	\[ \operatorname{Ln} \left[ \frac{p}{1-p} \right] = b_0 + b_1x_1 + b_2x_2 + b_3x_3 \ldots b_kx_k + e \]
-	
-	%-------------------------------------------%
-	
-
-	\subsection*{Logits}
-	In logistic regression, the logit may be computed in a manner similar to linear regression:
-	\[ \eta_i = \beta_0 + \beta_1x_1 + \beta_2x_2 + \ldots  \]
-	
-	%---------------------------%
-	
-	
-	
-
-	\subsection{Logistic function}
-	
-	The logistic function of any number is given by the inverse-logit:
-	
-	\[\operatorname{logit}^{-1}(\alpha) = \frac{1}{1 + \operatorname{exp}(-\alpha)} = \frac{\operatorname{exp}(\alpha)}{1 + \operatorname{exp}(\alpha)}\]
-	
-	%-------------------------------------------%
-	
-
-	\subsection{The Logistic Regression Equation}
-	The form of the logistic regression equation is:
-	\begin{framed}
-		\[ \mbox{logit}[p(x)] =  log \left(\frac{p(x)}{1-p(x)} \right) = b_0 + b_1x_1 + b_2x_2 + b_3x_3 + \ldots \]
-	\end{framed}
-	This looks just like a linear regression and although logistic regression finds a ‘best
-	fitting’ equation, just as linear regression does, the principles on which it does so are
-	rather different. Instead of using a least-squared deviations criterion for the best fit, it
-	uses a maximum likelihood method, which maximizes the probability of getting the
-	observed results given the fitted regression coefficients. A consequence of this is that the
-	goodness of fit and overall significance statistics used in logistic regression are different
-	from those used in linear regression.
-	
-	The probability that a case is in a particular category,p, can be calculated with the following formula (which is simply another rearrangement of the previous formula).
-	
-	\[p = \frac{exp(b_0 + b_1x_1 + b_2x_2 + b_3x_3 + \ldots)}{1 + exp(b_0 + b_1x_1 + b_2x_2 + b_3x_3 + \ldots)}\]
-	
-	\newpage
-	
 
 	\section{Review of Logistic Regression}
 	% http://www.nesug.org/proceedings/nesug06/an/da26.pdf
@@ -803,65 +598,6 @@ well as the fuller model (Model 2). In other words, we test the null hypothesis 
 against the alternative hypothesis that $\beta_2 \neq 0$. 
 
 
-\section{Binary Classification}	
-
-
-\subsection{Category Prediction Table}
-
-\begin{itemize}
-	\item It is very common to use binomial logistic regression to predict whether cases can be correctly classified (i.e., predicted) from the independent variables. Therefore, it becomes necessary to have a method to assess the effectiveness of the predicted classification against the actual classification.
-	\item  There are many methods to assess this with their usefulness oftening depending on the nature of the study conducted. However, all methods revolve around the observed and predicted classifications, which are presented in the ``\texttt{Classification Table}", as shown below:
-	
-	
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.8\linewidth]{images/BLogReg-Table}
-	\end{figure}
-	
-	
-	
-	\item Firstly, notice that the table has a subscript which states, ``\texttt{The cut value is .500}". This means that if the probability of a case being classified into the ``\textbf{\textit{yes}}" category is greater than .500, then that particular case is classified into the ``\textbf{\textit{yes}}" category. 
-	Otherwise, the case is classified as in the ``\textbf{\textit{no}}" category. 
-\end{itemize}
-
-
-
-
-\subsection{Classification Table}
-Rather than using a goodness-of-fit statistic, we often want to look at the proportion of cases we have managed to classify correctly. For this we need to look at the classification table printed out by SPSS, which tells us how many of the cases where the observed values of the dependent variable were 1 or 0 respectively have
-been correctly predicted.
-
-In the Classification table, the columns are the two predicted values of the dependent, while the rows are the two observed (actual) values of the dependent. In a perfect model, all cases will be on the diagonal and the
-overall percent correct will be 100\%. In this study, 87.5\% were correctly classified for the take offer group and 92.9\% for the decline offer group. Overall 90\% were correctly classified. This is a considerable improvement on the 53.3\% correct classification with the constant model so we know that the model with predictors is a significantly better mode.
-\begin{figure}[h!]
-	\begin{center}
-		% Requires \usepackage{graphicx}
-		\includegraphics[scale=0.6]{images/Logistic7}\\
-		\caption{Classification Table}
-	\end{center}
-\end{figure}
-
-\subsection{Classification Plot} 
-The classification plot or histogram of predicted probabilities
-provides a visual demonstration of the correct and incorrect predictions. Also called the `\texttt{classplot}' or the `\texttt{plot of observed groups and predicted probabilities}?,it is another very useful piece of information from the SPSS output when one chooses
-\texttt{Classification plots}' under the Options button in the Logistic Regression dialogue box.
-
-\subsection{Interpreting the Classifcation Table}
-Whilst the classification table appears to be very simple, it actually provides a lot of important information about your binomial logistic regression result, including:
-
-
-\begin{itemize}
-	\item[A.] The \textbf{percentage accuracy in classification (PAC)}, which reflects the percentage of cases that can be correctly classified as "no" heart disease with the independent variables added (not just the overall model).
-	\item[B.] \textbf{Sensitivity}, which is the percentage of cases that had the observed characteristic (e.g., "yes" for heart disease) which were correctly predicted by the model (i.e., true positives).
-	\item[C.] \textbf{Specificity}, which is the percentage of cases that did not have the observed characteristic (e.g., "no" for heart disease) and were also correctly predicted as not having the observed characteristic (i.e., true negatives).
-	\item[D.] The \textbf{positive predictive value}, which is the percentage of correctly predicted cases "with" the observed characteristic compared to the total number of cases predicted as having the characteristic.
-	\item[E.] The \textbf{negative predictive value}, which is the percentage of correctly predicted cases ``without" the observed characteristic compared to the total number of cases predicted as not having the characteristic.
-\end{itemize}
-%--------------------------------------------------------------------------------------%
-
-
-
-
 
 \section{Summary of Logistic Regression}
 logistic regression or logit regression is a type of regression analysis used for predicting
@@ -967,16 +703,7 @@ Note that, given the non-significance of the mortgage variable, you could be jus
 in leaving it out of the equation. As you can imagine, multiplying a mortgage value by
 B adds a negligible amount to the prediction as its B value is so small (.005).
 
-\newpage
-\section{Likelihood ratio test}
-\begin{itemize}
-	\item The likelihood-ratio test test discussed above to assess model fit is also the recommended procedure to assess the contribution of individual "predictors" to a given model.
-	
-	\item In the case of a single predictor model, one simply compares the deviance of the predictor model with that of the null model on a chi-square distribution with a single degree of freedom. If the predictor model has a significantly smaller deviance (c.f chi-square using the difference in degrees of freedom of the two models), then one can conclude that there is a significant association between the "predictor" and the outcome. 
-	\item Although some common statistical packages (e.g. SPSS) do provide likelihood ratio test statistics, without this computationally intensive test it would be more difficult to assess the contribution of individual predictors in the multiple logistic regression case. 
-	\item To assess the contribution of individual predictors one can enter the predictors hierarchically, comparing each new model with the previous to determine the contribution of each predictor.
-	\item There is considerable debate among statisticians regarding the appropriateness of so-called "stepwise" procedures. They do not preserve the nominal statistical properties and can be very misleading.
-\end{itemize}
+
 
 \end{document}
 

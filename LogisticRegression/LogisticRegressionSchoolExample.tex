@@ -15,10 +15,7 @@
 
 \begin{document}
 
-\large
-\tableofcontents
-%----------------------------------------------%
-\newpage
+
 \section{Logistic Regression: Graduate School Admission}
 \subsection{Description of the data}
 For this analysis below, we are going to consider the factors for being accepted into graduate school.
@@ -28,6 +25,8 @@ For this analysis below, we are going to consider the factors for being accepted
 \begin{quote}
 A researcher is interested in how variables, such as GRE (Graduate Record Exam scores), GPA (grade point average) and prestige of the undergraduate institution, effect admission into graduate school. The response variable, admit/don't admit, is a binary variable.
 \end{quote}
+{
+\larger
 \begin{framed}
 \begin{verbatim}
 mydata <- read.csv("binary.csv")
@@ -42,6 +41,7 @@ head(mydata)
 6     1 760 3.00    2
 \end{verbatim}
 \end{framed}
+}
 \begin{itemize}
 \item This dataset has a binary response (outcome, dependent) variable called \textit{admit}.
 \item There are three predictor variables: \textit{gre}, \textit{gpa} and \textit{rank}. 
@@ -50,7 +50,7 @@ head(mydata)
 \item We can get basic descriptives for the entire data set by using \texttt{summary()}. 
 %\item To get the standard deviations, we use sapply to apply the sd function to each variable in the dataset.
 \end{itemize}
-\newpage
+%===============================================%
 \begin{framed}
 \begin{verbatim}
 summary(mydata)
@@ -82,7 +82,7 @@ admit  1  2  3  4
 %sapply(mydata, sd)
 %  admit     gre     gpa    rank 
 %  0.466 115.517   0.381   0.944
-\newpage
+%==========================================%
 \subsection{Using the logit model}
 \begin{itemize}
 \item The code below estimates a logistic regression model using the glm (generalized linear model) function. \item Importantly, we convert \textbf{rank} to a factor to indicate that rank should be treated as a factor (categorical variable). We dont need to respecify ordering in this case.
@@ -96,7 +96,7 @@ model1 <- glm(admit ~ gre + gpa + rank,
    family = "binomial")
 \end{verbatim}
 \end{framed}
-\newpage
+%----------------------------------------------------------%
 \subsection{Using the \texttt{summary} function}
 \begin{itemize}
 \item Since we gave our model a name (model1), R will not produce any output from our regression. 
@@ -134,7 +134,7 @@ AIC: 470.5
 Number of Fisher Scoring iterations: 4
 \end{verbatim}
 \end{framed}
-\subsection{Interpreting the summary output}
+\subsection{Interpreting the \texttt{Summary} output}
 \begin{itemize}
 \item The first output we see is the deviance residuals, which are a measure of model fit. This part of output shows the distribution of the deviance residuals for individual cases used in the model. \\ \textit{Later we discuss how to use summaries of the deviance statistic to assess model fit.}
 \item The next part of the output shows the coefficients, their standard errors, the z-statistic (sometimes called a \textbf{\textit{Wald} }z-statistic), and the associated p-values. 
@@ -147,7 +147,7 @@ For a one unit increase in \textbf{\textit{gpa}}, the log odds of being admitted
 The indicator variables for rank have a slightly different interpretation. For example, having attended an undergraduate institution with rank of 2, versus an institution with a rank of 1, changes the log odds of admission by -0.675.
 \item Below the table of coefficients are fit indices, including the null and deviance residuals and the AIC.
 \end{itemize}
-\newpage
+%----------------------------------------------------------%
 \subsection{Confidence Intervals for Estimates}
 \begin{itemize}
 
@@ -179,8 +179,8 @@ rank3       -2.01699 -0.66342
 rank4       -2.37040 -0.73253
 \end{verbatim}
 \end{framed}}
-\newpage
-\subsection{The Wald Test (aod package)- optional}
+%----------------------------------------------------------%
+\subsection{The Wald Test (aod package: optional)}
 \begin{itemize}
 \item We can test for an overall effect of rank using the \texttt{wald.test} function of the \textbf{\textit{aod}} pacakge. 
 \item \textit{aod: Analysis of Overdispersed Data. This package provides a set of functions to analyse overdispersed counts or proportions}
@@ -199,7 +199,7 @@ X2 = 20.9, df = 3, P(> X2) = 0.00011
 \begin{itemize}
 \item The chi-squared test statistic of 20.9, with three degrees of freedom is associated with a p-value of 0.00011 indicating that the overall effect of \textbf{\textit{rank}} is statistically significant.
 \end{itemize}
-\newpage
+%----------------------------------------------------------%
 %\begin{itemize}
 %\item We can also test additional hypotheses about the differences in the coefficients for the different levels of rank. Below we test that the coefficient for rank=2 is equal to the coefficient for rank=3. The first line of code below creates a vector l that defines the test we want to perform. 
 %\item In this case, we want to test the difference (subtraction) of the terms for rank=2 and rank=3 (i.e., the 4th and 5th terms in the model). To contrast these two terms, we multiply one of them by 1, and the other by -1. The other terms in the model are not involved in the test, so they are multiplied by 0. The second line of code below uses L=l to tell R that we wish to base the test on the vector l (rather than using the Terms option as we did above).
@@ -217,7 +217,7 @@ X2 = 20.9, df = 3, P(> X2) = 0.00011
 %\end{verbatim}
 %\end{framed}
 %The chi-squared test statistic of 5.5 with 1 degree of freedom is associated with a p-value of 0.019, indicating that the difference between the coefficient for rank=2 and the coefficient for rank=3 is statistically significant.
-\newpage
+%----------------------------------------------------------%
 \subsection{Odds and Odds Ratio}
 \begin{itemize}
 \item You can also exponentiate the coefficients and interpret them as \textbf{odds-ratios}. 
@@ -256,7 +256,7 @@ rank4       0.2119 0.09072  0.471
 %For more information on interpreting odds ratios see our FAQ page How do I interpret odds ratios in logistic regression? . 
 \textit{Note that while \texttt{R} produces it, the odds ratio for the intercept is not generally interpreted.}
 \end{itemize}
-\newpage
+%----------------------------------------------------------%
 \subsection{Using the Model to make predictions}
 \begin{itemize}
 \item 
@@ -288,7 +288,7 @@ newdata1
 \item \textbf{\textit{Naming Conventions:}} These objects must have the same names as the variables in your logistic regression model (e.g. in this example the mean for gre must be named \textbf{\textit{gre}}). 
 \item Now that we have the data frame we want to use to calculate the predicted probabilities, we can tell \texttt{R} to create the predicted probabilities. 
 \end{itemize}
-\newpage
+%----------------------------------------------------------%
 \begin{itemize}
 %\item The first line of code below is quite compact, we will break it apart to discuss what various components do. 
 \item The \texttt{newdata1$\$$rankP} tells R that we want to create a new variable in the dataset (data frame) newdata1 called rankP, the rest of the command tells R that the values of rankP should be predictions made using the \texttt{predict( )} function. 
@@ -309,7 +309,7 @@ newdata1
 \begin{itemize} 
 \item In this output we see that the predicted probability of being accepted into a graduate program is 0.52 for students from the highest prestige undergraduate institutions (rank=1), and 0.18 for students from the lowest ranked institutions (rank=4), holding \textbf{\textit{gre}} and \textbf{\textit{gpa}} at their means. 
 \end{itemize}
-\newpage
+%----------------------------------------------------------%
 \subsection{Another Prediction Example - (optional)}
 \begin{itemize}
 \item We can do something very similar to create a table of predicted probabilities varying the value of gre and rank. We are going to plot these, so we will create 100 values of gre between 200 and 800, at each value of rank (i.e., 1, 2, 3, and 4).
@@ -345,7 +345,7 @@ head(newdata3)
 6 230 3.39    1 -0.743  0.487              1 0.553 0.155         0.322
 \end{verbatim}
 \end{framed}
-\newpage
+%----------------------------------------------------------%
 %\subsection{Graphs of Output}
 %
 %It can also be helpful to use graphs of predicted probabilities to understand and/or present the model. We will use the ggplot2 package for graphing. Below we make a plot with the predicted probabilities, and 95\% confidence intervals.
@@ -397,13 +397,14 @@ This is sometimes called a likelihood ratio test (the deviance residual is -2log
 logLik(model1)
 'log Lik.' -229 (df=6)
 \end{verbatim}
-\newpage
+%----------------------------------------------------------%
 \subsection{Things to consider}
 \begin{itemize}
 \item \textbf{Empty cells or small cells}: You should check for empty or small cells by doing a crosstab between categorical predictors and the outcome variable.\\ If a cell has very few cases (a small cell), the model may become unstable or it might not run at all.
 \item \textbf{Separation or quasi-separation} (also called perfect prediction), a condition in which the outcome does not vary at some levels of the independent variables. 
 \item 
-\textbf{Sample size:} Both logit and probit models require more cases than OLS regression because they use maximum likelihood estimation techniques. \\ It is sometimes possible to estimate models for binary outcomes in datasets with only a small number of cases using exact logistic regression. It is also important to keep in mind that when the outcome is rare, even if the overall dataset is large, it can be difficult to estimate a logit model.
+\textbf{Sample size:} Both logit and probit models require more cases than OLS regression because they use maximum likelihood estimation techniques. 
+\item \textbf{Sparsity:}   It is sometimes possible to estimate models for binary outcomes in datasets with only a small number of cases using exact logistic regression. It is also important to keep in mind that when the outcome is rare, even if the overall dataset is large, it can be difficult to estimate a logit model.
 \item \textbf{Pseudo-R-squared:} Many different measures of psuedo-R-squared exist. \\ They all attempt to provide information similar to that provided by R-squared in OLS regression; however, none of them can be interpreted exactly as R-squared in OLS regression is interpreted.
 \item \textbf{Diagnostics:} The diagnostics for logistic regression are different from those for OLS regression. 
 \end{itemize}
