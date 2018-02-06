@@ -19,14 +19,14 @@
 
 \pagestyle{fancy}
 \setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
-\lhead{MA4128} \rhead{Kevin O'Brien} \chead{Week 9} %\input{tcilatex}
+\lhead{MA4128} \rhead{Kevin O'Brien} \chead{Week 3} %\input{tcilatex}
 
 %http://www.electronics.dit.ie/staff/ysemenova/Opto2/CO_IntroLab.pdf
 \begin{document}
 
-\tableofcontents
-\newpage
-\section{Stepwise Regression (using \texttt{R}}
+% \tableofcontents
+% \newpage
+\section*{Stepwise Regression (using \texttt{R})}
 
 SPSS can be very opaque in determining how particularly statistical routines are carried out. Conversely the statistical programming language \texttt{R} is usually quite clear, once a familiarity with the language has been developed.
 
@@ -44,8 +44,8 @@ For variable selection procedures, \texttt{R} used the AIC criterion. When compa
 \item[gear]	 Number of forward gears
 \item[carb]	  Number of carburetors
 \end{description}
-
-\subsection{Backward Elimination}
+\newpage
+\subsection*{Backward Elimination}
 The initial model contains all of the independent variables. Candidate models, whereby each of the independent variables are individually removed from the model are fitted. The AIC value for each reduced model is computed. The unreduced model is also used for comparison. The AIC values are tabulated to determine which removal results in the lowest AIC value. In this first case, the removal of cyl would reduced the AIC value from 70.898 (see bottom row) to 68.915. Thus the independent variable cyl is removed from the set of IVs.
 \begin{framed}
 \begin{verbatim}
@@ -108,7 +108,8 @@ Coefficients:
       9.618       -3.917        1.226        2.936
 \end{verbatim}
 \end{framed}
-\subsection{Stepwise Regression}
+\newpage
+\subsection*{Stepwise Regression}
 Stepwise Regression differs from Backward Elimination, in that it allows IVs to be re-introduced. Hence the $+$ signs from the second phase onwards.
 \begin{framed}
 \begin{verbatim}
@@ -146,6 +147,7 @@ mpg ~ disp + hp + drat + wt + qsec + vs + am + gear + carb
 
 \end{verbatim}
 \end{framed}
+\newpage
 Again, the procedure finishes when it is found that the unchanged model has the lowest of all possible AIC values.
 \begin{framed}
 \begin{verbatim}
