@@ -44,22 +44,24 @@
 
 
 %Introduction
-Cluster analysis is a major technique for classifying a large volumes of information into
+\begin{itemize}
+\item Cluster analysis is a major technique for classifying a large volumes of information into
 manageable meaningful piles. Cluster analysis is a data reduction tool that creates subgroups that are
 more manageable than individual data items. In other words cluster analysis is an exploratory data analysis tool which aims at sorting different objects into groups in a way that the degree of association between two objects is maximal if they belong to the same group and minimal otherwise. Given the above, cluster analysis can be used to discover structures in data without providing an explanation/interpretation. In other words, cluster analysis simply discovers structures in data without explaining why they exist. Like factor analysis, it examines the full complement
 of inter-relationships between variables. Both cluster analysis (and later, discriminant
 analysis) are concerned with classification.
 
-However, the latter requires prior knowledge of membership of each cluster in order to classify new cases. In cluster analysis
+\item However, the latter requires prior knowledge of membership of each cluster in order to classify new cases. In cluster analysis
 there is no prior knowledge about which elements belong to which clusters. The grouping
 or clusters are defined through an analysis of the data. Subsequent multivariate analyses
 can be performed on the clusters as groups.
 
 \textbf{\textit{A cluster is a group of relatively homogeneous cases or observations.}}
 
-
+\item 
 The term cluster analysis encompasses a number of different algorithms and methods for grouping objects of similar kind into respective categories.A general question facing researchers in many areas of inquiry is how to organize observed data into meaningful structures, that is, to develop \textbf{\emph{taxonomies}}.
-
+\end{itemize}
+%========================%
 \subsection{Applications of Cluster Analysis}
 
 We deal with clustering in almost every aspect of daily life. For example, a group of diners sharing the same table in a restaurant may be regarded as a cluster of people. In food stores items of similar nature, such as different types of meat or vegetables are displayed in the same or nearby locations. There is a countless number of examples in which clustering plays an important role. Clustering techniques have been applied to a wide variety of scientific research problems. For example, in the field of medicine, clustering diseases, cures for diseases, or symptoms of diseases can lead to very useful taxonomies. In the field of psychiatry, the correct diagnosis of clusters of symptoms such as paranoia, schizophrenia, etc. is essential for successful therapy. In archeology, researchers have attempted to establish taxonomies of stone tools, funeral objects, etc. by applying cluster analytic techniques. According to the modern system employed in biology, man belongs to the primates, the mammals, the amniotes, the vertebrates, and the animals.
@@ -71,23 +73,26 @@ In general, whenever we need to classify a "mountain" of information into manage
 
 %---------------------------------------------------------------%
 \section{Cluster Analysis Techniques}
-Cluster analysis (CA) is an exploratory data analysis tool for organizing observed data into meaningful taxonomies, groups, or
+\begin{itemize}
+\item Cluster analysis (CA) is an exploratory data analysis tool for organizing observed data into meaningful taxonomies, groups, or
 clusters, based on combinations of independent variables, which maximizes the similarity of cases within
 each cluster while maximizing the dissimilarity between groups that are initially unknown.
 
-In this sense, CA creates new groupings without any preconceived notion of what clusters
+\item In this sense, Cluster analysis creates new groupings without any preconceived notion of what clusters
 may arise, whereas \textit{\textbf{discriminant analysis}} classifies people and items into
 already known groups.
 
-CA provides no explanation as to why the clusters exist nor is any
+\item Cluster analysis provides no explanation as to why the clusters exist nor is any
 interpretation made. Each cluster thus describes, in terms of the data collected, the class to
 which its members belong. Items in each cluster are similar in some ways to each other and
 dissimilar to those in other clusters.
 
-Cluster analysis is a tool of discovery revealing associations and structure in data which, though not previously
+\item Cluster analysis is a tool of discovery revealing associations and structure in data which, though not previously
 evident, are sensible and useful when discovered. Importantly, CA enables new
 cases to be assigned to classes for identification and diagnostic purposes; or find \textbf{\textit{exemplars}}
 to represent classes.
+\end{itemize}
+%---------------------------------------------------------------%
 
 \subsection{Types of Cluster Analysis}
 There are three main types of cluster analysis.
@@ -99,47 +104,54 @@ There are three main types of cluster analysis.
 
 Within hierarchical clustering analysis there are two subcategories: 
 \begin{itemize}
-\item Agglomerative (start from n clusters,to get to 1 cluster)
+\item Agglomerative (start from n clusters, to get to 1 cluster)
 \item Divisive (start from 1 cluster, to get to $n$ cluster)
 \end{itemize}
 
 
 %---------------------------------------------------------------------------------%
 \subsection{Hierarchical cluster analysis}
-This is the major statistical method for finding relatively homogeneous clusters of cases based on measured characteristics.
-
-Agglomerative clustering starts with each case as a separate cluster, i.e. there are as many clusters as cases, and then combines the clusters sequentially, reducing the number of clusters at each step until only one cluster is left.
-
-The clustering method uses the dissimilarities or distances between objects when forming the clusters. The SPSS programme calculates \textbf{\textit{distances}} between data points in terms of the specified variables.
-
-A hierarchical tree diagram, called a \textbf{\textit{dendrogram }} on SPSS, can be produced to show the linkage points. The clusters are linked at increasing levels of \textbf{\textit{dissimilarity}}.
-The actual measure of dissimilarity depends on the measure used.
+\begin{itemize}
+	\item This is the major statistical method for finding relatively homogeneous clusters of cases based on measured characteristics.
+	
+\item Agglomerative clustering starts with each case as a separate cluster, i.e. there are as many clusters as cases, and then combines the clusters sequentially, reducing the number of clusters at each step until only one cluster is left.
+	
+\item The clustering method uses the dissimilarities or distances between objects when forming the clusters. The SPSS programme calculates \textbf{\textit{distances}} between data points in terms of the specified variables.
+	
+\item A hierarchical tree diagram, called a \textbf{\textit{dendrogram }} on SPSS, can be produced to show the linkage points. The clusters are linked at increasing levels of \textbf{\textit{dissimilarity}}.
+	The actual measure of dissimilarity depends on the measure used.
+	
+\end{itemize}
 
 
 \subsection{Distance measures}
-Distance can be measured in a variety of ways. There are distances that are Euclidean (can be measured with a ruler) and there are other distances based on similarity. For example, in terms of
-geographical distance (i.e. Euclidean distance) Perth, Australia is closer to Jakarta, Indonesia, than it is to Sydney, Australia.
+\begin{itemize}
+	\item Distance can be measured in a variety of ways. There are distances that are Euclidean (can be measured with a ruler) and there are other distances based on similarity.
+	\item  For example, in terms of
+	geographical distance (i.e. Euclidean distance) Perth, Australia is closer to Jakarta, Indonesia, than it is to Sydney, Australia.
+	
+\item However, if distance is measured in terms of the cities characteristics, Perth is closer to Sydney (e.g. both on a big river estuary, straddling both sides of the river, with surfing beaches, and both English speaking, etc). 
+\item A number of distance measures are available within SPSS. The \textbf{\textit{squared Euclidean distance}} is the most widely used measure.
+\end{itemize}
 
-However, if distance is measured in terms of the cities characteristics, Perth is closer to Sydney (e.g. both on a big river estuary, straddling both sides of the river, with surfing beaches, and both English speaking, etc). A number of distance measures are available within SPSS. The \textbf{\textit{squared Euclidean distance}} is the most widely used measure.
 
-\subsection{Squared Euclidean distance}
-The most straightforward and generally accepted way of computing distances between objects in a multi-dimensional space is to compute Euclidean distances, an extension of Pythagoras's theorem.
-If we had a two- or three-dimensional space this measure is the actual geometric distance between objects in the space (i.e. as if measured with a ruler).
-
-In a univariate example, the Euclidean distance between two values is the arithmetic difference, i.e. \textbf{\textit{value1 - value2}}. In the bivariate case, the minimum distance is the hypotenuse of a triangle formed from the points, as in Pythagoras's theorem.
-
-Although difficult to visualize, an extension of the Pythagoras's theorem will give the distance between two points in n-dimensional space. The squared Euclidean distance is used more often than the simple Euclidean distance in order to place progressively greater weight on objects that are further apart. Euclidean (and squared Euclidean) distances are usually computed from raw data, and not from transformed data, e.g. standardized data.
 
 \subsection{Statistical Significance Testing}
 
-Note that the previous discussions refer to clustering algorithms and do not mention anything about statistical significance testing. In fact, cluster analysis is not as much a typical statistical test as it is a ``collection" of different algorithms that ``put objects into clusters according to well defined similarity rules."
+\begin{itemize}
+\item Note that the previous discussions refer to clustering algorithms and do not mention anything about statistical significance testing. In fact, cluster analysis is not as much a typical statistical test as it is a collection of different algorithms that ``\textit{put objects into clusters according to well defined similarity rules}."
+	
+\item The point here is that, unlike many other statistical procedures, cluster analysis methods are mostly used when we do not have any \textbf{\textit{a priori hypotheses}}, but are still in the exploratory phase of our research. In a sense, cluster analysis finds the ``most significant solution possible." Therefore, statistical significance testing is really not appropriate here, even in cases when p-values are reported.
+\end{itemize}
 
-The point here is that, unlike many other statistical procedures, cluster analysis methods are mostly used when we do not have any \textbf{\textit{a priori hypotheses}}, but are still in the exploratory phase of our research. In a sense, cluster analysis finds the ``most significant solution possible." Therefore, statistical significance testing is really not appropriate here, even in cases when p-values are reported.
 
 \subsection{Dendrograms}
-
-The dendrogram is a tree-structured graphical representation, used to visualize of the results of \textbf{\textit{hierarchical cluster analysis}} . This is a tree-like plot where each step of hierarchical clustering is represented as a joining (or fusion) of two branches of the tree into a single one. The branches represent clusters obtained on each step of hierarchical clustering. The result of a clustering is presented either as the \textbf{\textit{distance}} or the similarity between the clustered rows or columns depending on the selected distance measure.
-
+\begin{itemize}
+	
+\item The dendrogram is a tree-structured graphical representation, used to visualize of the results of \textbf{\textit{hierarchical cluster analysis}} . This is a tree-like plot where each step of hierarchical clustering is represented as a joining (or fusion) of two branches of the tree into a single one. 
+\item The branches represent clusters obtained on each step of hierarchical clustering. 
+\item The result of a clustering is presented either as the \textbf{\textit{distance}} or the similarity between the clustered rows or columns depending on the selected distance measure.
+\end{itemize}
 
 %----------------------------------------------------------%
 % http://www2.statistics.com/resources/glossary/h/hclusteran.php
@@ -154,7 +166,7 @@ The linkage distances are calculated by SPSS. The goal of the clustering algorit
 
 
 \subsection{Nearest neighbour method} 
-(Also known as the single linkage method).\\
+(\textit{Also known as the single linkage method}).\\
 In this method the distance between two clusters is defined to be the distance between
 the two closest members, or neighbours. This method is relatively simple but is often
 criticised because it doesn’t take account of cluster structure and can result in a problem
@@ -162,7 +174,7 @@ called chaining whereby clusters end up being long and straggly. However, it is 
 than the other methods when the natural clusters are not spherical or elliptical in shape.
 
 \subsection{Furthest neighbour method}
-(Also known as the complete linkage method).\\
+(\textit{Also known as the complete linkage method}).\\
 In this case the distance between two clusters is defined to be the maximum distance
 between members  i.e. the distance between the two subjects that are furthest apart.
 This method tends to produce compact clusters of similar size but, as for the nearest
@@ -170,7 +182,7 @@ neighbour method, does not take account of cluster structure. It is also quite s
 to outliers.
 
 \subsection{Average (between groups) linkage method }
-(sometimes referred to as UPGMA).\\
+(\textit{sometimes referred to as UPGMA}).\\
 The distance between two clusters is calculated as the average distance between all pairs
 of subjects in the two clusters. This is considered to be a fairly robust method.
 
@@ -306,11 +318,14 @@ For nearly all of this module example,the data were on an interval scale, and th
 
 \newpage
 \subsection{SPSS Agglomeration Schedule}
+\begin{center}
 \begin{figure}
-  % Requires \usepackage{graphicx}
-  \includegraphics[scale=0.7]{images/AggloSc}\\
-  \caption{SPSS Agglomeration Schedule}
+	% Requires \usepackage{graphicx}
+	\includegraphics[scale=1.1]{images/AggloSc}\\
+	%\caption{SPSS Agglomeration Schedule}
 \end{figure}
+\end{center}
+
 
 The procedure followed by cluster analysis at Stage 1 is to cluster the two cases that have the smallest
 squared Euclidean distance between them. Then SPSS will recompute the distance measures between all
@@ -327,23 +342,35 @@ next stage (when the cluster containing Case 1 combines with another case) is St
 17, Case 2 joins the Case-1 cluster.)
 
 \subsubsection{Stage 10}
-At Stage 10, Case 9 joins the Case-11 cluster (Case 11 was previously clustered with Case 14 back in Stage
-5, thus creating a cluster of 3 cases: Cases 9, 11, and 14). The squared Euclidean distance between Case 9
-and Case-11 cluster is 19.833. Case 9 has not been previously clustered (the zero under Cluster 1), and
-Case 11 was previously clustered at Stage 5. The next stage (when the cluster containing Case 9 clusters) is
-Stage 15 (when it combines with the Case-6 cluster).
+\begin{itemize}
+	\item At Stage 10, Case 9 joins the Case-11 cluster (Case 11 was previously clustered with Case 14 back in Stage
+	5, thus creating a cluster of 3 cases: Cases 9, 11, and 14). 
+	\item The squared Euclidean distance between Case 9
+	and Case-11 cluster is 19.833. 
+	\item Case 9 has not been previously clustered (the zero under Cluster 1), and
+	Case 11 was previously clustered at Stage 5. 
+	\item The next stage (when the cluster containing Case 9 clusters) is
+	Stage 15 (when it combines with the Case-6 cluster).
+\end{itemize}
+
 
 \subsubsection{Stage 14}
-At Stage 14, the clusters containing Cases 12 and 19 are joined, Case 12 has been previously clustered with
-Case 17, and Case 19 had been previously clustered with Cases 20 and 21, thus forming a cluster of 5 cases
-(Cases 12, 17, 19, 20, 21). The squared Euclidean distance between the two joined clusters is 31.667. Case
-12 was previously joined at Stage 3 with Case 17. Case 19 was previously joined at Stage 7 with the Case-
-20 cluster. The next stage when the Case-12 cluster will combine with another case/cluster is Stage 16
-(when it joins with the Case-10 cluster).
+\begin{itemize}
+	\item At Stage 14, the clusters containing Cases 12 and 19 are joined, Case 12 has been previously clustered with
+	Case 17, and Case 19 had been previously clustered with Cases 20 and 21, thus forming a cluster of 5 cases
+	(Cases 12, 17, 19, 20, 21). 
+	\item The squared Euclidean distance between the two joined clusters is 31.667. 
+	\item Case
+	12 was previously joined at Stage 3 with Case 17. Case 19 was previously joined at Stage 7 with the Case-
+	20 cluster. 
+	\item The next stage when the Case-12 cluster will combine with another case/cluster is Stage 16
+	(when it joins with the Case-10 cluster).
+\end{itemize}
+
 
 \begin{figure}
   % Requires \usepackage{graphicx}
-  \includegraphics[scale=0.7]{images/Dendro}\\
+  \includegraphics[scale=1.0]{images/Dendro}\\
   \caption{Corresponding Dendrogram}
 \end{figure}
 
@@ -355,25 +382,6 @@ the right relative distance become more apparent. The bigger the distances befor
 the bigger the differences in these clusters. To find a membership of a particular cluster simply trace
 backwards down the branches to the name.
 
-\section{Standardizing the Variables}
-% % Moved to CA Notes
-If variables are measured on different scales, variables with large values contribute
-more to the distance measure than variables with small values. In this example, both
-variables are measured on the same scale, so that’s not much of a problem, assuming
-the judges use the scales similarly. But if you were looking at the distance between two
-people based on their IQs and incomes in dollars, you would probably find that the
-differences in incomes would dominate any distance measures. (A difference of only
-\$100 when squared becomes 10,000, while a difference of 30 IQ points would be only
-900. I’d go for the IQ points over the dollars!).
-
-Variables that are measured in large numbers will contribute to the distance more than variables recorded in smaller
-numbers.
-
-In the hierarchical clustering procedure in SPSS, you can standardize variables in
-different ways. You can compute standardized scores or divide by just the standard
-deviation, range, mean, or maximum. This results in all variables contributing more
-equally to the distance measurement. That’s not necessarily always the best strategy,
-since variability of a measure can provide useful information. 
 %----------------------------------------------------- %
 \newpage
 \section{Non-Hierarchical Clustering}

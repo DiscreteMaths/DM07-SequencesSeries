@@ -10,6 +10,4 @@ Explain how the Akaike Information Criterion would be used in the context of mod
 
 
 
-Under what circumstance would you use Logistic Regression?
-
 Discuss some of the traditional technique for dealing with Missing Data, making references to the limitations of each.

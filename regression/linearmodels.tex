@@ -29,12 +29,18 @@
 \section{Linear Regression Analysis}
 
 \subsection{Introduction}
-Linear regression is used when you want to predict the value of a variable based on the value of another variable. The variable we want to predict is called the dependent variable (or sometimes, the outcome variable). The variable we are using to predict the other variable's value is called the independent variable (or sometimes, the predictor variable).
+\begin{itemize}
+	\item Linear regression is used when you want to predict the value of a variable based on the value of another variable.
+	\begin{itemize}
+	\item[$\ast$] The variable we want to predict is called the \textbf{\textit{dependent variable}} (or the response variable or outcome variable). 
+	\item[$\ast$] The variable we are using to predict the other variable's value is called the \textbf{\textit{independent variable}} (or the predictor variable).
+	\end{itemize}
+	
+\item For example, you could use linear regression to understand whether exam performance can be predicted based on revision time; whether cigarette consumptions can be predicted based on smoking duration; and so forth. If you have two or more independent variables, rather than just one, you need to use \textbf{\textit{multiple regression}}.
+	
+\item SPSS can be used to carry out linear regression, as well as interpret and report the results from this test. However, before we introduce you to this procedure, you need to understand the different assumptions that your data must meet in order for linear regression to give you a valid result. We discuss these assumptions next.
+\end{itemize}
 
-
-For example, you could use linear regression to understand whether exam performance can be predicted based on revision time; whether cigarette consumptions can be predicted based on smoking duration; and so forth. If you have two or more independent variables, rather than just one, you need to use \textbf{\textit{multiple regression}}.
-
-SPSS can be used to carry out linear regression, as well as interpret and report the results from this test. However, before we introduce you to this procedure, you need to understand the different assumptions that your data must meet in order for linear regression to give you a valid result. We discuss these assumptions next.
 
 
 \subsection{Assumptions}
@@ -92,7 +98,7 @@ When you analyse your own data, you will be lucky if your scatterplot looks like
 
 % Therefore, in our enhanced linear regression guide, we explain: (a) some of the things you will need to consider when interpreting your data; and (b) possible ways to continue with your analysis if your data fails to meet this assumption.
 
-\item \textbf{Assumption 6}:Finally, you need to check that the residuals (errors) of your two variables are approximately normally distributed. Two common methods to check this assumption include using either a histogram (with a superimposed normal curve) or by using a Normal P-P Plot.
+\item \textbf{Assumption 6}:Finally, you need to check that the residuals (errors) of your two variables are approximately normally distributed. Two common methods to check this assumption include using either a histogram (with a superimposed normal curve) or by using a Normal Probability Plot.
   %  Again, in our enhanced linear regression guide, we: (a) show you how to check this assumption using SPSS, whether you use a histogram (with superimposed normal curve) or Normal P-P Plot; (b) explain how to interpret these diagrams; and (c) provide a possible solution if your data fails to meet this assumption.
 
 \end{itemize}
@@ -115,13 +121,13 @@ For example, you could use linear regression to understand whether exam performa
 
 SPSS will generate quite a few tables of output for a linear regression procedure. Only the three main tables required to understand your results from the linear regression procedure, assuming that no assumptions have been violated.
 
-This includes relevant scatterplots, histogram (with superimposed normal curve) and Normal P-P Plot, and case-wise diagnostics and Durbin-Watson statistic tables. Below, we focus on the results for the linear regression analysis only.
+This includes relevant scatterplots, histogram (with superimposed normal curve) and Normal Probability Plot (i.e. Q-Q plots), and case-wise diagnostics and Durbin-Watson statistic tables. Below, we focus on the results for the linear regression analysis only.
 
 \begin{figure}[h!]
 \begin{centering}
   % Requires \usepackage{graphicx}
-  \includegraphics[width=12cm]{Regre4.jpg}\\
-  \caption{Model Summary table}
+  \includegraphics[width=15cm]{Regre4.jpg}\\
+ % \caption{Model Summary table}
 \end{centering}
 \end{figure}
 
@@ -133,20 +139,22 @@ The next table is the ANOVA table. This table indicates that the regression mode
 \begin{figure}[h!]
 \begin{centering}
   % Requires \usepackage{graphicx}
-  \includegraphics[width=12cm]{Regre5.jpg}\\
-  \caption{ANOVA Table}
+  \includegraphics[width=15cm]{Regre5.jpg}\\
+%  \caption{ANOVA Table}
 \end{centering}
 \end{figure}
 
-The next table again, \textbf{\textit{Coefficients}}, provides us with information on each predictor variable. This gives us the information we need to predict price from income. We can see that both the constant and income contribute significantly to the model (by looking at the Sig. column). By looking at the B column under the Unstandardized Coefficients column, we can present the regression equation as:
+The next table again, \textbf{\textit{Coefficients}}, provides us with information on each predictor variable. This gives us the information we need to predict price from income. We can see that both the constant and income contribute significantly to the model (by looking at the \texttt{Sig.} column). 
 
+By looking at the B column under the \texttt{Unstandardized Coefficients} column, we can present the regression equation as:
+\begin{center}
 \textit{\textbf{ $\hat{Price}$ = 8287 + 0.564(Income)}}
-
+\end{center}
 \begin{figure}[h!]
 \begin{centering}
   % Requires \usepackage{graphicx}
-  \includegraphics[width=12cm]{Regre6.jpg}\\
-  \caption{Coefficients Table}
+  \includegraphics[width=15cm]{Regre6.jpg}\\
+  %\caption{Coefficients Table}
 \end{centering}
 \end{figure}
 

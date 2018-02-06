@@ -1,20 +1,32 @@
-\documentclass[12pt]{article}
+\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
 \usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{graphics}
+\usepackage{epsfig}
 \usepackage{framed}
-\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
 
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode"CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 201113:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
 
+\pagestyle{fancy}
+\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+\lhead{MA4128} \rhead{Kevin O'Brien} \chead{Distance Measures} %\input{tcilatex}
 
-
+%http://www.electronics.dit.ie/staff/ysemenova/Opto2/CO_IntroLab.pdf
 \begin{document}
-\author{Kevin O'Brien}
-\title{Cluster Analysis - Distance Measures and Proximity Matrices}
-\tableofcontents
 
 %http://www.econ.upf.edu/~michael/stanford/maeb4.pdf
 %http://stn.spotfire.com/spotfire_client_help/hc/hc_distance_measures_overview.htm
-\newpage
+
 \section{Euclidean Distance}
 The Euclidean distance between two points, x and y, with $k$ dimensions is calculated as:
 \[ \sqrt{ \sum^{k}_{j=1} ( x_j - y_j)^2 } \]
@@ -37,14 +49,22 @@ $x_j$	&	$y_j$	&   $x_j - y_j$	&	$(x_j - y_j)^2$	\\ \hline
 \end{center}
 The Euclidean Distance between the two points is $\sqrt{49}$ i.e. 7.
 
-\subsection{Squared Euclidean Distance}
+%---------------------------------------------------------------------------%
+
+\subsection{Squared Euclidean distance}
+The most straightforward and generally accepted way of computing distances between objects in a multi-dimensional space is to compute Euclidean distances, an extension of Pythagoras's theorem.
+If we had a two- or three-dimensional space this measure is the actual geometric distance between objects in the space (i.e. as if measured with a ruler).
+
+In a univariate example, the Euclidean distance between two values is the arithmetic difference, i.e. \textbf{\textit{value1 - value2}}. In the bivariate case, the minimum distance is the hypotenuse of a triangle formed from the points, as in Pythagoras's theorem.
+
+Although difficult to visualize, an extension of the Pythagoras's theorem will give the distance between two points in n-dimensional space. The squared Euclidean distance is used more often than the simple Euclidean distance in order to place progressively greater weight on objects that are further apart. Euclidean (and squared Euclidean) distances are usually computed from raw data, and not from transformed data, e.g. standardized data.
+%----------------------------------------------------------%
+\section{Standardized Euclidean distance}
 The Squared Euclidean distance between two points, x and y, with $k$ dimensions is calculated as:
 \[ \sum^{k}_{j=1} ( x_j - y_j)^2  \]
 The Squared Euclidean distance may be preferred to the Euclidean distance as it is slightly less computational complex, without loss of any information.
 
-%---------------------------------------------------------------------------%
 
-\section{Standardized Euclidean distance}
 
 Let us consider measuring the distances between between two points using
 the three continuous variables pollution, depth and temperature. Let us suppose that a difference of 4.1 in terms of pollution is considered quite large and unusual, while a difference of 48 in terms of depth is large, but not particularly unusual.
@@ -66,9 +86,10 @@ Here is the calculation for Euclidean Distance:
  \[ d = \sqrt{16.81 + 2304 + 0.01} = \sqrt{2320.82} = 48.17 \]
 \noindent The contribution of the second variable depth to this calculation is huge  one could say
 that the distance is practically just the absolute difference in the depth values (equal to
-|51-99| = 48) with only tiny additional contributions from pollution and temperature. These three variables are on
+$|51-99| = 48$) with only tiny additional contributions from pollution and temperature. These three variables are on
 completely different scales of measurement and the larger depth values have larger differences, so they will dominate in the calculation of Euclidean distances.
 
+\subsection*{Standardization}
 \noindent The approach to take here is \textbf{standardization}, which is is necessary to balance out the contributions, and the
 conventional way to do this is to transform the variables so they all have the same variance
 of 1. At the same time we \textbf{\textit{center}} the variables at their means  this centering is not
