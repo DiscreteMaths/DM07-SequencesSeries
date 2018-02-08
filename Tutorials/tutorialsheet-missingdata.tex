@@ -1,26 +1,41 @@
-\textbf{}
-\documentclass[12pt]{article} % use larger type; default would be 10pt
-
-
-\usepackage{graphicx}
+\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+%\usepackage{listings}
 \usepackage{framed}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
 
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 2011 13:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
 
-%------------------------------------------------------%
-% http://www.floppybunny.org/robin/web/virtualclassroom/stats/statistics2/pca1.pdf
-% http://staff.bath.ac.uk/pssiw/stats2/page16/page16.html
-% https://en.wikiversity.org/wiki/Exploratory_factor_analysis
-% http://www.stat-help.com/factor.pdf
-% http://sociology.about.com/od/Statistics/a/Factor-Analysis.htm
-
-%------------------------------------------------------%
-\title{Advanced Data Modeling}
-\author{Kevin O'Brien}
+\pagestyle{fancy}
+\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+\lhead{MA4128} \rhead{Mr. Kevin O'Brien}
+\chead{Advanced Data Modeling}
+%\input{tcilatex}
 
 \begin{document}
-\maketitle
-\tableofcontents
 
+
+\subsection*{Question 4a : Missing Data}%10 Marks
+%----GOOD SHAPE
+\begin{itemize}
+	\item[i.](2 Marks) What is Missing Data? Discuss the implications of Missing Data in the context of a statistical analysis.
+	\item[ii.](3 Marks) Compare and contrast the following types of missing data: Missing At Random, Missing Not At Random, Missing Completely at Random.
+	\item[iii.](3 Marks) Discuss some of the traditional techniques for dealing with Missing Data, making reference to the limitations of each.
+	\item[iv.](2 Marks) Briefly describe the technique of Multiple Imputation.
+\end{itemize}
 \newpage
 \section{Logistic Regression}
 \textbf{What is the Logit Function}
@@ -45,6 +60,7 @@ Some of the better known ones are:
 \item Hagle and Mitchell's Pseudo-R-Square
 \end{itemize}
 %--------------------------------------------------------------------------%
+\newpage
 \section{Supervised Learning}
 
 %http://cs.stackexchange.com/questions/2907/what-exactly-is-the-difference-between-supervised-and-unsupervised-learning
@@ -62,3 +78,4 @@ unsupervised.
 \textbf{Give an example of a supervised learning methodology and an unsupervised learning methodology}
 
 
+\end{document}

@@ -30,9 +30,17 @@
 
 % http://www.norusis.com/pdf/SPC_v13.pdf
 \begin{document}
-	
-\section{Imputation of Missing Data}	
+\section{Listwise deletion}
+By far, the most common means of dealing with missing data is listwise deletion (also known as complete case), which is when all cases with a missing value are deleted. If the data are missing completely at random, then listwise deletion does not add any bias, but it does decrease the power of the analysis by decreasing the effective sample size. For example, if 1000 cases are collected but 80 have missing values, the effective sample size after listwise deletion is 920. 
+\subsection{What is multiple imputation?}
+%http://sites.stat.psu.edu/~jls/mifaq.html
 
+Imputation, the practice of 'filling in' missing data with plausible values, is an attractive approach to analyzing incomplete data. It apparently solves the missing-data problem at the beginning of the analysis. However, a naive or unprincipled imputation method may create more problems than it solves, distorting estimates, standard errors and hypothesis tests, as documented by Little and Rubin (1987) and others.
+
+The question of how to obtain valid inferences from imputed data was addressed by Rubin's (1987) book on multiple imputation (MI). MI is a Monte Carlo technique in which the missing values are replaced by m>1 simulated versions, where m is typically small (e.g. 3-10). 
+In Rubin's method for `repeated imputation' inference, each of the simulated complete datasets is analyzed by standard methods, and the results are combined to produce estimates and confidence intervals that incorporate missing-data uncertainty. Rubin (1987) addresses potential uses of MI primarily for large public-use data files from sample surveys and censuses. With the advent of new computational methods and software for creating MI's, however, the technique has become increasingly attractive for researchers in the biomedical, behavioral, and social sciences whose investigations are hindered by missing data. These methods are documented in a recent book by Schafer (1997) on incomplete multivariate data.
+\section{Imputation of Missing Data}	
+Imputation is the process of replacing missing data with substituted values.
 %----------------------------------------------------%
 \subsection{Multiple Imputation}
 \textbf{\textit{Multiple imputation}} provides a useful strategy for dealing
