@@ -70,133 +70,6 @@
 	
 	
 	
-	
-	
-	\subsection*{Logistic function} 
-	
-	The logistic function, with $\beta_0 + \beta_1 x$ on the horizontal axis and $\pi(x)$ on the vertical axis
-	An explanation of logistic regression begins with an explanation of the logistic function, which always takes on values between zero and one:
-	\[
-	F(t) = \frac{e^t}{e^t+1} = \frac{1}{1+e^{-t}},
-	\]
-	and viewing $t$ as a linear function of an explanatory variable x (or of a linear combination of explanatory variables), the logistic function can be written as:
-	\[\pi(x) = \frac{e^{(\beta_0 + \beta_1 x)}} {e^{(\beta_0 + \beta_1 x)} + 1} = \frac {1} {1+e^{-(\beta_0 + \beta_1 x)}}.
-	\]
-	This will be interpreted as the probability of the dependent variable equalling a ``success" or ``case" rather than a failure or non-case. We also define the inverse of the logistic function, the logit:
-	\[g(x) = \log \frac {\pi(x)} {1 - \pi(x)} = \beta_0 + \beta_1 x ,
-	\]and equivalently:
-	\[\frac{\pi(x)} {1 - \pi(x)} = e^{(\beta_0 + \beta_1 x)}.
-	\]
-	%======================================================%
-	
-	
-	%---------------------------%
-	
-	
-
-	\subsection{About logits}
-	
-	
-	There is a direct relationship between the coefficients produced by \textbf{logit} and the odds ratios produced by the logistic procedure.  First, let's define what is meant by a logit:  A logit is defined as the log base e (log) of the odds,
-	\[logit(p) = log(odds) = log(p/q)\]
-	Logistic regression is in reality ordinary regression using the logit as the response variable,
-	
-	\[logit(p) = log(p/q) = b_0 + b_1X\]
-	
-	This means that the coefficients in logistic regression are in terms of the log odds, that is, the coefficient 1.694596 implies that a one unit change in gender results in a 1.694596 unit change in the log of the odds.  
-	
-	Equation [3] can be expressed in odds by getting rid of the log.  This is done by taking e to the power for both sides of the equation.
-	\[ p/q = e^{b_0 + b_1}\]
-	The end result of all the mathematical manipulations is that the odds ratio can be computed by raising e to the power of the logistic coefficient,
-	\[OR = e^b = e^1.694596 = 5.44\]
-	
-	
-	%---------------------------------------------------------- %
-	\newpage
-	
-
-	\subsection{The Sigmoid Graph}
-	While logistic regression gives each predictor (IV) a coefficient \textbf{b} which measures its
-	independent contribution to variations in the dependent variable, the dependent variable
-	can only take on one of the two values: 0 or 1.
-	
-	What we want to predict from a knowledge of relevant independent variables and coefficients is therefore not a numerical value of a
-	dependent variable as in linear regression, but rather the probability (p) that it is 1 rather
-	than 0 (belonging to one group rather than the other). But even to use probability as the dependent variable is unsound, mainly because numerical predictors may be unlimited in range. If we expressed p as a linear function of investment, we might then find ourselves predicting that p is greater than 1 (which cannot be true, as
-	probabilities can only take values between 0 and 1). Additionally, because logistic regression
-	has only two y values – in the category or not in the category – a straight line best fit (as in
-	linear regression) is not possible to draw.
-	\subsection{Hypothetical Example}
-	\begin{itemize}
-		\item 	Consider the following hypothetical example:
-		200 accountancy first year students are graded on a pass-fail dichotomy on the end of the
-		semester accountancy exam. 
-		\item At the start of the course, they all took a maths pre-test with
-		results reported in interval data ranging from 0–50 – the higher the pretest score the more
-		competency in maths. 
-		\item Logistic regression is applied to determine the relationship between
-		maths pretest score (IV or predictor) and whether a student passed the course (DV). 
-		\item Students
-		who passed the accountancy course are coded 1 while those who failed are coded 0.
-	\end{itemize}
-	
-	\begin{center}
-		\begin{figure}[h!]
-			% Requires \usepackage{graphicx}
-			\includegraphics[scale=1.1]{images/Logistic1}\\
-			\caption{Accountancy Exam Results}
-		\end{figure}
-	\end{center}
-	
-	We can see from Figure 1 of the plotted ‘x’s’ that there is somewhat greater likelihood
-	that those who obtained above average to high score on the maths test passed the accountancy course, while below average to low scorers tended to fail. There is also an overlap in
-	the middle area. But if we tried to draw a straight (best fitting) line, as with linear regression,
-	it just would not work, as intersections of the maths results and pass/fail accountancy results
-	form two lines of x’s, as in Figure 1.
-	%
-	%\begin{figure}
-	%  % Requires \usepackage{graphicx}
-	%  \includegraphics[width=0.40]{Logistic2.jpeg}\\
-	%  \caption{Figure 2}
-	%\end{figure}
-	\begin{center}
-		\begin{figure}
-			% Requires \usepackage{graphicx}
-			\includegraphics[scale=0.8]{images/Logistic2}\\
-			\caption{Accountancy Exam Results - Fitted Curve}
-		\end{figure}
-	\end{center}
-	\begin{itemize}
-		\item 	The solution is to convert or transform these results into probabilities. We might compute
-		the average of the Y values at each point on the X axis. We could then plot the probabilities
-		of Y at each value of X and it would look something like the wavy graph line superimposed
-		on the original data in Figure 2. This is a smoother curve, and it is easy to see that the
-		probability of passing the accountancy course (Y axis) increases as values of X increase.
-		\item What we have just done is transform the scores so that the curve now fits a cumulative
-		probability curve, i.e. adding each new probability to the existing total. As you can see, this
-		curve is not a straight line; it is more of an s-shaped curve (A sigmoid curve).
-		
-		\item Predicted values are interpreted as probabilities and are now not just two conditions with a value of either 0 or 1 but continuous data that can take any value from 0 to 1.
-		The slope of the curve in Figure 2 is low at the lower and upper extremes of the
-		independent variable and greatest in the middle where it is most sensitive. 
-		\item In the middle, of
-		course, are a number of cases that are out of order, in the sense that there is an overlap with
-		average maths scores in both accountancy pass and fail categories, while at the extremes are
-		cases which are almost universally allocated to their correct group. The outcome is not a prediction of a Y value, as in linear regression, but a probability of belonging to one of two conditions
-		of Y, which can take on any value between 0 and 1 rather than just 0 and 1 in Figure 1.
-		
-	\end{itemize}
-
-%	\subsubsection{Log transformation}
-%	Unfortunately a further mathematical transformation – a log transformation – is needed
-%	to normalize the distribution. Transformations, such as log transformations and
-%	square root transformations transform non-normal/skewed distributions closer to normality.
-%	
-%	This log transformation of the p values to a log distribution enables us to create a link with the normal regression equation. The log distribution (or logistic transformation of p) is also called the logit of p or \textbf{\textit{logit(p)}}.
-%	
-
-	
-\newpage
 	\subsection*{South Africa Heart Disease Data Example}
 	
 	\begin{framed}
@@ -377,8 +250,469 @@
 	\end{itemize}	
 	The likelihood ratio test is also used to determine whether an effect exists.
 	]
+\newpage
+\section{Logistic Regression}
+Logistic regression determines the impact of multiple independent variables
+presented simultaneously to predict membership of one or other of the two
+dependent variable categories.
+
+\subsection{The purpose of logistic regression}
+\begin{itemize}
+	\item The crucial limitation of linear regression is that it cannot deal with Dependent Variables’s that are \textbf{\textit{dichotomous}} and categorical. Many interesting variables in the business world are dichotomous: for
+	example, consumers make a decision to buy or not buy (\textit{\textbf{Buy/Don't Buy}}), a product may pass or fail quality control (\textit{\textbf{Pass/Fail}}), there are good or poor credit risks (\textit{\textbf{Good/Poor}}), an employee may be promoted or not (\textit{\textbf{Promote/Don't Promote}}).
+	
+	\item 	A range of regression techniques have been developed for analysing data with categorical dependent
+	variables, including logistic regression and discriminant analysis (Hence referred to as DA, which is the next section of course).
+	
+	\item 	Logistical regression is regularly used rather than discriminant analysis when there are only two categories
+	for the dependent variable. Logistic regression is also easier to use with SPSS than DA when
+	there is a mixture of numerical and categorical Independent Variables’s, because it includes procedures for
+	generating the necessary dummy variables automatically, requires fewer assumptions, and
+	is more statistically robust. DA strictly requires the continuous independent variables  (though dummy variables can be used as in multiple regression). Thus, in instances where
+	the independent variables are categorical, or a mix of continuous and categorical, and the
+	DV is categorical, logistic regression is necessary.
+\end{itemize}
+
+
+\subsection{Use of Binomial Probability Theory}
+\begin{itemize}
+	\item Since the dependent variable is dichotomous we cannot predict a numerical value for it
+	using logistic regression, so the usual regression least squares deviations criteria for best fit
+	approach of minimizing error around the line of best fit is inappropriate.
+	
+	\item 	Instead, logistic regression employs binomial probability theory in which there are only two values to
+	predict: that probability (p) is 1 rather than 0, i.e. the event/person belongs to one group
+	rather than the other.
+	\item Logistic regression forms a best fitting equation or function using the
+	maximum likelihood method (not part of course), which maximizes the probability of classifying the observed
+	data into the appropriate category given the regression coefficients.
+\end{itemize}
+
+
+\section{Introduction to Logistic Regression}
+\begin{itemize}
+	\item Logistic regression or logit regression is a type of probabilistic statistical classification model.
+	
+	\item It is also used to predict a binary response from a binary predictor, used for predicting the outcome of a categorical dependent variable (i.e., a class label) based on one or more predictor variables (features). 
+	
+	\item That is, it is used in estimating empirical values of the parameters in a qualitative response model. The probabilities describing the possible outcomes of a single trial are modeled, as a function of the explanatory (predictor) variables, using a logistic function. 
+	
+	\item Logistic regression, also called a logit model, is used to model \textbf{dichotomous (i.e. Binary) outcome variables}. In the logit model the log odds of the outcome is modeled as a linear combination of the predictor variables.
+	
+	\item 
+	Binary Logistic regression is used to determine the impact of multiple independent variables
+	presented simultaneously to predict membership of one or other of the two
+	dependent variable categories.
+	\item Logistic regression determines the impact of multiple independent variables
+	presented simultaneously to predict membership of one or other of the two
+	dependent variable categories.
+	\item However, if your dependent variable was not measured on a dichotomous scale, but a continuous scale instead, you will need to carry out \textbf{multiple regression}, whereas if your dependent variable was measured on an ordinal scale, \textbf{ordinal regression} would be a more appropriate starting point.
+\end{itemize}
+
+
+
+\section*{Introduction to Logistic Regression}
+
+The term ‘\textbf{\textit{generalized linear model}}’ is used to describe a procedure for
+transforming the dependent variable so that the ‘right hand side’ of the model
+equation can be interpreted as a \textbf{‘\textit{linear combination}}’ of the explanatory variables. 	In logistic regression, the logit may be computed in a manner similar to linear regression:
+\[ \eta_i = \beta_0 + \beta_1x_1 + \beta_2x_2 + \ldots  \]
+
+In situations where the dependent (y) variable is continuous and can be
+reasonably assumed to have a normal distribution we do not transform the y
+variable at all and we can simply run a multiple linear regression analysis.
+
+Otherwise some sort of transformation is applied.
+
+
+%---------------------------------------------------------------%
+\subsection{Binomial Logistic Regression} 
+A binomial logistic regression (often referred to simply as logistic regression), predicts the probability that an observation falls into one of two categories of a \textbf{dichotomous} dependent variable based on one or more independent variables that can be either continuous or categorical.
+
+% \section{Binomial Logistic Regression}
+Binomial logistic regression estimates the probability of an event (as an example, having heart disease) occurring. 
+\begin{itemize}
+	\item If the estimated probability of the event occurring is greater than or equal to 0.5 (better than even chance), the procedure classifies the event as occurring (e.g., heart disease being present). \item If the probability is less than 0.5, Logistic regression classifies the event as not occurring (e.g., no heart disease). 
+\end{itemize}
+
+\subsection{Examples of Logistic Regression}
+
+\begin{description}
+	\item[Example 1:]  Suppose that we are interested in the factors that influence whether a political candidate wins an election.  The outcome (response) variable is binary (0/1); \textit{ win or lose}.  The predictor variables of interest are the amount of money spent on the campaign, the amount of time spent campaigning negatively and whether or not the candidate is an incumbent.
+	
+	\item[Example 2:]  A researcher is interested in how variables, such as GRE (Graduate Record Exam scores), GPA (grade point average) and prestige of the undergraduate institution, effect admission into graduate school. The response variable, \textit{admit/don't admit}, is a binary variable.
+\end{description}
+
+
+\subsection{Assumptions of logistic regression}
+
+
+\begin{description}
+	\item[Assumption 1:] Your dependent variable should be measured on a \textbf{dichotomous scale}. Examples of dichotomous variables include gender (two groups: "males" and "females"), presence of heart disease (two groups: "yes" and "no"), personality type (two groups: "introversion" or "extroversion"), body composition (two groups: "obese" or "not obese"), and so forth. \\
+	\newline
+	
+	
+	\item[Assumption 2:] You have one or more independent variables, which can be either continuous (i.e., an interval or ratio variable) or categorical (i.e., an ordinal or nominal variable). 
+	
+	
+	
+	\item[Assumption 3:] You should have independence of observations and the dependent variable should have mutually exclusive and exhaustive categories.
+	
+	\item[Assumption 4:] There needs to be a linear relationship between any continuous independent variables and the logit transformation of the dependent variable. 
+\end{description}
+\begin{itemize}
+	\item Logistic regression does not assume a linear relationship between the dependent and
+	independent variables.
+	\item The dependent variable must be a dichotomy (2 categories).
+	\textit{(Remark: Dichotomous refers to two outcomes. Multichotomous refers to more than two outcomes)}.
+	\item The independent variables need not be interval, nor normally distributed, nor linearly
+	related, nor of equal variance within each group.
+	\item The categories (groups) must be mutually exclusive and exhaustive; a case can only be
+	in one group and every case must be a member of one of the groups.
+	\item Larger samples are needed than for linear regression because maximum likelihood
+	coefficients are large sample estimates. A minimum of 50 cases per predictor is
+	recommended.
+\end{itemize}	
+%----------------------------------------------------------------------------------------%
+
+\begin{framed}
+	\subsection*{Types of Variables (Revision)}
+	\begin{itemize}
+		\item Examples of \textbf{continuous variables} include revision time (measured in hours), intelligence (measured using IQ score), exam performance (measured from 0 to 100), weight (measured in kg), and so forth. 
+		
+		\item Examples of \textbf{ordinal variables} include \textit{Likert} items (e.g., a 7-point scale from "strongly agree" through to "strongly disagree"), amongst other ways of ranking categories (e.g., a 3-point scale explaining how much a customer liked a product, ranging from "Not very much" to "Yes, a lot"). 
+		\item Examples of \textbf{nominal variables} include gender (e.g., 2 groups: male and female), ethnicity (e.g., 3 groups: Caucasian, African American and Hispanic), profession (e.g., 5 groups: surgeon, doctor, nurse, dentist, therapist), and so forth.
+	\end{itemize}
+\end{framed}
+
+
+
+
+
+
+\subsection*{Logistic function} 
+
+The logistic function, with $\beta_0 + \beta_1 x$ on the horizontal axis and $\pi(x)$ on the vertical axis
+An explanation of logistic regression begins with an explanation of the logistic function, which always takes on values between zero and one:
+\[
+F(t) = \frac{e^t}{e^t+1} = \frac{1}{1+e^{-t}},
+\]
+and viewing $t$ as a linear function of an explanatory variable x (or of a linear combination of explanatory variables), the logistic function can be written as:
+\[\pi(x) = \frac{e^{(\beta_0 + \beta_1 x)}} {e^{(\beta_0 + \beta_1 x)} + 1} = \frac {1} {1+e^{-(\beta_0 + \beta_1 x)}}.
+\]
+This will be interpreted as the probability of the dependent variable equalling a ``success" or ``case" rather than a failure or non-case. We also define the inverse of the logistic function, the logit:
+\[g(x) = \log \frac {\pi(x)} {1 - \pi(x)} = \beta_0 + \beta_1 x ,
+\]and equivalently:
+\[\frac{\pi(x)} {1 - \pi(x)} = e^{(\beta_0 + \beta_1 x)}.
+\]
+%======================================================%
+
+
+%---------------------------%
+
+
+%------------------------------------------------------------------------------------%
+\section{Logistic Regression}
+Logistic regression, also called a logit model, is used to model \textbf{dichotomous outcome} variables. 
+In the logit model the \textbf{log odds} of the outcome is modeled as a linear combination of the predictor variables.
+
+In logistic regression theory, the predicted dependent variable is a function of the probability that a particular subject will be in one of the categories (for example, the probability that a patient has the disease, given his or her set of scores on the predictor variables).
+
+\subsection{Dummy variables}
+When an explanatory variable is categorical we can use \textbf{dummy variables} to contrast
+the different categories. For each variable we choose a baseline category and then
+contrast all remaining categories with the base line. If an explanatory variable
+has k categories, we need k-1 dummy variables to investigate all the differences in
+the categories with respect to the dependent variable.
+
+For example suppose the explanatory variable was \textbf{\textit{housing}} coded like this:
+\begin{itemize}
+	\item[1:] Owner occupier
+	\item[2:] renting from a private landlord
+	\item[3:] renting from the local authority
+\end{itemize}
+
+We would therefore need to choose a baseline category and create two dummy
+variables. For example if we chose owner occupier as the baseline category we
+would code the dummy variables (House1 and House2) like this
+
+%Tenure: &House1 &House2\\
+%Owner occupier &0& 0\\
+%Rented private &1 &0\\
+%Rented local authority &0 &1\\
+
+\subsection{Log Likelihood}
+A ``likelihood" is a probability, specifically the probability that the observed values of the dependent may be predicted from the observed values of the independents. 
+
+Like any probability, the likelihood varies from 0 to 1. The log likelihood (LL) is its log and varies from 0 to minus infinity (it is negative because the log of any number less than 1 is negative). LL is calculated through iteration, using maximum likelihood estimation (MLE).
+
+
+\subsection{Maximum Likelihood Estimation}
+\begin{itemize}
+	\item Maximum likelihood estimation, MLE, is the method used to calculate the logit coefficients. This contrasts to the use of ordinary least squares (OLS) estimation of coefficients in regression. OLS seeks to minimize the sum of squared distances of the data points to the regression line. 
+	\item MLE seeks to maximize the log likelihood, LL, which reflects how likely it is (the odds) that the observed values of the dependent may be predicted from the observed values of the independents. (Equivalently MLE seeks to minimize the -2LL value.)
+	
+	\item MLE is an iterative algorithm which starts with an initial arbitrary ``guesstimate" of what the logit coefficients should be, the MLE algorithm determines the direction and size change in the logit coefficients which will increase LL. 
+	\item After this initial function is estimated, the residuals are tested and a re-estimate is made with an improved function, and the process is repeated (usually about a half-dozen times) until convergence is reached (that is, until LL does not change significantly). There are several alternative convergence criteria.
+\end{itemize}
+
+
+
+
+\subsection*{Wald Test}
+\begin{itemize}
+	\item 	The Wald test is a way of testing the signi®cance of particular explanatory variables in a statistical model. In logistic regression we have a binary outcome variable and one or more explanatory variables. For each explanatory variable in the model there will be an associated parameter.
+	\item 	The Wald test, described by Polit (1996) and Agresti (1990), is one of a number of ways of testing whether the parameters associated with a group of
+	explanatory variables are zero.
+	
+	\item 	If for a particular explanatory variable, or group of explanatory variables, the Wald test is significant, then we would conclude that the parameters associated with these variables are not zero, so that the variables should be included in the model. If the Wald test is not significant then these explanatory variables can be omitted from the model. When considering a single explanatory variable, Altman (1991) uses a t-test to check whether the parameter is significant. 
+	
+	\item 		For a single parameter the Wald statistic is just the square of the t-statistic and so will give exactly equivalent results.
+	An alternative and widely used approach to testing the significance of a number of explanatory variables is to use the likelihood ratio test. This is
+	appropriate for a variety of types of statistical models. Agresti (1990) argues that the likelihood ratio test is better, particularly if the sample size is small or the parameters are large.
+\end{itemize}
+
+
+The Wald Test is a statistical test used to determine whether an effect exists or not,
+
+It tests whether an independent variable has a statistically significant relationship with a dependent variable.
+
+It is used in a great variety of different models including models for dichotomous variables and model for continuous
+variables.
+
+\begin{itemize}
+	\item $\hat{\theta}$ Maximum likelihood estimate of the parameter of interest $\theta$
+	\item $\theta_o$ Proposed value.
+	This is an assumption of the fact that the differences between $\hat{\theta}$ and $\theta_o$ is normal.
+	
+	Univariate case
+	\[ \frac{(\hat{\theta} - \theta_o )^2}{\mbox{var}(\hat{\theta})} \sim \chi^2 \]
+	\[ \frac{(\hat{\theta} - \theta_o )^2}{\mbox{s.e.}(\hat{\theta})} \sim \mbox{Normal} \]
+\end{itemize}	
+The likelihood ratio test is also used to determine whether an effect exists.
+]
 
 %============================================================================================%
+
+
+	\section{Wald statistic}
+\begin{itemize}
+	\item Alternatively, when assessing the contribution of individual predictors in a given model, one may examine the significance of the Wald statistic. The Wald statistic, analogous to the t-test in linear regression, is used to assess the significance of coefficients. 
+	\item Alternatively, when assessing the contribution of individual predictors in a given model, one may examine the significance of the Wald statistic. The Wald statistic, analogous to the t-test in linear regression, is used to assess the significance of coefficients. 
+	
+	\item The Wald statistic is commonly used to test the significance of individual logistic regression coefficients for each independent variable (that is, to test the null hypothesis in logistic regression that a particular logit (effect) coefficient is zero). 
+	
+	\item The Wald Statistic is the ratio of the unstandardized logit coefficient to its standard error. The Wald statistic and its corresponding p probability level is part of SPSS output in the section \textbf{\textit{Variables in the Equation.}} This corresponds to significance testing of b coefficients in OLS regression. The researcher may well want to drop independents from the model when their effect is not significant by the Wald statistic.
+	
+	\item The Wald statistic is the ratio of the square of the regression coefficient to the square of the standard error of the coefficient and is asymptotically distributed as a chi-square distribution.
+	
+	\[W_j = \frac{B^2_j} {SE^2_{B_j}}\]
+	
+	\item Although several statistical packages (e.g., SPSS, SAS) report the Wald statistic to assess the contribution of individual predictors, the Wald statistic has limitations. 
+	\item When the regression coefficient is large, the standard error of the regression coefficient also tends to be large increasing the probability of Type-II error. 
+	
+	\item The Wald statistic is the ratio of the square of the regression coefficient to the square of the standard error of the coefficient and is asymptotically distributed as a chi-square distribution.
+	
+	\item The Wald statistic also tends to be biased when data are sparse.
+\end{itemize}
+% Wald Test?
+%--------------------------------------------------------%
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/waldtest}
+	\caption{}
+	\label{fig:waldtest}
+\end{figure}
+
+\subsection{The Wald Test}
+\begin{itemize}
+	\item The Wald test is a way of testing the significance of particular predictor variables in a statistical model. 
+	
+	\item In logistic regression we have a binary outcome variable and one or more explanatory variables. For each predictor variable in the model there will be an associated parameter. The Wald test is one of a number of ways of testing whether the parameters associated with a group of explanatory variables are zero.
+	%, described by Polit (1996) and Agresti (1990), 
+	
+	\item If for a particular explanatory variable, or group of explanatory variables, the Wald test is significant, then we would conclude that the parameters associated with these variables are not zero, so that the variables should be included in the model. If the Wald test is not significant then these explanatory variables can be omitted from the model. 
+	
+	\item When considering a single explanatory variable, Altman (1991) uses a t-test to check whether the parameter is significant. For a single parameter the Wald statistic is just the square of the t-statistic and so will give exactly equivalent results.
+	
+	\item An alternative and widely used approach to testing the significance of a number of explanatory variables is to use the likelihood ratio test. This is appropriate for a variety of types of statistical models. 
+	
+	\item Agresti (1990) argues that the likelihood ratio test is better, particularly if the sample size is small or the parameters are large.
+\end{itemize}
+
+
+
+%-------------------------------------------%
+\newpage
+\subsection{Variable Selection}
+Like ordinary regression, logistic regression provides a coefficient \textbf{b} estimates, which measures
+each IV’s partial contribution to variations in the response variables. The goal is to correctly predict
+the category of outcome for individual cases using the most parsimonious model.
+
+To accomplish this goal, a model (i.e. an equation) is created that includes all predictor variables that are useful in predicting the response variable. Variables can, if necessary, be entered into the model in the order specified by the researcher in a stepwise fashion like regression.
+
+There are two main uses of logistic regression:
+\begin{itemize}
+	\item The first is the prediction of group membership. Since logistic regression calculates the
+	probability of success over the probability of failure, the results of the analysis are in
+	the form of an \textbf{odds ratio}.
+	\item Logistic regression also provides knowledge of the relationships and strengths among
+	the variables (e.g. playing golf with the boss puts you at a higher probability for job
+	promotion than undertaking five hours unpaid overtime each week).
+\end{itemize}
+
+
+
+\subsection{Exercise Data Set}
+The exercise data set comes from a survey of home owners
+conducted by an electricity company about an offer of roof solar panels with a 50\% subsidy
+from the state government as part of the state’s environmental policy. The variables involve
+household income measured in units of a thousand dollars, age, monthly mortgage, size of
+family household, and as the dependent variable, whether the householder would take or decline the offer.
+The purpose of the exercise is to conduct a logistic regression to determine whether family
+size and monthly mortgage will predict taking or declining the offer.
+
+For the first demonstration, we will use `family size’ and
+`mortgage’ only. For the options, select Classification Plots, Hosmer-Lemeshow Goodness
+Of Fit, Casewise Listing Of Residuals and select Outliers Outside 2sd. Retain default
+entries for probability of stepwise, classification cutoff and maximum iterations.
+
+\begin{figure}[h!]
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.8]{images/Logistic10}\\
+		\caption{Selected Options for Exercises}
+	\end{center}
+\end{figure}
+
+We are not using any categorical variables this time. If there are categorical variables, use the \textbf{\textit{categorical}} option. For most situations, choose the ‘indicator’ coding scheme (it is the
+default).
+\subsection{SPSS Outout  - Block 0: Beginning Block.}
+Block 0 presents the results with only the constant included
+before any coefficients (i.e. those relating to family size and mortgage) are entered into
+the equation. Logistic regression compares this model with a model including all the
+predictors (family size and mortgage) to determine whether the latter model is more
+appropriate. The table suggests that if we knew nothing about our variables and guessed
+that a person would not take the offer we would be correct 53.3\% of the time.
+\begin{figure}[h!]
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.6]{images/Logistic3}\\
+		\caption{Classification table}
+	\end{center}
+\end{figure}
+The variables not in the equation table tells us whether each IV improves the model. The answer is yes for both variables, with family size slightly better than mortgage size, as both are significant and if included would add to the predictive power of the model. If they had not been significant and able to contribute to the prediction,
+then termination of the analysis would obviously occur at this point
+
+\begin{figure}
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.6]{images/Logistic4}\\
+		\caption{Variables in / not in the equation}
+	\end{center}
+\end{figure}
+This presents the results when the predictors ‘family size’ and
+‘mortgage’ are included. Later SPSS prints a classification table which shows how the
+classification error rate has changed from the original 53.3%. By adding the variables
+we can now predict with 90\% accuracy (see Classification Table later). The
+model appears good, but we need to evaluate model fit and significance as well. SPSS will
+offer you a variety of statistical tests for model fit and whether each of the independent
+variables included make a significant contribution to the model.
+\begin{figure}
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.6]{images/Logistic5}\\
+		\caption{Test Outcomes}
+	\end{center}
+\end{figure}
+
+
+%The likelihood function can be thought of as a measure of how well a candidate model fits the data (although that is a very simplistic definition). The AIC criterion is based on the Likelihood function.
+%The likelihood function of a fitted model is commonly re-expressed as -2LL (i.e. The log of the likelihood times minus 2).
+
+%The difference between –2LL for the best-fitting model and –2LL for the null hypothesis model (in which all the b values are set to zero in block 0) is distributed like
+%chi squared, with degrees of freedom equal to the number of predictors; this difference
+%is the Model chi square that SPSS refers to. Very conveniently, the difference between –2LL values for models with successive terms added also has a chi squared distribution,
+%so when we use a stepwise procedure, we can use chi-squared tests to find out if adding
+%one or more extra predictors significantly improves the fit of our model.
+
+
+
+\subsection{Logistic Regression: Decision Rule}
+Our decision rule will take the following form: If the probability of the event is greater than or equal to some threshold, we shall predict that the event will take place. By default, SPSS sets this threshold to .5. While that seems reasonable, in many cases we may want to set it higher or lower than .5.
+
+%---------------------------------------------------------- %
+
+\subsection{SPSS Output}
+\begin{itemize}
+	\item The variable Vote2005 is a binary variable describing turnout at a general election. The predictor variables are gender and age.
+	\begin{center}
+		\begin{figure}[h!]
+			% Requires \usepackage{graphicx}
+			\includegraphics[scale=0.6]{LogWeek10B}\\
+			\caption{General Election 2005}
+		\end{figure}
+	\end{center}
+	
+	% Image LogWeek10-B
+	
+	\[\mbox{logit(vote2005)} = -.779 + .077\mbox{gender(1)}+.037\mbox{age}\]
+	
+	\item The age coefficient is statistically significant. Exp(B) for age is 1.038, which
+	means for each year different in age, the person is 1.038 times more likely to turn
+	out to vote, having allowed for gender in the model. Eg. a 21 year old is 1.038
+	times as likely to turn out to vote than a 20 year old. \item This might not seem much
+	of a difference but a 20 year difference leads to a person being $1.038^20 = 2.11$
+	times more likely to turn out to vote. E.g. a 40 year old is 2.11 times more likely to
+	turn out to vote than a 20 year old, having allowed for gender in the model.
+	
+	
+	\item The gender coefficient is not statistically significant.
+	
+	
+\end{itemize}
+
+%-------------------------------------------%
+
+
+\subsection{Hosmer-Lemeshow Prostate Example}
+We will now consider a real life example to demonstrate Logistic Regression. This example is taken from a Prostate Cancer Study from Hosmer and Lemeshow (2000). The goal of the analysis is to determine if variables
+measured at baseline can predict whether a tumour has penetrated the prostatic capsule. The variables are as follows:
+\begin{center}
+	\begin{figure}[h!]
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.6]{LogWeek10C}\\
+		\caption{Variables}
+	\end{figure}
+\end{center}
+\subsection{Kasser and Bruce Infarction Data Example}
+We use a set of coronary data (Kasser and Bruce, 1969;
+Kronmal and Tarter, 1974) to see if age, history of angina pectoris (ANGINA:
+yes, no), history of high blood pressure (HIGHBP: yes, no), and functional class
+(FUNCTION: none, minimal, moderate, and more than moderate) can be used to
+predict the probability of past myocardial infarction (INFARCT: yes, no).
+
+
+
+\subsection{The Likelihood Ratio Test}
+The likelihood ratio test to test this hypothesis is based on the likelihood
+function. We can formally test to see whether inclusion of an explanatory variable in a model tells us
+more about the outcome variable than a model that does not include that variable. Suppose
+we have to evaluate two models. 
+\begin{center}
+	\begin{figure}[h!]
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.75]{LogWeek10D}\\
+		\caption{Variables}
+	\end{figure}
+\end{center}
+Here, Model 1 is said to be nested within Model 2 – all the explanatory variables in Model 1
+(X1) are included in Model 2. We are interested in whether the additional explanatory
+variable in Model 2 ($X_2$) is required, i.e. does the simpler model (Model 1) fit the data just as
+well as the fuller model (Model 2). In other words, we test the null hypothesis that $\beta_2 = 0$
+against the alternative hypothesis that $\beta_2 \neq 0$. 
+
+
 
 	\section{Wald statistic}
 	\begin{itemize}
@@ -599,6 +933,111 @@ against the alternative hypothesis that $\beta_2 \neq 0$.
 
 
 
+\section{Summary of Logistic Regression}
+logistic regression or logit regression is a type of regression analysis used for predicting
+the outcome of a categorical dependent variable (a dependent variable that can take on a limited number of values,
+whose magnitudes are not meaningful but whose ordering of magnitudes may or may not be meaningful)
+based on one or more predictor variables.
+
+
+
+\begin{itemize}
+	\item[(1.)] Logistic regression is intended for the modeling
+	of dichotomous categorical outcomes (e.g., characterized by binary responses: buy vs Don't buy, dead vs. alive, cancer vs. none,…).
+	
+	
+	\item[(2.)] We want to predict the probability of a particular response  (0 to 1 scale).
+	
+	\item[(3.)] For binary responses, linear regression should not be used for several reasons
+	but the most common-sense reason is that linear regression can provide predictions NOT on a 0 to 1 scale.
+	but rather a predicted response of some numeric value (e.g 2.4 or -800.3).
+	
+	\item[(4.)] We need a way to link the probabilistic response variable to the continuous and/or categorical predictors and
+	keep things on this 0 to 1 scale.
+	
+	\item[(5.)] Logistic regression winds up transforming the probabilities to odds and then taking the natural logarithm of these odds, called logits.
+	
+	
+	\item[(6.)] Suppose a response variable is passing a test (by convention, 0=no and 1=yes).
+	You have 1 predictor - number of days present in class over the past 30 days.
+	Suppose the regression coefficient (often just called beta) in the output is 0.14.
+	You would then say that, on average, as class presence increases by 1 day, the natural logarithm of the
+	odds of passing the test increases by 0.14.
+	
+	\item[7.)] For the interpretation, you can just talk about the odds.
+	Most computer output will give you this number.
+	Suppose the answer in odds is 1.24. Then, you just say that,on average, as class presence increases by 1 day,
+	the odds of passing the test are multiplied by 1.24.
+	In other words, for each additional day present, the odds of passing are 24% greater than that of not passing.
+	
+	\item[8.)] To validate our findings, normally, we test whether the regression coefficient is equal to zero in the population.
+	In logistic regression, the corresponding value for the odds is one (not zero). We got an odds of 1.24.
+	Can we trust this? Or should we go with one (which would mean that the odds are the same for both passing and not passing,
+	and hence class presence makes no difference at all)?  Look at the p-value (significance). If it less than .05 (by convention), you have enough evidence to reject
+	the notion that the odds are really one. You go ahead and support the 1.24 result.
+\end{itemize}
+
+
+%-------------------------------------------%
+
+
+
+
+
+%---------------------------------------------------------- %
+\subsection{Variables in the Equation}
+The Variables in the Equation table has several important elements. The Wald statistic and associated probabilities provide an index of the significance of each predictor in the equation.
+The simplest way to assess Wald is to take the significance values and if less
+than 0.05 reject the null hypothesis as the variable does make a significant contribution.
+In this case, we note that family size contributed significantly to the prediction
+(p = .013) but mortgage did not (p = .075). The researcher may well want to drop
+independents from the model when their effect is not significant by the Wald statistic
+(in this case mortgage).
+
+\begin{figure}
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.6]{images/Logistic8}\\
+		\caption{Variables in the Equation}
+	\end{center}
+\end{figure}
+
+The \textbf{\textit{Exp(B)}} column in the table presents the extent to which raising the corresponding measure by one unit influences the odds ratio. We can interpret \textbf{\textit{Exp(B)}}) in
+terms of the change in odds. If the value exceeds 1 then the odds of an outcome occurring increase; if the figure is less than 1, any increase in the predictor leads to a drop in
+the odds of the outcome occurring. For example, the \textbf{\textit{Exp(B)}} value associated with
+family size is 11.007. Hence when family size is raised by one unit (one person) the
+odds ratio is 11 times as large and therefore householders are 11 more times likely to
+belong to the take offer group.
+
+The \textbf{\textit{B}} values are the logistic coefficients that can be used to create a predictive
+equation (similar to the b values in linear regression) formula seen previously.
+\begin{figure}
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.75]{images/Logistic11}\\
+		\caption{Logistic Regression Equation}
+	\end{center}
+\end{figure}
+
+Here is an example of the use of the predictive equation for a new case. Imagine a
+householder whose household size including themselves was seven and paying
+a monthly mortgage of $2,500$ euros. Would they take up the offer, i.e. belong to category 1?
+Substituting in we get:
+\begin{figure}
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.75]{images/Logistic12}\\
+		\caption{Logistic Regression Equation : Example}
+	\end{center}
+\end{figure}
+
+Therefore, the probability that a householder with seven in the household and a mortgage of 2,500 p.m. will take up the offer is 99\%, or 99\% of such individuals will be
+expected to take up the offer.
+Note that, given the non-significance of the mortgage variable, you could be justified
+in leaving it out of the equation. As you can imagine, multiplying a mortgage value by
+B adds a negligible amount to the prediction as its B value is so small (.005).
+
+\newpage
 \section{Summary of Logistic Regression}
 logistic regression or logit regression is a type of regression analysis used for predicting
 the outcome of a categorical dependent variable (a dependent variable that can take on a limited number of values,

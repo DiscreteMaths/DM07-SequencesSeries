@@ -44,20 +44,6 @@ A dummy variable is a numerical variable used in regression analysis to represen
 
 
 
-\section{Law of Parsimony}
-\subsection{The Law of Parsimony}
-Ockham's razor, sometimes known as the law of parsimony, is simply a maxim that states that simple explanations are usually better than complicated ones. \textbf{Ockham's razor} was originally proposed by a monk named William of Ockham. (He did not call it "Ockham's razor" or even "my razor." This is a name that has been given to it over time.)
-
-Another version of this principle is the Law of parsimony . This says that if you are choosing between two theories, choose the one with the fewest assumptions. Assumptions here means claims of fact that have no evidence.
-A theory that doesn't have many assumptions, and is very simple, is called a parsimonious theory.
-
-In the context of statistics, the law of parsimony can be interpreted as an adequate model which requires the fewest independent variables is the preferred model.
-\begin{framed}
-Parsimonious: The simplest plausible model with the fewest possible number of variables.
-\end{framed}
-
-
-
 
 \section{Training and validation}
 %http://www.jmp.com/support/help/Validation_2.shtml
@@ -75,55 +61,6 @@ In some cases you might want to use only training and test data. For example, yo
 
 
 
-
-
-
-
-
-\section{Theoretical Aspects of Fitting Models}
-
-
-
-\subsection{Model building}
-
-The traditional approach to statistical model building is to find the most parsimonious model that still explains the data. The more variables included in a model (overfitting), the more likely it becomes mathematically unstable, the greater the estimated standard errors become, and the more dependent the model becomes on the observed data. Choosing the most adequate and minimal number of explanatory variables helps to find out the main sources of influence on the response variable, and increases the predictive ability of the model. As a rule of thumb, there should be more than 10 observations for each variable in the model.
-%
-%The usual procedures used in variable selection in regression analysis are: univariate analysis of each variable (using C2 test), stepwise method (backward or forward elimination of variables; using the deviance difference), and best subsets selection. Once the essential main effects are chosen, interactions should be considered next. As in all model building situations in biostatistics, biological considerations should play a role in variable selection.
-
-
-\subsection{Overfitting}
-
-Overfitting occurs when a statistical model does not adequately describe of the underlying relationship between variables in a regression model. When overfitting happens, the model predicts the fitted data very well, but predicts future observations poorly.
-
-Overfitting generally occurs when the model is excessively complex, such as having too many parameters (i.e. predictor variables) relative to the number of observations. A model which has been overfit will generally have poor predictive performance, as it can exaggerate minor fluctuations in the data.
-
-%\section{Overfitting}
-%A modeling error which occurs when a function is too closely fit to a limited set of data points. Overfitting the model generally takes the form of making an overly complex model to explain idiosyncrasies in the data under study. In reality, the data being studied often has some degree of error or random noise within it. Thus attempting to make the model conform too closely to slightly inaccurate data can infect the model with substantial errors and reduce its predictive power.
-
-\subsection{Variable-Selection Procedures}
-
-In regression analysis, variable-selection procedures are aimed at selecting a reduced set of the independent variables - the ones providing the best fit to the model, in keeping with the Law of Parsimony.
-
-\subsection{Validation and Testing}
-When you have sufficient data, you can subdivide your data into three parts called the training, validation, and test data. Rather than estimating parameter values from the entire data set, the data set is broken into three distinct parts. During the \textbf{\textit{variable selection}} process, models are fit on the training data, and the prediction error for the models so obtained is found by using the validation data. Validation is the process of using part of a data set to estimate model parameters, and using the other part to assess the predictive ability of the model. Validation can be used to assess whether or not overfitting has occurred.
-
-This prediction error on the validation data can be used to decide when to terminate the selection process or to decide what effects to include as the variable selection process proceeds. Finally, once a selected model has been obtained, the test set can be used to assess how the selected model generalizes on data that played no role in selecting the model.
-
-\begin{framed}
-\begin{itemize}
-\item[1] The training set is the part that estimates model parameters.
-\item[2] The validation set is the part that assesses or validates the predictive ability of the model.
-\item[3] The test set is a final, independent assessment of the model's predictive ability.
-\end{itemize}
-\end{framed}
-\begin{itemize}
-	\item A validation set is a portion of a data set used to assess the performance of prediction or classification models that have been fit on a separate portion of the same data set (the training set). 
-	\item Typically both the training and validation set are randomly selected, and the validation set is used as a more objective measure of the performance of various models that have been fit to the the training data (and whose performance with the training set is therefore not
-	likely to be a good guide to their performance with data that they were not fit to).
-	
-\item It is difficult to give a general rule on how many observations you should assign to each role. One important textbook recommended that a typical split might be 50\% for training and 25\% each for validation and testing.
-	 
-\end{itemize}
 
 
 

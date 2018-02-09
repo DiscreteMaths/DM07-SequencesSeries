@@ -105,68 +105,22 @@ Sensitivity and specificity are measures of the performance of a binary classifi
 In a Receiver Operating Characteristic (ROC) curve the true positive rate (Sensitivity) is plotted in function of the false positive rate (100-Specificity) for different cut-off points. Each point on the ROC curve represents a sensitivity/specificity pair corresponding to a particular decision threshold. A test with perfect discrimination (no overlap in the two distributions) has a ROC curve that passes through the upper left corner (100\% sensitivity, 100\% specificity). Therefore the closer the ROC curve is to the upper left corner, the higher the overall accuracy of the test (Zweig and Campbell, 1993).
 
 \begin{figure}
-  % Requires \usepackage{graphicx}
-  \includegraphics[scale=0.7]{ROC1.png}\\
-  \caption{Receiver Operating Characteristic (ROC) curve }\label{ROC1}
+	\centering
+	\includegraphics[width=0.7\linewidth]{ROCcurve}
+	\caption{}
+	\label{fig:roccurve}
 \end{figure}
 
-
-%-----------------------------------------------------------------------%
-\subsection{Accuracy, Recall and Precision: An Example}
-Calculating precision and recall is actually quite easy. Imagine there are 135 positive cases among 10,000 cases. You want to predict which ones are positive, and you pick 265 to have a better chance of catching many of the 135 positive cases.  You record the IDs of your predictions, and when you get the actual results you sum up how many times you were right or wrong. There are four ways of being right or wrong:
-
-\begin{itemize}
-\item TN / True Negative: case was negative and predicted negative
-\item TP / True Positive: case was positive and predicted positive
-\item FN / False Negative: case was positive but predicted negative
-\item FP / False Positive: case was negative but predicted positive
-\end{itemize}
-
-Now count how many of the 10,000 cases fall in each category:
-\begin{center}
-\begin{tabular}{|c|c|c|}
-  \hline
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-&Predicted Negative & Predicted Positive\\
-Negative Cases & TN: 9,700 & FP: 165 \\
-Positive Cases & FN: 35 & TP: 100 \\
-
-  \hline
-\end{tabular}
-\end{center}
-
-
-What percent of your predictions were correct?
-
-\begin{itemize}
-\item The \textbf{accuracy} was (9,760+60) out of 10,000 = 98.00\%
-\end{itemize}
-
-What percent of the positive cases did you catch?
-
-\begin{itemize}
-\item The \textbf{recall} was 100 out of 135 = 74.07\%
-\end{itemize}
-
-What percent of positive predictions were correct?
-
-\begin{itemize}
-\item The \textbf{precision} was 100 out of 265 = 37.74\%
-\end{itemize}
-
-What percent of negative predictions were correct?
-
-\begin{itemize}
-\item The \textbf{specifity} was 9700 out of 9735 = 99.64\%
-\end{itemize}
-%-------------------------------------------------------------------------------------%
-
-\subsection{The F Score}
-
-The F-score or F-measure is a measure of a classification procedure's accuracy.
-It considers both the precision  and the recall to compute the score.
-
-\[ F = 2 \cdot \frac{\mathrm{precision} \cdot \mathrm{recall}}{\mathrm{precision} + \mathrm{recall}}\]
-
-\newpage
-%-------------------------------------------------------------------------------------%
+%----------------------------------------------------------------------------------%
+\subsection{Properties of ROC Curves}
+% ROC Curves
+% Specificity and Sensitivity
+An ROC curve demonstrates several things:
+\begin{enumerate}
+	\item It shows the tradeoff between sensitivity and specificity (any increase in sensitivity will be accompanied by a decrease in specificity).
+	\item The closer the curve follows the upper-left border of the ROC space, the more accurate the test.
+	\item The closer the curve comes to the 45-degree diagonal of the ROC space, the less accurate the test.
+	\item The slope of the tangent line at a cutpoint gives the likelihood ratio (LR) for that value of the test.
+	\item The area under the curve is a measure of accuracy.
+\end{enumerate}
+\end{document}

@@ -27,6 +27,79 @@
 %http://www.econ.upf.edu/~michael/stanford/maeb4.pdf
 %http://stn.spotfire.com/spotfire_client_help/hc/hc_distance_measures_overview.htm
 
+\begin{itemize}
+\item There are various measures to express (dis)similarity between pairs of objects.
+A straightforward way to assess two objects proximity is by drawing a straight line
+between them. This type of distance is also referred to as
+\textbf{\textit{Euclidean distance}} (or straight-line distance) and is the most commonly used type
+when it comes to analyzing ratio or interval-scaled data.
+\begin{figure}[h!]
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.6]{images/EuclidDistance1.jpg}\\
+	\end{center}
+\end{figure}
+
+The Euclidean distance is the square root of the sum of the squared differences in
+the variables values. Suppose B and C were positioned as $(7,6)$ and $(6,5)$ respectively.
+\begin{figure}[h!]
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.6]{images/EuclidDistance2.jpg}\\
+	\end{center}
+\end{figure}
+
+This distance corresponds to the length of the line that connects objects B and C.
+In this case, we only used two variables but we can easily add more under the root
+sign in the formula. However, each additional variable will add a dimension to our
+research problem (e.g., with ten clustering variables, we have to deal with ten
+dimensions), making it impossible to represent the solution graphically.
+
+\item  The \textbf{\textit{Squared Euclidean distance}} uses the same equation as the Euclidean distance metric, but does not take the square root. In the previous example, the squared Euclidean distance between B and C is 2.
+As a result, clustering with the Squared Euclidean distance is computationally faster than clustering with the regular Euclidean distance.
+
+\item We can compute the distance between all other pairs of objects. All
+these distances are usually expressed by means of a \textit{\textbf{distance matrix}}. In this distance
+matrix, the non-diagonal elements express the distances between pairs of objects
+and zeros on the diagonal (the distance from each object to itself is, of course, 0). In
+our example, the distance matrix is an $8 \times 8$ table with the lines and rows
+representing the objects under consideration.
+\begin{figure}[h!]
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.6]{images/DistanceMatrix.jpg}\\
+	\end{center}
+\end{figure}
+
+\item There are also alternative distance measures: The \textbf{\textit{Manhattan distance}} or city-block distance uses the sum of the variables absolute differences. This is often called the Manhattan metric
+as it is akin to the walking distance between two points in a city like New Yorks
+Manhattan district, where the distance equals the number of blocks in the directions
+North-South and East-West. Using the points B and C that we used previously, the manhattan distance is computed as follows:
+\begin{figure}[h!]
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.6]{images/Manhattan.jpg}\\
+	\end{center}
+\end{figure}
+
+
+\item When working with metric (or ordinal) data, researchers frequently use
+the \textbf{\textit{Chebychev distance}}, which is the maximum of the absolute difference in the
+clustering variables values. For B and C, this result is:
+
+\begin{figure}[h!]
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.6]{images/Chebyshev.jpg}\\
+	\end{center}
+\end{figure}
+
+\item There are other distance measures such as the Angular, Canberra or Mahalanobis
+distance. In many situations, the \textbf{\textit{Mahalanobis
+		distance}} is desirable as this measure compensates for \textbf{\textit{multi-collinearity}}
+between the clustering variables. However, it is unfortunately not menu-accessible
+in SPSS.
+\end{itemize}
 \section{Euclidean Distance}
 The Euclidean distance between two points, x and y, with $k$ dimensions is calculated as:
 \[ \sqrt{ \sum^{k}_{j=1} ( x_j - y_j)^2 } \]
@@ -147,6 +220,35 @@ The Manhattan Distance between the two points is 6.
 
 %--------------------------------------------------------------------------------------%
 \newpage
+\subsection*{Measures for Interval Data}
+The following dissimilarity measures are available for interval data:
+\begin{itemize}
+	
+	\item Euclidean distance. The square root of the sum of the squared differences between values for the items. This is the default for interval data. {Squared Euclidean distance is the default on the classroom version of SPSS.  This is reasonable given the warning below that SPSS puts in the output.} 
+	The squared Euclidean measure should be used when the CENTROID, MEDIAN, or WARD cluster method is requested.
+	\item 	Squared Euclidean distance. The sum of the squared differences between the values for the items. 
+	\item 	Pearson correlation. The product-moment correlation between two vectors of values. 
+	\item 	Cosine. The cosine of the angle between two vectors of values. 
+	\item 	Chebychev. The maximum absolute difference between the values for the items. 
+	\item 	Block. The sum of the absolute differences between the values of the item. Also known as Manhattan distance. 
+	\item 	Minkowski. The pth root of the sum of the absolute differences to the pth power between the values for the items. 
+	\item 	Customized. The rth root of the sum of the absolute differences to the pth power between the values for the items.
+\end{itemize}
+
+\section*{Measures for Interval Data}
+The following dissimilarity measures are available for interval data:
+\begin{itemize}
+	
+	\item Euclidean distance. The square root of the sum of the squared differences between values for the items. This is the default for interval data. {Squared Euclidean distance is the default on the classroom version of SPSS.  This is reasonable given the warning below that SPSS puts in the output.} 
+	The squared Euclidean measure should be used when the CENTROID, MEDIAN, or WARD cluster method is requested.
+	\item 	Squared Euclidean distance. The sum of the squared differences between the values for the items. 
+	\item 	Pearson correlation. The product-moment correlation between two vectors of values. 
+	\item 	Cosine. The cosine of the angle between two vectors of values. 
+	\item 	Chebychev. The maximum absolute difference between the values for the items. 
+	\item 	Block. The sum of the absolute differences between the values of the item. Also known as Manhattan distance. 
+	\item 	Minkowski. The pth root of the sum of the absolute differences to the pth power between the values for the items. 
+	\item 	Customized. The rth root of the sum of the absolute differences to the pth power between the values for the items.
+\end{itemize}
 \section{Cluster Analysis : Proximity Matrices}
 
 Using \textbf{\textit{nearest neighbour}} linkage, describe how the agglomeration schedule based on the following 
@@ -156,37 +258,37 @@ proximity matrix. With nearest neighbour, a case is assigned to the cluster of t
 % latex table generated in R 2.15.2 by xtable 1.7-1 package
 % Tue May 14 19:17:33 2013
 \begin{table}[ht]
-\centering
-\begin{tabular}{|r|rrrrrrrrrr|}
-  \hline
-Case & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
-  \hline
-1 & 0.00 & \textbf{4.82} & 89.39 & 85.97 & 46.26 & 71.87 & 56.42 & 23.75 & 31.57 & 11.70 \\
-  2 & \textbf{4.82} & 0.00 & 94.24 & 38.96 & \textbf{5.55} & 35.07 & 74.52 & 71.27 & 61.84 & \textbf{4.84} \\
-  3 & 89.39 & 94.24 & 0.00 & 57.65 & 27.27 & 25.31 & 20.89 & \textbf{2.84} & 63.50 & 89.39 \\
-  4 & 85.97 & 38.96 & 57.65 & 0.00 & \textbf{22.94} & \textbf{7.13} & 70.49 & 23.09 & \textbf{12.75} & 85.97 \\
-  5 & 46.26 & \textbf{5.55} & 27.27 & \textbf{22.94} & 0.00 & 39.44 & 17.43 & 79.22 & 14.47 & 46.26 \\
-  6 & 71.87 & 35.07 & 25.31 & \textbf{7.13} & 39.44 & 0.00 & 27.50 & 30.65 & 13.34 & 71.87 \\
-  7 & 56.42 & 74.52 & 20.89 & 70.49 & 17.43 & 27.50 & 0.00 & 91.16 & 44.92 & \textbf{6.42} \\
-  8 & 23.75 & 71.27 & \textbf{2.84} & 23.09 & 79.22 & 30.65 & 91.16 & 0.00 & \textbf{3.18} & 23.75 \\
-  9 & 31.57 & 61.84 & 63.50 & \textbf{12.75} & 14.47 & 13.34 & 44.92 & \textbf{3.18} & 0.00 & 31.57 \\
-  10 & 11.70 & \textbf{4.84} & 89.39 & 85.97 & 46.26 & 71.87 & \textbf{6.42} & 23.75 & 31.57 & 0.00 \\
-   \hline
-\end{tabular}
+	\centering
+	\begin{tabular}{|r|rrrrrrrrrr|}
+		\hline
+		Case & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+		\hline
+		1 & 0.00 & \textbf{4.82} & 89.39 & 85.97 & 46.26 & 71.87 & 56.42 & 23.75 & 31.57 & 11.70 \\
+		2 & \textbf{4.82} & 0.00 & 94.24 & 38.96 & \textbf{5.55} & 35.07 & 74.52 & 71.27 & 61.84 & \textbf{4.84} \\
+		3 & 89.39 & 94.24 & 0.00 & 57.65 & 27.27 & 25.31 & 20.89 & \textbf{2.84} & 63.50 & 89.39 \\
+		4 & 85.97 & 38.96 & 57.65 & 0.00 & \textbf{22.94} & \textbf{7.13} & 70.49 & 23.09 & \textbf{12.75} & 85.97 \\
+		5 & 46.26 & \textbf{5.55} & 27.27 & \textbf{22.94} & 0.00 & 39.44 & 17.43 & 79.22 & 14.47 & 46.26 \\
+		6 & 71.87 & 35.07 & 25.31 & \textbf{7.13} & 39.44 & 0.00 & 27.50 & 30.65 & 13.34 & 71.87 \\
+		7 & 56.42 & 74.52 & 20.89 & 70.49 & 17.43 & 27.50 & 0.00 & 91.16 & 44.92 & \textbf{6.42} \\
+		8 & 23.75 & 71.27 & \textbf{2.84} & 23.09 & 79.22 & 30.65 & 91.16 & 0.00 & \textbf{3.18} & 23.75 \\
+		9 & 31.57 & 61.84 & 63.50 & \textbf{12.75} & 14.47 & 13.34 & 44.92 & \textbf{3.18} & 0.00 & 31.57 \\
+		10 & 11.70 & \textbf{4.84} & 89.39 & 85.97 & 46.26 & 71.87 & \textbf{6.42} & 23.75 & 31.57 & 0.00 \\
+		\hline
+	\end{tabular}
 \end{table}
 
 
 \begin{itemize}
-\item The closest pair in terms of distance (2.84) are cases 3 and 8. So this is the first linkage.
-\item The next closest pair (3.18) are 8 and 9. The next linkage joins case 9 to 3 and 8.
-\item The next closest pair (4.82) are 1 and 2. So this is the next linkage. [ So far (3,8,9) and (2,10) ] 
-\item The next closest pair (4.84) are 2 and 10. The next linkage joins case 1 to 2 and 10.
-\item The next closest pair (5.55) are 2 and 5. The next linkage joins case 5 to 1, 2 and 10. [ So far (3,8,9) and (1,2,5,10)]
-\item The next closest pair (6.42) are 7 and 10. The next linkage joins case 7 to 1, 2, 5 and 10.
-\item The next closest pair (7.13) are 4 and 6. The next linkage joins case 4 to 6. [ So far (3,8,9), (4,6) and (1,2,5,10) All cases are in clusters. This is a 3 cluster solution. ]
-\item The next closest pair (11.70) are 1 and 10. Disregard, because they are already clustered together.
-\item The next closest pair (19.44) are 4 and 9. This joins cluster (4,6) to cluster (3,8,9) [ So far (3,4,6,8,9) and (1,2,5,10). This is a 2 cluster solution.]
-\item The next closest pairing is 4 and 5. This linkage joins all cases together in one cluster.
+	\item The closest pair in terms of distance (2.84) are cases 3 and 8. So this is the first linkage.
+	\item The next closest pair (3.18) are 8 and 9. The next linkage joins case 9 to 3 and 8.
+	\item The next closest pair (4.82) are 1 and 2. So this is the next linkage. [ So far (3,8,9) and (2,10) ] 
+	\item The next closest pair (4.84) are 2 and 10. The next linkage joins case 1 to 2 and 10.
+	\item The next closest pair (5.55) are 2 and 5. The next linkage joins case 5 to 1, 2 and 10. [ So far (3,8,9) and (1,2,5,10)]
+	\item The next closest pair (6.42) are 7 and 10. The next linkage joins case 7 to 1, 2, 5 and 10.
+	\item The next closest pair (7.13) are 4 and 6. The next linkage joins case 4 to 6. [ So far (3,8,9), (4,6) and (1,2,5,10) All cases are in clusters. This is a 3 cluster solution. ]
+	\item The next closest pair (11.70) are 1 and 10. Disregard, because they are already clustered together.
+	\item The next closest pair (19.44) are 4 and 9. This joins cluster (4,6) to cluster (3,8,9) [ So far (3,4,6,8,9) and (1,2,5,10). This is a 2 cluster solution.]
+	\item The next closest pairing is 4 and 5. This linkage joins all cases together in one cluster.
 \end{itemize}
 
 \end{document}

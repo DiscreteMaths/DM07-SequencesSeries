@@ -144,13 +144,7 @@ Precision = T P
 T P + F P
 (1)
 3
-\subsection{Recall}
-Recall is defined as the number of true positives divided by the total number of cases that actually
-belong to the positive class (i.e. the sum of true positives and false negatives, which are items
-which were not labeled as belonging to the positive class but should have been).
-Recall = T P
-T P + F N
-(2)
+
 \subsection{Accuracy, Recall and Precision: An Example}
 Suppose we are designing a medical diagnosis system, and we have enlisted 10000 volunteers to
 help us test it. Suppose there are 135 positive cases of an illness among the10,000 cases. You want
@@ -173,131 +167,9 @@ Positive Cases FN: 35 TP: 100
 \item  The specifity was 9700 out of 9735 = 99.64%
 
 
-\subsection{Class Imbalance}
-\item  A data set said to be highly skewed if sample from one class is in higher number than other.
-\item  In an imbalanced data set the class having more number of instances is called as major class
-while the one having relatively less number of instances are called as minor class .
-\item  Applications such as medical diagnosis prediction of rare but important disease is very important
-than regular treatment.
-\item  Similar situations are observed in other areas, such as detecting fraud in banking operations,
-detecting network intrusions, managing risk and predicting failures of technical equipment.
-\item  In such situation most of the binary classification procedure are biased towards the major
-classes and hence show very poor classification rates on minor classes.
-\item  It is also possible that classifier predicts everything as major class and ignores the minor class
-completely.
-\item  The Accuracy measure is an example of an metric that is affected by this bias.
-\item  As the F-Score is not computed using the True Negatives, it is less biased.
-4
-\subsection{The F Score}
-The F-score or F-measure is a measure of a classification procedure’s accuracy. It considers both
-the precision and the recall to compute the score.
-F = 2 ·
-precision · recall
-precision + recall
-\item  The F-score or F-measure is a single measure of a classification procedure’s usefulness.
-\item  The F-score considers both the Precision and the Recall of the procedure to compute the
-score.
-\item  The higher the F-score, the better the predictive power of the classification procedure.
-\item  A score of 1 means the classification procedure is perfect. The lowest possible F-score is 0.
-0 ≤ F ≤ 1
-From Before
-\item  Precision is the number of correct positive results divided by the number of predicted
-positive results.
-Precision = T P
-T P + F P
-\item  Recall is the number of correct positive results divided by the number of actual positive
-results.
-Recall = T P
-T P + F N
-The F-score is the Harmonic mean of Precision and Recall.
-F =
-2
-1
-Recall +
-1
-Precision
-Alternatively
-F = 2 ×
-
-Precision × Recall
-Precision + Recall
-Example
-Number of cases: 100,000
-Predicted Negative Predicted Positive
-Actual State: Negative TN = 97750 FP = 150
-Actual State: Positive FN= 330 TP =1770
-\item  Accuracy = 0.9952
-\item  Recall = 0.8428
-\item  Precision = 0.9218
-F = 2 ×
-Precision × Recall
-Precision + Recall
-F = 2 ×
-
-0.9218 × 0.8428
-0.9218 + 0.8428
-= 2 ×
-
-0.7770
-1.7646
-= 2 × 0.4402
-F = 0.8804
-5
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Performance of Classification Procedure}
-	
-	These classifications are used to calculate accuracy, precision (also called positive predictive value), recall (also called sensitivity), specificity and negative predictive value:
-	
-	\begin{itemize}
-		\item  \textbf{Accuracy} is the fraction of observations with correct predicted classification
-		\[ \mbox{Accuracy}=\frac{TP+TN}{TP+FP+FN+TN}\]
-		
-		
-		\item \textbf{Precision} is the proportion of predicted positives that are correct
-		\[
-		\mbox{Precision} = \mbox{Positive Predictive Value} =\frac{TP}{TP+FP} \, \]
-		
-		\item \textbf{Negative Predictive Value} is the  fraction of predicted negatives that are correct
-		\[\mbox{Negative Predictive Value} = \frac{TN}{TN+FN}\]
-		
-		\item \textbf{Recall} is the fraction of observations that are actually 1 with a correct predicted classification
-		\[ 
-		\mbox{Recall} = \mbox{Sensitivity} = \frac{TP}{TP+FN} \,  \]
-		
-		\item \textbf{Specificity} is the fraction of observations that are actually 0 with a correct predicted classification
-		\[ \mbox{Specificity} = \frac{TN}{TN+FP} \]
-		
-	\end{itemize}
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Performance of Classification Procedure}
-	
-	These classifications are used to calculate accuracy, precision (also called positive predictive value), recall (also called sensitivity), specificity and negative predictive value:
-	
-	\begin{itemize}
-		\item  \textbf{Accuracy} is the fraction of observations with correct predicted classification
-		\[ \mbox{Accuracy}=\frac{TP+TN}{TP+FP+FN+TN}\]
-		
-		
-		\item \textbf{Precision} is the proportion of predicted positives that are correct
-		\[
-		\mbox{Precision} = \mbox{Positive Predictive Value} =\frac{TP}{TP+FP} \, \]
-		
-		\item \textbf{Negative Predictive Value} is the  fraction of predicted negatives that are correct
-		\[\mbox{Negative Predictive Value} = \frac{TN}{TN+FN}\]
-		
-		\item \textbf{Recall} is the fraction of observations that are actually 1 with a correct predicted classification
-		\[ 
-		\mbox{Recall} = \mbox{Sensitivity} = \frac{TP}{TP+FN} \,  \]
-		
-		\item \textbf{Specificity} is the fraction of observations that are actually 0 with a correct predicted classification
-		\[ \mbox{Specificity} = \frac{TN}{TN+FP} \]
-		
-	\end{itemize}
 %-------------------------------------------------- %
 \medskip
 \subsection{Definitions (From Week 1)}
@@ -358,29 +230,6 @@ In general, Positive = identified and negative = rejected. Therefore:
 
 
 
-\subsection{Binary Classification}
-\noindent \textbf{Defining True/False Positives}
-In general, Positive = identified and negative = rejected. Therefore:
-
-\begin{itemize}
-	\item True positive = correctly identified
-	
-	\item False positive = incorrectly identified
-	
-	\item True negative = correctly rejected
-	
-	\item False negative = incorrectly rejected
-\end{itemize}
-\subsubsection*{Medical Testing Example:}
-\begin{itemize}
-	\item True positive = Sick people correctly diagnosed as sick
-	
-	\item False positive= Healthy people incorrectly identified as sick
-	
-	\item True negative = Healthy people correctly identified as healthy
-	
-	\item False negative = Sick people incorrectly identified as healthy.
-\end{itemize}
 
 
 %-------------------------------------------------- %

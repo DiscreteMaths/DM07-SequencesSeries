@@ -34,13 +34,16 @@ In stepwise selection, an attempt is made to remove any insignificant variables 
 Stepwise binary logistic regression is very similar to stepwise multiple regression in terms of its advantages and disadvantages. Stepwise logistic regression is designed to find the \textbf{\textit{most parsimonious}} set of predictors that are most effective in predicting the dependent variable.
 
 \subsection{Procedure for Stepwise Selection}
-Variables are added to the logistic regression equation one at a time, using the statistical criterion of reducing the \textbf{\textit{-2 Log Likelihood error}} for the included variables. (Recall: The lower the -2LL value, the better the fit of the model).
+\begin{itemize}
+	\item Variables are added to the logistic regression equation one at a time, using the statistical criterion of reducing the \textbf{\textit{-2 Log Likelihood error}} for the included variables. (Recall: The lower the -2LL value, the better the fit of the model).
+	
+\item After each variable is entered, each of the included variables are tested to see if the model would be better off the variable were excluded. This does not happen often.
+	
+\item The process of adding more variables stops when all of the available variables have been included or when it is not possible to make a statistically significant reduction in -2 Log Likelihood using any of the variables not yet included.
+	
+\item Categorical variables are added to the logistic regression as a group. It is possible, and often likely, that not all of the individual dummy-coded variables will have a statistically significant individual relationship with the dependent variable. 
+\end{itemize}
 
-After each variable is entered, each of the included variables are tested to see if the model would be better off the variable were excluded. This does not happen often.
-
-The process of adding more variables stops when all of the available variables have been included or when it is not possible to make a statistically significant reduction in -2 Log Likelihood using any of the variables not yet included.
-
-Categorical variables are added to the logistic regression as a group. It is possible, and often likely, that not all of the individual dummy-coded variables will have a statistically significant individual relationship with the dependent variable. 
 %We limit our interpretation to the dummy-coded variables that do have a statistically significant individual relationship.
 \subsection{SPSS Implementation}
 SPSS provides a table of variables included in the analysis and a table of variables excluded from the analysis.  It is possible that none of the variables will be included.  It is possible that all of the variables will be included.
@@ -50,18 +53,21 @@ The order of entry of the variables can be used as a measure of relative importa
 Once a variable is included, its interpretation in stepwise logistic regression is the same as it would be using other methods for including variables.
 %-------------------------------------------------------%
 \subsection{Advantages and Disadvantages}
-Stepwise logistic regression can be used when the goal is to produce a predictive model that is parsimonious and accurate because it excludes variables that do not contribute to explaining differences in the dependent variable.
+\begin{itemize}
+	\item Stepwise logistic regression can be used when the goal is to produce a predictive model that is parsimonious and accurate because it excludes variables that do not contribute to explaining differences in the dependent variable.
+	
+\item Stepwise logistic regression is less useful for testing hypotheses about statistical relationships. Its usage is recommended only for exploratory purposes, rather that as a formal procedure.
+	
+\item Stepwise logistic regression can be useful in finding relationships that have not been tested before. Its findings invite one to speculate on why an unusual relationship makes sense.
+	
+\item It is not legitimate to do a stepwise logistic regression and present the results as though one were testing a hypothesis that included the variables found to be significant in the stepwise logistic regression.
+	
+\item Using statistical criteria to determine relationships is vulnerable to over-fitting the data set used to develop the model at the expense of generalisability.
+\end{itemize}
 
-Stepwise logistic regression is less useful for testing hypotheses about statistical relationships. Its usage is recommended only for exploratory purposes, rather that as a formal procedure.
-
-Stepwise logistic regression can be useful in finding relationships that have not been tested before. Its findings invite one to speculate on why an unusual relationship makes sense.
-
-It is not legitimate to do a stepwise logistic regression and present the results as though one were testing a hypothesis that included the variables found to be significant in the stepwise logistic regression.
-
-Using statistical criteria to determine relationships is vulnerable to over-fitting the data set used to develop the model at the expense of generalisability.
 
 \begin{quote}
-	Menard (1995: 54) writes, "there appears to be general agreement that the use of computer-controlled stepwise procedures to select variables is inappropriate for theory testing because it capitalizes on random variations in the data and produces results that tend to be idosyncratic and difficult to replicate in any sample other than the sample in which they were originally obtained."
+	Menard (1995: 54) writes, "There appears to be general agreement that the use of computer-controlled stepwise procedures to select variables is inappropriate for theory testing because it capitalizes on random variations in the data and produces results that tend to be idosyncratic and difficult to replicate in any sample other than the sample in which they were originally obtained."
 \end{quote}
 %-------------------------------------------------------%
 \subsection{Forward Selection}
@@ -74,28 +80,29 @@ Forward selection is the usual option for a stepwise regression,
 starting with the constant-only model and adding variables one at a time. The forward
 stepwise logistic regression method utilizes the likelihood ratio test which tests the change in 2LL between steps to determine automatically which variables to add or drop from the model.
 
+\subsection*{Model Selection Methods}
 Method selection allows you to specify how independent variables are entered into the analysis.
 Using different methods, you can construct a variety of regression models from the same set of
 variables.
 
 \begin{itemize}
-	\item[1] Enter. A procedure for variable selection in which all variables in a block are entered in a
+	\item[1] \textbf{Enter}. A procedure for variable selection in which all variables in a block are entered in a
 	single step.
-	\item[2] Forward Selection (Conditional). Stepwise selection method with entry testing based on
+	\item[2] \textbf{Forward Selection (Conditional)}. Stepwise selection method with entry testing based on
 	the significance of the score statistic, and removal testing based on the probability of a
 	likelihood-ratio statistic based on conditional parameter estimates.
-	\item[3] Forward Selection (Likelihood Ratio). Stepwise selection method with entry testing based
+	\item[3] \textbf{Forward Selection (Likelihood Ratio)}. Stepwise selection method with entry testing based
 	on the significance of the score statistic, and removal testing based on the probability of a
 	likelihood-ratio statistic based on the maximum partial likelihood estimates.  (LR stands for Likelihood Ratio and  is considered the criterion least prone to error.)
-	\item[4] Forward Selection (Wald). Stepwise selection method with entry testing based on the
+	\item[4] \textbf{Forward Selection (Wald)}. Stepwise selection method with entry testing based on the
 	significance of the score statistic, and removal testing based on the probability of the Wald
 	statistic.
-	\item[5] Backward Elimination (Conditional). Backward stepwise selection. Removal testing is based on
+	\item[5] \textbf{Backward Elimination (Conditional)}. Backward stepwise selection. Removal testing is based on
 	the probability of the likelihood-ratio statistic based on conditional parameter estimates.
-	\item[6] Backward Elimination (Likelihood Ratio). Backward stepwise selection. Removal testing
+	\item[6] \textbf{Backward Elimination (Likelihood Ratio)}. Backward stepwise selection. Removal testing
 	is based on the probability of the likelihood-ratio statistic based on the maximum partial
 	likelihood estimates.
-	\item[7] Backward Elimination (Wald). Backward stepwise selection. Removal testing is based on the
+	\item[7] \textbf{Backward Elimination (Wald)}. Backward stepwise selection. Removal testing is based on the
 	probability of the Wald statistic.
 \end{itemize}
 %-------------------------------------------------------%
