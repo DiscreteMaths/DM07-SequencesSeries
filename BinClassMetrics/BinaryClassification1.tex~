@@ -47,8 +47,31 @@ if them having a particular set of characteristics.
 	
 	\[ = \frac{FP + FN}{TP+FP+TN+FN}\]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+\subsection*{Sensitivity and Specificity}
+Sensitivity and specificity are measures of the performance of a binary classification
+test.
+\begin{itemize}
+	\item Sensitivity (also called the true positive rate, or the recall rate) measures
+	the proportion of actual positives which are correctly identified
+	as such (e.g. the percentage of sick people who are correctly identified
+	as having the condition).
+	sensitivity (Recall) = number of true positives
+	number of true positives + number of false negatives
+	\begin{itemize}
+		\item \textit{(Remark: We will use the terms Sensitivity and Recall interchangeably.
+			Sensitivity is more commonly used in a medical context, while recall is more
+			commonly used in data science.)}
+	\end{itemize}
+	\item Specificity measures the proportion of negatives which are correctly
+	identified as such (e.g. the percentage of healthy people who are correctly
+	identified as not having the condition, sometimes called the true
+	negative rate).
+\end{itemize}
+\[ \mbox{Specificity} = \frac{TN}{TP +FN}\]
+
+\newpage
 \subsection*{Sensitivity and Specificity}
 Sensitivity and specificity are measures of the performance of a binary classification
 test.
@@ -243,6 +266,38 @@ p(2|1).
 (In other words: the sum of the cost of misclassification times the (joint)
 probability of that misclassification.
 A reasonable classification rule should have ECM as small as possible.
+\subsection*{ Cross Validation}
+
+
+The cross validated set of
+data is a more honest presentation of the power of the discriminant function
+than that provided by the original classifications and often produces a poorer
+outcome. The cross validation is often termed a jack-knife classification, in
+that it successively classifies all cases but one to develop a discriminant
+function and then categorizes the case that was left out. This process is
+repeated with each case left out in turn.This is known as leave-1-out cross
+validation.
+This cross validation produces a more reliable function. The argument
+behind it is that one should not use the case you are trying to predict as part
+of the categorization process.
+\subsection*{Error Rates}
+\begin{itemize}
+	\item We can evaluate error rates by means of a training sample (to construct the
+	discrimination rule) and a test sample.
+	\item An optimistic error rate is obtained by reclassifying the training data. (In
+	the training data sets, how many cases were misclassified). This is known
+	as the apparent error rate.
+	\item The apparent error rate is obtained by using in the training set to estimate
+	the error rates. It can be severely optimistically biased, particularly for
+	complex classifiers, and in the presence of over-fitted models.
+	\item If an independent test sample is used for classifying, we arrive at the true
+	error rate.
+		\item The true error rate (or conditional error rate) of a classifier is the
+	expected probability of misclassifying a randomly selected pattern. It is the
+	error rate of an infinitely large test set drawn from the same distribution as
+	the training data.
+\end{itemize}
+
 \subsection{Misclassification Rate}
 The misclassification rate calculates the proportion ofobservations being allocated to the \textbf{incorrect} group by the predictive model. It is calculated as follows:
 \[ \frac{
@@ -250,6 +305,60 @@ The misclassification rate calculates the proportion ofobservations being alloca
 
 \[ = \frac{FP + FN}{TP+FP+TN+FN}\]
 
+
+
+\subsection*{Misclassification Cost}
+As in all statistical procedures it is helpful to use diagnostic procedures to
+asses the efficacy of the discriminant analysis. We use cross-validation to
+assess the classification probability. Typically you are going to have some
+prior rule as to what is an acceptable misclassification rate.
+Those rules might involve things like, “what is the cost of misclassification?”
+Consider a medical study where you might be able to diagnose cancer.
+There are really two alternative costs. The cost of misclassifying someone
+as having cancer when they don’t. This could cause a certain amount of emotional
+grief. Additionally there would be the substantial cost of unnecessary
+treatment.
+There is also the alternative cost of misclassifying someone as not having
+cancer when in fact they do have it.
+A good classification procedure should
+\begin{itemize}
+	\item result in few misclassifications
+	\item take prior probabilities of occurrence into account
+	\item consider the cost of misclassification
+\end{itemize}
+For example, suppose there tend to be more financially sound firms than
+bankrupt firm. If we really believe that the prior probability of a financially
+distressed and ultimately bankrupted firm is very small, then one should classify
+a randomly selected firm as non-bankrupt unless the data overwhelmingly
+favor bankruptcy.
+There are two costs associated with discriminant analysis classification:
+The true misclassification cost per class, and the expected misclassification
+cost (ECM) per observation.
+
+\smallskip
+
+Suppose there we have a binary classification system, with two classes:
+class 1 and class 2. Suppose that classifying a class 1 object as belonging
+to class 2 represents a more serious error than classifying a class 2 object as
+belonging to class 1. There would an assignable cost to each error. c(i|j) is
+the cost of classifying an observation into class j if its true class is i. The
+costs of misclassification can be defined by a cost matrix.
+Predicted Predicted
+Class 1 Class 2
+Class 1 0 c(2|1)
+Class 2 c(1|2) 0
+\subsection*{ Expected cost of misclassification (ECM)}
+Let p1 and p2 be the prior probability of class 1 and class 2 respectively.
+Necessarily p1 + p2 = 1.
+
+The conditional probability of classifying an object as class 1 when it is
+in fact from class 2 is denoted p(1|2). Similarly the conditional probability
+of classifying an object as class 2 when it is in fact from class 1 is denoted
+p(2|1).
+\[ ECM = c(2|1)p(2|1)p1 + c(1|2)p(1|2)p2\]
+(In other words: the sum of the cost of misclassification times the (joint)
+probability of that misclassification.
+A reasonable classification rule should have ECM as small as possible.
 
 %-----------------------------------------------------------------------------------%
 \subsection{Error Rates}
@@ -268,6 +377,53 @@ If an independent test sample is used for classifying, we arrive at the  \textbf
 probability of misclassifying a randomly selected pattern.
 It is the error rate of an infinitely large test set drawn from the same distribution as the training data.
 
+
+
+%---------------------------------------------------------------------------------------%
+
+\subsection{Misclassification Cost}
+
+As in all statistical procedures it is helpful to use diagnostic procedures to asses the efficacy of the discriminant analysis. We use \textbf{cross-validation} to assess the classification probability.
+Typically you are going to have some prior rule as to what is an \textbf{acceptable misclassification rate}.
+
+Those rules might involve things like, ``what is the cost of misclassification?" Consider a medical study where you might be able to diagnose cancer.
+
+There are really two alternative costs. The cost of misclassifying someone as having cancer when they don't.
+This could cause a certain amount of emotional grief. Additionally there would be the substantial cost of unnecessary treatment.
+
+There is also the alternative cost of misclassifying someone as not having cancer when in fact they do have it.
+
+A good classification procedure should
+\begin{itemize}
+	\item result in few misclassifications
+	\item take \textbf{\textit{prior probabilities of occurrence}} into account
+	\item consider the cost of misclassification
+\end{itemize}
+
+For example, suppose there tend to be more financially sound firms than bankrupt
+firm. If we really believe that the prior probability of a financially
+distressed and ultimately bankrupted firm is very small, then one should
+classify a randomly selected firm as non-bankrupt unless the data
+overwhelmingly favor bankruptcy.
+
+
+
+There are two costs associated with discriminant analysis classification: The true misclassification cost per class, and the \textbf{\textit{expected misclassification cost (ECM)}} per observation.
+
+Suppose there we have a binary classification system, with two classes: class 1 and class 2.
+Suppose that classifying a class 1 object as belonging to class 2 represents a more serious error than classifying a class 2 object as belonging to class 1. There would an assignable cost to each error.
+$c(i|j)$ is the cost of classifying an observation into class $j$ if its true class is $i$.
+The costs of misclassification can be defined by a cost matrix.
+
+\begin{tabular}{|c|c|c|}
+	\hline
+	% after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+	& Predicted & Predicted \\
+	& Class 1 & Class 2 \\  \hline
+	Class 1 & 0 & $c(2|1)$  \\
+	Class 2 & $c(1|2)$ & 0 \\
+	\hline
+\end{tabular}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}

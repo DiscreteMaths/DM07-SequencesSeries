@@ -120,10 +120,10 @@ Stepwise binary logistic regression is very similar to stepwise multiple regress
 
 %We limit our interpretation to the dummy-coded variables that do have a statistically significant individual relationship.
 \subsection{SPSS Implementation}
-SPSS provides a table of variables included in the analysis and a table of variables excluded from the analysis.  
-It is possible that none of the variables will be included.  
-It is possible that all of the variables will be included.
+SPSS provides a table of variables included in the analysis and a table of variables excluded from the analysis.  It is possible that none of the variables will be included.  It is possible that all of the variables will be included.
+
 The order of entry of the variables can be used as a measure of relative importance.
+
 Once a variable is included, its interpretation in stepwise logistic regression is the same as it would be using other methods for including variables.
 
 %-------------------------------------------------------%
@@ -132,7 +132,10 @@ You can estimate models using block entry of variables or any of the following s
 methods: forward conditional, forward LR, forward Wald, backward conditional, backward
 LR, or backward Wald.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Forward selection is the usual option for a stepwise regression,
+starting with the constant-only model and adding variables one at a time. The forward
+stepwise logistic regression method utilizes the likelihood ratio test which tests the change in 2LL between steps to determine automatically which variables to add or drop from the model.
 
 \subsection*{Model Selection Methods}
 Method selection allows you to specify how independent variables are entered into the analysis.

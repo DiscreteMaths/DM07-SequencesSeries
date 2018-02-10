@@ -567,13 +567,14 @@ The odds of outcome 1 versus outcome 2 are the probability (or frequency) of out
 \[ \hat{Y} = \frac{\mbox{Odds}}{1+\mbox{Odds}} \]
 
 
+Loglinear models essentially define a pattern of odds ratios, apply the marginals to them, and compare the resulting table with the observed table, in pretty much the same way we apply the Pearson  $\chi^2$ test for association. The big difference is the pattern we define can be much more complicated than independence.
 
 %---------------------------------------------------------- %
 	\section{Logistic Regression}
 Logistic regression, also called a logit model, is used to model \textbf{dichotomous outcome} variables. 
 In the logit model the \textbf{log odds} of the outcome is modeled as a linear combination of the predictor variables.
 
-In logistic regression theory, the predicted dependent variable is a function of the probability that a particular subject will be in one of the categories (for example, the probability that a patient has the disease, given their set of scores on the predictor variables).
+In logistic regression theory, the predicted dependent variable is a function of the probability that a particular subject will be in one of the categories (for example, the probability that a patient has the disease, given his or her set of scores on the predictor variables).
 %------------------------------------------------------------------------------------------------------------------------- %
 \subsection{Odds}
 \begin{itemize}

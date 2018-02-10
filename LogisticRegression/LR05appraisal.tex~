@@ -35,25 +35,16 @@ dependent variable categories.
 \subsection{The Hosmer-Lemeshow Test}
 %http://www.strath.ac.uk/aer/materials/5furtherquantitativeresearchdesignandanalysis/unit6/goodnessoffitmeasures/
 
-\noindent \textbf{Performing the Hosmer-Lemeshow Goodness-of-Fit Test} 	
-\begin{itemize}	
-	\item 	
-	The Hosmer-Lemeshow test of goodness of fit is not automatically a part of the SPSS logistic regression output. 
-	To get this output, we need to go into \textbf{\texttt{options}} and tick the box marked Hosmer-Lemeshow test of goodness of fit. 
-\end{itemize}
-
-
-
-In our example, this gives us the following output:
+The Hosmer-Lemeshow test of goodness of fit is not automatically a part of the SPSS logistic regression output. To get this output, we need to go into `\textbf{\texttt{options}}’ and tick the box marked Hosmer-Lemeshow test of goodness of fit. In our example, this gives us the following output:
 
 \begin{center}
-	\begin{tabular}{|c|c|c|c|}
-		\hline  Step	& Chi-square&	df 	 & Sig. \\ \hline
-		1	 & 142.032	& 6	 &.000 \\ 
-		\hline 
-	\end{tabular} 
+\begin{tabular}{|c|c|c|c|}
+	\hline  Step	& Chi-square&	df 	 & Sig. \\ \hline
+	1	 & 142.032	& 6	 &.000 \\ 
+	\hline 
+\end{tabular}
 \end{center}
-
+ 
 
 Therefore, our model is significant, suggesting it does not fit the data. However, as we have a sample size of over 13,000, even very small divergencies of the model from the data would be flagged up and cause significance. Therefore, with samples of this size it is hard to find models that are parsimonious (i.e. that use the minimum amount of independent variables to explain the dependent variable) and fit the data. Therefore, other fit indices might be more appropriate.
 
@@ -195,9 +186,34 @@ The overall significance is tested using what SPSS calls the \textbf{\textit{Mod
 If the H-L goodness-of-fit test statistic is greater than .05, as we want for well-fitting models, we fail to reject the null hypothesis that there is no difference between observed and model-predicted values, implying that the models estimates fit the data at an acceptable level. That is, well-fitting models show non-significance on the
 H-L goodness-of-fit test. This desirable outcome of non-significance indicates that the
 model prediction does not significantly differ from the observed.
+
+\noindent \textbf{Performing the Hosmer-Lemeshow Goodness-of-Fit Test} 	
+\begin{itemize}	
+	\item 	
+	The Hosmer-Lemeshow test of goodness of fit is not automatically a part of the SPSS logistic regression output. 
+	To get this output, we need to go into \textbf{\texttt{options}} and tick the box marked Hosmer-Lemeshow test of goodness of fit. 
+\end{itemize}
+
+
+
+In our example, this gives us the following output:
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline  Step	& Chi-square&	df 	 & Sig. \\ \hline
+		1	 & 142.032	& 6	 &.000 \\ 
+		\hline 
+	\end{tabular} 
+\end{center}
+
+
+Therefore, our model is significant, suggesting it does not fit the data. However, as we have a sample size of over 13,000, even very small divergencies of the model from the data would be flagged up and cause significance. Therefore, with samples of this size it is hard to find models that are parsimonious (i.e. that use the minimum amount of independent variables to explain the dependent variable) and fit the data. Therefore, other fit indices might be more appropriate.\\
+
+% Binary Regression : http://teaching.sociology.ul.ie/SSS/lugano/node10.html 
+% http://istics.net/pdfs/multivariate.pdf
 %---------------------------------------------------------- %
 
-\subsection{Computing the Hosmer and Lemeshow Test Statistic}
+\noindent \textbf{Computing the Hosmer and Lemeshow Test Statistic}
 
 \begin{itemize}
 	\item The Hosmer and Lemeshow test
@@ -218,7 +234,8 @@ model prediction does not significantly differ from the observed.
 	\end{center}
 \end{figure}
 
-\subsection{Sample Adequacy}
+\noindent \textbf{Sample Adequacy}\\
+
 
 The H-L statistic assumes sampling adequacy, with a rule of thumb being enough cases so that 95\% of cells (typically, 10 decile groups times 2 outcome categories = 20 cells) have an expected frequency $>$ 5. Our H-L statistic has a significance of .605 which means that it is not statistically significant and therefore our model is quite a
 good fit.
@@ -230,7 +247,82 @@ good fit.
 	\end{center}
 \end{figure}
 
+\newpage
+\subsection{Hosmer-Lemeshow Goodness-of-Fit Test}
+\begin{framed}
+	\begin{itemize}
+		\item The Hosmer-Lemeshow Goodness-of-Fit
+		test tells us whether we have constructed a valid overall model or not, and is an alternative to model chi square procedure.
+		\item If the model is a good fit to the data then the Hosmer-Lemeshow Goodness-of-Fit test should have an associated p-value greater than 0.05.
+	\end{itemize} 
+\end{framed}
+If the H-L goodness-of-fit test statistic is greater than .05, as we want for well-fitting models, we fail to reject the null hypothesis that there is no difference between observed and model-predicted values, implying that the models estimates fit the data at an acceptable level. That is, well-fitting models show non-significance on the
+H-L goodness-of-fit test. This desirable outcome of non-significance indicates that the
+model prediction does not significantly differ from the observed.
 
+\noindent \textbf{Performing the Hosmer-Lemeshow Goodness-of-Fit Test} 	
+\begin{itemize}	
+	\item 	
+	The Hosmer-Lemeshow test of goodness of fit is not automatically a part of the SPSS logistic regression output. 
+	To get this output, we need to go into \textbf{\texttt{options}} and tick the box marked Hosmer-Lemeshow test of goodness of fit. 
+\end{itemize}
+
+
+
+In our example, this gives us the following output:
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline  Step	& Chi-square&	df 	 & Sig. \\ \hline
+		1	 & 142.032	& 6	 &.000 \\ 
+		\hline 
+	\end{tabular} 
+\end{center}
+
+
+Therefore, our model is significant, suggesting it does not fit the data. However, as we have a sample size of over 13,000, even very small divergencies of the model from the data would be flagged up and cause significance. Therefore, with samples of this size it is hard to find models that are parsimonious (i.e. that use the minimum amount of independent variables to explain the dependent variable) and fit the data. Therefore, other fit indices might be more appropriate.\\
+
+% Binary Regression : http://teaching.sociology.ul.ie/SSS/lugano/node10.html 
+% http://istics.net/pdfs/multivariate.pdf
+%---------------------------------------------------------- %
+
+
+\subsection{Hosmer-Lemeshow Goodness-of-Fit Test}
+\begin{framed}
+	\begin{itemize}
+		\item The Hosmer-Lemeshow Goodness-of-Fit
+		test tells us whether we have constructed a valid overall model or not, and is an alternative to model chi square procedure.
+		\item If the model is a good fit to the data then the Hosmer-Lemeshow Goodness-of-Fit test should have an associated p-value greater than 0.05.
+	\end{itemize} 
+\end{framed}
+If the H-L goodness-of-fit test statistic is greater than .05, as we want for well-fitting models, we fail to reject the null hypothesis that there is no difference between observed and model-predicted values, implying that the models estimates fit the data at an acceptable level. That is, well-fitting models show non-significance on the
+H-L goodness-of-fit test. This desirable outcome of non-significance indicates that the
+model prediction does not significantly differ from the observed.
+
+\noindent \textbf{Performing the Hosmer-Lemeshow Goodness-of-Fit Test} 	
+\begin{itemize}	
+	\item 	
+	The Hosmer-Lemeshow test of goodness of fit is not automatically a part of the SPSS logistic regression output. 
+	To get this output, we need to go into \textbf{\texttt{options}} and tick the box marked Hosmer-Lemeshow test of goodness of fit. 
+\end{itemize}
+
+
+
+In our example, this gives us the following output:
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline  Step	& Chi-square&	df 	 & Sig. \\ \hline
+		1	 & 142.032	& 6	 &.000 \\ 
+		\hline 
+	\end{tabular} 
+\end{center}
+
+
+Therefore, our model is significant, suggesting it does not fit the data. However, as we have a sample size of over 13,000, even very small divergencies of the model from the data would be flagged up and cause significance. Therefore, with samples of this size it is hard to find models that are parsimonious (i.e. that use the minimum amount of independent variables to explain the dependent variable) and fit the data. Therefore, other fit indices might be more appropriate.\\
+
+% Binary Regression : http://teaching.sociology.ul.ie/SSS/lugano/node10.html 
+% http://istics.net/pdfs/multivariate.pdf
 
 
 

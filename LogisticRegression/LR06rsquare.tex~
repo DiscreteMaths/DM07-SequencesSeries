@@ -58,7 +58,7 @@ Logistic regression does not have an equivalent to the R-squared that is found i
  
 \item The SPSS output table below contains the Cox \& Snell R Square and Nagelkerke R Square
 values, which are both methods of calculating the explained variation. These values are
-sometimes referred to as pseudo $R^2$ values (and will have lower values than in multiple
+sometimes referred to as pseudo R 2 values (and will have lower values than in multiple
 regression).
 
 \item  However, they are interpreted in the same manner, but with more caution. Therefore, the explained variation in the dependent variable based on our model ranges from 24.0\% to 33.0\%, depending on whether you reference the Cox \& Snell $R^2$ or Nagelkerke $R^2$ methods, respectively.

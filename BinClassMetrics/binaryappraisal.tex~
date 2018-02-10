@@ -24,8 +24,10 @@
 
 %http://www.electronics.dit.ie/staff/ysemenova/Opto2/CO_IntroLab.pdf
 \begin{document}
-\section{Binary Classification}
-\subsection{What Is Classification}
+
+
+Binary Classification
+What Is Classification
 Classification is the problem of identifying to which of a set of categories (sub-populations) a new
 observation belongs, on the basis of a training set of data containing observations (or instances)
 whose category membership is known. Binary Classification is the task of classifying the members of
@@ -47,7 +49,12 @@ Four Possible Outcomes from Classification Procedure:
 \item  FP / False Positive: Case was actually negative but was predicted positive (WRONG).
 Remark : We will use this notation to specify the number of cases in each category also: i.e. TP
 = 5000 means 5000 True Positives.
-
+Confusion Matrix
+\item  The Confusion Matrix is a table in which the rows are the observed categories of the dependent
+and the columns are the predicted categories.
+\item  A confusion matrix reports the number of false positives, false negatives, true positives, and
+true negatives. This allows more detailed analysis than mere proportion of correct guesses
+(accuracy).
 \item  Accuracy is not a reliable metric for the real performance of a classification system, because
 it will yield misleading results if the data set is unbalanced (that is, when the number of
 samples in different classes vary greatly).
@@ -84,7 +91,22 @@ null hypothesis False positive True positive
 Fail to reject Correct Outcome Type II error
 null hypothesis True negative False negative
 \end{itemize}
-
+Accuracy Rate
+The accuracy rate calculates the proportion ofobservations being allocated to the correct group
+by the predictive model. It is calculated as follows:
+Accuracy = Number of Correct Classifications
+Total Number of Classifications
+Accuracy = T P + T N
+T P + F P + T N + F N
+2
+Misclassification Rate
+The misclassification rate calculates the proportion ofobservations being allocated to the incorrect
+group by the predictive model. It is calculated as follows:
+Number of Incorrect Classifications
+Total Number of Classifications
+=
+F P + F N
+T P + F P + T N + F N
 Sensitivity and Specificity
 Sensitivity and specificity are measures of the performance of a binary classification test.
 \item  Sensitivity (also called the true positive rate, or the recall rate) measures the proportion
@@ -174,7 +196,7 @@ The misclassification rate calculates the proportion ofobservations being alloca
 \[ = \frac{FP + FN}{TP+FP+TN+FN}\]
 \medskip
 
-%=====================================================%
+
 
 
 \subsection{Binary Classification}

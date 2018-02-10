@@ -24,14 +24,6 @@
 
 %http://www.electronics.dit.ie/staff/ysemenova/Opto2/CO_IntroLab.pdf
 \begin{document}
-\subsection{Confusion Matrix}
-
-A \textbf{confusion matrix}, is a table with two rows and two columns that reports the number of false positives, false negatives, true positives, and true negatives.
-
-This allows more detailed analysis than mere proportion of correct guesses (accuracy). Accuracy is not a reliable metric for the real performance of a classifier, because it will yield misleading results if the data set is unbalanced (that is, when the number of samples in different classes vary greatly).
-
-For example, if there were 95 cats and only 5 dogs in the data set, the classifier could easily be biased into classifying all the samples as cats. The overall accuracy would be 95\%, but  in practice the classifier would have a 100\% recognition rate for the cat class but a 0\% recognition rate for the dog class.
-
 	\subsection*{Confusion Matrix}
 The confusion table is a table in which the rows are the observed categories of
 the dependent and the columns are the predicted categories. When prediction

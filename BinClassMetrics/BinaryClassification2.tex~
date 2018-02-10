@@ -138,30 +138,6 @@ The ROC is also known as a relative operating characteristic curve, because it i
 	the higher the overall accuracy of the test. %(Zweig and Campbell, 1993).
 \end{itemize}
 
-\subsection{Receiver Operating Characteristic (ROC) curve }
-
-
-In a Receiver Operating Characteristic (ROC) curve the true positive rate (Sensitivity) is plotted in function of the false positive rate (100-Specificity) for different cut-off points. Each point on the ROC curve represents a sensitivity/specificity pair corresponding to a particular decision threshold. A test with perfect discrimination (no overlap in the two distributions) has a ROC curve that passes through the upper left corner (100\% sensitivity, 100\% specificity). Therefore the closer the ROC curve is to the upper left corner, the higher the overall accuracy of the test (Zweig and Campbell, 1993).
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{ROCcurve}
-	\caption{}
-	\label{fig:roccurve}
-\end{figure}
-
-%----------------------------------------------------------------------------------%
-\subsection{Properties of ROC Curves}
-% ROC Curves
-% Specificity and Sensitivity
-An ROC curve demonstrates several things:
-\begin{enumerate}
-	\item It shows the tradeoff between sensitivity and specificity (any increase in sensitivity will be accompanied by a decrease in specificity).
-	\item The closer the curve follows the upper-left border of the ROC space, the more accurate the test.
-	\item The closer the curve comes to the 45-degree diagonal of the ROC space, the less accurate the test.
-	\item The slope of the tangent line at a cutpoint gives the likelihood ratio (LR) for that value of the test.
-	\item The area under the curve is a measure of accuracy.
-\end{enumerate}
 
 
 \end{document}
