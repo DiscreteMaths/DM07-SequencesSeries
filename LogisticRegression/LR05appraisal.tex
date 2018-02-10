@@ -176,6 +176,171 @@ The overall significance is tested using what SPSS calls the \textbf{\textit{Mod
 
 
 
+	\subsection*{Wald Test}
+	\begin{itemize}
+		\item 	The Wald test is a way of testing the signi®cance of particular explanatory variables in a statistical model. In logistic regression we have a binary outcome variable and one or more explanatory variables. For each explanatory variable in the model there will be an associated parameter.
+	\item 	The Wald test, described by Polit (1996) and Agresti (1990), is one of a number of ways of testing whether the parameters associated with a group of
+		explanatory variables are zero.
+		
+	\item 	If for a particular explanatory variable, or group of explanatory variables, the Wald test is significant, then we would conclude that the parameters associated with these variables are not zero, so that the variables should be included in the model. If the Wald test is not significant then these explanatory variables can be omitted from the model. When considering a single explanatory variable, Altman (1991) uses a t-test to check whether the parameter is significant. 
+		
+\item 		For a single parameter the Wald statistic is just the square of the t-statistic and so will give exactly equivalent results.
+		An alternative and widely used approach to testing the significance of a number of explanatory variables is to use the likelihood ratio test. This is
+		appropriate for a variety of types of statistical models. Agresti (1990) argues that the likelihood ratio test is better, particularly if the sample size is small or the parameters are large.
+	\end{itemize}
+
+	
+	The Wald Test is a statistical test used to determine whether an effect exists or not,
+	
+	It tests whether an independent variable has a statistically significant relationship with a dependent variable.
+	
+	It is used in a great variety of different models including models for dichotomous variables and model for continuous
+	variables.
+	
+	\begin{itemize}
+		\item $\hat{\theta}$ Maximum likelihood estimate of the parameter of interest $\theta$
+		\item $\theta_o$ Proposed value.
+		This is an assumption of the fact that the differences between $\hat{\theta}$ and $\theta_o$ is normal.
+		
+		Univariate case
+		\[ \frac{(\hat{\theta} - \theta_o )^2}{\mbox{var}(\hat{\theta})} \sim \chi^2 \]
+		\[ \frac{(\hat{\theta} - \theta_o )^2}{\mbox{s.e.}(\hat{\theta})} \sim \mbox{Normal} \]
+	\end{itemize}	
+	The likelihood ratio test is also used to determine whether an effect exists.
+	]
+\newpage
+
+
+
+\subsection*{Wald Test}
+\begin{itemize}
+	\item 	The Wald test is a way of testing the signi®cance of particular explanatory variables in a statistical model. In logistic regression we have a binary outcome variable and one or more explanatory variables. For each explanatory variable in the model there will be an associated parameter.
+	\item 	The Wald test, described by Polit (1996) and Agresti (1990), is one of a number of ways of testing whether the parameters associated with a group of
+	explanatory variables are zero.
+	
+	\item 	If for a particular explanatory variable, or group of explanatory variables, the Wald test is significant, then we would conclude that the parameters associated with these variables are not zero, so that the variables should be included in the model. If the Wald test is not significant then these explanatory variables can be omitted from the model. When considering a single explanatory variable, Altman (1991) uses a t-test to check whether the parameter is significant. 
+	
+	\item 		For a single parameter the Wald statistic is just the square of the t-statistic and so will give exactly equivalent results.
+	An alternative and widely used approach to testing the significance of a number of explanatory variables is to use the likelihood ratio test. This is
+	appropriate for a variety of types of statistical models. Agresti (1990) argues that the likelihood ratio test is better, particularly if the sample size is small or the parameters are large.
+\end{itemize}
+
+
+The Wald Test is a statistical test used to determine whether an effect exists or not,
+
+It tests whether an independent variable has a statistically significant relationship with a dependent variable.
+
+It is used in a great variety of different models including models for dichotomous variables and model for continuous
+variables.
+
+\begin{itemize}
+	\item $\hat{\theta}$ Maximum likelihood estimate of the parameter of interest $\theta$
+	\item $\theta_o$ Proposed value.
+	This is an assumption of the fact that the differences between $\hat{\theta}$ and $\theta_o$ is normal.
+	
+	Univariate case
+	\[ \frac{(\hat{\theta} - \theta_o )^2}{\mbox{var}(\hat{\theta})} \sim \chi^2 \]
+	\[ \frac{(\hat{\theta} - \theta_o )^2}{\mbox{s.e.}(\hat{\theta})} \sim \mbox{Normal} \]
+\end{itemize}	
+The likelihood ratio test is also used to determine whether an effect exists.
+]
+
+%============================================================================================%
+
+
+	\section{Wald statistic}
+\begin{itemize}
+	\item Alternatively, when assessing the contribution of individual predictors in a given model, one may examine the significance of the Wald statistic. The Wald statistic, analogous to the t-test in linear regression, is used to assess the significance of coefficients. 
+	\item Alternatively, when assessing the contribution of individual predictors in a given model, one may examine the significance of the Wald statistic. The Wald statistic, analogous to the t-test in linear regression, is used to assess the significance of coefficients. 
+	
+	\item The Wald statistic is commonly used to test the significance of individual logistic regression coefficients for each independent variable (that is, to test the null hypothesis in logistic regression that a particular logit (effect) coefficient is zero). 
+	
+	\item The Wald Statistic is the ratio of the unstandardized logit coefficient to its standard error. The Wald statistic and its corresponding p probability level is part of SPSS output in the section \textbf{\textit{Variables in the Equation.}} This corresponds to significance testing of b coefficients in OLS regression. The researcher may well want to drop independents from the model when their effect is not significant by the Wald statistic.
+	
+	\item The Wald statistic is the ratio of the square of the regression coefficient to the square of the standard error of the coefficient and is asymptotically distributed as a chi-square distribution.
+	
+	\[W_j = \frac{B^2_j} {SE^2_{B_j}}\]
+	
+	\item Although several statistical packages (e.g., SPSS, SAS) report the Wald statistic to assess the contribution of individual predictors, the Wald statistic has limitations. 
+	\item When the regression coefficient is large, the standard error of the regression coefficient also tends to be large increasing the probability of Type-II error. 
+	
+	\item The Wald statistic is the ratio of the square of the regression coefficient to the square of the standard error of the coefficient and is asymptotically distributed as a chi-square distribution.
+	
+	\item The Wald statistic also tends to be biased when data are sparse.
+\end{itemize}
+% Wald Test?
+%--------------------------------------------------------%
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/waldtest}
+	\caption{}
+	\label{fig:waldtest}
+\end{figure}
+
+\subsection{The Wald Test}
+\begin{itemize}
+	\item The Wald test is a way of testing the significance of particular predictor variables in a statistical model. 
+	
+	\item In logistic regression we have a binary outcome variable and one or more explanatory variables. For each predictor variable in the model there will be an associated parameter. The Wald test is one of a number of ways of testing whether the parameters associated with a group of explanatory variables are zero.
+	%, described by Polit (1996) and Agresti (1990), 
+	
+	\item If for a particular explanatory variable, or group of explanatory variables, the Wald test is significant, then we would conclude that the parameters associated with these variables are not zero, so that the variables should be included in the model. If the Wald test is not significant then these explanatory variables can be omitted from the model. 
+	
+	\item When considering a single explanatory variable, Altman (1991) uses a t-test to check whether the parameter is significant. For a single parameter the Wald statistic is just the square of the t-statistic and so will give exactly equivalent results.
+	
+	\item An alternative and widely used approach to testing the significance of a number of explanatory variables is to use the likelihood ratio test. This is appropriate for a variety of types of statistical models. 
+	
+	\item Agresti (1990) argues that the likelihood ratio test is better, particularly if the sample size is small or the parameters are large.
+\end{itemize}
+
+
+
+
+	\section{Wald statistic}
+	\begin{itemize}
+		\item Alternatively, when assessing the contribution of individual predictors in a given model, one may examine the significance of the Wald statistic. The Wald statistic, analogous to the t-test in linear regression, is used to assess the significance of coefficients. 
+				\item Alternatively, when assessing the contribution of individual predictors in a given model, one may examine the significance of the Wald statistic. The Wald statistic, analogous to the t-test in linear regression, is used to assess the significance of coefficients. 
+				
+				\item The Wald statistic is commonly used to test the significance of individual logistic regression coefficients for each independent variable (that is, to test the null hypothesis in logistic regression that a particular logit (effect) coefficient is zero). 
+				
+				\item The Wald Statistic is the ratio of the unstandardized logit coefficient to its standard error. The Wald statistic and its corresponding p probability level is part of SPSS output in the section \textbf{\textit{Variables in the Equation.}} This corresponds to significance testing of b coefficients in OLS regression. The researcher may well want to drop independents from the model when their effect is not significant by the Wald statistic.
+				
+				\item The Wald statistic is the ratio of the square of the regression coefficient to the square of the standard error of the coefficient and is asymptotically distributed as a chi-square distribution.
+		
+		\[W_j = \frac{B^2_j} {SE^2_{B_j}}\]
+		
+		\item Although several statistical packages (e.g., SPSS, SAS) report the Wald statistic to assess the contribution of individual predictors, the Wald statistic has limitations. 
+		\item When the regression coefficient is large, the standard error of the regression coefficient also tends to be large increasing the probability of Type-II error. 
+				
+		\item The Wald statistic is the ratio of the square of the regression coefficient to the square of the standard error of the coefficient and is asymptotically distributed as a chi-square distribution.
+		
+		\item The Wald statistic also tends to be biased when data are sparse.
+	\end{itemize}
+	% Wald Test?
+		%--------------------------------------------------------%
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{images/waldtest}
+		\caption{}
+		\label{fig:waldtest}
+	\end{figure}
+	
+	\subsection{The Wald Test}
+	\begin{itemize}
+		\item The Wald test is a way of testing the significance of particular predictor variables in a statistical model. 
+		
+		\item In logistic regression we have a binary outcome variable and one or more explanatory variables. For each predictor variable in the model there will be an associated parameter. The Wald test is one of a number of ways of testing whether the parameters associated with a group of explanatory variables are zero.
+		%, described by Polit (1996) and Agresti (1990), 
+		
+		\item If for a particular explanatory variable, or group of explanatory variables, the Wald test is significant, then we would conclude that the parameters associated with these variables are not zero, so that the variables should be included in the model. If the Wald test is not significant then these explanatory variables can be omitted from the model. 
+		
+		\item When considering a single explanatory variable, Altman (1991) uses a t-test to check whether the parameter is significant. For a single parameter the Wald statistic is just the square of the t-statistic and so will give exactly equivalent results.
+		
+		\item An alternative and widely used approach to testing the significance of a number of explanatory variables is to use the likelihood ratio test. This is appropriate for a variety of types of statistical models. 
+		
+		\item Agresti (1990) argues that the likelihood ratio test is better, particularly if the sample size is small or the parameters are large.
+	\end{itemize}
+	
 
 
 %---------------------------------------------------------- %

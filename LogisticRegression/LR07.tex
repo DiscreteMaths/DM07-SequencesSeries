@@ -66,6 +66,109 @@ Like any probability, the likelihood varies from 0 to 1. The log likelihood (LL)
 
 
 
+\subsection{Log Likelihood}
+A ``likelihood" is a probability, specifically the probability that the observed values of the dependent may be predicted from the observed values of the independents. 
+
+Like any probability, the likelihood varies from 0 to 1. The log likelihood (LL) is its log and varies from 0 to minus infinity (it is negative because the log of any number less than 1 is negative). LL is calculated through iteration, using maximum likelihood estimation (MLE).
+
+
+\subsection{Maximum Likelihood Estimation}
+\begin{itemize}
+	\item Maximum likelihood estimation, MLE, is the method used to calculate the logit coefficients. This contrasts to the use of ordinary least squares (OLS) estimation of coefficients in regression. OLS seeks to minimize the sum of squared distances of the data points to the regression line. 
+	\item MLE seeks to maximize the log likelihood, LL, which reflects how likely it is (the odds) that the observed values of the dependent may be predicted from the observed values of the independents. (Equivalently MLE seeks to minimize the -2LL value.)
+	
+	\item MLE is an iterative algorithm which starts with an initial arbitrary ``guesstimate" of what the logit coefficients should be, the MLE algorithm determines the direction and size change in the logit coefficients which will increase LL. 
+	\item After this initial function is estimated, the residuals are tested and a re-estimate is made with an improved function, and the process is repeated (usually about a half-dozen times) until convergence is reached (that is, until LL does not change significantly). There are several alternative convergence criteria.
+\end{itemize}
+
+
+
+
+
+\subsection{The Likelihood Ratio Test}
+The likelihood ratio test to test this hypothesis is based on the likelihood
+function. We can formally test to see whether inclusion of an explanatory variable in a model tells us
+more about the outcome variable than a model that does not include that variable. Suppose
+we have to evaluate two models. 
+\begin{center}
+	\begin{figure}[h!]
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.75]{LogWeek10D}\\
+		\caption{Variables}
+	\end{figure}
+\end{center}
+Here, Model 1 is said to be nested within Model 2  all the explanatory variables in Model 1
+(X1) are included in Model 2. We are interested in whether the additional explanatory
+variable in Model 2 ($X_2$) is required, i.e. does the simpler model (Model 1) fit the data just as
+well as the fuller model (Model 2). In other words, we test the null hypothesis that $\beta_2 = 0$
+against the alternative hypothesis that $\beta_2 \neq 0$. 
+
+
+
+\subsection{The Likelihood Ratio Test}
+The likelihood ratio test to test this hypothesis is based on the likelihood
+function. We can formally test to see whether inclusion of an explanatory variable in a model tells us
+more about the outcome variable than a model that does not include that variable. Suppose
+we have to evaluate two models. 
+\begin{center}
+	\begin{figure}[h!]
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.75]{LogWeek10D}\\
+		\caption{Variables}
+	\end{figure}
+\end{center}
+Here, Model 1 is said to be nested within Model 2  all the explanatory variables in Model 1
+(X1) are included in Model 2. We are interested in whether the additional explanatory
+variable in Model 2 ($X_2$) is required, i.e. does the simpler model (Model 1) fit the data just as
+well as the fuller model (Model 2). In other words, we test the null hypothesis that $\beta_2 = 0$
+against the alternative hypothesis that $\beta_2 \neq 0$. 
+
+
+
+
+
+\subsection{The Likelihood Ratio Test}
+The likelihood ratio test to test this hypothesis is based on the likelihood
+function. We can formally test to see whether inclusion of an explanatory variable in a model tells us
+more about the outcome variable than a model that does not include that variable. Suppose
+we have to evaluate two models. 
+\begin{center}
+	\begin{figure}[h!]
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.75]{LogWeek10D}\\
+		\caption{Variables}
+	\end{figure}
+\end{center}
+Here, Model 1 is said to be nested within Model 2  all the explanatory variables in Model 1
+(X1) are included in Model 2. We are interested in whether the additional explanatory
+variable in Model 2 ($X_2$) is required, i.e. does the simpler model (Model 1) fit the data just as
+well as the fuller model (Model 2). In other words, we test the null hypothesis that $\beta_2 = 0$
+against the alternative hypothesis that $\beta_2 \neq 0$. 
+
+
+
+
+\subsection{The Likelihood Ratio Test}
+The likelihood ratio test to test this hypothesis is based on the likelihood
+function. We can formally test to see whether inclusion of an explanatory variable in a model tells us
+more about the outcome variable than a model that does not include that variable. Suppose
+we have to evaluate two models. 
+\begin{center}
+	\begin{figure}[h!]
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.75]{LogWeek10D}\\
+		\caption{Variables}
+	\end{figure}
+\end{center}
+Here, Model 1 is said to be nested within Model 2  all the explanatory variables in Model 1
+(X1) are included in Model 2. We are interested in whether the additional explanatory
+variable in Model 2 ($X_2$) is required, i.e. does the simpler model (Model 1) fit the data just as
+well as the fuller model (Model 2). In other words, we test the null hypothesis that $\beta_2 = 0$
+against the alternative hypothesis that $\beta_2 \neq 0$. 
+
+
+	
+	
 \section{The Likelihood Ratio Test}
 The likelihood ratio test to test this hypothesis is based on the likelihood
 function. We can formally test to see whether inclusion of an explanatory variable in a model tells us
