@@ -1,4 +1,4 @@
-﻿\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,12pt]{article}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{eurosym}
 \usepackage{vmargin}
@@ -21,67 +21,54 @@
 
 \pagestyle{fancy}
 \setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
-\lhead{Dublin \texttt{R}} \rhead{10 April 2013}
-\chead{Introduction to \texttt{R} (Module A)}
+\lhead{MA4128} \rhead{Kevin O'Brien}
+\chead{Logistic Regression}
 %\input{tcilatex}
 
 
 \begin{document}
 
-\tableofcontents
+%\tableofcontents
 
-\section{Logistic Regression}
-Logistic regression determines the impact of multiple independent variables
-presented simultaneously to predict membership of one or other of the two
-dependent variable categories.
 
-\subsection{The purpose of logistic regression}
+\section*{Logistic Regression}
 \begin{itemize}
-	\item The crucial limitation of linear regression is that it cannot deal with Dependent Variabless that are \textbf{\textit{dichotomous}} and categorical. Many interesting variables in the business world are dichotomous: for
-	example, consumers make a decision to buy or not buy (\textit{\textbf{Buy/Don't Buy}}), a product may pass or fail quality control (\textit{\textbf{Pass/Fail}}), there are good or poor credit risks (\textit{\textbf{Good/Poor}}), an employee may be promoted or not (\textit{\textbf{Promote/Don't Promote}}).
-	
-	\item 	A range of regression techniques have been developed for analysing data with categorical dependent
-	variables, including logistic regression and discriminant analysis (Hence referred to as DA, which is the next section of course).
-	
-	\item 	Logistical regression is regularly used rather than discriminant analysis when there are only two categories
-	for the dependent variable. Logistic regression is also easier to use with SPSS than DA when
-	there is a mixture of numerical and categorical Independent Variabless, because it includes procedures for
-	generating the necessary dummy variables automatically, requires fewer assumptions, and
-	is more statistically robust. DA strictly requires the continuous independent variables  (though dummy variables can be used as in multiple regression). Thus, in instances where
-	the independent variables are categorical, or a mix of continuous and categorical, and the
-	DV is categorical, logistic regression is necessary.
-\end{itemize}
-\subsection*{What is Logistic Regression?}
-Logistic regression is a discriminitive probabilistic classification model that operates over real-valued vector inputs. 
-
-The dimensions of the input vectors being classified are called "features" and there is no restriction against them being correlated. 
-
-Logistic regression is one of the best probabilistic classifiers, measured in both log loss and first-best classification accuracy across a number of tasks.
-
-Logistic regression requires extensive tuning in the form of feature selection and implementation to achieve state-of-the-art classification performance.
-
-
-
-\subsection{Use of Binomial Probability Theory}
-\begin{itemize}
-	\item Since the dependent variable is dichotomous we cannot predict a numerical value for it
-	using logistic regression, so the usual regression least squares deviations criteria for best fit
-	approach of minimizing error around the line of best fit is inappropriate.
-	
-	\item 	Instead, logistic regression employs binomial probability theory in which there are only two values to
-	predict: that probability (p) is 1 rather than 0, i.e. the event/person belongs to one group
-	rather than the other.
-	\item Logistic regression forms a best fitting equation or function using the
-	maximum likelihood method (not part of course), which maximizes the probability of classifying the observed
-	data into the appropriate category given the regression coefficients.
+	\item Logistic regression determines the impact of multiple independent variables
+	presented simultaneously to predict membership of one or other of the two
+	dependent variable categories.
+	\item 
+	A range of regression techniques have been developed for analysing data with categorical dependent
+	variables, including logistic regression and discriminant analysis.
 \end{itemize}
 
 
-\section{Introduction to Logistic Regression}
+
+
+There are two main uses of logistic regression:
+\begin{itemize}
+	\item The first is the prediction of group membership. Since logistic regression calculates the
+	probability of success over the probability of failure, the results of the analysis are in
+	the form of an \textbf{odds ratio}.
+	\item Logistic regression also provides knowledge of the relationships and strengths among
+	the variables (e.g. playing golf with the boss puts you at a higher probability for job
+	promotion than undertaking five hours unpaid overtime each week).
+\end{itemize}
+
+
+
+
+\section*{Introduction to Logistic Regression}
 \begin{itemize}
 	\item Logistic regression or logit regression is a type of probabilistic statistical classification model.
+\item Logistic regression  operates over real-valued vector inputs. 
 	
-	\item It is also used to predict a binary response from a binary predictor, used for predicting the outcome of a categorical dependent variable (i.e., a class label) based on one or more predictor variables (features). 
+%	The dimensions of the input vectors being classified are called "features" and there is no restriction against them being correlated. 
+%	
+%	Logistic regression is one of the best probabilistic classifiers, measured in both log loss and first-best classification accuracy across a number of tasks.
+%	
+%	Logistic regression requires extensive tuning in the form of feature selection and implementation to achieve state-of-the-art classification performance.
+	
+	\item Logistic regression is also used to predict a binary response from a binary predictor, used for predicting the outcome of a categorical dependent variable (i.e., a class label) based on one or more predictor variables (features). 
 	
 	\item That is, it is used in estimating empirical values of the parameters in a qualitative response model. The probabilities describing the possible outcomes of a single trial are modeled, as a function of the explanatory (predictor) variables, using a logistic function. 
 	
@@ -95,30 +82,38 @@ Logistic regression requires extensive tuning in the form of feature selection a
 	\item However, if your dependent variable was not measured on a dichotomous scale, but a continuous scale instead, you will need to carry out \textbf{multiple regression}, whereas if your dependent variable was measured on an ordinal scale, \textbf{ordinal regression} would be a more appropriate starting point.
 \end{itemize}
 
-\section{Logistic Regression}
-Logistic regression determines the impact of multiple independent variables
-presented simultaneously to predict membership of one or other of the two
-dependent variable categories.
 
-\subsection{The purpose of logistic regression}
+\subsection*{Examples of Logistic Regression}
+
+\begin{description}
+	\item[Example 1:]  Suppose that we are interested in the factors that influence whether a political candidate wins an election.  The outcome (response) variable is binary (0/1); \textit{ win or lose}.  The predictor variables of interest are the amount of money spent on the campaign, the amount of time spent campaigning negatively and whether or not the candidate is an incumbent.
+	
+	\item[Example 2:]  A researcher is interested in how variables, such as GRE (Graduate Record Exam scores), GPA (grade point average) and prestige of the undergraduate institution, effect admission into graduate school. The response variable, \textit{admit/don't admit}, is a binary variable.
+\end{description}
+
+
+\subsection*{The Purpose of Logistic Regression}
 \begin{itemize}
-	\item The crucial limitation of linear regression is that it cannot deal with Dependent Variables's that are \textbf{\textit{dichotomous}} and categorical. Many interesting variables in the business world are dichotomous: for
+	\item The crucial limitation of linear regression is that it cannot deal with Dependent Variabless that are \textbf{\textit{dichotomous}} and categorical. 
+	\item Many interesting variables in the business world are dichotomous: for
 	example, consumers make a decision to buy or not buy (\textit{\textbf{Buy/Don't Buy}}), a product may pass or fail quality control (\textit{\textbf{Pass/Fail}}), there are good or poor credit risks (\textit{\textbf{Good/Poor}}), an employee may be promoted or not (\textit{\textbf{Promote/Don't Promote}}).
 	
-	\item 	A range of regression techniques have been developed for analysing data with categorical dependent
-	variables, including logistic regression and discriminant analysis (Hence referred to as DA, which is the next section of course).
+
 	
 	\item 	Logistical regression is regularly used rather than discriminant analysis when there are only two categories
-	for the dependent variable. Logistic regression is also easier to use with SPSS than DA when
-	there is a mixture of numerical and categorical Independent Variables's, because it includes procedures for
+	for the dependent variable. Logistic regression is also easier to use with SPSS than discriminant analysis when
+	there is a mixture of numerical and categorical Independent Variabless, because it includes procedures for
 	generating the necessary dummy variables automatically, requires fewer assumptions, and
-	is more statistically robust. DA strictly requires the continuous independent variables  (though dummy variables can be used as in multiple regression). Thus, in instances where
+	is more statistically robust. 
+	
+	\item Discriminant analysis strictly requires the continuous independent variables  (though dummy variables can be used as in multiple regression). Thus, in instances where
 	the independent variables are categorical, or a mix of continuous and categorical, and the
-	DV is categorical, logistic regression is necessary.
+	Dependent Variable is categorical, logistic regression is necessary.
 \end{itemize}
 
 
-\subsection{Use of Binomial Probability Theory}
+
+\subsection*{Use of Binomial Probability Theory}
 \begin{itemize}
 	\item Since the dependent variable is dichotomous we cannot predict a numerical value for it
 	using logistic regression, so the usual regression least squares deviations criteria for best fit
@@ -133,22 +128,6 @@ dependent variable categories.
 \end{itemize}
 
 
-\subsection{Variable Selection}
-Like ordinary regression, logistic regression provides a coefficient \textbf{b} estimates, which measures
-each IV's partial contribution to variations in the response variables. The goal is to correctly predict
-the category of outcome for individual cases using the most parsimonious model.
-
-To accomplish this goal, a model (i.e. an equation) is created that includes all predictor variables that are useful in predicting the response variable. Variables can, if necessary, be entered into the model in the order specified by the researcher in a stepwise fashion like regression.
-
-There are two main uses of logistic regression:
-\begin{itemize}
-\item The first is the prediction of group membership. Since logistic regression calculates the
-probability of success over the probability of failure, the results of the analysis are in
-the form of an \textbf{odds ratio}.
-\item Logistic regression also provides knowledge of the relationships and strengths among
-the variables (e.g. playing golf with the boss puts you at a higher probability for job
-promotion than undertaking five hours unpaid overtime each week).
-\end{itemize}
 
 \subsection{Assumptions of logistic regression}
 \begin{itemize}
@@ -164,7 +143,8 @@ in one group and every case must be a member of one of the groups.
 coefficients are large sample estimates. A minimum of 50 cases per predictor is
 recommended.
 \end{itemize}
-\subsection{Exercise Data Set}
+\newpage
+\subsection*{Exercise Data Set}
 The exercise data set comes from a survey of home owners
 conducted by an electricity company about an offer of roof solar panels with a 50\% subsidy
 from the state government as part of the states environmental policy. The variables involve
@@ -173,10 +153,17 @@ family household, and as the dependent variable, whether the householder would t
 The purpose of the exercise is to conduct a logistic regression to determine whether family
 size and monthly mortgage will predict taking or declining the offer.
 
-For the first demonstration, we will use `family size and
-`mortgage only. For the options, select Classification Plots, Hosmer-Lemeshow Goodness
-Of Fit, Casewise Listing Of Residuals and select Outliers Outside 2sd. Retain default
-entries for probability of stepwise, classification cutoff and maximum iterations.
+\subsection*{Exercise}
+\begin{itemize}
+	\item For the first demonstration, we will use `family size and
+	`mortgage only. 
+	\item For the options, select Classification Plots, Hosmer-Lemeshow Goodness
+	Of Fit, Casewise Listing Of Residuals and select Outliers Outside 2sd. 
+		\item 
+	Retain default
+	entries for probability of stepwise, classification cutoff and maximum iterations.
+\end{itemize}
+
 
 \begin{figure}[h!]
 \begin{center}
@@ -214,7 +201,7 @@ then termination of the analysis would obviously occur at this point
 \end{figure}
 This presents the results when the predictors family size and
 mortgage are included. Later SPSS prints a classification table which shows how the
-classification error rate has changed from the original 53.3%. By adding the variables
+classification error rate has changed from the original 53.3\%. By adding the variables
 we can now predict with 90\% accuracy (see Classification Table later). The
 model appears good, but we need to evaluate model fit and significance as well. SPSS will
 offer you a variety of statistical tests for model fit and whether each of the independent
@@ -227,40 +214,8 @@ variables included make a significant contribution to the model.
 \end{center}
 \end{figure}
 
-\section{Logistic Regression}
-Logistic regression determines the impact of multiple independent variables
-presented simultaneously to predict membership of one or other of the two
-dependent variable categories.
 
 
-
-
-A range of regression techniques have been developed for analysing data with categorical dependent
-variables, including logistic regression and discriminant analysis (Hence referred to as DA, which is the next section of course).
-
-
-
-
-
-\section{Introduction to Logistic Regression}
-\begin{itemize}
-	\item Logistic regression or logit regression is a type of probabilistic statistical classification model.
-	
-	\item It is also used to predict a binary response from a binary predictor, used for predicting the outcome of a categorical dependent variable (i.e., a class label) based on one or more predictor variables (features). 
-	
-	\item That is, it is used in estimating empirical values of the parameters in a qualitative response model. The probabilities describing the possible outcomes of a single trial are modeled, as a function of the explanatory (predictor) variables, using a logistic function. 
-	
-	\item Logistic regression, also called a logit model, is used to model \textbf{dichotomous (i.e. Binary) outcome variables}. In the logit model the log odds of the outcome is modeled as a linear combination of the predictor variables.
-	
-	\item 
-	Binary Logistic regression is used to determine the impact of multiple independent variables
-	presented simultaneously to predict membership of one or other of the two
-	dependent variable categories.
-	\item Logistic regression determines the impact of multiple independent variables
-	presented simultaneously to predict membership of one or other of the two
-	dependent variable categories.
-	\item However, if your dependent variable was not measured on a dichotomous scale, but a continuous scale instead, you will need to carry out \textbf{multiple regression}, whereas if your dependent variable was measured on an ordinal scale, \textbf{ordinal regression} would be a more appropriate starting point.
-\end{itemize}
 
 
 
@@ -287,14 +242,6 @@ Binomial logistic regression estimates the probability of an event (as an exampl
 \begin{itemize}
 	\item If the estimated probability of the event occurring is greater than or equal to 0.5 (better than even chance), the procedure classifies the event as occurring (e.g., heart disease being present). \item If the probability is less than 0.5, Logistic regression classifies the event as not occurring (e.g., no heart disease). 
 \end{itemize}
-
-\subsection{Examples of Logistic Regression}
-
-\begin{description}
-	\item[Example 1:]  Suppose that we are interested in the factors that influence whether a political candidate wins an election.  The outcome (response) variable is binary (0/1); \textit{ win or lose}.  The predictor variables of interest are the amount of money spent on the campaign, the amount of time spent campaigning negatively and whether or not the candidate is an incumbent.
-	
-	\item[Example 2:]  A researcher is interested in how variables, such as GRE (Graduate Record Exam scores), GPA (grade point average) and prestige of the undergraduate institution, effect admission into graduate school. The response variable, \textit{admit/don't admit}, is a binary variable.
-\end{description}
 
 
 \section{Review of Logistic Regression}

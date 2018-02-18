@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{article}
+﻿\documentclass[a4paper,12pt]{article}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{eurosym}
 \usepackage{vmargin}
@@ -23,6 +23,13 @@
 
 %---------------------------------------------------------%
 \begin{document}
+\subsection{Variable Selection}
+Like ordinary regression, logistic regression provides a coefficient \textbf{b} estimates, which measures
+each IV's partial contribution to variations in the response variables. The goal is to correctly predict
+the category of outcome for individual cases using the most parsimonious model.
+
+To accomplish this goal, a model (i.e. an equation) is created that includes all predictor variables that are useful in predicting the response variable. Variables can, if necessary, be entered into the model in the order specified by the researcher in a stepwise fashion like regression.
+
 
 \section{Stepwise Logistic Selection}
 Stepwise logistic regression involves the stepwise (or one-by-one) selection of variables,
