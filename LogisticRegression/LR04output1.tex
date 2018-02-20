@@ -42,29 +42,6 @@
 \section*{Binary Classification}	
 
 
-\subsection*{The Logistic Regression Equation}
-The form of the logistic regression equation is:
-\begin{framed}
-	\[ \mbox{logit}[p(x)] =  log \left(\frac{p(x)}{1-p(x)} \right) = b_0 + b_1x_1 + b_2x_2 + b_3x_3 + \ldots \]
-\end{framed}
-\begin{itemize}
-	\item This looks just like a linear regression and although logistic regression finds a best
-	fitting equation, just as linear regression does, the principles on which it does so are
-	rather different.
-	\item  Instead of using a least-squared deviations criterion for the best fit, it
-	uses a maximum likelihood method, which maximizes the probability of getting the
-	observed results given the fitted regression coefficients.
-	\item  A consequence of this is that the
-	goodness of fit and overall significance statistics used in logistic regression are different
-	from those used in linear regression.
-	\item 
-	The probability that a case is in a particular category,p, can be calculated with the following formula.
-	
-	\[p = \frac{exp(b_0 + b_1x_1 + b_2x_2 + b_3x_3 + \ldots)}{1 + exp(b_0 + b_1x_1 + b_2x_2 + b_3x_3 + \ldots)}\]
-\end{itemize}
-
-
-\newpage
 
 
 
