@@ -23,7 +23,7 @@
 \pagestyle{fancy}
 \setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
 \lhead{MA4128} \rhead{Mr. Kevin O'Brien}
-\chead{Spring 2013}
+\chead{Principal Component Analysis}
 %\input{tcilatex}
 
 \begin{document}
@@ -31,28 +31,6 @@
 	\tableofcontents
 	%http://support.sas.com/publishing/pubcat/chaps/55129.pdf
 
-\section{Review of Important Definitions}
-\begin{itemize}
-\item An observed variable can be measured directly, is sometimes called a measured variable or an indicator or a
-manifest variable.
-\item A principal component is a linear combination of weighted observed variables. Principal components are
-uncorrelated and orthogonal.
-\item A latent construct can be measured indirectly by determining its influence to responses on measured variables. A latent construct could is also referred to as a factor, underlying construct, or unobserved variable.
-\item Factor scores are estimates of underlying latent constructs.
-\item Unique factors refer to unreliability due to measurement error and variation in the data.
-\item Principal component analysis minimizes the sum of the squared perpendicular distances to the axis of the
-principal component while least squares regression minimizes the sum of the squared distances perpendicular to the
-x axis (not perpendicular to the fitted line).
-\item Principal component scores are actual scores.
-\item Eigenvectors are the weights in a linear transformation when computing principal component scores.
-Eigenvalues indicate the amount of variance explained by each principal component or each factor.
-\item Orthogonal means at a 90 degree angle, perpendicular.
-Obilque means other than a 90 degree angle.
-\item An observed variable \textbf{\emph{loads}} on a factors if it is highly correlated with the factor, has an eigenvector of greater magnitude on that factor.
-\item Communality is the variance in observed variables accounted for by a common factors. Communality is more
-relevant to EFA than PCA.
-\end{itemize}
-\newpage
 %--------------------------------------------------------------------------------------------------%
 \section{Exploratory Factor Analysis}
 Principal Component Analysis (PCA) and Exploratory Factor Analysis (EFA) are both variable reduction techniques
@@ -203,21 +181,6 @@ therefore be removed from consideration in order to simplify the overall
 analyses.
 \end{itemize}
 
-\subsection{Bi-plot Display of PCA}
-\begin{itemize}
-\item Bi-plot display is a visualization technique for investigating
-the inter-relationships between the observations and
-variables in multivariate data.
-\item  To display a bi-plot, the data should be considered as a
-matrix, in which the column represents the variable space
-while the row represents the observational space.
-\item  The term bi-plot means it is a plot of two dimensions with the
-observation and variable spaces plotted simultaneously.
-\item  In PCA, relationships between PC scores and PCA loadings
-associated with any two PCs can be illustrated in a bi-plot
-display
-\end{itemize}
-
 
 \subsection{Communality} 
 Communality refers to the total amount of variance an original variable shares with all other
@@ -228,39 +191,6 @@ variables included in the analysis.This is the proportion of each variable's var
 \textbf{Extraction}  - The values in this column indicate the proportion of each variable's variance that can be explained by the principal components.  Variables with high values are well represented in the common factor space, while variables with low values are not well represented. They are the reproduced variances from the number of components that you have saved.  You can find these values on the diagonal of the reproduced correlation matrix.
 
 
-\subsection{What is a Rotation}
-
-Ideally, you would like to review the correlations between the variables and the
-components and use this information to interpret the components; that is, to determine what
-construct seems to be measured by component 1, what construct seems to be measured by
-component 2, and so forth. Unfortunately, when more than one component has been retained in
-an analysis, the interpretation of an unrotated factor pattern is usually quite difficult. To make
-interpretation easier, you will normally perform an operation called a rotation. A rotation is a
-linear transformation that is performed on the factor solution for the purpose of making the
-solution easier to interpret.
-%-------------------------------------------------------------------------------------------------------%
-
-\subsection{Varimax Rotation}
-A varimax rotation is an orthogonal rotation, meaning that
-it results in uncorrelated components. Compared to some other types of rotations, a varimax
-rotation tends to maximize the variance of a column of the factor pattern matrix (as opposed to a
-row of the matrix). This rotation is probably the most commonly used orthogonal rotation in the
-social sciences.
-
-\subsection{Interpreting the Rotated Solution}
-
-Interpreting a rotated solution means determining just what is measured by each of the retained
-components. Briefly, this involves identifying the variables that demonstrate high loadings for a
-given component, and determining what these variables have in common. Usually, a brief name
-is assigned to each retained component that describes its content.
-The first decision to be made at this stage is to decide how large a factor loading must be to be
-considered ``large."
-
-Guidelines are provided in statistical literature for testing the statistical significance of factor loadings. Given that this is an introductory treatment of principal component analysis, however, simply consider a loading
-to be large if its absolute value exceeds 0.40.
-
-
-\end{document}
 
 %-------------------------------------------------------------------------------------------------------%
 %\subsection{Factor loadings}

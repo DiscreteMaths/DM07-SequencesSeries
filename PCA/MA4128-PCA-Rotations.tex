@@ -1,0 +1,68 @@
+
+\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphicx}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 2011 13:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+\pagestyle{fancy}
+\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+\lhead{MA4128} \rhead{Mr. Kevin O'Brien}
+\chead{Principal Component Analysis}
+%\input{tcilatex}
+
+\begin{document}
+	
+
+\subsection{What is a Rotation}
+\begin{itemize}
+	\item Ideally, you would like to review the correlations between the variables and the
+	components and use this information to interpret the components; that is, to determine what
+	construct seems to be measured by component 1, what construct seems to be measured by
+	component 2, and so forth. 
+	\item Unfortunately, when more than one component has been retained in
+	an analysis, the interpretation of an unrotated factor pattern is usually quite difficult. To make
+	interpretation easier, you will normally perform an operation called a rotation. 
+	\item A rotation is a
+	linear transformation that is performed on the factor solution for the purpose of making the
+	solution easier to interpret.
+\end{itemize}
+
+%-------------------------------------------------------------------------------------------------------%
+
+\subsection{Varimax Rotation}
+A varimax rotation is an orthogonal rotation, meaning that
+it results in uncorrelated components. Compared to some other types of rotations, a varimax
+rotation tends to maximize the variance of a column of the factor pattern matrix (as opposed to a
+row of the matrix). This rotation is probably the most commonly used orthogonal rotation in the
+social sciences.
+
+\subsection{Interpreting the Rotated Solution}
+\begin{itemize}
+\item Interpreting a rotated solution means determining just what is measured by each of the retained
+components. Briefly, this involves identifying the variables that demonstrate high loadings for a
+given component, and determining what these variables have in common. Usually, a brief name
+is assigned to each retained component that describes its content.
+\item The first decision to be made at this stage is to decide how large a factor loading must be to be
+considered ``large."
+\item 
+Guidelines are provided in statistical literature for testing the statistical significance of factor loadings. Given that this is an introductory treatment of principal component analysis, however, simply consider a loading
+to be large if its absolute value exceeds 0.40.
+\end{itemize}
+
+\end{document}
