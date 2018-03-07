@@ -46,13 +46,14 @@ that are measured on each observation.\\(I Fodor, LLNL, USA, June 2002).
 
 To ground the students in Applied Multivariate Analysis. This module serves business and mathematics students. It introduces the mathematical statistical ideas behind \begin{itemize} \item Principal Component Analysis, \item Factor Analysis, \item Cluster Analysis, \item Discrimination Function, \item The Multiple Linear Logistic function. \end{itemize}
 The students learn how to implement these techniques in SPSS to become competent in the analysis of a wide variety of multivariate data structures.
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data Reduction}
+\begin{itemize}
+\item Data Reduction or Dimensionality Reduction pertains to analytic methods (typically multivariate exploratory techniques such as Factor Analysis, Multidimensional Scaling, Cluster Analysis, Canonical Correlation, or Neural Networks) that involve reducing the dimensionality of a data set by extracting a number of underlying factors, dimensions, clusters, etc., that can account for the variability in the (multidimensional) data set.
 
-Data Reduction or Dimensionality Reduction pertains to analytic methods (typically multivariate exploratory techniques such as Factor Analysis, Multidimensional Scaling, Cluster Analysis, Canonical Correlation, or Neural Networks) that involve reducing the dimensionality of a data set by extracting a number of underlying factors, dimensions, clusters, etc., that can account for the variability in the (multidimensional) data set.
-
-For example, in poorly designed questionnaires, all responses provided by the participants on a large number of variables (scales, questions, or dimensions) could be explained by a very limited number of "trivial" or artifactual factors. For example, two such underlying factors could be: (1) the respondent's attitude towards the study (positive or negative) and (2) the "social desirability" factor (a response bias representing a tendency to respond in a socially desirable manner).
-\newpage
+\item For example, in poorly designed questionnaires, all responses provided by the participants on a large number of variables (scales, questions, or dimensions) could be explained by a very limited number of "trivial" or artifactual factors. For example, two such underlying factors could be: (1) the respondent's attitude towards the study (positive or negative) and (2) the "social desirability" factor (a response bias representing a tendency to respond in a socially desirable manner).
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Variable Redundancy}
 A specific (but fictitious) example of research will now be presented to illustrate the concept of
 variable redundancy introduced earlier. Imagine that you have developed a 7-item measure of
@@ -63,8 +64,8 @@ job satisfaction. The \emph{instrument} is reproduced here:
 \begin{verbatim}
 Please respond to each of the following statements by placing a
 rating in the space to the left of the statement. In making your
-ratings, use any number from 1 to 7 in which 1=ìstrongly disagreeî
-and 7=ìstrongly agree.î
+ratings, use any number from 1 to 7 in which 1=‚Äústrongly disagree‚Äù
+and 7=‚Äústrongly agree.‚Äù
 _____ 1. My supervisor treats me with consideration.
 _____ 2. My supervisor consults me concerning important decisions
 that affect my work.
@@ -79,8 +80,8 @@ whose jobs are similar to mine.
 \end{verbatim}
 \end{framed}
 
-Notice that items 1-4 all deal with the same topic: the employeesí satisfaction with their supervisors. In this way, items 1-4 are somewhat redundant to one another. Similarly, notice that items 5-7 also all seem to deal
-with the same topic: the employeesí satisfaction with their pay. Empirical findings may further support the notion that there is redundancy in the seven items. Assume that you administer the questionnaire to 200 employees and compute all possible correlations between responses to the 7 items. The resulting fictitious correlations are
+Notice that items 1-4 all deal with the same topic: the employees‚Äô satisfaction with their supervisors. In this way, items 1-4 are somewhat redundant to one another. Similarly, notice that items 5-7 also all seem to deal
+with the same topic: the employees‚Äô satisfaction with their pay. Empirical findings may further support the notion that there is redundancy in the seven items. Assume that you administer the questionnaire to 200 employees and compute all possible correlations between responses to the 7 items. The resulting fictitious correlations are
 reproduced in the table below.
 
 \begin{figure}
@@ -118,7 +119,7 @@ measuring a different construct that could be labelled \textbf{\emph{satisfactio
 If responses to the seven items actually displayed the redundancy suggested by the pattern of
 correlations, it would be advantageous to somehow reduce the number of variables
 in this data set, so that (in a sense) items 1-4 are collapsed into a single new variable that reflects
-the employeesí satisfaction with supervision, and items 5-7 are collapsed into a single new
+the employees‚Äô satisfaction with supervision, and items 5-7 are collapsed into a single new
 variable that reflects satisfaction with pay.
 
 We could then use these two new artificial variables (rather than the seven original variables) as predictor variables in multiple regression, or in any other type of analysis.
@@ -245,7 +246,7 @@ variance in the data set (i.e. the remaining 1.7 units). has been accounted for.
 
 This course will discuss only principal component analysis that result in \textbf{orthogonal solutions}.
 An orthogonal solution is one in which the components remain uncorrelated (orthogonal means
-ìuncorrelatedî).
+‚Äúuncorrelated‚Äù).
 
 It is possible to perform a principal component analysis that results in correlated components.
 Such a solution is called an \textbf{oblique solution}.  In some situations, oblique solutions are superior
