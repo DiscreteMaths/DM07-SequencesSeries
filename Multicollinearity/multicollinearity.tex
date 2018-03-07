@@ -35,6 +35,12 @@ predictive performance, as it can exaggerate minor fluctuations in the data.
 
 
 
+
+\section{Multicollinearity}
+In multiple regression, two or more predictor variables are colinear if they show strong linear relationships. This makes estimation of regression coefficients impossible. It can also produce unexpectedly large estimated standard errors for the coefficients of the X variables involved.
+
+This is why an exploratory analysis of the data should be first done to see if any collinearity among explanatory variables exists. Multicolinearity is suggested by non-significant results in individual tests on the regression coefficients for important explanatory (predictor) variables. Multicolinearity may make the determination of the main predictor variable having an effect on the outcome difficult.
+
 \subsection*{What is Multicollinearity}
 \begin{itemize}
 
@@ -97,7 +103,7 @@ often, confusing and misleading results.
 	\item  This issue is not a serious one with respect to the usefulness of the overall model, but it does affect any attempt to interpret the meaning of the partial regression coefficients in the model.
 
 \end{itemize}
-\textbf{}
+
 \subsection{Effects of Multicollinearity}
 
 In statistics, the occurrence of several independent variables in a multiple regression model are
@@ -106,18 +112,21 @@ to study how well individual independent variables contribute to an understandin
 pendent variable. In general, multicollinearity can cause wide confidence intervals and strange
 p−values for independent variables.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bigskip
 
 You can also assess multicollinearity in regression in the following ways:
-\begin{enumerate}
-	\item  Examine the correlations and associations (nominal variables) between independent variables to detect a high level of association. High bivariate correlations are easy to spot by running correlations among your variables. If high bivariate correlations are present, you can delete one of the two variables. However, this may not always be sufficient.
-	
-\item  Regression coefficients will change dramatically according to whether other variables are included or excluded from the model. Play around with this by adding and then removing variables from your regression model.
-	
-\item  The standard errors of the regression coefficients will be large if multicollinearity is an issue.
-	
-\item Predictor variables with known, strong relationships to the outcome variable will not achieve statistical significance. In this case, neither may contribute significantly to the model after the other one is included. But together they contribute a lot. If you remove both variables from the model, the fit would be much worse. So the overall model fits the data well, but neither X variable makes a significant contribution when it is added to your model last. When this happens, multicollinearity may be present.
-\end{enumerate}
 
+\begin{itemize}
+\item [(1)] Examine the correlations and associations (nominal variables) between independent variables to detect a high level of association. High bivariate correlations are easy to spot by running correlations among your variables. If high bivariate correlations are present, you can delete one of the two variables. However, this may not always be sufficient.
+
+\item [(2)] Regression coefficients will change dramatically according to whether other variables are included or excluded from the model. Play around with this by adding and then removing variables from your regression model.
+
+\item [(3)] The standard errors of the regression coefficients will be large if multicollinearity is an issue.
+
+\item [(4)] Predictor variables with known, strong relationships to the outcome variable will not achieve statistical significance. In this case, neither may contribute significantly to the model after the other one is included. But together they contribute a lot. If you remove both variables from the model, the fit would be much worse. So the overall model fits the data well, but neither X variable makes a significant contribution when it is added to your model last. When this happens, multicollinearity may be present.
+
+\end{itemize}
 
 
 \subsection{How to Identify Multicollinearity}
@@ -155,31 +164,9 @@ collinearity is probably an issue.
 \item When VIF is high there is high multicollinearity and instability of the b and beta coeffi-
 cients. It is often difficult to sort this out.
 \end{itemize}
-You can also assess multicollinearity in regression in the following ways:
-(1) Examine the correlations and associations (nominal variables) between independent vari-
-ables to detect a high level of association. High bivariate correlations are easy to spot by
-running correlations among your variables. If high bivariate correlations are present, you
-can delete one of the two variables. However, this may not always be sufficient.
-(2) Regression coefficients will change dramatically according to whether other variables are
-included or excluded from the model. Play around with this by adding and then removing
-variables from your regression model.
-(3) The standard errors of the regression coefficients will be large if multicollinearity is an
-issue.
-(4) Predictor variables with known, strong relationships to the outcome variable will not
-achieve statistical significance. In this case, neither may contribute significantly to the
-model after the other one is included. But together they contribute a lot. If you remove
-both variables from the model, the fit would be much worse. So the overall model fits
-the data well, but neither X variable makes a significant contribution when it is added to
-your model last. When this happens, multicollinearity may be present.
-Variance inflation factor and tolerance tolerance. One is the reciprocal of the other.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Determing the Variance Inflation Factor (VIF) with R}
-\begin{verbatim}
-library(car)
-# Evaluate Collinearity
-vif(fit) # variance inflation factors
-sqrt(vif(fit)) > 2 # problem?
-\end{verbatim}
+
 
 \subsection{Interpreting Variance Inflation Factors}
 \begin{itemize}
@@ -194,34 +181,12 @@ investigated.
 \item Variance inflation factors greater than 10 are taken as an indication that the multi-
 collinearity may be unduly influencing the least squares estimates.
 \end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Tolerance}
-Tolerance is simply the reciprocal of VIF, and is computed as
-
-
-\[ Tolerance = \frac{1}{VIF}\]
-
-Whereas large values of VIF were unwanted and undesirable, since tolerance is the reciprocal
-of VIF, larger than not values of tolerance are indicative of a lesser problem with collinearity.
-In other words, we want large tolerances.
-
-\begin{itemize}
-\item A tolerance close to 1 means there is little multicollinearity, whereas a value close to 0
-suggests that multicollinearity may be a threat.
-\item The VIF shows us how much the variance of the coefficient estimate is being inflated by
-multicollinearity. For example, if the VIF for a variable were 9, its standard error would
-be three times as large as it would be if its VIF was 1. In such a case, the coefficient
-would have to be 3 times as large to be statistically significant.
-\end{itemize}
-
-
 
 
 %======================================================%
 \subsection{Variance Inflation Factor (VIF)}
 \begin{itemize}
-\item  The Variance In
-ation Factor (VIF) measures the impact of multicollinearity among the variables in a
+\item  The Variance Inflation Factor (VIF) measures the impact of multicollinearity among the variables in a
 regression model.
 \item  There is no formal VIF value for determining presence of multicollinearity. Values of VIF that exceed 10
 are often regarded as indicating multicollinearity, but in weaker models values above 2.5 may be a cause
@@ -248,6 +213,7 @@ coefficients in the model.
 
 
 \end{itemize}
+
 %======================================================%
 \section*{Variance Infiation Factor}
 \begin{itemize}
@@ -265,7 +231,6 @@ an alternative to least square regression.
 \end{itemize}
 
 
-
 %===============================================%
 \section*{Variance Inflation Factor (VIF)}
 \begin{itemize}
@@ -275,27 +240,8 @@ as an individual $R^2$ value (distinct from the overall $R^2$ of the model) and 
 Factor (VIF). 
 \item When those $R^2$ and VIF values are high for any of the variables in your model,
 multi-collinearity is probably an issue.
+\item When VIF is high there is high multicollinearity and instability of the b and beta coefficients. It is often difficult to sort this out. \\
 
-\end{itemize}
-
-
-
-
-%===============================================%
-\section*{Variance Inflation Factor}
-\begin{itemize}
-\item The variance inflation factor (VIF) is used to detect whether one predictor has a strong linear
-association with the remaining predictors (the presence of multicollinearity among the
-predictors). 
-\item VIF measures how much the variance of an estimated regression coefficient
-increases if your predictors are correlated (multicollinear).
-VIF = 1 indicates no relation; VIF > 1, otherwise.
-\item The variance in
-ation factor (VIF) quanties the severity of multicollinearity in a regression
-analysis.
-\item The VIF provides an index that measures how much the variance (the square of the es-
-timate's standard deviation) of an estimated regression coefficient is increased because of
-collinearity.
 
 \end{itemize}
 
@@ -323,38 +269,13 @@ predictors, using different predictors, or an alternative to least square regres
 
 
 
-\newpage
-\section{Multicollinearity}
-In multiple regression, two or more predictor variables are colinear if they show strong linear relationships. This makes estimation of regression coefficients impossible. It can also produce unexpectedly large estimated standard errors for the coefficients of the X variables involved.
-
-This is why an exploratory analysis of the data should be first done to see if any collinearity among explanatory variables exists. Multicolinearity is suggested by non-significant results in individual tests on the regression coefficients for important explanatory (predictor) variables. Multicolinearity may make the determination of the main predictor variable having an effect on the outcome difficult.
-
-
-
-
-
 
 
 \subsection{The Variance Inflation Factor (VIF)}
 
 
 
-   In many statistics programs, the results are shown both as an individual R2 value (distinct from the overall R2 of the model) and a Variance Inflation Factor (VIF). When those R2 and VIF values are high for any of the variables in your model, multicollinearity is probably an issue. When VIF is high there is high multicollinearity and instability of the b and beta coefficients. It is often difficult to sort this out. \\
 
-\bigskip
-
-You can also assess multicollinearity in regression in the following ways:
-
-\begin{itemize}
-\item [(1)] Examine the correlations and associations (nominal variables) between independent variables to detect a high level of association. High bivariate correlations are easy to spot by running correlations among your variables. If high bivariate correlations are present, you can delete one of the two variables. However, this may not always be sufficient.
-
-\item [(2)] Regression coefficients will change dramatically according to whether other variables are included or excluded from the model. Play around with this by adding and then removing variables from your regression model.
-
-\item [(3)] The standard errors of the regression coefficients will be large if multicollinearity is an issue.
-
-\item [(4)] Predictor variables with known, strong relationships to the outcome variable will not achieve statistical significance. In this case, neither may contribute significantly to the model after the other one is included. But together they contribute a lot. If you remove both variables from the model, the fit would be much worse. So the overall model fits the data well, but neither X variable makes a significant contribution when it is added to your model last. When this happens, multicollinearity may be present.
-
-\end{itemize}
 
 \subsection{Variance Inflation Factor}
 
@@ -366,7 +287,13 @@ The VIF provides an index that measures how much the variance (the square of the
 A common rule of thumb is that if the VIF is greater than 5 then multicollinearity is high. Also a VIF level of 10 has been proposed as a cut off value.
 
 \newpage
-
+\subsection{Determing the Variance Inflation Factor (VIF) with R}
+\begin{verbatim}
+library(car)
+# Evaluate Collinearity
+vif(fit) # variance inflation factors
+sqrt(vif(fit)) > 2 # problem?
+\end{verbatim}
 %
 %\subsection{The Variance Inflation Factor (VIF)}
 %
@@ -392,7 +319,7 @@ A common rule of thumb is that if the VIF is greater than 5 then multicollineari
 The Variance Inflation Factor (VIF) measures the impact of multi-collinearity among the variables in a regression model. 
 %Variance Inflation Factor (VIF) is 1/Tolerance, it is always greater than or equal to 1.
 
-There is no formal VIF valu-e for determining presence of multi-collinearity. Values of VIF that exceed 10 are often regarded as indicating multicollinearity, but in weaker models values above 2.5 may be a cause for concern. In many statistics programs, the results are shown both as an individual $R^2$ value (distinct from the overall $R^2$ of the model) and a Variance Inflation Factor (VIF). When those $R^2$ and VIF values are high for any of the variables in your model, multi-collinearity is probably an issue. 
+There is no formal VIF value for determining presence of multi-collinearity. Values of VIF that exceed 10 are often regarded as indicating multicollinearity, but in weaker models values above 2.5 may be a cause for concern. In many statistics programs, the results are shown both as an individual $R^2$ value (distinct from the overall $R^2$ of the model) and a Variance Inflation Factor (VIF). When those $R^2$ and VIF values are high for any of the variables in your model, multi-collinearity is probably an issue. 
 
 %When VIF is high there is high multi-collinearity and instability of the regression estimates. It is often difficult to sort this out.
 
@@ -410,11 +337,25 @@ A tolerance close to 1 means there is little multicollinearity, whereas a value 
 
 
 
-\subsection{Tolerance}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Tolerance}
 Tolerance is simply the reciprocal of VIF, and is computed as
-\[ \mbox{Tolerance} = \frac{1}{VIF}\]
-Whereas large values of VIF were unwanted and undesirable, since tolerance is the reciprocal of VIF, larger than not values of tolerance are indicative of a lesser problem with collinearity. In other words, we want large tolerances.
+
+
+\[ Tolerance = \frac{1}{VIF}\]
+
+Whereas large values of VIF were unwanted and undesirable, since tolerance is the reciprocal
+of VIF, larger than not values of tolerance are indicative of a lesser problem with collinearity.
+In other words, we want large tolerances.
+
+\begin{itemize}
+\item A tolerance close to 1 means there is little multicollinearity, whereas a value close to 0
+suggests that multicollinearity may be a threat.
+\item The VIF shows us how much the variance of the coefficient estimate is being inflated by
+multicollinearity. For example, if the VIF for a variable were 9, its standard error would
+be three times as large as it would be if its VIF was 1. In such a case, the coefficient
+would have to be 3 times as large to be statistically significant.
+\end{itemize}
 
 
 
