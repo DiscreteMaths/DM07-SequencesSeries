@@ -30,6 +30,18 @@
 % http://www.norusis.com/pdf/SPC_v13.pdf
 \begin{document}
 \section{Clustering Linkage Methods}
+\newpage
+
+%----------------------------------------------------------%
+% http://www2.statistics.com/resources/glossary/h/hclusteran.php
+
+% http://mlsc.lboro.ac.uk/resources/statistics/Clusteranalysis.pdf
+
+\section{Cluster Methods}
+Having selected how we will measure distance, we must now choose the clustering algorithm, i.e. the rules that govern between which points distances are measured to determine cluster membership. There are many methods available, the criteria used differ and hence
+different classifications may be obtained for the same data. This is important since it tells us that, although cluster analysis may provide an objective method for the clustering of cases, there can be subjectivity in the choice of method. 
+
+The linkage distances are calculated by SPSS. The goal of the clustering algorithm is to join objects together into successively larger clusters, using some measure of similarity or distance. SPSS provides seven clustering algorithms, the most commonly used one being  \textbf{\textit{Ward's method}}.
 
 SPSS provides several alternative methods for determining a summary measure of distance when a cluster has multiple cases in the cluster.  The SPSS options for the clustering method are Between-groups linkage, Within-groups linkage, Nearest neighbor, Furthest neighbor, Centroid clustering, Median clustering, and Ward's method.
 
@@ -55,18 +67,6 @@ SPSS provides several alternative methods for determining a summary measure of d
 	For the \textbf{median clustering} method, the dissimilarity between cluster A and cluster B is represented by the distance between the SPSS determined median for the cases in cluster A and the median for the cases in cluster B.  See the message in the note above about using squared Euclidean distance rather than Euclidean distance for this method.
 	
 \end{itemize}
-\newpage
-
-%----------------------------------------------------------%
-% http://www2.statistics.com/resources/glossary/h/hclusteran.php
-
-% http://mlsc.lboro.ac.uk/resources/statistics/Clusteranalysis.pdf
-
-\section{Cluster Methods}
-Having selected how we will measure distance, we must now choose the clustering algorithm, i.e. the rules that govern between which points distances are measured to determine cluster membership. There are many methods available, the criteria used differ and hence
-different classifications may be obtained for the same data. This is important since it tells us that, although cluster analysis may provide an objective method for the clustering of cases, there can be subjectivity in the choice of method. 
-
-The linkage distances are calculated by SPSS. The goal of the clustering algorithm is to join objects together into successively larger clusters, using some measure of similarity or distance. SPSS provides seven clustering algorithms, the most commonly used one being  \textbf{\textit{Ward's method}}.
 
 
 \subsection{Nearest neighbour method} 
@@ -115,45 +115,6 @@ with the average linkage method.
 %
 %Ward's linkage is a method for hierarchical cluster analysis . The idea has much in common with analysis of variance (ANOVA). The linkage function specifying the distance between two clusters is computed as the increase in the "error sum of squares" (ESS) after fusing two clusters into a single cluster. Ward's Method seeks to choose the successive clustering steps so as to minimize the increase in ESS at each step.
 
-\newpage
-\subsection*{Clustering Methods}
-
-SPSS provides several alternative methods for determining a summary measure of distance when a cluster has multiple cases in the cluster.  The SPSS options for the clustering method are Between-groups linkage, Within-groups linkage, Nearest neighbor, Furthest neighbor, Centroid clustering, Median clustering, and Ward's method.
-
-\begin{itemize}
-	\item For the \textbf{nearest neighbor} or \textbf{single linkage} method, the dissimilarity between cluster A and cluster B is represented by the minimum of all possible distances between the cases in cluster A and the cases in cluster B.
-	
-	\item For the \textbf{furthest neighbor} or \textbf{complete linkage} method, the dissimilarity between cluster A and cluster B is represented by the maximum of all possible distances between the cases in cluster A and the cases in cluster B.
-	
-	\item For the \textbf{between-groups linkage} or average linkage method, the dissimilarity between cluster A and cluster B is represented by the average of all the possible distances between the cases in cluster A and the cases in cluster B.
-	
-	\item For the \textbf{within-groups linkage} method, the dissimilarity between cluster A and cluster B is represented by the average of all the possible distances between the cases within a single new cluster determined by combining cluster A and cluster B.
-	
-	\item  
-	For the \textbf{centroid clustering} method, the dissimilarity between cluster A and cluster B is represented by the distance between the centroid for the cases in cluster A and the centroid for the cases in cluster B.  Note that this distance is not mathematically equivalent to the average of the distances used in the average linkage method.  Also note the SPSS warning below about using squared Euclidean distance rather than Euclidean distance for this procedure.
-	
-	\begin{framed}
-		The squared Euclidean measure should be used when the CENTROID, MEDIAN, or WARD cluster method is requested.
-	\end{framed}
-	
-	\item For \textbf{Ward’s method}, the dissimilarity between cluster A and cluster B is represented by the “loss of information” from joining the two clusters with this loss of information being measured by the increase in error sum of squares.  For a cluster the sum of squares is the sum of squared deviations of each case from the centroid for the cluster.  The error sum of squares is the total of these for all clusters.  When selecting clusters to join, the two clusters among all possible combinations that have the minimum increase in error sum of squares are selected.  See the note above about using squared Euclidean distance rather than Euclidean distance for this method.
-	
-	\item 
-	For the \textbf{median clustering} method, the dissimilarity between cluster A and cluster B is represented by the distance between the SPSS determined median for the cases in cluster A and the median for the cases in cluster B.  See the message in the note above about using squared Euclidean distance rather than Euclidean distance for this method.
-	
-\end{itemize}
-	
-	
-	%SESSION 1: Hierarchical Clustering
-	% Hierarchical clustering - dendrograms
-	% Divisive vs. agglomerative methods
-	% Different linkage methods
-	
-	%SESSION 2: K-means Clustering
-	
-%	\tableofcontents
-%	\newpage
-%
 
 
 \subsection{Linkage methods}
@@ -281,46 +242,6 @@ The final outcome may depend on the order of the cases in the file. To minimize 
 
 % http://mlsc.lboro.ac.uk/resources/statistics/Clusteranalysis.pdf
 
-\section{Cluster Methods}
-Having selected how we will measure distance, we must now choose the clustering algorithm, i.e. the rules that govern between which points distances are measured to determine cluster membership. There are many methods available, the criteria used differ and hence
-different classifications may be obtained for the same data. This is important since it tells us that, although cluster analysis may provide an objective method for the clustering of cases, there can be subjectivity in the choice of method. 
-
-The linkage distances are calculated by SPSS. The goal of the clustering algorithm is to join objects together into successively larger clusters, using some measure of similarity or distance. SPSS provides seven clustering algorithms, the most commonly used one being  \textbf{\textit{Ward's method}}.
-
-
-\subsection{Nearest neighbour method} 
-(\textit{Also known as the single linkage method}).\\
-In this method the distance between two clusters is defined to be the distance between
-the two closest members, or neighbours. This method is relatively simple but is often
-criticised because it doesnt take account of cluster structure and can result in a problem
-called chaining whereby clusters end up being long and straggly. However, it is better
-than the other methods when the natural clusters are not spherical or elliptical in shape.
-
-\subsection{Furthest neighbour method}
-(\textit{Also known as the complete linkage method}).\\
-In this case the distance between two clusters is defined to be the maximum distance
-between members  i.e. the distance between the two subjects that are furthest apart.
-This method tends to produce compact clusters of similar size but, as for the nearest
-neighbour method, does not take account of cluster structure. It is also quite sensitive
-to outliers.
-
-\subsection{Average (between groups) linkage method }
-(\textit{sometimes referred to as UPGMA}).\\
-The distance between two clusters is calculated as the average distance between all pairs
-of subjects in the two clusters. This is considered to be a fairly robust method.
-
-\subsection{Centroid method}
-Here the centroid (mean value for each variable) of each cluster is calculated and the
-distance between centroids is used. Clusters whose centroids are closest together are
-merged. This method is also fairly robust.
-
-\subsection{Wards method}
-In this method all possible pairs of clusters are combined and the sum of the squared
-distances within each cluster is calculated. This is then summed over all clusters. The
-combination that gives the lowest sum of squares is chosen. This method tends to
-produce clusters of approximately equal size, which is not always desirable. It is also
-quite sensitive to outliers. Despite this, it is one of the most popular methods, along
-with the average linkage method.
 
 %\subsection{Ward's Method}
 %This method is distinct from other methods because it uses an \textbf{\textit{analysis of variance}} approach to evaluate the distances between clusters. In general, this method is very efficient.
@@ -333,5 +254,5 @@ with the average linkage method.
 %\subsection{Ward's Linkage}
 %
 %Ward's linkage is a method for hierarchical cluster analysis . The idea has much in common with analysis of variance (ANOVA). The linkage function specifying the distance between two clusters is computed as the increase in the "error sum of squares" (ESS) after fusing two clusters into a single cluster. Ward's Method seeks to choose the successive clustering steps so as to minimize the increase in ESS at each step.
-\part{title}
+
 \end{document}
