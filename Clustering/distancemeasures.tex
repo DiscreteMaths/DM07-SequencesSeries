@@ -23,10 +23,10 @@
 
 %http://www.electronics.dit.ie/staff/ysemenova/Opto2/CO_IntroLab.pdf
 \begin{document}
-
+\noindent \textbf{\textit{(Remark: We will focus on distance measures used in Cluster Analysis here. Later in the semester, we will revert later to other distance metrics, specifically measures that are commonly encountered in multivariate statistics, e.g Mahalanobis Distance.)}}
 %http://www.econ.upf.edu/~michael/stanford/maeb4.pdf
 %http://stn.spotfire.com/spotfire_client_help/hc/hc_distance_measures_overview.htm
-
+\section*{Distance Measures for Cluster Analysis}
 \begin{itemize}
 \item There are various measures to express (dis)similarity between pairs of objects.
 A straightforward way to assess two objects proximity is by drawing a straight line
@@ -36,7 +36,7 @@ when it comes to analyzing ratio or interval-scaled data.
 \begin{figure}[h!]
 	\begin{center}
 		% Requires \usepackage{graphicx}
-		\includegraphics[scale=0.6]{images/EuclidDistance1.jpg}\\
+		\includegraphics[scale=0.6]{images/EuclidDistance1.jpg}
 	\end{center}
 \end{figure}
 
@@ -45,17 +45,17 @@ the variables values. Suppose B and C were positioned as $(7,6)$ and $(6,5)$ r
 \begin{figure}[h!]
 	\begin{center}
 		% Requires \usepackage{graphicx}
-		\includegraphics[scale=0.6]{images/EuclidDistance2.jpg}\\
+		\includegraphics[scale=0.6]{images/EuclidDistance2.jpg}
 	\end{center}
 \end{figure}
 
 This distance corresponds to the length of the line that connects objects B and C.
 In this case, we only used two variables but we can easily add more under the root
 sign in the formula. However, each additional variable will add a dimension to our
-research problem (e.g., with ten clustering variables, we have to deal with ten
+analysis (e.g., with ten clustering variables, we have to deal with ten
 dimensions), making it impossible to represent the solution graphically.
 
-\item  The \textbf{\textit{Squared Euclidean distance}} uses the same equation as the Euclidean distance metric, but does not take the square root. In the previous example, the squared Euclidean distance between B and C is 2.
+\item  The \textbf{\textit{Squared Euclidean distance}} uses the same equation as the Euclidean distance metric, but does not take the square root. For the previous example, the squared Euclidean distance between B and C is 2.
 As a result, clustering with the Squared Euclidean distance is computationally faster than clustering with the regular Euclidean distance.
 
 \item We can compute the distance between all other pairs of objects. All
@@ -67,22 +67,23 @@ representing the objects under consideration.
 \begin{figure}[h!]
 	\begin{center}
 		% Requires \usepackage{graphicx}
-		\includegraphics[scale=0.6]{images/DistanceMatrix.jpg}\\
+		\includegraphics[scale=0.6]{images/DistanceMatrix.jpg}
 	\end{center}
 \end{figure}
-
-\item There are also alternative distance measures: The \textbf{\textit{Manhattan distance}} or city-block distance uses the sum of the variables absolute differences. This is often called the Manhattan metric
-as it is akin to the walking distance between two points in a city like New Yorks
-Manhattan district, where the distance equals the number of blocks in the directions
-North-South and East-West. Using the points B and C that we used previously, the manhattan distance is computed as follows:
+\newpage
+\item There are also alternative distance measures: The \textbf{\textit{Manhattan distance}} or city-block distance uses the sum of the variables absolute differences.
+\begin{itemize}
+	\item[$\ast$] This is often called the Manhattan metric
+	as it is akin to the walking distance between two points in a city like New Yorks
+	Manhattan district, where the distance equals the number of blocks in the directions
+	North-South and East-West.
+\end{itemize}  Using the points B and C that we used previously, the manhattan distance is computed as follows:
 \begin{figure}[h!]
 	\begin{center}
 		% Requires \usepackage{graphicx}
-		\includegraphics[scale=0.6]{images/Manhattan.jpg}\\
+		\includegraphics[scale=0.6]{images/Manhattan.jpg}
 	\end{center}
 \end{figure}
-
-
 \item When working with metric (or ordinal) data, researchers frequently use
 the \textbf{\textit{Chebychev distance}}, which is the maximum of the absolute difference in the
 clustering variables values. For B and C, this result is:
@@ -90,22 +91,34 @@ clustering variables values. For B and C, this result is:
 \begin{figure}[h!]
 	\begin{center}
 		% Requires \usepackage{graphicx}
-		\includegraphics[scale=0.6]{images/Chebyshev.jpg}\\
+		\includegraphics[scale=0.6]{images/Chebyshev.jpg}
 	\end{center}
 \end{figure}
-
 \item There are other distance measures such as the Angular, Canberra or Mahalanobis
 distance. In many situations, the \textbf{\textit{Mahalanobis
 		distance}} is desirable as this measure compensates for \textbf{\textit{multi-collinearity}}
 between the clustering variables. However, it is unfortunately not menu-accessible
-in SPSS.
+in SPSS for cluster analysis.
 \end{itemize}
-\section{Euclidean Distance}
+%---------------------------------------------------------------------------%
+\newpage
+\section*{Euclidean Distance Metrics}
+\begin{itemize}
+\item The most straightforward and generally accepted way of computing distances between objects in a multi-dimensional space is to compute Euclidean distances, an extension of Pythagoras's theorem. If we had a two- or three-dimensional space this measure is the actual geometric distance between objects in the space (i.e. as if measured with a ruler).
+	
+\item In a univariate example, the Euclidean distance between two values is the arithmetic difference, i.e. \textbf{\textit{value1 - value2}}. In the bivariate case, the minimum distance is the hypotenuse of a triangle formed from the points, as in Pythagoras's theorem.
+	
+\item Although difficult to visualize, an extension of the Pythagoras's theorem will give the distance between two points in n-dimensional space. The squared Euclidean distance is used more often than the simple Euclidean distance in order to place progressively greater weight on objects that are further apart. Euclidean (and squared Euclidean) distances are usually computed from raw data, and not from transformed data, e.g. standardized data.
+\end{itemize}
+
+
+
+\subsection*{Euclidean Distance}
 The Euclidean distance between two points, x and y, with $k$ dimensions is calculated as:
 \[ \sqrt{ \sum^{k}_{j=1} ( x_j - y_j)^2 } \]
 The Euclidean distance is always greater than or equal to zero. The measurement would be zero for identical points and high for points that show little similarity.
 
-\subsection{Example}
+\subsubsection*{Example}
 Compute the Euclidean Distance between the following points:
 $X = \{1,5,4,3\}$ and $Y = \{2,1,8,7\}$
 
@@ -122,17 +135,8 @@ $x_j$	&	$y_j$	&   $x_j - y_j$	&	$(x_j - y_j)^2$	\\ \hline
 \end{center}
 The Euclidean Distance between the two points is $\sqrt{49}$ i.e. 7.
 
-%---------------------------------------------------------------------------%
-
-\subsection{Squared Euclidean distance}
-The most straightforward and generally accepted way of computing distances between objects in a multi-dimensional space is to compute Euclidean distances, an extension of Pythagoras's theorem.
-If we had a two- or three-dimensional space this measure is the actual geometric distance between objects in the space (i.e. as if measured with a ruler).
-
-In a univariate example, the Euclidean distance between two values is the arithmetic difference, i.e. \textbf{\textit{value1 - value2}}. In the bivariate case, the minimum distance is the hypotenuse of a triangle formed from the points, as in Pythagoras's theorem.
-
-Although difficult to visualize, an extension of the Pythagoras's theorem will give the distance between two points in n-dimensional space. The squared Euclidean distance is used more often than the simple Euclidean distance in order to place progressively greater weight on objects that are further apart. Euclidean (and squared Euclidean) distances are usually computed from raw data, and not from transformed data, e.g. standardized data.
 %----------------------------------------------------------%
-\section{Standardized Euclidean distance}
+\subsection*{Standardized Euclidean distance}
 The Squared Euclidean distance between two points, x and y, with $k$ dimensions is calculated as:
 \[ \sum^{k}_{j=1} ( x_j - y_j)^2  \]
 The Squared Euclidean distance may be preferred to the Euclidean distance as it is slightly less computational complex, without loss of any information.
@@ -193,13 +197,13 @@ largest role in this particular example, even after standardization. But this co
 justified now, since it does show the biggest standardized difference between the samples. 
 %--------------------------------------------------------------------------------------%
 \newpage
-\section{Manhattan (City Block) Distance}
+\section*{Manhattan (City Block) Distance}
 The City block distance between two points, x and y, with $k$ dimensions is calculated as:
 \[ \sum^{k}_{j=1} | x_j - y_j |  \]
 
 The City block distance is always greater than or equal to zero. The measurement would be zero for identical points and high for points that show little similarity.
 
-\subsection{Example}
+\subsection*{Example}
 Compute the Manhattan Distance between the following points: 
 $X = \{1,3,4,2\}$ and $Y = \{5,2,5,2\}$
 
@@ -220,36 +224,46 @@ The Manhattan Distance between the two points is 6.
 
 %--------------------------------------------------------------------------------------%
 \newpage
-\subsection*{Measures for Interval Data}
+\subsection*{Other Measures for Interval Data}
 The following dissimilarity measures are available for interval data:
 \begin{itemize}
-	
-	\item Euclidean distance. The square root of the sum of the squared differences between values for the items. This is the default for interval data. {Squared Euclidean distance is the default on the classroom version of SPSS.  This is reasonable given the warning below that SPSS puts in the output.} 
-	The squared Euclidean measure should be used when the CENTROID, MEDIAN, or WARD cluster method is requested.
-	\item 	Squared Euclidean distance. The sum of the squared differences between the values for the items. 
+%	
+%	\item Euclidean distance. The square root of the sum of the squared differences between values for the items. This is the default for interval data. {Squared Euclidean distance is the default on the classroom version of SPSS.  This is reasonable given the warning below that SPSS puts in the output.} 
+%	The squared Euclidean measure should be used when the CENTROID, MEDIAN, or WARD cluster method is requested.
+%	\item 	Squared Euclidean distance. The sum of the squared differences between the values for the items. 
 	\item 	Pearson correlation. The product-moment correlation between two vectors of values. 
-	\item 	Cosine. The cosine of the angle between two vectors of values. 
+	\item 	Cosine. The cosine of the angle between two vectors of values (see next section). 
 	\item 	Chebychev. The maximum absolute difference between the values for the items. 
-	\item 	Block. The sum of the absolute differences between the values of the item. Also known as Manhattan distance. 
-	\item 	Minkowski. The pth root of the sum of the absolute differences to the pth power between the values for the items. 
-	\item 	Customized. The rth root of the sum of the absolute differences to the pth power between the values for the items.
+%	\item 	Block. The sum of the absolute differences between the values of the item. Also known as Manhattan distance. 
+	\item 	Minkowski. The $p-$th root of the sum of the absolute differences to the $p-$th power between the values for the items. 
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.35\linewidth]{images/minkowski}
+	\end{figure}\\
+	\textit{(Remark : this is a generalization of the Euclidean distance. This one is worth remembering).}
+	\item 	Customized. The $r-$th root of the sum of the absolute differences to the $p-$th power between the values for the items.\\
+	\textit{(Remark: this can be seen as a generalization of the Minkowski distance, where the powers are not required to be equal).}
 \end{itemize}
 
-\section*{Measures for Interval Data}
-The following dissimilarity measures are available for interval data:
+\subsection*{Cosine Similarity}
 \begin{itemize}
+	\item Cosine similarity is a measure of similarity between two non-zero vectors of an inner product space that measures the cosine of the angle between them. 
+	\item The cosine of 0 degrees is 1, and it is less than 1 for any other angle in the interval $[0,2\pi)$. \item It is thus a judgment of orientation and not magnitude: two vectors with the same orientation have a cosine similarity of 1, two vectors at 90 degrees have a similarity of 0, and two vectors diametrically opposed have a similarity of -1, independent of their magnitude. 
+	\item Cosine similarity is particularly used in positive space, where the outcome is neatly bounded in [0,1].
 	
-	\item Euclidean distance. The square root of the sum of the squared differences between values for the items. This is the default for interval data. {Squared Euclidean distance is the default on the classroom version of SPSS.  This is reasonable given the warning below that SPSS puts in the output.} 
-	The squared Euclidean measure should be used when the CENTROID, MEDIAN, or WARD cluster method is requested.
-	\item 	Squared Euclidean distance. The sum of the squared differences between the values for the items. 
-	\item 	Pearson correlation. The product-moment correlation between two vectors of values. 
-	\item 	Cosine. The cosine of the angle between two vectors of values. 
-	\item 	Chebychev. The maximum absolute difference between the values for the items. 
-	\item 	Block. The sum of the absolute differences between the values of the item. Also known as Manhattan distance. 
-	\item 	Minkowski. The pth root of the sum of the absolute differences to the pth power between the values for the items. 
-	\item 	Customized. The rth root of the sum of the absolute differences to the pth power between the values for the items.
 \end{itemize}
-\section{Cluster Analysis : Proximity Matrices}
+\newpage \begin{figure}[h!]
+ 	\centering
+ 	\includegraphics[width=0.55\linewidth]{images/cosinesimilarity}
+ 	\caption{Euclidean Distance vs Cosine Similarity}
+ 	\label{fig:cosinesimilarity}
+ \end{figure}
+\begin{itemize}
+	\item This is a visual representation of euclidean distance ($d$) and cosine similarity ($\theta$). While cosine looks at the angle between vectors (thus not taking into regard their weight or magnitude), euclidean distance is similar to using a ruler to actually measure the distance.
+	\item Cosine similarity is generally used as a metric for measuring distance when the magnitude of the vectors does not matter (i.e. Text Analytics). 
+\end{itemize} 
+\newpage
+\section*{Cluster Analysis : Proximity Matrices}
 
 Using \textbf{\textit{nearest neighbour}} linkage, describe how the agglomeration schedule based on the following 
 proximity matrix. With nearest neighbour, a case is assigned to the cluster of the case with which it has the shortest distance. Cluster are also joined on this basis.

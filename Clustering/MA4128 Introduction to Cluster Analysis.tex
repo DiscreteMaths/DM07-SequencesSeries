@@ -22,7 +22,7 @@
 \pagestyle{fancy}
 \setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
 \lhead{MA4128} \rhead{Mr. Kevin O'Brien}
-\chead{Advanced Data Modelling}
+\chead{Cluster Analysis}
 %\input{tcilatex}
 
 
@@ -63,13 +63,22 @@ The term cluster analysis encompasses a number of different algorithms and metho
 \end{itemize}
 %========================%
 \subsection{Applications of Cluster Analysis}
+\begin{itemize}
+\item 	
+We deal with clustering in almost every aspect of daily life. For example, a group of diners sharing the same table in a restaurant may be regarded as a cluster of people. In food stores items of similar nature, such as different types of meat or vegetables are displayed in the same or nearby locations. Clustering techniques have been applied to a wide variety of scientific research problems. 
 
-We deal with clustering in almost every aspect of daily life. For example, a group of diners sharing the same table in a restaurant may be regarded as a cluster of people. In food stores items of similar nature, such as different types of meat or vegetables are displayed in the same or nearby locations. There is a countless number of examples in which clustering plays an important role. Clustering techniques have been applied to a wide variety of scientific research problems. For example, in the field of medicine, clustering diseases, cures for diseases, or symptoms of diseases can lead to very useful taxonomies. In the field of psychiatry, the correct diagnosis of clusters of symptoms such as paranoia, schizophrenia, etc. is essential for successful therapy. In archeology, researchers have attempted to establish taxonomies of stone tools, funeral objects, etc. by applying cluster analytic techniques. According to the modern system employed in biology, man belongs to the primates, the mammals, the amniotes, the vertebrates, and the animals.
-
+\item There is a countless number of examples in which clustering plays an important role. 
+\begin{itemize}
+\item[$\ast$] In the field of medicine, clustering diseases, cures for diseases, or symptoms of diseases can lead to very useful taxonomies. 
+\item[$\ast$] In the field of psychiatry, the correct diagnosis of clusters of symptoms such as paranoia, schizophrenia, etc. is essential for successful therapy. 
+\item[$\ast$] In archeology, researchers have attempted to establish taxonomies of stone tools, funeral objects, etc. by applying cluster analytic techniques. 
+\item[$\ast$] According to the modern system employed in biology, man belongs to the primates, the mammals, the amniotes, the vertebrates, and the animals.
+\end{itemize}
+\item 
 Note how in this classification, the higher the level of aggregation the less similar are the members in the respective class. Man has more in common with all other primates (e.g., apes) than it does with the more "distant" members of the mammals (e.g., dogs), etc.
-
+\item 
 In general, whenever we need to classify a "mountain" of information into manageable meaningful piles, cluster analysis is of great utility.
-
+\end{itemize}
 
 %---------------------------------------------------------------%
 \section{Cluster Analysis Techniques}
@@ -88,8 +97,8 @@ which its members belong. Items in each cluster are similar in some ways to each
 dissimilar to those in other clusters.
 
 \item Cluster analysis is a tool of discovery revealing associations and structure in data which, though not previously
-evident, are sensible and useful when discovered. Importantly, CA enables new
-cases to be assigned to classes for identification and diagnostic purposes; or find \textbf{\textit{exemplars}}
+evident, are sensible and useful when discovered. Importantly, Cluster analysis enables new
+cases to be assigned to classes for identification and diagnostic purposes; or find \textbf{\textit{exemplars}} (i.e. a very typcial case)
 to represent classes.
 \end{itemize}
 %---------------------------------------------------------------%
@@ -102,7 +111,7 @@ There are three main types of cluster analysis.
 \item Two Step Clustering Analysis
 \end{itemize}
 
-Within hierarchical clustering analysis there are two subcategories: 
+\noindent Within hierarchical clustering analysis there are two subcategories: 
 \begin{itemize}
 \item Agglomerative (start from n clusters, to get to 1 cluster)
 \item Divisive (start from 1 cluster, to get to $n$ cluster)
@@ -110,13 +119,13 @@ Within hierarchical clustering analysis there are two subcategories:
 
 
 %---------------------------------------------------------------------------------%
-\subsection{Hierarchical cluster analysis}
+\subsection{Hierarchical Cluster Analysis}
 \begin{itemize}
 	\item This is the major statistical method for finding relatively homogeneous clusters of cases based on measured characteristics.
 	
-\item Agglomerative clustering starts with each case as a separate cluster, i.e. there are as many clusters as cases, and then combines the clusters sequentially, reducing the number of clusters at each step until only one cluster is left.
+\item \textbf{\textit{Agglomerative clustering}} starts with each case as a separate cluster, i.e. there are as many clusters as cases, and then combines the clusters sequentially, reducing the number of clusters at each step until only one cluster is left.
 	
-\item The clustering method uses the dissimilarities or distances between objects when forming the clusters. The SPSS programme calculates \textbf{\textit{distances}} between data points in terms of the specified variables.
+\item The clustering method uses the \textbf{dissimilarities} or \textbf{distances} between objects when forming the clusters. The SPSS programme calculates \textbf{\textit{distances}} between data points in terms of the specified variables.
 	
 \item A hierarchical tree diagram, called a \textbf{\textit{dendrogram }} on SPSS, can be produced to show the linkage points. The clusters are linked at increasing levels of \textbf{\textit{dissimilarity}}.
 	The actual measure of dissimilarity depends on the measure used.
@@ -124,7 +133,7 @@ Within hierarchical clustering analysis there are two subcategories:
 \end{itemize}
 
 
-\subsection{Distance measures}
+\subsection{Distance Measures}
 \begin{itemize}
 	\item Distance can be measured in a variety of ways. There are distances that are Euclidean (can be measured with a ruler) and there are other distances based on similarity.
 	\item  For example, in terms of
@@ -142,13 +151,15 @@ Within hierarchical clustering analysis there are two subcategories:
 \item Note that the previous discussions refer to clustering algorithms and do not mention anything about statistical significance testing. In fact, cluster analysis is not as much a typical statistical test as it is a collection of different algorithms that ``\textit{put objects into clusters according to well defined similarity rules}."
 	
 \item The point here is that, unlike many other statistical procedures, cluster analysis methods are mostly used when we do not have any \textbf{\textit{a priori hypotheses}}, but are still in the exploratory phase of our research. In a sense, cluster analysis finds the ``most significant solution possible." Therefore, statistical significance testing is really not appropriate here, even in cases when p-values are reported.
+\item \textit{(Remark: Consider this in the context of the the \textbf{Supervised/Unsupervised learning} dichotomy that we will see later in the course.)}
 \end{itemize}
 
 
 \subsection{Dendrograms}
 \begin{itemize}
 	
-\item The dendrogram is a tree-structured graphical representation, used to visualize of the results of \textbf{\textit{hierarchical cluster analysis}} . This is a tree-like plot where each step of hierarchical clustering is represented as a joining (or fusion) of two branches of the tree into a single one. 
+\item The dendrogram is a tree-structured graphical representation, used to visualize of the results of \textbf{\textit{hierarchical cluster analysis}} . 
+\item This is a tree-like plot where each step of hierarchical clustering is represented as a joining (or fusion) of two branches of the tree into a single one. 
 \item The branches represent clusters obtained on each step of hierarchical clustering. 
 \item The result of a clustering is presented either as the \textbf{\textit{distance}} or the similarity between the clustered rows or columns depending on the selected distance measure.
 \end{itemize}
@@ -157,68 +168,6 @@ Within hierarchical clustering analysis there are two subcategories:
 % http://www2.statistics.com/resources/glossary/h/hclusteran.php
 
 % http://mlsc.lboro.ac.uk/resources/statistics/Clusteranalysis.pdf
-
-\section{Cluster Methods}
-Having selected how we will measure distance, we must now choose the clustering algorithm, i.e. the rules that govern between which points distances are measured to determine cluster membership. There are many methods available, the criteria used differ and hence
-different classifications may be obtained for the same data. This is important since it tells us that, although cluster analysis may provide an objective method for the clustering of cases, there can be subjectivity in the choice of method. 
-
-The linkage distances are calculated by SPSS. The goal of the clustering algorithm is to join objects together into successively larger clusters, using some measure of similarity or distance. SPSS provides seven clustering algorithms, the most commonly used one being  \textbf{\textit{Ward's method}}.
-
-
-\subsection{Nearest neighbour method} 
-(\textit{Also known as the single linkage method}).\\
-In this method the distance between two clusters is defined to be the distance between
-the two closest members, or neighbours. This method is relatively simple but is often
-criticised because it doesn’t take account of cluster structure and can result in a problem
-called chaining whereby clusters end up being long and straggly. However, it is better
-than the other methods when the natural clusters are not spherical or elliptical in shape.
-
-\subsection{Furthest neighbour method}
-(\textit{Also known as the complete linkage method}).\\
-In this case the distance between two clusters is defined to be the maximum distance
-between members  i.e. the distance between the two subjects that are furthest apart.
-This method tends to produce compact clusters of similar size but, as for the nearest
-neighbour method, does not take account of cluster structure. It is also quite sensitive
-to outliers.
-
-\subsection{Average (between groups) linkage method }
-(\textit{sometimes referred to as UPGMA}).\\
-The distance between two clusters is calculated as the average distance between all pairs
-of subjects in the two clusters. This is considered to be a fairly robust method.
-
-\subsection{Centroid method}
-Here the centroid (mean value for each variable) of each cluster is calculated and the
-distance between centroids is used. Clusters whose centroids are closest together are
-merged. This method is also fairly robust.
-
-\subsection{Ward’s method}
-In this method all possible pairs of clusters are combined and the sum of the squared
-distances within each cluster is calculated. This is then summed over all clusters. The
-combination that gives the lowest sum of squares is chosen. This method tends to
-produce clusters of approximately equal size, which is not always desirable. It is also
-quite sensitive to outliers. Despite this, it is one of the most popular methods, along
-with the average linkage method.
-
-%\subsection{Ward's Method}
-%This method is distinct from other methods because it uses an \textbf{\textit{analysis of variance}} approach to evaluate the distances between clusters. In general, this method is very efficient.
-%
-%Cluster membership is assessed by calculating the total sum of squared deviations from the mean of a cluster. The criterion for fusion is that it should produce the smallest possible increase
-%in the error sum of squares.
-%
-%
-%
-%\subsection{Ward's Linkage}
-%
-%Ward's linkage is a method for hierarchical cluster analysis . The idea has much in common with analysis of variance (ANOVA). The linkage function specifying the distance between two clusters is computed as the increase in the "error sum of squares" (ESS) after fusing two clusters into a single cluster. Ward's Method seeks to choose the successive clustering steps so as to minimize the increase in ESS at each step.
-
-
-%
-%\subsection{Applications of Cluster Analysis}
-%
-%In medicine, the clustering of symptoms and diseases leads to taxonomies of illnesses. In the field of business, clusters of consumer segments are often sought for successful marketing strategies. Biologists have to organize the different species of animals before a meaningful description of the differences between animals is possible.
-
-%\subsection{Cluster Analysis as a Statistical Tool}
-
 
 
 \section{Simple Case Studies}
