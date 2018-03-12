@@ -32,7 +32,7 @@
 
 
 
-\section{K-Means Cluster Analysis}
+\section{Cluster Analysis: Background to K-Means Clustering}
 \noindent \textbf{Objective:} create clusters of items, individuals or objects that have similarity with the others in the cluster but with differences between clusters.  
 % Document prepared by Robert L. Andrews, April 2005 & revised, April 2011
 
@@ -46,7 +46,9 @@
 \item A key issue in obtaining a set of clusters is the determination of the number of clusters.  Hierarchical procedures provide information that allows the analyst to decide on the number of clusters based on the output. 
 \item  This is often done by examining tabular or graphical output to identify the gaps that define logical clusters.  
 	\item Hierarchical clustering requires a distance or similarity matrix between all pairs of cases. That's an extremely large matrix if you have tens of thousands of cases in your data file.
-
+\end{itemize}
+\section{K-means Clustering}
+\begin{itemize}
 \item A clustering method that doesn't require computation of all possible distances is k-means clustering. It differs from hierarchical clustering in several ways. You have to know in advance the number of clusters you want. You can't get solutions for a range of cluster numbers unless you rerun the analysis for each different number of clusters.
 
 \item The algorithm repeatedly reassigns cases to clusters, so the same case can move from cluster to cluster during the analysis. In agglomerative hierarchical clustering, on the other hand, cases are added only to existing clusters. They are forever captive in their cluster, with a widening circle of ``neighbours".
@@ -72,13 +74,20 @@
 
 \subsection*{Assumptions}
 \begin{itemize}
-	\item  Distances are computed using simple Euclidean distance. If you want to use another distance or similarity measure, use the Hierarchical Cluster Analysis procedure. Scaling of variables is an important consideration--if your variables are measured on different scales (for example, one variable is expressed in dollars and another is expressed in years), your results may be misleading.
-	\item  In such cases, you should consider standardizing your variables before you perform the k-means cluster analysis (this can be done in the Descriptives procedure). The procedure assumes that you have selected the appropriate number of clusters and that you have included all relevant variables. 
+	\item  Distances are computed using simple Euclidean distance. If you want to use another distance or similarity measure, use the Hierarchical Cluster Analysis procedure. 
+	\begin{itemize}
+		\item[$\ast$] Scaling of variables is an important consideration--if your variables are measured on different scales (for example, one variable is expressed in dollars and another is expressed in years), your results may be misleading.
+	\end{itemize}
+	\item  In such cases, you should consider standardizing your variables before you perform the k-means cluster analysis \\ (\textit{SPSS: this can be done in the Descriptives procedure}). The procedure assumes that you have selected the appropriate number of clusters and that you have included all relevant variables. 
 	\item If you have chosen an inappropriate number of clusters or omitted important variables, your results may be misleading.
 \end{itemize}
 
 
-\subsection*{Case and Initial Cluster Center Order.} The default algorithm for choosing initial cluster centers is not invariant to case ordering. The Use running means option on the Iterate dialog box makes the resulting solution potentially dependent upon case order regardless of how initial cluster centers are chosen. If you are using either of these methods, you may want to obtain several different solutions with cases sorted in different random orders to verify the stability of a given solution. Specifying initial cluster centers and not using the Use running means option will avoid issues related to case order. However, ordering of the initial cluster centers may affect the solution, if there are tied distances from cases to cluster centers. Comparing results from analyses with different permutations of the initial center values may be used to assess the stability of a given solution.
+\subsection*{Case and Initial Cluster Center Order} 
+\begin{itemize}
+	\item The default algorithm for choosing initial cluster centers is not invariant to case ordering. The Use running means option on the Iterate dialog box makes the resulting solution potentially dependent upon case order regardless of how initial cluster centers are chosen. 
+	\item If you are using either of these methods, you may want to obtain several different solutions with cases sorted in different random orders to verify the stability of a given solution. \item Specifying initial cluster centers and not using the Use running means option will avoid issues related to case order. However, ordering of the initial cluster centers may affect the solution, if there are tied distances from cases to cluster centers. Comparing results from analyses with different permutations of the initial center values may be used to assess the stability of a given solution.
+	\end{itemize}
 %------------------------------------------------------------------%
 \subsection{Initial Cluster Centres}
 \begin{itemize}
@@ -147,7 +156,7 @@ contained in the cluster (e.g., A, B, C in the first cluster) regarding each of 
 		\includegraphics[scale=0.4]{images/kmeans4.jpg}\\
 	\end{center}
 \end{figure}
-\item Both clusterscenters now shift into new positions (CC1 for the first and CC2 for the second cluster).
+\item Both clusters centers now shift into new positions (CC1 for the first and CC2 for the second cluster).
 In the fourth step, the distances from each object to the newly located cluster
 centers are computed and objects are again assigned to a certain cluster on the basis
 of their minimum distance to other cluster centers (CC1 and CC2).
@@ -181,20 +190,19 @@ makes k-means less attractive to some and still hinders its routine application 
 practice.
 \end{itemize}
 
-Cluster analysis can be an effective tool to identify extreme data values in a multivariate data set.  Extreme points will be a cluster by themselves while the vast majority of the other points are in one or more well populated clusters.  
+% Cluster analysis can be an effective tool to identify extreme data values in a multivariate data set.  Extreme points will be a cluster by themselves while the vast majority of the other points are in one or more well populated clusters.  
+% When performing hierarchical cluster analysis one can cluster cases or variables in SPSS by selecting either cases or variables in the initial menu.  The default is cases since it is probably done more than clustering variables but clustering variables may be desirable in certain situations.  
 
-When performing hierarchical cluster analysis one can cluster cases or variables in SPSS by selecting either cases or variables in the initial menu.  The default is cases since it is probably done more than clustering variables but clustering variables may be desirable in certain situations.  
-
- 
- \newpage
-\section*{Clustering Procedures: }
-% (Descriptions below originally copied from SPSS13.0 Help & I have made % slight additions.)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{K-Means Cluster Analysis}
 \begin{itemize}
-	\item This procedure attempts to identify relatively homogeneous groups of cases based on selected characteristics, using an algorithm that can handle large numbers of cases. However, the algorithm requires you to specify the number of clusters. You can specify initial cluster centers if you know this information. \item You can select one of two methods for classifying cases, either updating cluster centers iteratively or classifying only. You can save cluster membership, distance information, and final cluster centers. \item Optionally, you can specify a variable whose values are used to label casewise output. You can also request analysis of variance F statistics. While these statistics are opportunistic (the procedure tries to form groups that do differ), the relative size of the statistics provides information about each variable's contribution to the separation of the groups.
+	\item This procedure attempts to identify relatively homogeneous groups of cases based on selected characteristics, using an algorithm that can handle large numbers of cases.
+	\item However, the algorithm requires you to specify the number of clusters. You can specify initial cluster centers if you know this information. \item You can select one of two methods for classifying cases, either updating cluster centers iteratively or classifying only. You can save \texttt{cluster membership}, \texttt{distance information}, and \texttt{final cluster centers}. 
+	\item Optionally, you can specify a variable whose values are used to label casewise output. You can also request analysis of variance $F$ statistics.
+	\item  While these statistics are opportunistic (the procedure tries to form groups that do differ), the relative size of the statistics provides information about each variable's contribution to the separation of the groups.
 	
-	\item Statistics. Complete solution: initial cluster centers, ANOVA table.  Each case: cluster information, distance from cluster center.
+%	\item Statistics. Complete solution: initial cluster centers, ANOVA table.  Each case: cluster information, distance from cluster center.
 \end{itemize}
 
 

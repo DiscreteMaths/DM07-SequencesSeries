@@ -55,8 +55,9 @@ The Two-Step Cluster Analysis is an exploratory tool designed to reveal natural 
 	of preclusters give better results because the cases are more similar in a precluster;
 	however, forming many preclusters slows the algorithm}.
 	
-
-	\subsubsection{Step 1: Preclustering: Making Little Clusters}
+\end{itemize}
+\end{itemize}
+	\subsection{Step 1: Preclustering: Making Little Clusters}
 	\begin{itemize}
 		\item The first step of the two-step procedure is formation of preclusters. The goal of
 		preclustering is to reduce the size of the matrix that contains distances between all
@@ -68,9 +69,6 @@ The Two-Step Cluster Analysis is an exploratory tool designed to reveal natural 
 		matrix is no longer dependent on the number of cases but on the number of preclusters.
 	\end{itemize}
 	
-
-\end{itemize}
-\end{itemize}
 
 
 
@@ -150,10 +148,10 @@ clustering solution’s overall goodness-of-fit.
 distances between the objects and can vary between -1 and +1. Specifically, a
 silhouette measure of less than 0.20 indicates a poor solution quality, a measure
 between 0.20 and 0.50 a fair solution, whereas values of more than 0.50 indicate a
-good solution . 
+good solution. 
 \item In our case, the measure indicates a satisfactory (``fair") cluster quality. Consequently, you can
 proceed with the analysis by double-clicking on the output. This will open up the
-model viewer , an evaluation tool that graphically presents the structure
+model viewer, an evaluation tool that graphically presents the structure
 of the revealed clusters.
 \item 
 
@@ -165,14 +163,14 @@ request different information, such as an overview of the cluster structure and 
 overall variable importance.
 \end{itemize}
 
-
-\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Settings}
 Some of the options you can specify when using two-step clustering are:
-\textbf{Standardization:} The algorithm will automatically standardize all of the variables
-unless you override this option.
+
 \begin{itemize}
+	\item \textbf{Standardization:} The algorithm will automatically standardize all of the variables
+	unless you override this option.
 	\item \textbf{Distance measures:} If your data are a mixture of continuous and categorical variables,
 	you can use only the log-likelihood criterion. The distance between two clusters
 	depends on the decrease in the log-likelihood when they are combined into a single
@@ -211,9 +209,9 @@ unless you override this option.
 chooses the appropriate solution by looking for the smallest value in the chosen
 criterion. However, which criterion should we choose?
 \begin{itemize}
-	\item AIC is well-known for
+	\item[$\ast$] AIC is well-known for
 	overestimating the correct number of segments
-	\item BIC has a slight tendency
+	\item[$\ast$] BIC has a slight tendency
 	to underestimate this number.
 \end{itemize}
 
@@ -245,7 +243,7 @@ criterion. However, which criterion should we choose?
 	\begin{figure}[h!]
 		\begin{centering}
 			% Requires \usepackage{graphicx}
-			\includegraphics[width=10cm]{images/TwoStep1.jpg}\\
+			\includegraphics[width=14.5cm]{images/TwoStep1.jpg}\\
 			\caption{Schwarz Bayesian Information Criterion}
 		\end{centering}
 	\end{figure}
