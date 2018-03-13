@@ -29,8 +29,6 @@
 
 % http://www.norusis.com/pdf/SPC_v13.pdf
 \begin{document}
-\section{Clustering Linkage Methods}
-\newpage
 
 %----------------------------------------------------------%
 % http://www2.statistics.com/resources/glossary/h/hclusteran.php
@@ -46,22 +44,19 @@ The linkage distances are calculated by SPSS. The goal of the clustering algorit
 SPSS provides several alternative methods for determining a summary measure of distance when a cluster has multiple cases in the cluster.  The SPSS options for the clustering method are Between-groups linkage, Within-groups linkage, Nearest neighbor, Furthest neighbor, Centroid clustering, Median clustering, and Ward's method.
 
 \begin{itemize}
-	\item For the \textbf{nearest neighbor} or \textbf{single linkage} method, the dissimilarity between cluster A and cluster B is represented by the minimum of all possible distances between the cases in cluster A and the cases in cluster B.
-	
-	\item For the \textbf{furthest neighbor} or \textbf{complete linkage} method, the dissimilarity between cluster A and cluster B is represented by the maximum of all possible distances between the cases in cluster A and the cases in cluster B.
-	
+
 	\item For the \textbf{between-groups linkage} or average linkage method, the dissimilarity between cluster A and cluster B is represented by the average of all the possible distances between the cases in cluster A and the cases in cluster B.
 	
 	\item For the \textbf{within-groups linkage} method, the dissimilarity between cluster A and cluster B is represented by the average of all the possible distances between the cases within a single new cluster determined by combining cluster A and cluster B.
 	
-	\item  
-	For the \textbf{centroid clustering} method, the dissimilarity between cluster A and cluster B is represented by the distance between the centroid for the cases in cluster A and the centroid for the cases in cluster B.  Note that this distance is not mathematically equivalent to the average of the distances used in the average linkage method.  Also note the SPSS warning below about using squared Euclidean distance rather than Euclidean distance for this procedure.
+
+
 	
 	\begin{framed}
 		The squared Euclidean measure should be used when the CENTROID, MEDIAN, or WARD cluster method is requested.
 	\end{framed}
 	
-	\item For \textbf{Ward’s method}, the dissimilarity between cluster A and cluster B is represented by the “loss of information” from joining the two clusters with this loss of information being measured by the increase in error sum of squares.  For a cluster the sum of squares is the sum of squared deviations of each case from the centroid for the cluster.  The error sum of squares is the total of these for all clusters.  When selecting clusters to join, the two clusters among all possible combinations that have the minimum increase in error sum of squares are selected.  See the note above about using squared Euclidean distance rather than Euclidean distance for this method.
+
 	
 	\item 
 	For the \textbf{median clustering} method, the dissimilarity between cluster A and cluster B is represented by the distance between the SPSS determined median for the cases in cluster A and the median for the cases in cluster B.  See the message in the note above about using squared Euclidean distance rather than Euclidean distance for this method.
@@ -77,13 +72,20 @@ criticised because it doesnt take account of cluster structure and can result 
 called chaining whereby clusters end up being long and straggly. However, it is better
 than the other methods when the natural clusters are not spherical or elliptical in shape.
 
-\subsection{Furthest neighbour method}
-(\textit{Also known as the complete linkage method}).\\
-In this case the distance between two clusters is defined to be the maximum distance
-between members  i.e. the distance between the two subjects that are furthest apart.
-This method tends to produce compact clusters of similar size but, as for the nearest
-neighbour method, does not take account of cluster structure. It is also quite sensitive
-to outliers.
+\begin{itemize}
+		\item For the \textbf{nearest neighbor} or \textbf{single linkage} method, the dissimilarity between cluster A and cluster B is represented by the minimum of all possible distances between the cases in cluster A and the cases in cluster B.
+	
+	\item For the \textbf{furthest neighbor} or \textbf{complete linkage} method, the dissimilarity between cluster A and cluster B is represented by the maximum of all possible distances between the cases in cluster A and the cases in cluster B.
+	\item Furthest neighbour method
+	(\textit{Also known as the complete linkage method}).\\
+	In this case the distance between two clusters is defined to be the maximum distance
+	between members  i.e. the distance between the two subjects that are furthest apart.
+	This method tends to produce compact clusters of similar size but, as for the nearest
+	neighbour method, does not take account of cluster structure. It is also quite sensitive
+	to outliers.
+\end{itemize}
+
+
 
 \subsection{Average (between groups) linkage method }
 (\textit{sometimes referred to as UPGMA}).\\
@@ -91,11 +93,27 @@ The distance between two clusters is calculated as the average distance between 
 of subjects in the two clusters. This is considered to be a fairly robust method.
 
 \subsection{Centroid method}
-Here the centroid (mean value for each variable) of each cluster is calculated and the
-distance between centroids is used. Clusters whose centroids are closest together are
-merged. This method is also fairly robust.
+\begin{itemize}
+	\item For the \textbf{centroid clustering} method, the dissimilarity between cluster A and cluster B is represented by the distance between the centroid for the cases in cluster A and the centroid for the cases in cluster B.  
+	\item Note that this distance is not mathematically equivalent to the average of the distances used in the average linkage method.  Also note the SPSS warning below about using squared Euclidean distance rather than Euclidean distance for this procedure.
+	
+	\item Here the centroid (mean value for 
+	each variable) of each cluster is calculated and the
+	distance between centroids is used. Clusters whose centroids are closest together are
+	merged. This method is also fairly robust. 
+\end{itemize}
 
-\subsection{Wards method}
+
+The distance between two clusters is defined as the
+difference between the centroids (cluster averages)
+
+\newpage
+\section{Wards method}
+
+For \textbf{Ward’s method}, the dissimilarity between cluster A and cluster B is represented by the “loss of information” from joining the two clusters with this loss of information being measured by the increase in error sum of squares.  For a cluster the sum of squares is the sum of squared deviations of each case from the centroid for the cluster.  The error sum of squares is the total of these for all clusters.  When selecting clusters to join, the two clusters among all possible combinations that have the minimum increase in error sum of squares are selected.  See the note above about using squared Euclidean distance rather than Euclidean distance for this method.
+
+
+
 In this method all possible pairs of clusters are combined and the sum of the squared
 distances within each cluster is calculated. This is then summed over all clusters. The
 combination that gives the lowest sum of squares is chosen. This method tends to
@@ -126,15 +144,12 @@ with the average linkage method.
 
 %http://www.rdg.ac.uk/~aes02mm/supermarket.sav
 
-\subsubsection{Ward's method}
+\subsection{Ward's method}
 \begin{itemize}
 	\item  Compute sum of squared distances within clusters
 	\item  Aggregate clusters with the minimum increase in the
 	overall sum of squares
 \end{itemize}
-\subsubsection{Centroid method}
-The distance between two clusters is defined as the
-difference between the centroids (cluster averages)
 
 \begin{itemize}
 
@@ -187,12 +202,15 @@ agglomerative clustering procedures include the following:
 		\end{center}
 	\end{figure}
 \end{description}
-Each of these linkage algorithms can yield totally different results when used on the same data set, as each has its specific properties. As the single linkage algorithm is based on minimum distances, it tends to form one large cluster with the other clusters containing only one or few objects each. We can make use of this \textbf{\textit{chaining effect}} to detect outliers, as these will be merged with the remaining objects  usually at very large distances  in the last steps of the analysis. Generally, single linkage is considered the most versatile algorithm.
-
+\item Each of these linkage algorithms can yield totally different results when used on the same data set, as each has its specific properties. As the single linkage algorithm is based on minimum distances, it tends to form one large cluster with the other clusters containing only one or few objects each. We can make use of this \textbf{\textit{chaining effect}} to detect outliers, as these will be merged with the remaining objects  usually at very large distances  in the last steps of the analysis. Generally, single linkage is considered the most versatile algorithm.
+\item 
 Conversely, the complete linkage method is strongly affected by outliers, as it is based on maximum distances. Clusters produced by this method are likely to be rather compact and tightly clustered. The average linkage and centroid algorithms tend to produce clusters with rather low within-cluster variance and similar sizes.
 However, both procedures are affected by outliers, though not as much as complete linkage.
 
-An understanding of linkage method's other than than Ward method will be expected in the end of year examination.
+\item An understanding of linkage method's other than than Ward method will be expected in the end of year examination.
+\end{itemize}
+\newpage
+\begin{itemize}
 
 \item A common way to visualize the cluster analysiss progress is by drawing a
 dendrogram, which displays the distance level at which there was a combination
