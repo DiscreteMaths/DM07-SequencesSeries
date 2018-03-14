@@ -48,13 +48,7 @@ The Two-Step Cluster Analysis is an exploratory tool designed to reveal natural 
 		procedure conducts a modified hierarchical agglomerative clustering procedure that
 		combines the objects sequentially to form homogenous clusters.
 
-	\item[$\ast$] In the second step, SPSS uses the standard hierarchical clustering algorithm on the
-	preclusters. Forming clusters hierarchically lets you explore a range of solutions with
-	different numbers of clusters.
-	\\ \textit{Tip: The Options dialog box lets you control the number of preclusters. Large numbers
-	of preclusters give better results because the cases are more similar in a precluster;
-	however, forming many preclusters slows the algorithm}.
-	
+		
 \end{itemize}
 \end{itemize}
 	\subsection{Step 1: Preclustering: Making Little Clusters}
@@ -68,9 +62,17 @@ The Two-Step Cluster Analysis is an exploratory tool designed to reveal natural 
 		all cases in the same precluster are treated as a single entity.     \item The size of the distance
 		matrix is no longer dependent on the number of cases but on the number of preclusters.
 	\end{itemize}
-	
+	\subsection{Step 2:	Hierarchical Clustering}
+\begin{itemize}
+\item In the second step, SPSS uses the standard hierarchical clustering algorithm on the
+preclusters. Forming clusters hierarchically lets you explore a range of solutions with
+different numbers of clusters.
+\\ \textit{Tip: The Options dialog box lets you control the number of preclusters. Large numbers
+	of preclusters give better results because the cases are more similar in a precluster;
+	however, forming many preclusters slows the algorithm}.
 
 
+\end{itemize}
 
 
 
@@ -162,6 +164,12 @@ features the cluster sizes (right-hand side).
 request different information, such as an overview of the cluster structure and the
 overall variable importance.
 \end{itemize}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{images/silhouette}
+\caption{}
+\label{fig:silhouette}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
