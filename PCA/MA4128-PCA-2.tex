@@ -61,25 +61,28 @@ are the weights used to calculate components scores.
 
 
 \subsection{Factor Analysis}
-Factor analysis is a statistical procedure to identify interrelationships that
-exist among a large number of variables, i.e.,  to identify how suites of
-variables are related.
+\begin{itemize}
+	\item Factor analysis is a statistical procedure to identify interrelationships that
+	exist among a large number of variables, i.e.,  to identify how suites of
+	variables are related.
+	
+		\item Factor analysis can be used for exploratory or confirmatory purposes.
+	As an exploratory procedure, factor analysis is used to search for a
+	possible underlying structure in the variables. In confirmatory research,
+	the researcher evaluates how similar the actual structure of the data, as
+	indicated by factor analysis, is to the expected structure.
+	
+		\item The major difference between exploratory and confirmatory factor
+	analysis is that researcher has formulated hypotheses about the
+	underlying structure of the variables when using factor analysis for
+	confirmatory purposes.
+	
+		\item As an exploratory tool, factor analysis doesn't have many statistical
+	assumptions. The only real assumption is presence of relatedness
+	between the variables as represented by the correlation coefficient. If
+	there are no correlations, then there is no underlying structure.
+\end{itemize}
 
-Factor analysis can be used for exploratory or confirmatory purposes.
-As an exploratory procedure, factor analysis is used to search for a
-possible underlying structure in the variables. In confirmatory research,
-the researcher evaluates how similar the actual structure of the data, as
-indicated by factor analysis, is to the expected structure.
-
-The major difference between exploratory and confirmatory factor
-analysis is that researcher has formulated hypotheses about the
-underlying structure of the variables when using factor analysis for
-confirmatory purposes.
-
-As an exploratory tool, factor analysis doesn't have many statistical
-assumptions. The only real assumption is presence of relatedness
-between the variables as represented by the correlation coefficient. If
-there are no correlations, then there is no underlying structure.
 
 \subsection{Exploratory Factor Analysis (EFA)}
 \begin{itemize}
@@ -94,6 +97,7 @@ structure of a set of variables
 
 The figure below shows four \textbf{\emph{factors}} (ovals) each measured by 3 observed variables (rectangles) with unique factors. Since measurement is not perfect, error or unreliability is estimated and specified explicitly in the diagram.
 
+\subsection*{Factor Loadings}
 \textbf{\emph{Factor loadings}} (parameter estimates) help interpret factors. Loadings are the correlation between observed variables and factors, are standardized regression weights if variables are standardized (weights used to predict variables from factor). Standardized linear weights represent the effect size of the factor
 on variability of observed variables.
 
@@ -126,12 +130,15 @@ influenced by an underlying construct.
 \end{itemize}
 
 \subsection{Differences between PCA and FA}
-These techniques are typically used to analyze groups of correlated variables representing one or more common domains; for example, indicators of socioeconomic status, job satisfaction, health, self-esteem, political attitudes or family values. 
-Principal components analysis is used to find optimal ways of combining variables into a small number of subsets, while factor analysis may be used to identify the structure underlying such variables and to estimate scores to measure latent factors themselves. The main applications of these techniques can be found in the analysis of multiple indicators, measurement and validation of complex constructs, index and scale construction, and data reduction. These approaches are particularly useful in situations where the dimensionality of data and its structural composition are not well known.
+\begin{itemize}
+	\item These techniques are typically used to analyze groups of correlated variables representing one or more common domains; for example, indicators of socioeconomic status, job satisfaction, health, self-esteem, political attitudes or family values. 
+	\item	Principal components analysis is used to find optimal ways of combining variables into a small number of subsets, while factor analysis may be used to identify the structure underlying such variables and to estimate scores to measure latent factors themselves. The main applications of these techniques can be found in the analysis of multiple indicators, measurement and validation of complex constructs, index and scale construction, and data reduction. These approaches are particularly useful in situations where the dimensionality of data and its structural composition are not well known.
+	
+		\item When an investigator has a set of hypotheses that form the conceptual basis for her/his factor analysis, the investigator performs a confirmatory, or hypothesis testing, factor analysis. In contrast, when there are no guiding hypotheses, when the question is simply what are the underlying factors the investigator conducts an exploratory factor analysis. 
+	
+		\item The factors in factor analysis are conceptualized as "real world" entities such as depression, anxiety, and disturbed thought. This is in contrast to principal components analysis (PCA), where the components are simply geometrical abstractions that may not map easily onto real world phenomena.
+\end{itemize}
 
-When an investigator has a set of hypotheses that form the conceptual basis for her/his factor analysis, the investigator performs a confirmatory, or hypothesis testing, factor analysis. In contrast, when there are no guiding hypotheses, when the question is simply what are the underlying factors the investigator conducts an exploratory factor analysis. 
-
-The factors in factor analysis are conceptualized as "real world" entities such as depression, anxiety, and disturbed thought. This is in contrast to principal components analysis (PCA), where the components are simply geometrical abstractions that may not map easily onto real world phenomena.
 
 \subsubsection{ Treatment of Variance}
 
@@ -186,9 +193,12 @@ analyses.
 Communality refers to the total amount of variance an original variable shares with all other
 variables included in the analysis.This is the proportion of each variable's variance that can be explained by the principal components .  (It is denoted as $h^2$ and can be defined as the sum of squared factor loadings).
 
-\textbf{Initial} - By definition, the initial value of the communality in a principal components analysis is 1.
-
-\textbf{Extraction}  - The values in this column indicate the proportion of each variable's variance that can be explained by the principal components.  Variables with high values are well represented in the common factor space, while variables with low values are not well represented. They are the reproduced variances from the number of components that you have saved.  You can find these values on the diagonal of the reproduced correlation matrix.
+\begin{itemize}
+	\item \textbf{Initial} - By definition, the initial value of the communality in a principal components analysis is 1.
+	
+	\item \textbf{Extraction}  - The values in this column indicate the proportion of each variable's variance that can be explained by the principal components. 
+\end{itemize}
+ Variables with high values are well represented in the common factor space, while variables with low values are not well represented. They are the reproduced variances from the number of components that you have saved.  You can find these values on the diagonal of the reproduced correlation matrix.
 
 
 

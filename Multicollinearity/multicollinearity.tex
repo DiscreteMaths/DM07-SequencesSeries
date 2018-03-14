@@ -20,13 +20,13 @@
 
 \pagestyle{fancy}
 \setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
-\lhead{MA4128} \rhead{Kevin O'Brien} \chead{Week 8} %\input{tcilatex}
+\lhead{MA4128} \rhead{Kevin O'Brien} \chead{Multicollinearity} %\input{tcilatex}
 
 %http://www.electronics.dit.ie/staff/ysemenova/Opto2/CO_IntroLab.pdf
 \begin{document}
 
-\section*{Multicollinearity}
-\subsection*{Overfitting}
+\section{Multicollinearity}
+\subsection{Overfitting}
 Overfitting occurs when a statistical model does not adequately describe of the underlying
 relationship between variables in a regression model. Overfitting generally occurs when the
 model is excessively complex, such as having too many parameters (i.e. predictor variables)
@@ -43,6 +43,8 @@ predictive performance, as it can exaggerate minor fluctuations in the data.
 	linear relationships. This makes estimation of regression coefficients impossible. It can
 	also produce unexpectedly large estimated standard errors for the coefficients of the X
 	variables involved.
+	\item Multicollinearity occurs when two or more predictors in the model are correlated
+	and provide redundant information about the response.
 	\item This is why an exploratory analysis of the data should be first done to see if any collinearity
 	among explanatory variables exists.
 	\item Multicolinearity is suggested by non-significant results in individual tests on the regression
@@ -51,32 +53,15 @@ predictive performance, as it can exaggerate minor fluctuations in the data.
 	effect on the outcome difficult.
 	\item When choosing a predictor variable you should select one that might be correlated with
 	the criterion variable, but that is not strongly correlated with the other predictor variables.
+	\item  Examples of pairs of multicollinear predictors are years of education and income, height and weight of a
+	person, and assessed value and square footage of a house.
 	\item However, correlations amongst the predictor variables are not unusual. The term multi-
 	collinearity is used to describe the situation when a high correlation is detected between
 	two or more predictor variables.
 	\item Such high correlations cause problems when trying to draw inferences about the relative
 	contribution of each predictor variable to the success of the model.
 \end{itemize}
-\subsection*{What is Multicollinearity}
-\begin{itemize}
 
-\item Multicollinearity occurs when two or more predictors in the model are correlated
-and provide redundant information about the response.
-\item  Examples of pairs of multicollinear predictors are years of education and income, height and weight of a
-person, and assessed value and square footage of a house.
-
-\end{itemize}
-
-
-
-\section{Important Topics}
-
-\begin{itemize}
-\item \textbf{Multi-collinearity}: Multi-collinearity occurs when two or more predictors in the model are
-correlated and provide redundant information about the response. Examples of pairs of multi-collinear predictors are years of education and income, height and weight of a person, and assessed value and square footage
-of a house.
-
-\end{itemize}
 
 
 
@@ -142,21 +127,20 @@ You can also assess multicollinearity in regression in the following ways:
 \item You can assess multicollinearity by examining two collinearity diagnostic measures: tol-
 erance and the Variance Inflation Factor (VIF) .
 \item Tolerance is a measure of collinearity reported by most statistical programs such as SPSS;
-the variables tolerance is $1 − R^2$ .
+the variables tolerance is $1 - R^2$ .
 \item All variables involved in the linear relationship will have a small tolerance.
-\item Interpretation: A small tolerance value indicates that the variable under consideration
-is almost a perfect linear combination of the independent variables already in the equation
-and that it should not be added to the regression equation.
-\item Interpretation: Some suggest that a tolerance value less than 0.1 should be investigated
-further. If a low tolerance value is accompanied by large standard errors and nonsignifi-
-cance, multicollinearity may be an issue.
+
 \item The variance inflation factor (VIF) quantifies the severity of multicollinearity in a regres-
 sion analysis.
 \item The VIF provides an index that measures how much the variance (the square of the
 estimate’s standard deviation) of an estimated regression coefficient is increased because
 of collinearity.
+
+
+\item  You should consider the options to break up the multicollinearity: collecting additional data, deleting predictors, using different predictors, or an alternative to least square regression.
+
 \end{itemize}
-\subsection*{ The Variance Inflation Factor (VIF)}
+\subsection*{The Variance Inflation Factor (VIF)}
 \begin{itemize}
 \item The Variance Inflation Factor (VIF) measures the impact of collinearity among the variables in a regression model.
 \item The Variance Inflation Factor (VIF) is 1/Tolerance, it is always greater than or equal to
@@ -177,8 +161,10 @@ collinearity is probably an issue.
 \end{itemize}
 
 
-%======================================================%
-\subsection{Variance Inflation Factor (VIF)}
+%===============================================%
+
+\section{Interpreting VIF Multicollinearity}
+
 \begin{itemize}
 
 \item A common rule of thumb is that if the VIF is greater than 5 then multicollinearity is high. Also a VIF level of 10 has been proposed as a cut off value.
@@ -189,43 +175,29 @@ with the remaining predictors (the presence of multicollinearity among the predi
 \item  VIF measures how much the variance of an estimated regression coefficient increases if your predictors
 are correlated (multicollinear). VIF = 1 indicates no relation; VIF > 1, otherwise.
 
-\item  The Variance Inflation Factor (VIF) is 1/Tolerance, it is always greater than or equal to 1. 
-
-\item  You should consider the options to break up the multicollinearity: collecting additional data, deleting predictors, using different predictors, or an alternative to least square regression.
-\end{itemize}
-
-
-
-%===============================================%
-
-\section{Interpreting VIF Multicollinearity}
-
-\begin{itemize}
-
 \item  The largest VIF among all predictors is often used as an indicator of severe multicollinearity.
-\item  Montgomery and Peck [21] suggest that when VIF is greater than 5-10, then the regression coefficients are poorly estimated.
+\item  \textbf{\textit{Montgomery and Peck}} suggest that when VIF is greater than 5-10, then the regression coefficients are poorly estimated.
 \item A common rule of thumb is that if the VIF is greater than 5 then multicollinearity is high.
 Also a VIF level of 10 has been proposed as a cut off value.
-\item The largest VIF among all predictors is often used as an indicator of severe multicollinearity. 
-\item Montgomery and Peck [21] suggest that when VIF is greater than 5-10, then the regression coefficients are poorly estimated. 
+
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-\subsection{Interpreting Variance Inflation Factors}
-\begin{itemize}
-	\item We learned previously that the standard errors, and hence the variances, of the estimated
-	coefficients are inflated when multicollinearity exists.
-	
-	
-	\item So, the variance inflation factor for the estimated coefficient b k , denoted $VIF_k$ , is just the
-	factor by which the variance is inflated.
-	\item Variance inflation factors k greater than 4 suggest that the multicollinearity should be
-	investigated.
-	\item Variance inflation factors greater than 10 are taken as an indication that the multicollinearity may be unduly influencing the least squares estimates.
-\end{itemize}
+%
+%
+%\subsection{Interpreting Variance Inflation Factors}
+%\begin{itemize}
+%	\item We learned previously that the standard errors, and hence the variances, of the estimated
+%	coefficients are inflated when multicollinearity exists.
+%	
+%	
+%	\item So, the variance inflation factor for the estimated coefficient b k , denoted $VIF_k$ , is just the
+%	factor by which the variance is inflated.
+%	\item Variance inflation factors k greater than 4 suggest that the multicollinearity should be
+%	investigated.
+%	\item Variance inflation factors greater than 10 are taken as an indication that the multicollinearity may be unduly influencing the least squares estimates.
+%\end{itemize}
 
 
 
@@ -287,6 +259,12 @@ suggests that multicollinearity may be a threat.
 multicollinearity. For example, if the VIF for a variable were 9, its standard error would
 be three times as large as it would be if its VIF was 1. In such a case, the coefficient
 would have to be 3 times as large to be statistically significant.
+\item Interpretation: A small tolerance value indicates that the variable under consideration
+is almost a perfect linear combination of the independent variables already in the equation
+and that it should not be added to the regression equation.
+\item Interpretation: Some suggest that a tolerance value less than 0.1 should be investigated
+further. If a low tolerance value is accompanied by large standard errors and nonsignifi-
+cance, multicollinearity may be an issue.
 \end{itemize}
 
 

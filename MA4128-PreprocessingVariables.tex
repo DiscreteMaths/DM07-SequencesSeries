@@ -21,7 +21,24 @@
 
 
 
+\subsection*{Introduction}
+\begin{itemize}
+\item
+In statistics, the occurrence of several  variables in a multiple regression model are \textbf{closely correlated} to one another, and carrying the same information, more or less. Multi-collinearity can cause strange results when attempting to study how well individual independent variables contribute to an understanding of the dependent variable, often undermining the analysis.
 
+\item In many analysis tasks, the variables under consideration are measured on
+different scales or levels. This would
+clearly distort any clustering analysis results. We can resolve this problem by \textbf{\textit{standardizing}}
+the data prior to the analysis.
+
+\item Different standardization methods are available, such as the simple \textbf{\textit{z standardization}},
+which re-scales each variable to have a mean of 0 and a standard deviation of 1.
+
+\item In most situations, however, \textbf{\textit{standardization by range}}(e.g., to a
+range of 0 to 1 or -1 to 1) is preferable. We recommend standardizing the data
+in general, even though this procedure can potentially reduce or inflate the variables influence
+on the clustering solution.
+\end{itemize}
 %----------------------------------%
 \section*{Transform Values}
 The following alternatives are available for transforming values:

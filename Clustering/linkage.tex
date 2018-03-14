@@ -36,32 +36,17 @@
 % http://mlsc.lboro.ac.uk/resources/statistics/Clusteranalysis.pdf
 
 \section{Cluster Methods}
-Having selected how we will measure distance, we must now choose the clustering algorithm, i.e. the rules that govern between which points distances are measured to determine cluster membership. There are many methods available, the criteria used differ and hence
+\begin{itemize}
+\item Having selected how we will measure distance, we must now choose the clustering algorithm, i.e. the rules that govern between which points distances are measured to determine cluster membership. 
+\item There are many methods available, the criteria used differ and hence
 different classifications may be obtained for the same data. This is important since it tells us that, although cluster analysis may provide an objective method for the clustering of cases, there can be subjectivity in the choice of method. 
 
-The linkage distances are calculated by SPSS. The goal of the clustering algorithm is to join objects together into successively larger clusters, using some measure of similarity or distance. SPSS provides seven clustering algorithms, the most commonly used one being  \textbf{\textit{Ward's method}}.
+\item The linkage distances are calculated by SPSS. The goal of the clustering algorithm is to join objects together into successively larger clusters, using some measure of similarity or distance. SPSS provides seven clustering algorithms, the most commonly used one being  \textbf{\textit{Ward's method}}.
 
-SPSS provides several alternative methods for determining a summary measure of distance when a cluster has multiple cases in the cluster.  The SPSS options for the clustering method are Between-groups linkage, Within-groups linkage, Nearest neighbor, Furthest neighbor, Centroid clustering, Median clustering, and Ward's method.
+\item SPSS provides several alternative methods for determining a summary measure of distance when a cluster has multiple cases in the cluster.  The SPSS options for the clustering method are Between-groups linkage, Within-groups linkage, Nearest neighbor, Furthest neighbor, Centroid clustering, Median clustering, and Ward's method.
 
-\begin{itemize}
-
-	\item For the \textbf{between-groups linkage} or average linkage method, the dissimilarity between cluster A and cluster B is represented by the average of all the possible distances between the cases in cluster A and the cases in cluster B.
-	
-	\item For the \textbf{within-groups linkage} method, the dissimilarity between cluster A and cluster B is represented by the average of all the possible distances between the cases within a single new cluster determined by combining cluster A and cluster B.
-	
-
-
-	
-	\begin{framed}
-		The squared Euclidean measure should be used when the CENTROID, MEDIAN, or WARD cluster method is requested.
-	\end{framed}
-	
-
-	
-	\item 
-	For the \textbf{median clustering} method, the dissimilarity between cluster A and cluster B is represented by the distance between the SPSS determined median for the cases in cluster A and the median for the cases in cluster B.  See the message in the note above about using squared Euclidean distance rather than Euclidean distance for this method.
-	
 \end{itemize}
+
 
 
 \subsection{Nearest neighbour method} 
@@ -74,7 +59,21 @@ than the other methods when the natural clusters are not spherical or elliptical
 
 \begin{itemize}
 		\item For the \textbf{nearest neighbor} or \textbf{single linkage} method, the dissimilarity between cluster A and cluster B is represented by the minimum of all possible distances between the cases in cluster A and the cases in cluster B.
-	
+		
+	\item The distance between two clusters corresponds
+	to the shortest distance between any two members in the two clusters.
+	\begin{figure}[h!]
+		\begin{center}
+			% Requires \usepackage{graphicx}
+			\includegraphics[scale=0.4]{images/Link1.jpg}\\
+			\caption{Single linkage (nearest neighbor)}
+		\end{center}
+	\end{figure}		
+\end{itemize}
+
+
+\subsection{Furthest neighbour method} 
+\begin{itemize}	
 	\item For the \textbf{furthest neighbor} or \textbf{complete linkage} method, the dissimilarity between cluster A and cluster B is represented by the maximum of all possible distances between the cases in cluster A and the cases in cluster B.
 	\item Furthest neighbour method
 	(\textit{Also known as the complete linkage method}).\\
@@ -83,26 +82,81 @@ than the other methods when the natural clusters are not spherical or elliptical
 	This method tends to produce compact clusters of similar size but, as for the nearest
 	neighbour method, does not take account of cluster structure. It is also quite sensitive
 	to outliers.
+	\item 	: The oppositional approach to single
+	linkage assumes that the distance between two clusters is based on the longest
+	distance between any two members in the two clusters.
+	\begin{figure}[h!]
+		\begin{center}
+			% Requires \usepackage{graphicx}
+			\includegraphics[scale=0.4]{images/Link2.jpg}\\
+			\caption{Complete linkage (furthest neighbor)}
+		\end{center}
+	\end{figure}
 \end{itemize}
 
 
 
 \subsection{Average (between groups) linkage method }
 (\textit{sometimes referred to as UPGMA}).\\
-The distance between two clusters is calculated as the average distance between all pairs
+\begin{itemize}
+\item For the \textbf{between-groups linkage} or average linkage method, the dissimilarity between cluster A and cluster B is represented by the average of all the possible distances between the cases in cluster A and the cases in cluster B. 
+\item The distance between two clusters is calculated as the average distance between all pairs
 of subjects in the two clusters. This is considered to be a fairly robust method.
+\item 
+\item : The distance between two clusters is defined as the average
+distance between all pairs of the two clusters members.
+\begin{figure}[h!]
+	\begin{center}
+		% Requires \usepackage{graphicx}
+		\includegraphics[scale=0.4]{images/Link3.jpg}\\
+		\caption{Average linkage}
+	\end{center}
+\end{figure}
+\end{itemize}
+
 
 \subsection{Centroid method}
 \begin{itemize}
 	\item For the \textbf{centroid clustering} method, the dissimilarity between cluster A and cluster B is represented by the distance between the centroid for the cases in cluster A and the centroid for the cases in cluster B.  
 	\item Note that this distance is not mathematically equivalent to the average of the distances used in the average linkage method.  Also note the SPSS warning below about using squared Euclidean distance rather than Euclidean distance for this procedure.
-	
+	\item  In this approach, the geometric center (centroid) of each cluster is
+	computed first. The distance between the two clusters equals the distance between
+	the two centroids.
+	\begin{figure}[h!]
+		\begin{center}
+			% Requires \usepackage{graphicx}
+			\includegraphics[scale=0.4]{images/Link4.jpg}\\
+			\caption{centroid}
+		\end{center}
+	\end{figure}
 	\item Here the centroid (mean value for 
 	each variable) of each cluster is calculated and the
 	distance between centroids is used. Clusters whose centroids are closest together are
 	merged. This method is also fairly robust. 
 \end{itemize}
+\subsection{Within-Groups linkage method}
+\begin{itemize}
 
+	\item For the \textbf{within-groups linkage} method, the dissimilarity between cluster A and cluster B is represented by the average of all the possible distances between the cases within a single new cluster determined by combining cluster A and cluster B.
+\end{itemize}	
+	
+	
+	
+	\begin{framed}
+		The squared Euclidean measure should be used when the CENTROID, MEDIAN, or WARD cluster method is requested.
+	\end{framed}
+	
+\subsection{median clustering}
+
+\begin{itemize}
+	
+	
+
+	
+	\item 
+	For the \textbf{median clustering} method, the dissimilarity between cluster A and cluster B is represented by the distance between the SPSS determined median for the cases in cluster A and the median for the cases in cluster B.  See the message in the note above about using squared Euclidean distance rather than Euclidean distance for this method.
+	
+\end{itemize}
 
 The distance between two clusters is defined as the
 difference between the centroids (cluster averages)
@@ -135,12 +189,12 @@ with the average linkage method.
 
 
 
-\subsection{Linkage methods}
-\begin{itemize}
-	\item  Single linkage (minimum distance)
-	\item  Complete linkage (maximum distance)
-	\item  Average linkage
-\end{itemize}
+%\subsection{Linkage methods}
+%\begin{itemize}
+%	\item  Single linkage (minimum distance)
+%	\item  Complete linkage (maximum distance)
+%	\item  Average linkage
+%\end{itemize}
 
 %http://www.rdg.ac.uk/~aes02mm/supermarket.sav
 
@@ -163,45 +217,7 @@ method.
 We will use the Ward's linkage method for laboratory exercises.
 
 
-\item Other most popular
-agglomerative clustering procedures include the following:
-\begin{description}
-	\item[Single linkage (nearest neighbor)]: The distance between two clusters corresponds
-	to the shortest distance between any two members in the two clusters.
-	\begin{figure}[h!]
-		\begin{center}
-			% Requires \usepackage{graphicx}
-			\includegraphics[scale=0.4]{images/Link1.jpg}\\
-		\end{center}
-	\end{figure}
-	\item[Complete linkage (furthest neighbor)]: The oppositional approach to single
-	linkage assumes that the distance between two clusters is based on the longest
-	distance between any two members in the two clusters.
-	\begin{figure}[h!]
-		\begin{center}
-			% Requires \usepackage{graphicx}
-			\includegraphics[scale=0.4]{images/Link2.jpg}\\
-		\end{center}
-	\end{figure}
-	\item[Average linkage] : The distance between two clusters is defined as the average
-	distance between all pairs of the two clusters members.
-	\begin{figure}[h!]
-		\begin{center}
-			% Requires \usepackage{graphicx}
-			\includegraphics[scale=0.4]{images/Link3.jpg}\\
-		\end{center}
-	\end{figure}
-	\newpage
-	\item[Centroid] : In this approach, the geometric center (centroid) of each cluster is
-	computed first. The distance between the two clusters equals the distance between
-	the two centroids.
-	\begin{figure}[h!]
-		\begin{center}
-			% Requires \usepackage{graphicx}
-			\includegraphics[scale=0.4]{images/Link4.jpg}\\
-		\end{center}
-	\end{figure}
-\end{description}
+
 \item Each of these linkage algorithms can yield totally different results when used on the same data set, as each has its specific properties. As the single linkage algorithm is based on minimum distances, it tends to form one large cluster with the other clusters containing only one or few objects each. We can make use of this \textbf{\textit{chaining effect}} to detect outliers, as these will be merged with the remaining objects  usually at very large distances  in the last steps of the analysis. Generally, single linkage is considered the most versatile algorithm.
 \item 
 Conversely, the complete linkage method is strongly affected by outliers, as it is based on maximum distances. Clusters produced by this method are likely to be rather compact and tightly clustered. The average linkage and centroid algorithms tend to produce clusters with rather low within-cluster variance and similar sizes.
@@ -209,50 +225,7 @@ However, both procedures are affected by outliers, though not as much as complet
 
 \item An understanding of linkage method's other than than Ward method will be expected in the end of year examination.
 \end{itemize}
-\newpage
-\begin{itemize}
 
-\item A common way to visualize the cluster analysiss progress is by drawing a
-dendrogram, which displays the distance level at which there was a combination
-of objects and clusters.
-Here is an example of a dendrogram (which corresponds to the example in the next section of material.
-
-
-\begin{figure}[h!]
-	\begin{center}
-		% Requires \usepackage{graphicx}
-		\includegraphics[scale=0.6]{images/Dendrogram.jpg}\\
-	\end{center}
-\end{figure}
-
-\item An important question is how to decide on the number of
-clusters to retain from the data. Unfortunately, hierarchical methods provide only
-very limited guidance for making this decision. The only meaningful indicator
-relates to the distances at which the objects are combined. Similar to factor
-analysiss scree plot, we can seek a solution in which an additional combination
-of clusters or objects would occur at a greatly increased distance. This raises the
-issue of what a great distance is, of course. For this purpose, we can make use of the dendrogram.
-
-\item In constructing the dendrogram, SPSS rescales the distances to a range of 025; that is, the last merging step to a one-cluster solution takes place at a
-(rescaled) distance of 25. The rescaling often lengthens the merging steps, thus
-making breaks occurring at a greatly increased distance level more obvious. Despite this, this distance-based decision rule does not work very well in all
-cases.
-
-It is often difficult to identify where the break actually occurs. This is also
-the case in our example above. By looking at the dendrogram, we could justify
-a two-cluster solution ([A,B,C,D,E,F] and [G]), as well as a five-cluster solution
-([B,C,E], [A], [D], [F], [G]).
-
-
-\item 
-The clustering algorithm is based on a distance measure that gives the best results if all variables are independent, continuous variables have a normal distribution (or categorical variables have a multinomial distribution). This is seldom the case in practice, but the algorithm is thought to behave reasonably well when the assumptions are not met.
-
-\item 
-Because cluster analysis does not involve hypothesis testing and calculation of observed significance levels, other than for descriptive follow-up, it's perfectly acceptable to cluster data that may not meet the assumptions for best performance.
-\item 
-The final outcome may depend on the order of the cases in the file. To minimize the effect, arrange the cases in random order. Sort them by the last digit of their ID numbers or something similar.
-\end{itemize}
-\newpage
 
 
 %----------------------------------------------------------%
