@@ -1,0 +1,537 @@
+
+\documentclass[]{article}
+\usepackage{framed}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+%opening
+
+\begin{document}
+\subsection*{Sequences, Series and Proof
+by Induction}
+
+%---------------------------------------------- %
+\begin{verbatim}
+Summary
+Sequences; Proof by induction; Series and aha sigma notation.
+References: Epp Sections 4.1. 4.2, 4.3` 44, 81, 82 nr MSLB Secnizm 3.1.
+\end{verbatim}
+\subsection{Sequences}
+
+A sequence is simply a list as, for example
+\begin{itemize}
+\item[(a)] $2,5,8,11,14, ldots,$
+\item[(b)] $5,0.5,0.05,0.005,0.0005,...$
+\item[(c)] $0,1,1,2,3,5,8,13,21,...$
+\end{itemize}
+%---------------------------------------------- %
+\begin{verbatim}
+Formally. a sequence is a function from the set 2+ imo   The first term in
+nhs sequence is called the initial term and is the image of 1, the second term is the
+image cf 2, che chird is the image of 3, and so nm. 
+
+We usually denote aha terms of
+nhe sequence by a letter with a subscript. thus
+uk 1 u2,u;, ....
+
+\end{verbatim}
+For example, in the sequence (a) given above, the initial term is $u_l = 2$, then $u_2 = 5$,
+$u_3 = 8$, and so on.
+
+
+Sequences are important because they arise naturally in a wide variety of practical situations, whenever a process is repeated and the result recorded.
+
+%---------------------------------------------- %
+\begin{verbatim}
+ \Vhc¤ the
+process is random as, for example, when the air uemperaturc is recorded at a weather
+station or a die is rolled, there is nc way of predicting for certain what the next
+term of a sequence will be, no matter how many earlier terms we have knowledge
+of, There are processes, however, nhar give rise Lo sequences where the terms fall
+into a. pattern as, for example; when the vakue of a sum of money invested at. a fixed
+rate of compound interest is calculated at regular intervals. It is this latter type of
+sequence, where we can continue nhe sequence when we know the pzmem and the
+Fast few terms, that concerns us on this course. In this section, 0ur objective is mu
+had a way of expressing the relationship between the terms of this kind of sequence.
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+To be able to continue che inzeuded sequence, you must be given sufiiciem
+data E0 be sure of the rclanicmship between its terms; as for example can be seen
+by considering the sequence 1,2,4,.A .. (There: are at least uw logical ways of
+continuing this sequence.)
+\end{verbatim}
+
+We have enough terms $u_f$ the sequence (a) 2,5,8, 11, 14, .. f, to convince us that
+each term is found by adding 3 to the preceding berm. 
+
+%---------------------------------------------- %
+\begin{verbatim}
+S0 c-he terms are calculaned
+successively by the rules:
+ul = 2;
+uz Z ui + 3 : 5.
+243 : ug + 3 : 8, ..,.
+VVe can express this relationship between the terms in general by 14,,+; : 1%+3, for
+all Tl E 2+. This is called the recurrence relation for this sequence. A sequence
+for which the recurrence relation is of the form un+1 = un + d, where dis a cnnshanll
+is known as an arithmetic progression (A.P.).
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+In the sequence (b] 5,0.5, [}.05,0.005,0r00O5, ..., we obnain each term by multi-
+plying the preceding Lerm by 0.1. This time, the terms are calculated successively
+by the rules:
+ur = 5;
+ug = (0.1)u1 Z 0.5,
+ug = [0.1] ug : 0.05, ....
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+The recurrence relation for this sequence is un.}; : (O.l)u,.,, for all n E ZU'. A
+sequence fur which the recurrence relation is ofthe form 14,1+; : run, where r is a
+constant, is called a geometric progression (G.P.).
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+The sequence (c}, given at Lhe beginning of She subsection, is known as the
+Fibonacci sequence. The terms are called Fibonacci numbers and we shall
+denoce them by F¤}F;,Fg,   (note that it is customary to start this sequence at
+term O instead of term I). The sequence has so many interesting properties that
+it has fascinated mathematicians for centuries. Recently a number 0f applicanions
+ha.“v'e been found 1:0 computer science.
+\end{verbatim}
+
+Careful consideration of the Fibonacci sequence tells us that each term is the
+sum of the previous two. So, starting from the initial terms $F_0 = 0, F_1 = 1$, the
+terms are calculated successively by the rules:
+%---------------------------------------------- %
+\begin{verbatim}
+F2 = F0+F1l;'O+1: 1),
+Fa = F1+F2(:]+1:2),
+F4 = Fz+Fs(=1+2=3).
+F5 = F5-!-F4(=2·i·3=5), ....
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+The recurrence relation is FM.; = Farr; + Fm where n 2 G, Notice that this time
+we need knowledge uf two initial zermsr Fg and F1, in order no use nhe recurrence
+relation to calculate successive terms.
+\end{verbatim}
+\subsection*{Proof by induction}
+
+
+A technique that is often useful in proving results “‘for all positive integers n" is
+called the Principle of Induction. It is based on the following fundamental
+property of the integers.
+
+%---------------------------------------------- %
+\begin{verbatim}
+Suppose that S is a subset of 2+ and than we have the following information
+about 5:
+(i) 1 E S;
+(ii} whenever the integers 1, 2, . . ,,k 6 S, nhen k +1 6 S also.
+
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+Then we may conclude that S = ZL?
+To sec why this is true) we note Flrst that L E S by fl), and since 1 E S, than
+2 6 S by (ii). But since 1, 2 6 S: then 3 E S by (ii) again; similarly, since 1, 2,3 6 S,
+than 4 E S by (ii) . .. and so cn. Thus the two conditions together show that 2* Q S.
+But. we are wld that S Q 2+ and hence S : 2+.
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+New suppose that we wish to prove that a certain result is true "f0r all rz E 2+7
+Lat S be the subset of 2+ for which the result holds. We can prove that. S : Zi
+by showing that conditions   and {ii) above are satisfled by S. 
+\end{verbatim}
+%---------------------------------------------- %
+We can do this if
+we can establish the following THREE steps.
+\textbf{Base case}
+\begin{verbatim}
+ Give a verification that the result is true when n = l so that 1 E S.
+Induction hypothesis We suppose that the result is true for all the integers
+1,2 .... ,k (for some integer lc 2 1).
+\end{verbatim}
+%---------------------------------------------- %
+\textbf{Induction step}
+\begin{verbatim}
+ Using the hypothesis that, the result is true when n : 1, 2, .... k,
+we prove thai the result also holds when n : k + 1.
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+Example 2.1 Consider the sequence 2,5,8,11, 14, .... We saw above that the re-
+currence relation for this sequence is M,-.+1 = ur. + 3. Sc starting from the initial
+term ul = 2: we can calculate succesively:
+ug : ul-l-3:11;-%-3xI
+ua Z uz-?-3:u;+3+3:u1+3x2
+uq : 213+3:ul +3+3+3:12;+3X 3,
+amd it would be reasonable to guess that a formula that would give us Lhe value of
+uu directly in terms of n mighc be
+un :1l; +3(n—-}.}:`Z+3(n- I) :311- 1:
+for all n E 2+. 
+\end{verbatim}
+%---------------------------------------------- %
+We can use the Principle of Induction to prove that this guess is
+correct.
+
+\begin{verbatim}
+
+Base case The formula is correct when n : l, since 3 (1) - l : 2 : ui.
+Induction hypothesis Suppose that un : 3n — I is true for in = 1,2,3, . . ,,k.
+Thus in particular we know that uk : 3}: —- l.
+Induction step We prove that ur, : 3n — 1 is also true when n : k + 1, To do
+this, we must calculate che value <>fuk+1 from uk (using the recurrence relation and
+the induction hypothesis) and check that the result agrees with the formula, i.e. we
+check chan we get uw; : 3(/c +1)— 1.
+Putting n : k in the recurrence relation, gives
+11;;+1 : uk + 34 (2,1]
+\end{verbatim}
+%---------------------------------------------- %
+
+\begin{verbatim}
+Using the induction hypothesis to substitute for uk in [2.}.), gives
+1.%+; =(3k—l)+3=3k+2:3(k+l}—1.
+Thus the formula holds when wz : k-+1. Hence it holds for all n 2 1, by inducticnl
+\·Vc can use induction tu prove results “f`0r all n 2 ng", for any integer ng; the
+base: case is than n : no and che zest of the proof follows as above. Notice that
+your base case is always the least value of rz for which Lhe scacemenu is true. In nhs
+following example, this least value of n is n = 0.
+\end{verbatim}
+%---------------------------------------------- %
+\newpage
+
+%15 CHAPTER 2. SEQUENCES, SERIES AND PROOF BY INDUCTION
+
+\subsection*{Example 2.2}
+\begin{verbatim}
+
+ A sequence is determined by the recurrence relation u,., = 4u,,-i —
+314,,-2 and the initial terms up ¤ O, ui = 2. We shall prove that un : 3" — 1.
+Notice that we could not calculate ug and subsequent terms of this sequence
+unless we had been given the values of two initial terms. Thus for the base case.
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+we must verify the formula is correct for BOTH Hq and ug. Also, note that the
+recurrence relation connects u,, with two previous terms, not just with uh,.
+Base cases VVhen n : 0, the formula u,, : 3" -1 gives no ; SU -1 : O; and when
+rr: l, it gives nl : 31 -1: 2. Hence it holds for ri : O and rz z l.
+Induction hypothesis Suppose the formulaun : 3“——1lioldsfor n = O, 1, 2, . . .,k—
+I (note that for algebraic convenience, we go just to k - l this time).
+Induction step We prove the formula also holds for n : k. From the recurrence
+relation, we have
+uk:4uk_1-321;,-2. (2.2]
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+By the induction hypothesis, the result is true when ri : Ic -1 and n : lr-2. Hence
+ure; : 2k-* -1 uuui ui-2 : 3*-2 -1. Substituting into (2.2) gives
+ur : 4 ($*-1 ~ 1) ~ 3 (2** -1)
+Z ,,<3k-1) _4_ 3k-i +3
+e (4-i)3k`;-1:3*-1.
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+Thus the formula also holds when n : k and hence holds for all n E   by induction]
+We shall find further applications of proof by induction later.
+$
+\end{verbatim}
+%---------------------------------------------- %
+\subsection*{Series and the Sigma Notation}
+\begin{verbatim}
+
+A finite series is what we get when we add together a finite number of terms of
+za. sequence. A handy notation for writing series uses the Greek letter sigma E as
+follows:
+ 
+u-;+u;;+...+un :21:,
+1*:1
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+We read the right hand side as “the sum of ur from r = l to P 2 ri". The integers
+1 and rz are known respectively as the lower and upper limits of summation;
+the variable r is called the index of summation.
+\end{verbatim}
+%---------------------------------------------- %
+\subsection*{Example 2.3}
+\begin{verbatim}
+ Consider the following sums.
+(ei) 1+2+3+...+u
+Here, we can put u,. : r; then i· : 1 gives the first term in the sum and r : n
+gives the last term. S0 we can write
+ 
+l+2+3+...+n=Zi*.
+rei
+(ti 1¤+22+a2+...+¤’
+Here, we can put u, : rz; then r : I gives the first term in the sum and
+r : n gives the last term. So we can write
+ 
+12+2;)+32+...-é·nE = Eli-?
+rei
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+17
+(c)1+2+4+S·e...2" :2°+2' +22+...+2r
+Here, we can put u, : S1'; then r z O gives the first term in the sum and
+v- = n gives the last term. So we can write
+-  
+1+2+4+S+...2":Z2'.
+rec
+ 
+(d) 2 (3r — 1)
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+In Example 241, we showed that the formula rr, : Sr — 1, generates the
+sequence 2,5,8,. . .,(3n — 1), where the First term ur : 2 is given by ·r = 1,
+and the last term u,, = 3n - 1 is given by r : n, So we can write
+ 
+ \[ \sum_{i=1}^{i=n} \]
+E(3r+1):2+5+8+..,+(3n—l)-
+
+Tar
+\end{verbatim}
+%---------------------------------------------- %
+
+Induction is a useful method for verifying a formula for the sum of a finite number
+of terms of a sequence because it is very easy to obtain a recurrence relation betwean
+the sum ofthe first n +1 terms and the sum of the First n terms. 
+
+
+
+\begin{verbatim}
+
+To see this let
+ul, 112,,.. be a sequence and for any positive integer n let 5,, = ul — ug + ...-1- 21,,.
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+Then
+5}.+.1 = (ur + 112+-..+ un) + um.; = 5,, +u+,+r-
+Tbis idea is illustrated in the proofs of parts (b) and (c) of the following theorem.
+Theorem 2.4 Let- n be a positive integer. Then
+ 
+(E!.) E 1 : 11.
+.-:1
+\end{verbatim}
+\[\frac{(n+1)}{2}\]
+%---------------------------------------------- %
+\begin{verbatim} 
+(b) Z r:n   \frac{(n+1)}{2}.
+r:1
+(c) fj rz: n(n+1)(2n+1)/5.
+mr
+"‘ »~+i_, __ .
+(d) Z af = LET, for anyx G 5% with m #1.
+peo
+Proof. (a) In this sum we have ur : 1, for r : 1,2, 4. .n. So we are adding
+, 1+1+... + 1, giving rz altogether.
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+V (b) Let 5,, denote the sum of the first n integers, so that 5,, : 1+ 2 + . . . + n. We
+prove by induction that Sn 2 n (n + 1) /2, for all ri 2 1.
+Base case The formula gives S; = 1 (1+1)/2 = 1, so the formula holds when
+n : 1.
+\end{verbatim}
+%---------------------------------------------- %
+\textbf{Induction Hypothesis}
+\begin{verbatim}
+
+Suppose that Sn = ri (n + 1) /2, for n : 1, 2, . . Wk; then
+in particular we know that Sk = k (k + 1) /2,
+Induction step We prove that that 5,, : n (n -5- 1) /2 is also true when rt = ic +1;
+that is, we find 5;,.,.; from S), and check that the result agrees with the the formula.
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+
+New Sk:1+2+3~$-...+k and.51+;:1+2+3+..,+k+(k+1),s0
+5,,+, = St + (k + 1) . (23)
+Using the induction hypothesis to substitute for Sk in (2.3) gives
+51.:+1 = k(k+1)/2+ (k-l-1)
+: (lc +1) (lc/2+1)
+: (ir-1-1) (k+2)/2.
+$
+\end{verbatim}
+%---------------------------------------------- %
+
+%18 CHAPTER 2. SEQUENCES, SERIES AND PROOF BY INDUCTION
+
+\begin{verbatim}
+
+But putting T2 = fr + 1 in the formula gives .5}+1 : (lc »§·1](/it + 2) /2. Thus the
+formula also holds for n :. k + 1 and hence it holds for all ri 2 1, by induction.
+(0) Let Tn denote the sum of the squares of the first 21 integers, S0 that T,. =
+12 + 22 + .i .+ nz. We shall prove by induction that Tn is given by the formula;
+T,,=n(n+ l)(2n+1)/6. for ell ri 21.
+\end{verbatim}
+%---------------------------------------------- %
+\textbf{Base Case}
+\begin{verbatim}
+When n :: 1, K :12. The formula gives T,:1(1+1)(2 +1)/6 :1.
+
+
+
+\end{verbatim}
+%---------------------------------------------- %
+Hence the formula holds when n = 1.
+
+\textbf{Induction hypothesis}
+\begin{verbatim}
+
+ Suppose Tn : n (n +1)(2n + 1} /5 is uruefor n = 1, 2,. ,/cg
+then, in particular, we know that Ti, :     + 1} (2k + 1) /6.
+Induction stop 1:Ve prove that the fvrmula. also holds for n : lr + 1; that is, we
+calculate Tk 1., from Tk and check that the result agrees with the formula. From the
+recurrence relation we have
+Tk-il =YL+(l¢+l)2.
+\end{verbatim}
+%---------------------------------------------- %
+Using the induction hypothesis to substitute for Tk gives
+\begin{verbatim}
+
+Tk+i Z k(k+1)(2k+1)/6-&—(k+1)2
+= (k+ 1)[k(2k+1)/6-1-(k-i-1)]
+: (i+1){2k2-+rk+6}/6
+: (k+i)(k+2)(2k+3)/6.
+\end{verbatim}
+%---------------------------------------------- %
+
+\begin{verbatim}
+But putting n, : k+1 in the formula gives TH; : (lc +1](}c + 2] (2}: + 3) /6. Thus
+the formula also holds for n : k + 1 and hence it holds for all rz 2 1, by induction.
+[cl) Let S : 1-+ z + .7:2 +1 ..+ :c“, where n: st 1. Multiplying through by z, gives
+2:8 : m + 2:2 + ara + . ..+ x"‘“. Subtracting, we have a:S -— S = :v"+1 — l. Thus
+S(r —~ 1) : NH ~— 1, and dividing both sides by m —~ 1 gives the required result]
+Note Part (cl) can also be proved by induction.
+
+\end{verbatim}
+%---------------------------------------------- %
+The sigma notation is not gust a convenient shorthand for writing sums. Most
+importantly, it gives us a way of working out the sum of a complicated expression
+by turning it into simpler sums. We can do this by applying combinations of the
+following three simple rules.
+Expressing a sum as a difference of known sums.
+\begin{verbatim}
+ For example
+zu zu in
+Z r :. Z r - E r
+mir rei rzl
+: 20 >< 21/2- 10 ><11/2:155.
+Taking out ci common factor For example
+s(1)+s(3)+5(s2)+...+s(s"·i):a(i+2+2F+...+a"·1).
+Thus
+¤-i n-1
+Einar; : afar.
+eso rea
+\end{verbatim}
+%---------------------------------------------- %
+The common factor 5 can be taken outside the sigma sign because it can be taken
+outside the bracket in the "long hand" version of the sum.
+\begin{verbatim}
+
+Splitting o sum into two {or mare) components. For example
+(1+12)-l—(2+22)+   +(n+n2)
+Z (1+2+2+...e¤)+(12+22+32+...+n2)
+1
+
+\end{verbatim}
+%---------------------------------------------- %
+
+\begin{verbatim}
+Thus
+E{7"‘l·T’2) Z 27*+273
+1*:1 1*:1 r:i
+We may formalise these rules in the following theorem.
+Theorem 2.5 (21) Z u, :. E ur — Z u,.
+v’:m 1*:1 :*:1
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}  
+fb) Z cu, : c Z 11, , where c is a constant.
+(C) Z (¤T+w¢l= E ¤1+ E w1·
+Proof.
+(ai) follows immedianely,
+(bl
+H N
+Em =c(um+um+1+um+g#...+un) =cZ1-rr.
+(C)
+ 
+2 (ue + wr) = (um + wi-»1)+(Um+1 + w1n+1)’l" »..-#(1:.-. +wn)
+= (vm + um~l·1 +   uy.)   (wm + wm+1 + ·.-+w¤)
+= Z ue + Z wr.
+I
+\end{verbatim}
+%---------------------------------------------- %
+By taking out factors and splitting up the sums, we may reduce a complicated
+sum to simpler sums for which we already know a formula.
+\begin{verbatim}
+
+Example 2.6 We now find the formula for the sum in Example 2.3(d).
+xw - 1) Z Ear - Z1, by Theorem 2.5(b).
+r:l :-:1 :-:1
+   
+: 3 Z r — Z 1, by Theorem 2.5(a),
+r:1 r:1
+Hence, by Theorem 2.4 (a) and (ln),
+ 
+§;(3r-· 1) : 3n(n—|-1)/2-n
+1-:1
+: n[3{n+1)/2-1}
+\end{verbatim}
+%%- 20 CHAPTER 24 SEQUENCES, SERIES AND PROOF BY INDUCTION
+\section{Exercise 3}
+%---------------------------------------------- %
+\begin{verbatim}
+
+Q1 For each of the following sequences, [i) calculate the next term ofthe sequence
+and (ii) find a recurrence relation that gives #4,,+; in terms of un.
+(sp 4.2.1,%,%,...: [z]
+(lu) 2.7,111122 ,l,. [3]
+Q2 Determine the value of u,._, for n : 1, 2,3,4, for the sequences determined by
+each of the following recurrence relations.
+(al wei = 5%   2.111 : 0; [2]
+(bl ¤,,+;:un+;—un,u;=0 andug=1. [2]
+\end{verbatim}
+%---------------------------------------------- %
+Q3 A sequence is determined by the recurrence relation
+\begin{verbatim}
+ une] cv Bun + 2 and initial
+term u; = 2. 
+
+Prove by induction that un : 3" — 1.. for all n E 2+.  
+Q4 Let n be E1 positive integer and z be a real number with x gé l. State, without
+proving, the formulae for
+ei it rr me
+rei
+ \end{verbatim}
+ %---------------------------------------------- %
+ \begin{verbatim}
+(bl Z rs Eli
+rei
+(cl Z ¤¤’· [11
+rea
+Q5 Use the formulae you stated in Q4 to evaluate
+au _
+(el Eli; [21
+im . .
+(bl El? + il- [21
+\end{verbatim}
+%---------------------------------------------- %
+\begin{verbatim}
+Q6 Let sn :1+3+5-]-...+(2n—1)forn&Z+.
+(a) Express sn using Z notation. [1]
+(b) Calculate sl, s; and sg. [1]
+(c) Find a recurrence relation which expresses sus.; in terms of sn. [2]
+(d) Use induction to prove that su : nz for all ri 2 1. [5]
+\end{verbatim}
+%---------------------------------------------- %
+\end{document}

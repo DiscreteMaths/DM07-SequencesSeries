@@ -1,0 +1,416 @@
+%\documentclass[11pt, a4paper,dalthesis]{report}    % final 
+%\documentclass[11pt,a4paper,dalthesis]{report}
+%\documentclass[11pt,a4paper,dalthesis]{book}
+
+\documentclass[11pt,a4paper,titlepage,oneside,openany]{article}
+
+\pagestyle{plain}
+%\renewcommand{\baselinestretch}{1.7}
+
+\usepackage{setspace}
+%\singlespacing
+\onehalfspacing
+%\doublespacing
+%\setstretch{1.1}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage[margin=3cm]{geometry}
+\usepackage{graphicx,psfrag}%\usepackage{hyperref}
+
+
+\usepackage{framed}
+\include{zcust_preamble}
+\include{zcust_commands}
+
+\begin{document}
+
+\section*{Series}
+
+
+
+\noindent \textbf{Series}: A series is the sum of a sequence. For a given sequence $a_0,a_1,a_2,a_3,\ldots,a_n,\ldots$ the terms in the corresponding \emph{series} $s_n$ are given by
+\begin{align*}
+  s_0&=a_0\\
+  s_1&=a_0+a_1\\
+  s_2&=a_0+a_1+a_2\\
+  s_3&=a_0+a_1+a_2+a_3,\quad \text{etc}
+\end{align*}
+The general term $s_n$, which is the $n^{th}$ term in the series, is given by
+\begin{equation*}
+  s_n=a_0+a_1+a_2+\cdots+a_{n-1}+a_n
+\end{equation*}
+Note that
+\begin{itemize}
+\item Every series is itself another sequence. Therefore a series can have all the properties of sequences; boundedness, limits, etc.
+\item Every sequence $a_n$ has a corresponding series $s_n$.
+\item Every series $s_n$ has a corresponding sequence $a_n=s_n-s_{n-1}$.
+\end{itemize}
+\noindent  \textbf{Example}
+Let $a_n=n^2$, So that the terms in the sequence are $0,1,4,9,16,25,\ldots$
+\begin{align*}
+  s_0&=0\\
+  s_1&=0+1=1\\
+  s_2&=0+1+4=5\\
+  s_3&=0+1+4+9=14,\quad \text{etc}
+\end{align*}
+
+\subsection*{Sigma Notation}
+Instead of writing out a long sum for every term in a series, the greek letter Sigma is used to denote such sums. For a sum over a range or terms $a_p$ to $a_q$, with $p<q$ let
+\begin{equation*}
+  \sum_{k=p}^{q}a_k = a_p+a_{p+1}+a_{p+2}+a_{p+3}+\cdots+a_{q-1}+a_q
+\end{equation*}
+The sum is over the variable $k$ which ranges from the lower bound $p$, increasing in steps of $1$, until it reaches the upper bound $q$. The Sigma denotes that all the terms are to be added together. With this, the general term $s_n$ in the sequence is written
+\begin{multicols}{2}
+$\qquad \qquad s_n=\displaystyle \sum_{k=0}^n a_k$
+\columnbreak
+
+or $\ s_n=\displaystyle \sum_{k=1}^n a_k\quad $ if $a_0$ is not defined.
+\end{multicols}
+\pagebreak
+
+\noindent \textbf{Example:} Sum of first $n$ integers
+\begin{equation*}
+  s_n=\sum_{k=0}^n k = 0 + 1 + 2 + 3 + \cdots + (n-1) + n 
+\end{equation*}
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+$n$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ \\ \hline
+$a_n$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$\\ \hline
+$s_n$ & $0$ & $1$ & $3$ & $6$ & $10$ & $15$ & $21$ & $28$ & $36$ & $45$ & $55$
+\end{tabular}
+\end{center}
+Instead of having to perform the summation for each $s_n$, a formula for the sum of the first $n$ integers can be derived.
+\begin{thm*}
+  \begin{equation*}
+    \sum_{k=0}^n k = \frac{n(n+1)}{2}
+  \end{equation*}
+\begin{proof}
+  Let $s_n=\displaystyle \sum_{k=0}^n k$. Proceed by writing out this sum, then writing out the reversed sum, and then adding the two
+\\
+\\
+  \begin{tabular}{ccccccccccccccc}
+    \setlength{\arraycolsep}{0.01cm}
+    $s_n$&$=$&$0$&$+$&$1$&$+$&$2$&$+$&$\cdots$&$+$&$(n-2)$&$+$&$(n-1)$&$+$&$n$\\
+    $s_n$&$=$&$n$&$+$&$(n-1)$&$+$&$(n-2)$&$+$&$\cdots$&$+$&$2$&$+$&$1$&$+$&$0$\\\hline
+    $2s_n$&$=$&$n$&$+$&$n$&$+$&$n$&$+$&$\cdots$&$+$&$n$&$+$&$n$&$+$&$n$\\
+  \end{tabular}
+\\
+\\
+\\
+  There are $n+1$ terms in the sum, therefore
+  \begin{equation*}
+    2s_n = (n+1)n, \qquad \Rightarrow s_n=\frac{n(n+1)}{2}, \qquad \text{and so } \sum_{k=0}^n k=\frac{n(n+1)}{2}
+  \end{equation*}
+\end{proof}
+\end{thm*}
+
+\noindent \textbf{Other Series Theorems}\\
+If $a_n$ and $b_n$ are sequences, and $c$ is a constant then,
+\[\sum_{k=0}^{n} \left(a_n+b_n\right) = \sum_{k=0}^{n} a_n + \sum_{k=0}^{n}b_n \]
+\[\sum_{k=0}^{n} c a_n = c \sum_{k=0}^{n} a_n \]
+\[\sum_{k=0}^{n} c = (n+1) c\]
+\pagebreak
+
+\subsection*{Arithmetic Series}
+And \emph{arithmetic sequence} $a_n$ is a sequences whose terms increase by a constant difference $d$ at each step. And a \emph{arithmetic series} $s_n$ is the sum of an arithmetic sequence. Formally
+\begin{equation*}
+  a_n=a_0+nd, \qquad s_n=\sum_{k=0}^n \left( a_0 + nd \right)
+\end{equation*}
+\noindent \textbf{Example:}\\
+Let $a_n=10+3n$.
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
+$n$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$  \\ \hline
+$a_n$ & $10$ & $13$ & $16$ & $19$ & $22$ & $25$ & $28$ & $31$ \\ \hline
+$s_n$ & $10$ & $23$ & $39$ & $58$ & $80$ & $105$ & $133$ & $164$
+\end{tabular}
+\end{center}
+Instead of having to sum up every term in an arithmetic series, a formula for the $n^{th}$ term in the series can be derived.
+\begin{thm*}
+  For an arithmetic series
+  \begin{equation*}
+    s_n = (n+1)\left(a_0 + \frac{n}{2} d\right)
+  \end{equation*}
+\begin{proof}
+This can be proved by using the theorems on the previous page, in particular using the formula for the sum of the first $n$ integers.
+  \begin{align*}
+    s_n=\sum_{k=0}^n a_k = \sum_{k=0}^n a_0+kd &= \sum_{k=0}^n a_0+\sum_{k=0}^n kd\\
+    &= (n+1)a_0+d\sum_{k=0}^n k\\
+    &= (n+1)a_0+d\frac{n(n+1)}{2}= \frac{(n+1)}{2} \left( 2a_0+nd\right)
+  \end{align*}
+\end{proof}
+\end{thm*}
+
+\noindent \textbf{Example:} For $a_n=10+3n$, the formula gives
+\begin{equation*}
+  s_7=(7+1) \left( 10+\dfrac{7}{2} \cdot 3 \right) = 8 \left(  \dfrac{41}{2} \right) = 164
+\end{equation*}
+Which matches what was calculated for $s_7$ in the table above. Using the formula, terms even further out can now be calculated without direct summation. For example
+\begin{align*}
+  s_{100}&=(100+1) \left( 10+\dfrac{100}{2} \cdot 3 \right) = 101 \left(  \dfrac{320}{2} \right) = 16160\\
+  s_{1000}&= 1001 \left( 10+  \dfrac{1000}{2} \cdot 3 \right) =  1511510\\
+\end{align*}
+
+
+\subsection*{Ratio Test}
+To determine whether an infinite series is convergent, the ratio test can be applied. The test examines the ratio of successive terms in the sequence as $n \to \infty$. If this ratio has a limit, the sequences behaves like a geometric sequence for large $n$, and so if the ratio is less than $1$, the series will be convergent.
+
+Formally, given a sequence $a_n$ and the corresponding infinite series $\displaystyle \sum_{n=0}^\infty a_n$. Let
+\begin{equation*}
+  R=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|
+\end{equation*}
+If this limit $R$ exists, then
+\begin{itemize}
+\item if $R<1$, the series is convergent.
+\item if $R>1$, the series is divergent.
+\item if $R=1$ or $R$ does not exist, then the ratio test was inconclusive.
+\end{itemize}
+\noindent  \textbf{Example 1:}\\
+Let $a_n=\dfrac{1}{n!}$, and consider the infinite series $\displaystyle \sum_{n=0}^{\infty} \frac{1}{n!} = 1+1+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\cdots$. Since $a_{n+1}=\dfrac{1}{(n+1)!}$
+\begin{equation*}
+  \left| \frac{a_{n+1}}{a_n}\right|=\left| \frac{1}{(n+1)!}\cdot \frac{n!}{1}\right|=\left| \frac{n!}{(n+1)!}\right|=\left| \frac{1}{n+1}\right|=\frac{1}{n+1}
+\end{equation*}
+So to evaluate $R$,
+\begin{equation*}
+  R=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|=\lim_{n \to \infty} \frac{1}{n+1}=0
+\end{equation*}
+So $R=0$ meaning that $R<1$, and therefore the infinite series $ \sum_{n=0}^{\infty} \frac{1}{n!}$ is convergent.
+
+\noindent  \textbf{Example 2:}\\
+Let $a_n=\dfrac{2^n}{n^2}$, and consider the infinite series $\displaystyle \sum_{n=0}^{\infty} \frac{2^n}{n^2}$. Since $a_{n+1}=\dfrac{2^{n+1}}{(n+1)^2}$
+\begin{equation*}
+  \left| \frac{a_{n+1}}{a_n}\right|=\left| \frac{2^{n+1}}{(n+1)^2}\cdot \frac{n^2}{2^n}\right|=\left| \frac{2^{n+1}}{2^n}\cdot\frac{n^2}{(n+1)^2}\right|=2 \left(\frac{n}{n+1}\right)^2
+\end{equation*}
+So to evaluate $R$,
+\begin{equation*}
+  R=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|=\lim_{n \to \infty} 2 \left(\frac{n}{n+1}\right)^2=\lim_{n \to \infty} 2 \left(\frac{1}{1+\frac{1}{n}}\right)^2=2\left(\frac{1}{1+0}\right)^2=2
+\end{equation*}
+So $R=2$ meaning $R>1$, and therefore the infinite series $\displaystyle \sum_{n=0}^{\infty} \frac{2^n}{n^2}$ is divergent.
+
+\section*{Functions Defined by Infinite Series}
+Convergent infinite series are often used to define functions. The \emph{exponential function} $y=e^x=\text{exp}(x)$ is defined as
+\begin{equation}
+\label{eq:exp_def_taylor}
+  \text{exp}(x) = \sum_{n=0}^{\infty} \frac{x^n}{n!}=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots
+\end{equation}
+The ratio test can be used to show that this infinite series is convergent for all values of $x$. Here, the sequence terms are $a_n=\dfrac{x^n}{n!}$, so $a_{n+1}=\dfrac{x^{n+1}}{(n+1)!}$, and
+\begin{equation*}
+  \left| \frac{a_{n+1}}{a_n}\right|=\left| \frac{x^{n+1}}{(n+1)!}\cdot \frac{n!}{x^n}\right|=\left| \frac{x^{n+1}}{x^n}\cdot\frac{n!}{(n+1)!}\right|=\left|x \frac{1}{n+1}\right| = \frac{|x|}{n+1}
+\end{equation*}
+So to evaluate $R$,
+\begin{equation*}
+  R=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|=\lim_{n \to \infty} \frac{|x|}{n+1}=0
+\end{equation*}
+So $R<1$ and the series is convergent for all $x$.
+
+The infinite series can be used to approximate $e^x$ to as many decimal places desired. To do this, use the sequence terms to evaluate the terms in the series $\displaystyle s_n=\sum_{k=0}^{n} \frac{x^k}{k!}$. This is best done using a table similar to the one below.
+
+For example, to evaluate $e^{0.3}$ to three decimal places\footnote{below the decimal point}, the terms in the series $\displaystyle s_n=\sum_{k=0}^{n} \frac{(0.3)^k}{k!}$ must be computed until the desired accuracy is reached.
+%\begin{tabular}{|l|c|c:c:c:c:c:c:c:c:c:c:c|c|c:c:c:c:c:c:c:c:c:c:c|}\hline
+\begin{center}
+  
+\begin{tabular}{|l|c|p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}|c|p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}|}\hline
+$n$ & \ & \multicolumn{11}{c|}{$a_n$} & \ & \multicolumn{11}{c|}{$s_n$} \\\hline
+$0$ & \ &
+$1$ & $\cdot$ & $0$ &  &  &  &  &  &  &  &  & \ &
+$1$ & $\cdot$ & $0$ &  &  &  &  &  &  &  &  \\ \hline
+$1$ & \ &
+$0$ & $\cdot$ & $3$ &  &  &  &  &  &  &  &  & \ &
+$1$ & $\cdot$ & $3$ &  &  &  &  &  &  &  &  \\ \hline
+$2$ & \ &
+$0$ & $\cdot$ & $0$ & $4$ & $5$ &  &  &  &  &  &  & \ &
+$1$ & $\cdot$ & $3$ & $4$ & $5$ &  &  &  &  &  &  \\ \hline
+$3$ & \ &
+$0$ & $\cdot$ & $0$ & $0$ & $4$ & $5$ &  &  &  &  &  & \ &
+$1$ & $\cdot$ & $3$ & $4$ & $9$ & $5$ &  &  &  &  &  \\ \hline
+$4$ & \ &
+$0$ & $\cdot$ & $0$ & $0$ & $0$ & $3$ & $3$ & $7$ & $5$ &  &  & \ &
+$1$ & $\cdot$ & $3$ & $4$ & $9$ & $8$ & $3$ & $7$ & $5$ &  &  \\ \hline
+$5$ & \ &
+$0$ & $\cdot$ & $0$ & $0$ & $0$ & $0$ & $2$ & $0$ & $2$ & $5$ &  & \ &
+$1$ & $\cdot$ & $3$ & $4$ & $9$ & $8$ & $5$ & $7$ & $7$ & $5$ &  \\ \hline
+\end{tabular}
+\end{center}
+The series can be summed indefinitely but in practice some kind of stopping condition is needed. A heuristic stopping condition can be used; for example, we can stop when the terms $a_n$ become small enough, or when the digits of $s_n$ appear to have converged to enough decimal places. The first condition assumes that the terms $a_n$ never become large again, and the second condition may have problems if the terms $a_n$ alternate around $0$. However, in practice, we can stop if the series appears to have converged after a few iterations.
+
+In this case, to $3$ decimal places $e^{0.3} \cong 1.349$. A more accurate estimate would be $e^{0.3}\cong 1.34985880757600310398$.
+
+\subsection*{Exponential Function}
+
+Since $y=e^x$ can be evaluated for any real $x$, a graph of the function can be drawn. The series \eqref{eq:exp_def_taylor} immediately gives $e^0=1$, and so the graph passes through the point $(0,1)$. $e^1=e \cong 2.781828$ and so the graph passes through $(1,2.781828)$. Other points on the graph are calculated in a similar fashion.
+
+\begin{wrapfigure}{l}{0.4\textwidth}
+%  \begin{center} 
+   % \includegraphics[width=1.1\textwidth]{exp}
+    \includegraphics[width=0.4\textwidth]{images/exp.eps}
+%  \end{center}
+\end{wrapfigure}
+The exponential function grows extremely rapidly as $x \to \infty$. For example, $e^{10}\cong 22,026$ and $e^{100}\cong 2.688 \times 10^{43}$. In fact the function grows faster than any polynomial function, no matter how large the constants or powers. For example for $x\ge50$, $e^x> 53000 x^{10}$. Never use the term \emph{grows exponentially} unless the growth is actually this fast.
+
+Correspondingly the exponential function decreases extremely rapidly as $x \to -\infty$. For example $e^{-10} \cong 0.0000454$ and $e^{-100}\cong 3.72 \times 10^{-44}$. If the height of the graph above the x-axis at $x=0$ was $1$ metre, then the distance between the graph and the axis at $x=-30$ would be less than the radius of an atom. It can be seen that $\lim_{x\to -\infty} e^{x} = 0$. However, note that the function never actually reaches $0$.
+
+The exponential function $e^x$ behaves as the number $e \cong 2.781828$ being put to the power of $x$, and the usual rules for powers apply. For example
+
+\begin{equation*}
+  e^{x} e^{y} = e^{x+y} , \qquad e^0=1, \qquad e^x > 0 \text{ for all real } x 
+\end{equation*}
+
+One important property of the exponential functions is that the function is its own derivative, that is
+\begin{equation*}
+  y=e^x, \quad \Rightarrow \frac{dy}{dx}=e^x
+\end{equation*}
+The derivative is a measure of the rate of growth of the function. Therefore, the rate of growth of $e^x$ is equal to its current value. So the larger the function is, the faster it is growing, and so the rate of growth itself grows and the function quickly becomes enormous. \begin{wrapfigure}{r}{0.4\textwidth}
+%  \begin{center} 
+   % \includegraphics[width=1.1\textwidth]{exp}
+    \includegraphics[width=0.4\textwidth]{images/expd.eps}
+%  \end{center}
+\end{wrapfigure}Examples of such exponential growth are populations of bacteria, or the growth of bank savings accounts or unpaid loans. In reality, exponential growth cannot continue forever; something eventually has to give, e.g. the bacteria run out of food, or the banking system collapses.
+
+Closely related to the exponential function is the exponential decay function $e^{-x}$. Substituting $-x$ for $x$ in the infinite series for $e^x$ gives
+\begin{equation*}
+  e^{-x} = \sum_{n=0}^{\infty} \frac{(-1)^n x^n}{n!}=1-x+\frac{x^2}{2!}-\frac{x^3}{3!}+\cdots
+\end{equation*}
+The graph of this function is the mirror images of $e^x$ in the y-axis. The exponential decay function decreases towards $0$ as $x \to \infty$ and increases infinitely as $x \to -\infty$.
+
+Infinite series can be used to define many kinds of functions.
+\subsection*{Trignometric functions}
+Trignometric functions such as sine and cosine can be evaluated using infinite series. These functions can be defined by
+\begin{align*}
+  \cos(x) &= \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!}=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\frac{x^8}{8!}-\cdots\\
+  \sin(x) &= \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!}=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\cdots
+\end{align*}
+Using the ratio test, these series can be shown to be convergent for all $x$. For example for $\cos(x)$, the terms are $a_{n}=\dfrac{(-1)^n x^{2n}}{(2n)!}$ and $a_{n+1}=\dfrac{(-1)^{n+1} x^{2n+2}}{(2n+2)!}$ and so
+\begin{align*}
+  \left| \frac{a_{n+1}}{a_n}\right|&=\left| \frac{(-1)^{n+1} x^{2n+2}}{(2n+2)!} \frac{(2n)!}{(-1)^n x^{2n}}\right|=\left|\frac{(-1)^{n+1}}{(-1)^{n}}\frac{x^{2n+2}}{x^{2n}}\frac{(2n)!}{(2n+2)!}\right|\\
+  &=\left|(-1) x^2 \frac{1}{(2n+1)(2n+2)}\right|= \frac{x^2}{4n^2+6n+2}
+\end{align*}
+\begin{equation*}
+  R=\lim_{n \to \infty}   \left| \frac{a_{n+1}}{a_n}\right| = \lim_{n \to \infty} \frac{x^2}{4n^2+6n+2} = 0, \quad \text{ so } R<1 \text{ and so series is cgt.}
+\end{equation*}
+
+It is \emph{vital} to note that the angle $x$ used in these infinite series but be measured in radians. If an angle $\theta$ is given in degrees $d$, then the angle can be converted between degress and radians using the following formulas
+\begin{equation*}
+  x_{\text{radians}} = d^{\circ} \times \frac{\pi}{180}, \qquad d^{\circ} = x_{\text{radians}} \times \frac{180}{\pi}
+\end{equation*}
+
+The infinite series can be used to evaluate the cosine of angles by summing the series until a specified accuracy is reached. For example, to calculate the cosine of $60^\circ$, first convert the angle to radians. So the angle in radians is given by $x= 60 \frac{\pi}{180}=\frac{\pi}{3}\cong1.0471798$. Using the series, cosine is given by
+
+\begin{equation*}
+  \cos(\frac{\pi}{3}) = \sum_{n=0}^{\infty} \frac{(-1)^n (\frac{\pi}{3})^{2n}}{(2n)!}=1-\frac{\left( \frac{\pi}{3} \right)^2}{2!}+\frac{\left( \frac{\pi}{3} \right)^4}{4!}-\frac{\left( \frac{\pi}{3} \right)^6}{6!}+\frac{\left( \frac{\pi}{3} \right)^8}{8!}-\cdots
+\end{equation*}
+And can be summed using a table similar to the following. Because the series now ossillates around the limit, instead of waiting for the digits to ``lock-in'' instead evaluate the series until the $a_n$ terms approach zero.
+\\
+
+%\begin{tabular}{|l|c|c:c:c:c:c:c:c:c:c:c|c|c:c:c:c:c:c:c:c:c:c|}\hline
+\begin{tabular}{|l|c|cp{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}|c|p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}p{0.1em}|}\hline
+$n$ & \ & \multicolumn{10}{c|}{$a_n$} & \ & \multicolumn{10}{c|}{$s_n$} \\\hline
+$0$ & \ &
+\hspace{0.4em} & $1$ & $\cdot$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$  & \ &
+\hspace{0.4em} & $1$ & $\cdot$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$  \\ \hline
+$1$ & \ &
+- & $0$ & $\cdot$ & $5$ & $4$ & $8$ & $3$ & $1$ & $1$ & $3$  & \ &
+\hspace{0.4em} & $0$ & $\cdot$ & $4$ & $5$ & $1$ & $6$ & $8$ & $8$ & $6$  \\ \hline
+$2$ & \ &
+\hspace{0.4em} & $0$ & $\cdot$ & $0$ & $5$ & $0$ & $1$ & $0$ & $7$ & $5$  & \ &
+\hspace{0.4em} & $0$ & $\cdot$ & $5$ & $0$ & $1$ & $7$ & $9$ & $6$ & $2$  \\ \hline
+$3$ & \ &
+- & $0$ & $\cdot$ & $0$ & $0$ & $1$ & $8$ & $3$ & $1$ & $6$  & \ &
+\hspace{0.4em} & $0$ & $\cdot$ & $4$ & $9$ & $9$ & $9$ & $6$ & $4$ & $5$  \\ \hline
+$4$ & \ &
+\hspace{0.4em} & $0$ & $\cdot$ & $0$ & $0$ & $0$ & $0$ & $3$ & $5$ & $8$  & \ &
+\hspace{0.4em} & $0$ & $\cdot$ & $5$ & $0$ & $0$ & $0$ & $0$ & $0$ & $4$  \\ \hline
+$5$ & \ &
+- & $0$ & $\cdot$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$  & \ &
+\hspace{0.4em} & $0$ & $\cdot$ & $4$ & $9$ & $9$ & $9$ & $9$ & $9$ & $9$  \\ \hline
+$5$ & \ &
+\hspace{0.4em} & $0$ & $\cdot$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$  & \ &
+\hspace{0.4em} & $0$ & $\cdot$ & $5$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$  \\ \hline
+\end{tabular}
+\\
+\\
+And so $\cos(\frac{\pi}{3}) \cong 0.5$. In fact, the cosine of $60^\circ$ is exactly $\frac{1}{2}$.
+
+In this way, the cosine and sine functions can be evaluated for all $x$ and the functions can be graphed as shown below. Note that the angles are measured in radians.
+\begin{figure}[b]
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{images/cos_sin.eps}
+  \end{center}
+\end{figure}
+\pagebreak
+
+\subsection*{Logarithim function}
+
+The natural logarithim $\log(x)=\log_{e}(x)=\ln(x)$ can be defined using the infinite series
+\begin{equation*}
+  \log(1+x) = \sum_{n=1}^{\infty} \frac{(-1)^{n+1} x^n}{n}=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+ \cdots 
+\end{equation*}
+
+\begin{wrapfigure}{l}{0.4\textwidth}
+%  \begin{center} 
+   % \includegraphics[width=1.1\textwidth]{exp}
+    \includegraphics[width=0.4\textwidth]{images/log.eps}
+%  \end{center}
+\end{wrapfigure}
+However, when the ratio test is applied, the convergence of $\log$ depends on the value of $x$
+\begin{align*}
+  \left| \frac{a_{n+1}}{a_n}\right|&=\left| \frac{(-1)^{n+2} x^{n+1}}{n+1} \frac{n}{(-1)^{n+1} x^n}\right|\\
+&=|x|\left(\frac{n+1}{n}\right)\\
+ \Rightarrow R &=\lim_{n \to \infty} |x|\left(\frac{n+1}{n}\right) = x
+\end{align*}
+And so $R=|x|$, and hence the series will be convergent only when $|x|<1$. And when $|x|>1$ the series is divergent. So only values of $\log$ in the interval $(0,2)$ can be computed using this infinite series.
+
+A better method of calculating $\log$ is needed. One method is to remember the definition of the $\log$ function. The number $x=\log(D)$ is the $x$ which satisfies $e^X=D$. This can be rewritten as $e^x-D=0$. Consider the function
+\begin{equation*}
+  f(x)=e^x-D
+\end{equation*}
+If an $x$ can be found which gives $f(x)=0$, then $x=\log(D)$. This is the problem of finding the root of the function, and one way to solve this problem is to use Newton's Method.
+
+
+% 0.000000000000000   1.000000000000000   1.000000000000000
+%   1.000000000000000  -0.548311355616075   0.451688644383925
+%   2.000000000000000   0.050107557116256   0.501796201500181
+%   3.000000000000000  -0.001831636171268   0.499964565328913
+%   4.000000000000000   0.000035868104002   0.500000433432915
+%   5.000000000000000  -0.000000437041972   0.499999996390943
+
+% \thispagestyle{empty} 
+% \begin{landscape}
+% \begin{figure}[!h!]
+%  \begin{centering}
+%    \includegraphics[width=1.7\textwidth]{cosine}
+%    \includegraphics[width=1.7\textwidth]{sine}
+%  \end{centering}
+% \end{figure}
+% \end{landscape}
+
+% \pagebreak
+% \thispagestyle{empty} 
+%   \begin{figure}[!h!]
+%     \begin{center}
+%       %\includegraphics[width=1.1\textwidth]{exp}
+%       \includegraphics[scale=1.85]{exp}
+%     \end{center}
+%   \end{figure}
+% \pagebreak
+% \thispagestyle{empty} 
+%   \begin{figure}[!h!]
+%     \begin{center}
+%     %\includegraphics[width=1.1\textwidth]{log}
+%       \includegraphics[scale=1.85]{log}
+%     \end{center}
+%   \end{figure}
+% \pagebreak
+% \thispagestyle{empty} 
+%   \begin{figure}[!h!]
+%     \begin{center}
+%     \includegraphics[width=0.55\textwidth]{exp2}
+%     \end{center}
+%   \end{figure}
+
+
+
+\end{document}
+

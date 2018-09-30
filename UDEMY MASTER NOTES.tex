@@ -1,0 +1,164 @@
+%\documentclass[11pt, a4paper,dalthesis]{report}    % final 
+%\documentclass[11pt,a4paper,dalthesis]{report}
+%\documentclass[11pt,a4paper,dalthesis]{book}
+
+\documentclass[11pt,a4paper,titlepage,oneside,openany]{article}
+
+\pagestyle{plain}
+%\renewcommand{\baselinestretch}{1.7}
+
+\usepackage{setspace}
+%\singlespacing
+\onehalfspacing
+%\doublespacing
+%\setstretch{1.1}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage[margin=3cm]{geometry}
+\usepackage{graphicx,psfrag}%\usepackage{hyperref}
+
+
+\usepackage{framed}
+\include{zcust_preamble}
+\include{zcust_commands}
+
+\begin{document}
+
+\section*{Sequences and limits}
+
+Heron's method and the reciprocal algorithm both generated \emph{sequences} of numbers which hopefully converged to a \emph{limit}. We need to study and understand these objects and concepts.
+
+A sequence is an ordered list of numbers given by a definite rule. A sequence of numbers is written in the form
+\begin{equation*}
+ a_0,a_1,a_2,a_3,a_4,a_5,a_6,\ldots
+\end{equation*}
+The term $a_n$ denotes the $n^{th}$ \emph{term} in the sequence, \eg $a_{105}$ denotes the $105^{th}$ term. Note that $n$ must be a positive integer ($n \in \mathbb{N}_0$). It cannot be negative or a fraction, \etc. Some sequences start at $n=0$, other can start at $n=1$. A sequence can be \emph{finite}, with the terms ending after a large enough value of $n$ is reach. Sequences can also be \emph{infinite}, with the terms continuing forever without ending.
+
+The \emph{rule} which defines the sequence may take many forms but it must define all terms in the sequence unambiguously.
+
+\subsection*{Simple Rules}
+
+A simple rule for a sequence is a formula which has the same behavior/form for all inputs $n$. For example
+\begin{align*}
+%  a_n=&n\ , \quad &a_0=0,a_1=1,a_2=2,a_3=3,\ldots \\
+  a_n=&2n^2+3n\\%\ , \quad &a_0=0,a_1=5,a_2=14,a_3=27,\ldots\\
+  b_n=&\frac{1}{n+1}\\%\ , \quad &a_0=1,a_1=\frac{1}{2},a_2=\frac{1}{3},a_3=\frac{1}{4},\ldots\\
+  c_n=&2^n+3^n%\ , \quad &a_0=2,a_1=5,a_2=13,a_3=35,\ldots
+\end{align*}
+The rule is of the form $a_n=f(n)$ for some simple function $f$. Different letter can be used to distinguish terms in different sequences. Some terms in the sequences above are listed in the tables below.
+
+\begin{center}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$a_0$ & $a_1$ & $a_2$ & $a_3$ & $a_4$ & $a_5$ \\
+\hline
+  0 & 5 & 14 & 27 & 44 & 65  \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$b_0$ & $b_1$ & $b_2$ & $b_3$ & $b_4$ & $b_5$ \\
+\hline
+  1 & $\frac{1}{2}$ & $\frac{1}{3}$  & $\frac{1}{4}$  & $\frac{1}{5}$  & $\frac{1}{6}$   \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$c_0$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ \\
+\hline
+  2 & 5 & 13 & 35 & 97 & 275  \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{Piecewise Rules}
+
+A piecewise rule for a sequence is one which changes its formula depending on the input $n$. The input must first be checked and matched to a particular formula before evaluating the term. 
+
+\noindent {\bf Example:}
+\begin{align*}
+  a_n&= \begin{cases}
+    n^2 &,\qquad n < 3\\
+    -2n &,\qquad n \ge 3
+  \end{cases}
+\end{align*}
+The sequence $a_n$ is given by the formula $n^2$ when $n<10$ and by the formula $-2n$ when $n \ge 10$. Before evaluation, the input $n$ much be checked to see which of the conditions it satisfies.
+
+For example to evaluate the term $a_2$, the input $n=2$ is seen to satisfy the condition $n<3$. Therefore the formula $n^2$ is used, and so $a_2=2^2=4$. To evaluate the term $a_5$, the input $n=5$ is seen to satisfy the condition $n \ge3$. Therefore the formula $-2n$ is used, and so $a_5=-2(5) = -10$. In this way, the terms of the sequence can be evaluated as long as the inputs $n$ are matched to their proper conditions. Further terms in this sequence are listed in the table below.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$a_0$ & $a_1$ & $a_2$ & $a_3$ & $a_4$ & $a_5$ \\
+\hline
+  0 & 1 & 4 & -6 & -8 & -10  \\
+\hline
+\end{tabular}
+\end{center}
+
+The sequences $b_n$ and $c_n$ below are also defined using piecewise rules. Some terms in the sequences $b_n$ and $c_n$ are listed in the tables below.
+
+The conditions for the sequence $b_n$ check whether the input $n$ is even$(0,2,4,6,\ldots)$ or odd$(1,3,5,7,\ldots)$. The sequence $c_n$ has $3$ formulas, and $3$ corresponding conditions on the input $n$. The input must be checked against all listed conditions until a suitable formula is found.
+\begin{align*}
+  b_n&= \begin{cases}
+    2n^2+3n&,\qquad n \text{ even}\\
+    \frac{1}{n} &,\qquad n \text{ odd}
+  \end{cases}\\
+  c_n&= \begin{cases}
+    0 &,\qquad n<2\\
+    n^2 &,\qquad n=2\\
+    n^3 &,\qquad n>2
+  \end{cases}
+\end{align*}
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$b_0$ & $b_1$ & $b_2$ & $b_3$ & $b_4$ & $b_5$ \\
+\hline
+  0 & $\frac{1}{1}$ & 14 & $\frac{1}{3}$ & 44 & $\frac{1}{5}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$c_0$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ \\
+\hline
+  0 & 0 & 4 & 27 & 64 & 125  \\
+\hline
+\end{tabular}
+\end{center}
+
+To represent piecewise rules on a computer, some kind of if/else statement or other control flow statements are needed. For multiple conditions, a switch statement can be used.
+
+Piecewise and simple rules are convenient as they allow any term in a sequence to be immediately evaluated without needed to evaluate any previous terms. For example $b_{100}=2(100)^2+3(100)=20300$, and $a_{1000000} = -2000000$.
+
+Piecewise rules can also be used to define more general function. For example, the modulus or absolute value function $|x|$, or $\text{abs}(x)$, can be defined using the rule.
+\begin{equation*}
+  |x| =
+  \begin{cases}
+    x, \qquad x \ge 0\\
+    -x, \qquad x<0
+  \end{cases}
+\end{equation*}
+This function strips off the negative sign of any number, but leaves positive numbers unchanged. It gives the ``size'' of a number, or its distance from $0$. The function $|x|$ is plotted in Figure \vref{fig:abs_x}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{images/abs_x.eps}
+  \caption{The absolute value function $|x|$, also written $\text{abs}(x)$}
+  \label{fig:abs_x}
+\end{figure}
+

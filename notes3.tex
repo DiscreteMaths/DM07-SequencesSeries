@@ -1,0 +1,31 @@
+
+\subsection*{Properties of Sequences}
+
+\textbf{Boundedness}\\
+A sequence is said to be \emph{bounded} if there exists some finite number $M$ such that $|a_n|<M$ for every $n$. A sequence for which no such $M$ exists is said to be \emph{unbounded}.\\
+\textbf{Strictly Positive/Negative}\\
+A sequence is \emph{strictly positive} if $a_n > 0$ for all $n$.\\
+A sequence is \emph{strictly negative} if $a_n < 0$ for all $n$.\\
+\textbf{Equivalence}\\
+Two sequences $a_n$ and $b_n$ are \emph{equivalent} if $a_n = b_n$ for all $n$.\\
+\textbf{Increasing/Decreasing}\\
+A sequence is \emph{increasing} if $a_{n+1} > a_n$ for all $n$\\
+A sequence is \emph{decreasing} if $a_{n+1} < a_n$ for all $n$\\
+
+For strictly positive sequences, these conditions mean respectively that $\frac{a_{n+1}}{a_n} > 1$ and $\frac{a_{n+1}}{a_n} < 1$. Therefore, to test whether a sequence is increasing or decreasing, the ratio $\frac{a_{n+1}}{a_n}$ must be evaluated.
+
+\noindent \textbf{ Example:}\\
+To test whether the sequence $a_n=n$ is increasing or decreasing.
+\begin{equation*}
+  a_n=n,\quad a_{n+1}=n+1,\quad \Rightarrow \frac{a_{n+1}}{a_n}=\frac{n+1}{n} > 1 
+\end{equation*}
+as $n+1 >n$. Therefore the sequence $a_n=n$ is increasing.
+
+\noindent \textbf{ Example:}\\
+To test whether the sequence $a_n=\frac{n+2}{n+1}$ is increasing or decreasing.
+\begin{align*}
+  &a_n=\frac{n+2}{n+1},\quad a_{n+1}=\frac{n+3}{n+2},\\
+  &\Rightarrow \frac{a_{n+1}}{a_n}=\frac{\frac{n+3}{n+2}}{\frac{n+2}{n+1}}= \frac{n+3}{n+2}\cdot \frac{n+1}{n+2} = \frac{n^2+4n+3}{n^2+4n+4} = \frac{n^2+4n+3}{\left(n^2+4n+3\right)+1}=\frac{x}{x+1}<1 
+\end{align*}
+where $x=n^2+4n+2$. Therefore $\frac{a_{n+1}}{a_n}<1$ and so the sequence is decreasing.
+\pagebreak
