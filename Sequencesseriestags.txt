@@ -1,0 +1,76 @@
+proof by induction sequence
+18 (8.5%)
+42 (8.9%)
+2:20
+
+proof by induction series
+12 (5.7%)
+19 (4.1%)
+1:36
+
+proof by induction sequences
+12 (5.7%)
+27 (5.6%)
+2:13
+
+proof by induction
+7 (3.3%)
+20 (4.1%)
+2:48
+
+sequence proof by induction
+6 (2.8%)
+3 (0.6%)
+0:30
+
+unknown
+3 (1.4%)
+5 (0.9%)
+1:30
+
+mathematical induction proof for series and sequences
+3 (1.4%)
+2 (0.4%)
+0:37
+
+sequences and series proof by induction
+3 (1.4%)
+7 (1.4%)
+2:11
+
+how to prove a sequence by induction
+3 (1.4%)
+5 (1.0%)
+1:33
+
+sequence proof
+2 (0.9%)
+7 (1.4%)
+3:26
+
+sequences and proof by induction
+2 (0.9%)
+8 (1.6%)
+3:53
+
+sequences proof by induction
+2 (0.9%)
+5 (1.0%)
+2:15
+
+sequence induction proof
+2 (0.9%)
+7 (1.4%)
+3:18
+
+sequences induction
+2 (0.9%)
+1 (0.3%)
+0:39
+
+induction proof sequence
+2 (0.9%)
+3 (0.7%)
+1:38
+
+series and sequences induction
